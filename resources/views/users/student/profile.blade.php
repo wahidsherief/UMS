@@ -32,7 +32,7 @@
               <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->picture}}" alt="User profile picture">
+                    <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->picture}}" alt="User profile picture" class="updated_picture">
                   </div>
 
                   <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
@@ -40,7 +40,7 @@
                   <p class="text-muted text-center">Web Developer</p>
 
 
-<input type="file" name="upload_profile_image" id="upload_profile_image" style="opacity:0,height:1px;display:none"/>
+<input type="file" name="upload_profile_image" id="upload_profile_image" style="opacity:0,height:1px;display:none" class="updated_picture"/>
                   <a href="javascript:void(0)" class="btn btn-primary btn-block" id="change_picture_btn"><b>Update Picture</b></a>
                 </div>
                 <!-- /.card-body -->
@@ -169,24 +169,50 @@
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="change_password">
                       <!-- The timeline -->
-                      <form class="form-horizontal">
 
+
+    @if( Session::get('error_password_update'))
+
+<script>
+        swal("Failed", "Something went wrong. Please try again", "error");
+</script>
+@endif
+
+
+@if( Session::get('success_password_update'))
+
+<script>
+        swal("Success", "Password has been updated successfully", "success");
+</script>
+@endif
+
+                      <form class="form-horizontal" action="{{route('studentChangePassword')}}" method="POST">
+@csrf
                         <div class="form-group row">
                           <label for="password" class="col-sm-2 col-form-label">Old Password</label>
                           <div class="col-sm-10">
-                            <input type="password" class="form-control" id="old_pass" placeholder="Old Passsword">
+                            <input type="password" class="form-control"  placeholder="Old Passsword"
+                            name="oldpassword" id="oldpassword"
+                            >
+                            <span class="text-danger error-text oldpassword_error"></span>
                           </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-sm-2 col-form-label">New Password</label>
                             <div class="col-sm-10">
-                              <input type="password" class="form-control" id="old_pass" placeholder="New Passsword">
+                              <input type="password" class="form-control"  placeholder="New Passsword"
+                              name="newpassword" id="newpassword"
+                              >
+                              <span class="text-danger error-text newpassword_error"></span>
                             </div>
                           </div>  <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Old Password</label>
+                            <label for="password" class="col-sm-2 col-form-label">Confirm Password</label>
                             <div class="col-sm-10">
-                              <input type="password" class="form-control" id="old_pass" placeholder="Old Passsword">
+                              <input type="password" class="form-control" placeholder="Confirm Passsword"
+                              name="cnewpassword" id="cnew_password"
+                              >
+                              <span class="text-danger error-text cnewpassword_error"></span>
                             </div>
                           </div>
 

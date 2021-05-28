@@ -20,6 +20,9 @@ class StudentController extends Controller
     public function setting(){
         return view('users.student.setting');
     }
+    public function notification(){
+        return view('users.student.notification');
+    }
     function updateInfo(Request $request){
 
         $request->validate([
@@ -44,6 +47,20 @@ else{
 }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Update Image
 public function updatePicture(Request $request){
 $path= 'users/images/';
@@ -59,8 +76,8 @@ else{
     $oldPicture= User::find(Auth::user()->id)->getAttributes()['picture'];
 
     if($oldPicture != ''){
-        if(File::exists(public_path($path.$oldPicture))){
-            File::delete(public_path($path.$oldPicture));
+        if(\File::exists(public_path($path.$oldPicture))){
+            \File::delete(public_path($path.$oldPicture));
         }
     }
 
@@ -77,4 +94,54 @@ else{
 }
 }
 
+
+
+//change password
+function ChangePassword(Request $request){
+
+
+
+ //Validate form
+ $validator = \Validator::make($request->all(),[
+    'oldpassword'=>[
+        'required', function($attribute, $value, $fail){
+            if( !\Hash::check($value, Auth::user()->password) ){
+                return $fail(__('The current password is incorrect'));
+            }
+        },
+        'min:8',
+        'max:30'
+     ],
+     'newpassword'=>'required|min:3|max:30',
+     'cnewpassword'=>'required|same:newpassword'
+ ],[
+     'oldpassword.required'=>'Enter your current password',
+     'oldpassword.min'=>'Old password must have atleast 8 characters',
+     'oldpassword.max'=>'Old password must not be greater than 30 characters',
+     'newpassword.required'=>'Enter new password',
+     'newpassword.min'=>'New password must have atleast 8 characters',
+     'newpassword.max'=>'New password must not be greater than 30 characters',
+     'cnewpassword.required'=>'ReEnter your new password',
+     'cnewpassword.same'=>'New password and Confirm new password must match'
+ ]);
+
+if( !$validator->passes() ){
+    return redirect()->back()->with('error_password_update','Something went wrong try again later');
+}else{
+
+ $update = User::find(Auth::user()->id)->update(['password'=>\Hash::make($request->newpassword)]);
+
+ if( !$update ){
+    return redirect()->back()->with('error_password_update','Something went wrong try again later');
+ }else{
+    return redirect()->back()->with('success_password_update','Password Updated Successfully.');
+}
+
+
+}
+
+
+
+
+}
 }

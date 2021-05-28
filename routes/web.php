@@ -47,15 +47,19 @@ Route::group(['prefix'=>'teacher','middleware'=>['isTeacher','auth','PreventBack
     Route::get('setting',[TeacherController::class,'setting'])->name('teacher.setting');
 
 });
+
+//Student Info
 Route::group(['prefix'=>'student','middleware'=>['isStudent','auth','PreventBackHistory']],function(){
 
     Route::get('dashboard',[StudentController::class,'index'])->name('student.dashboard');
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('setting',[StudentController::class,'setting'])->name('student.setting');
+    Route::get('notification',[StudentController::class,'notification'])->name('student.notification');
 
 
     Route::post('update-profile-info',[StudentController::class,'updateInfo'])->name('student.UpdateInfo');
     Route::post('change-profile-picture',[StudentController::class,'updatePicture'])->name('studentPictureUpdate');
 
+    Route::post('change-password',[StudentController::class,'ChangePassword'])->name('studentChangePassword');
 
 });

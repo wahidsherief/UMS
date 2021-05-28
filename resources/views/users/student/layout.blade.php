@@ -27,6 +27,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
@@ -113,9 +114,9 @@
               </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('student.setting')}}" class="nav-link {{ (request()->is('student/setting'))?'active': ''}}">
+                <a href="{{route('student.notification')}}" class="nav-link {{ (request()->is('student/notification'))?'active': ''}}">
                     <i class="nav-icon fas fa-cog"></i>
-                    <p>Setting</p>
+                    <p>Notification <span class="right badge badge-danger">New</span></p>
                   </a>
                   </li>
         </ul>
@@ -201,7 +202,6 @@
 <script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
 <script>
       $(document).ready(function(){
 
@@ -212,11 +212,11 @@ $(document).on('click','#change_picture_btn',function(){
 
 
        $('#upload_profile_image').ijaboCropTool({
-          preview : '',
+          preview : '.updated_picture',
           setRatio:1,
           allowedExtensions: ['jpg', 'jpeg','png'],
           buttonsText:['CROP','QUIT'],
-          buttonsColor:['#30bf7d','#ee5155', -15],
+          buttonsColor:['#30bf7d','#ee5155', -13],
           processUrl:'{{ route("studentPictureUpdate") }}',
            withCSRF:['_token','{{ csrf_token() }}'],
           onSuccess:function(message, element, status){
@@ -236,57 +236,6 @@ $(document).on('click','#change_picture_btn',function(){
     </script>
 
 
-// $.ajaxSetup({
-//     headers:{
-//         'X-CSRF-TOKOEN':$('meta[name="csrf-token"]').attr('content')
-//     }
-// });
-
-
-
-
-
-
-
-//     $(function(){
-// $('#AdminInfoForm').on('submit',function(e){
-// e.preventDefault();
-
-// $.ajax({
-//     url:$(this).attr('action'),
-//     method:$(this).attr('method'),
-//     data:new FormData(this),
-//     processData:false,
-//     dataType:'json',
-//     contentType:false,
-//     beforeSend:function(){
-//         $(document).find('span.error-text').text('');
-//     },
-//     success:function(data){
-//         if(data.status==0){
-//             $.each(data.error,function(prefix,val){
-//                 $('span.'+prefix+'_error').text(val[0]);
-//             });
-//         }
-//         else{
-//             $('#AdminInfoForm').[0].reset();
-//             alert(data,msg);
-//         }
-//     }
-// })
-
-
-
-
-
-
-
-
-// });
-
-
-//     });
-//
 </body>
 </html>
 
