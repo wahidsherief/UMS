@@ -65,6 +65,13 @@
                             </div>
                         </div>
                     </form>
+
+                        @if(Session::has('error'))
+                        <div class="alert alert-warning" role="alert">
+                      <b>  {{Session::get('error')}} </b>
+                    </div>
+                        @endif
+
                 </div>
             </div>
         </div>

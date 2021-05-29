@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content = "{{csrf_token()}}">
   <title>@yield('title')</title>
 <base href="{{ \URL::to('/')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -25,12 +26,16 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
-  {{-- <div class="preloader flex-column justify-content-center align-items-center">
+  {{-- <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div> --}}
 
@@ -73,9 +78,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ \URL::to('/')}}" class="brand-link">
-      <img src="{{('users/images/4271621914328_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Teacher</span>
+    <a href="{{ \URL::to('/student/dashboard')}}" class="brand-link">
+      <img src="{{('users/images/7941621914053_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Teacher Dashboard</span>
     </a>
 
     <!-- Sidebar -->
@@ -97,7 +102,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
      <li class="nav-item">
-                <a href="{{route('teacher.dashboard')}}"  class="nav-link {{ (request()->is('teacher/dashboard'))?'active': ''}}">
+                <a href="{{route('teacher.dashboard')}}" class="nav-link {{ (request()->is('student/dashboard'))?'active': ''}}">
                   <i class="nav-icon fas fa-home"></i>
                   <p>Dashboard</p>
                 </a>
@@ -108,12 +113,7 @@
                 <p>Profile</p>
               </a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('teacher.setting')}}" class="nav-link {{ (request()->is('teacher/setting'))?'active': ''}}">
-                    <i class="nav-icon fas fa-cog"></i>
-                    <p>Setting</p>
-                  </a>
-                  </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -194,5 +194,43 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+      $(document).ready(function(){
+
+
+$(document).on('click','#change_picture_btn',function(){
+        $('#upload_profile_image').click();
+    });
+
+
+       $('#upload_profile_image').ijaboCropTool({
+          preview : '.updated_picture',
+          setRatio:1,
+          allowedExtensions: ['jpg', 'jpeg','png'],
+          buttonsText:['CROP','QUIT'],
+          buttonsColor:['#30bf7d','#ee5155', -13],
+          processUrl:'{{ route("teacherPictureUpdate") }}',
+           withCSRF:['_token','{{ csrf_token() }}'],
+          onSuccess:function(message, element, status){
+             alert(message);
+          },
+          onError:function(message, element, status){
+            alert(message);
+          }
+       });
+
+
+});
+
+
+
+
+    </script>
+
+
 </body>
 </html>
+

@@ -46,6 +46,11 @@ Route::group(['prefix'=>'teacher','middleware'=>['isTeacher','auth','PreventBack
     Route::get('profile',[TeacherController::class,'profile'])->name('teacher.profile');
     Route::get('setting',[TeacherController::class,'setting'])->name('teacher.setting');
 
+    Route::post('update-profile-info',[TeacherController::class,'updateInfo'])->name('teacher.UpdateInfo');
+    Route::post('change-profile-picture',[TeacherController::class,'updatePicture'])->name('teacherPictureUpdate');
+
+    Route::post('change-password',[TeacherController::class,'ChangePassword'])->name('teacherChangePassword');
+
 });
 
 //Student Info
