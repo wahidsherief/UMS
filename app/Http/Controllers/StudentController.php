@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Auth\Events\Validated;
 
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +22,9 @@ class StudentController extends Controller
         return view('users.student.setting');
     }
     public function notification(){
-        return view('users.student.notification');
+        $notification= Notification::orderBy('id','DESC')->get();
+        return view('users.student.notification',compact('notification'));
+
     }
     function updateInfo(Request $request){
 

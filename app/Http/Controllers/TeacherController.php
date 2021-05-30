@@ -21,6 +21,13 @@ class TeacherController extends Controller
     public function setting(){
         return view('users.teacher.setting');
     }
+    public function addNotification(){
+        return view('users.teacher.addnotification');
+    }
+
+
+
+
     function updateInfo(Request $request){
 
         $request->validate([

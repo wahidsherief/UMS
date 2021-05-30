@@ -5,6 +5,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -40,11 +41,18 @@ Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','PreventBackHist
     Route::get('setting',[AdminController::class,'setting'])->name('admin.setting');
 
 });
+
+//Teacher
+
 Route::group(['prefix'=>'teacher','middleware'=>['isTeacher','auth','PreventBackHistory']],function(){
 
     Route::get('dashboard',[TeacherController::class,'index'])->name('teacher.dashboard');
     Route::get('profile',[TeacherController::class,'profile'])->name('teacher.profile');
     Route::get('setting',[TeacherController::class,'setting'])->name('teacher.setting');
+    Route::get('notification',[TeacherController::class,'addNotification'])->name('teacher.notification');
+
+
+    Route::POST('submitnotification',[NotificationController::class,'insertNotification'])->name('insertNotification');
 
     Route::post('update-profile-info',[TeacherController::class,'updateInfo'])->name('teacher.UpdateInfo');
     Route::post('change-profile-picture',[TeacherController::class,'updatePicture'])->name('teacherPictureUpdate');

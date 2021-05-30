@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/5b63wl8ybhi7rxkv3pz7vt60x9e2rdxx5drkqo3ou4c7mkuf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 
 </head>
@@ -113,7 +114,12 @@
                 <p>Profile</p>
               </a>
               </li>
-
+              <li class="nav-item">
+                <a href="{{route('teacher.notification')}}" class="nav-link {{ (request()->is('teacher/notification'))?'active': ''}}">
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>Notification</p>
+                  </a>
+                  </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -229,7 +235,12 @@ $(document).on('click','#change_picture_btn',function(){
 
 
     </script>
+    <script>
+            tinymce.init({
+             selector: '#post_body',
 
+            })
+        </script>
 
 </body>
 </html>
