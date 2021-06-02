@@ -52,4 +52,9 @@ class User extends Authenticatable
             return asset('users/images/no-image.jpg');
         }
     }
+
+
+    public function notice(){
+        return $this->hasMany(Notice::class);
+    }
 }

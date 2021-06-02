@@ -79,8 +79,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ \URL::to('/student/dashboard')}}" class="brand-link">
-      <img src="{{('users/images/7941621914053_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Student Dashboard</span>
+      <img src="{{('users/images/20171621953200_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">UMS</span>
     </a>
 
     <!-- Sidebar -->
@@ -114,9 +114,9 @@
               </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('student.notification')}}" class="nav-link {{ (request()->is('student/notification'))?'active': ''}}">
+                <a href="{{route('student.notice')}}" class="nav-link {{ (request()->is('student/notice'))?'active': ''}}">
                     <i class="nav-icon fas fa-cog"></i>
-                    <p>Notification <span class="right badge badge-danger">New</span></p>
+                    <p>Notice <span class="right badge badge-danger">New</span></p>
                   </a>
                   </li>
         </ul>

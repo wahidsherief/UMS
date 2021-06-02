@@ -21,8 +21,8 @@ class TeacherController extends Controller
     public function setting(){
         return view('users.teacher.setting');
     }
-    public function addNotification(){
-        return view('users.teacher.addnotification');
+    public function notice(){
+        return view('users.teacher.addnotice');
     }
 
 

@@ -5,7 +5,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\NoticeController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +49,10 @@ Route::group(['prefix'=>'teacher','middleware'=>['isTeacher','auth','PreventBack
     Route::get('dashboard',[TeacherController::class,'index'])->name('teacher.dashboard');
     Route::get('profile',[TeacherController::class,'profile'])->name('teacher.profile');
     Route::get('setting',[TeacherController::class,'setting'])->name('teacher.setting');
-    Route::get('notification',[TeacherController::class,'addNotification'])->name('teacher.notification');
+    Route::get('notice',[TeacherController::class,'notice'])->name('teacher.notice');
 
 
-    Route::POST('submitnotification',[NotificationController::class,'insertNotification'])->name('insertNotification');
+    Route::POST('submitnotice/{id}',[NoticeController::class,'insertNotice'])->name('insertNotice');
 
     Route::post('update-profile-info',[TeacherController::class,'updateInfo'])->name('teacher.UpdateInfo');
     Route::post('change-profile-picture',[TeacherController::class,'updatePicture'])->name('teacherPictureUpdate');
@@ -67,7 +67,7 @@ Route::group(['prefix'=>'student','middleware'=>['isStudent','auth','PreventBack
     Route::get('dashboard',[StudentController::class,'index'])->name('student.dashboard');
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('setting',[StudentController::class,'setting'])->name('student.setting');
-    Route::get('notification',[StudentController::class,'notification'])->name('student.notification');
+    Route::get('notice',[StudentController::class,'notice'])->name('student.notice');
 
 
     Route::post('update-profile-info',[StudentController::class,'updateInfo'])->name('student.UpdateInfo');

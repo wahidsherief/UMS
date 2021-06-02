@@ -79,8 +79,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ \URL::to('/student/dashboard')}}" class="brand-link">
-      <img src="{{('users/images/7941621914053_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="{{ \URL::to('/teacher/dashboard')}}" class="brand-link">
+      <img src="{{('users/images/4271621914328_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Teacher Dashboard</span>
     </a>
 
@@ -115,9 +115,9 @@
               </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('teacher.notification')}}" class="nav-link {{ (request()->is('teacher/notification'))?'active': ''}}">
+                <a href="{{route('teacher.notice')}}" class="nav-link {{ (request()->is('teacher/notice'))?'active': ''}}">
                     <i class="nav-icon fas fa-user"></i>
-                    <p>Notification</p>
+                    <p>Notice</p>
                   </a>
                   </li>
         </ul>
