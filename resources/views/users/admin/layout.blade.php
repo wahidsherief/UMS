@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content = "{{csrf_token()}}">
   <title>@yield('title')</title>
 <base href="{{ \URL::to('/')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -25,14 +26,19 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/5b63wl8ybhi7rxkv3pz7vt60x9e2rdxx5drkqo3ou4c7mkuf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
+  {{-- <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
+  </div> --}}
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -42,8 +48,12 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
 
-      <li class="nav-item d-none d-sm-inline-block">
-
+ <li class="nav-item d-none d-sm-inline-block">
+        <a class="dropdown-item" href="{{ route('index') }}"
+       >Home
+     </a>
+    </li>
+    <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -73,9 +83,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ \URL::to('/')}}" class="brand-link">
-      <img src="{{('users/images/1501621952699_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin</span>
+    <a href="{{ \URL::to('/admin/dashboard')}}" class="brand-link">
+      <img src="{{('users/images/4271621914328_avatar.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin Dashboard</span>
     </a>
 
     <!-- Sidebar -->
@@ -108,12 +118,27 @@
                 <p>Profile</p>
               </a>
               </li>
+
               <li class="nav-item">
-                <a href="{{route('admin.setting')}}" class="nav-link {{ (request()->is('admin/setting'))?'active': ''}}">
-                    <i class="nav-icon fas fa-cog"></i>
-                    <p>Setting</p>
+                <a href="{{route('admin.addnotice')}}" class="nav-link {{ (request()->is('admin/addnotice'))?'active': ''}}">
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>Add Notice</p>
                   </a>
                   </li>
+  <li class="nav-item">
+                <a href="{{route('admin.notice')}}" class="nav-link {{ (request()->is('admin/notice'))?'active': ''}}">
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>All Notice</p>
+                  </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{route('admin.department')}}" class="nav-link {{ (request()->is('admin/department'))?'active': ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Department</p>
+                      </a>
+                      </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -194,5 +219,48 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+      $(document).ready(function(){
+
+
+$(document).on('click','#change_picture_btn',function(){
+        $('#upload_profile_image').click();
+    });
+
+
+       $('#upload_profile_image').ijaboCropTool({
+          preview : '.updated_picture',
+          setRatio:1,
+          allowedExtensions: ['jpg', 'jpeg','png'],
+          buttonsText:['CROP','QUIT'],
+          buttonsColor:['#30bf7d','#ee5155', -13],
+          processUrl:'{{ route("adminPictureUpdate") }}',
+           withCSRF:['_token','{{ csrf_token() }}'],
+          onSuccess:function(message, element, status){
+             alert(message);
+          },
+          onError:function(message, element, status){
+            alert(message);
+          }
+       });
+
+
+});
+
+
+
+
+    </script>
+    <script>
+            tinymce.init({
+             selector: '#post_body',
+
+            })
+        </script>
+
 </body>
 </html>
+

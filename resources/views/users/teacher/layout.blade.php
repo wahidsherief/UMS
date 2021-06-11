@@ -48,8 +48,12 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
 
-      <li class="nav-item d-none d-sm-inline-block">
-
+ <li class="nav-item d-none d-sm-inline-block">
+        <a class="dropdown-item" href="{{ route('index') }}"
+       >Home
+     </a>
+    </li>
+    <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -114,12 +118,20 @@
                 <p>Profile</p>
               </a>
               </li>
+
               <li class="nav-item">
-                <a href="{{route('teacher.notice')}}" class="nav-link {{ (request()->is('teacher/notice'))?'active': ''}}">
+                <a href="{{route('teacher.addnotice')}}" class="nav-link {{ (request()->is('teacher/addnotice'))?'active': ''}}">
                     <i class="nav-icon fas fa-user"></i>
-                    <p>Notice</p>
+                    <p>Add Notice</p>
                   </a>
                   </li>
+  <li class="nav-item">
+                <a href="{{route('teacher.notice')}}" class="nav-link {{ (request()->is('teacher/notice'))?'active': ''}}">
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>All Notice</p>
+                  </a>
+                  </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -1,9 +1,9 @@
 
-@extends('users.admin.layout')
-@section('title',"admin dashboard")
+@extends('users.teacher.layout')
+@section('title',"Teacher Setting")
 
 @section('content')
 <div class="container">
-    <h3>Admin Setting</h3>
+    <h3>Teacher Setting</h3>
 </div>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Notice;
 use Illuminate\Auth\Events\Validated;
 
 use Illuminate\Support\Facades\Hash;
@@ -21,10 +22,18 @@ class TeacherController extends Controller
     public function setting(){
         return view('users.teacher.setting');
     }
-    public function notice(){
+    public function addnotice(){
         return view('users.teacher.addnotice');
     }
 
+    public function notice(){
+        $notice= Notice::with('user')->orderBy('id','DESC')->paginate(10);
+        return view('users.teacher.notice',compact('notice'));
+    }
+    public function single_notice($id){
+        $notice= Notice::with('user')->where('id',$id)->get();
+        return view('users.teacher.single_notice',compact('notice'));
+    }
 
 
 

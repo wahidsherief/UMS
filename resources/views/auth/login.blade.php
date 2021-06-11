@@ -1,10 +1,15 @@
-@extends('layouts.app')
-
+@extends('frontend.layout')
+@section('title','Login')
 @section('content')
-<div class="container">
+{{-- <div class="home">
+    <div class=" ">
+
+    </div> --}}
+   <div  style="background:url('frontend/images/login.jpg');padding-top:13%;padding-bottom:20%;">
+<div class="container" >
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-8" >
+            <div class="card" style="padding:40px">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -65,7 +70,7 @@
                             </div>
                         </div>
                     </form>
-
+                    <div class="alert alert-info mt-3" role="info"><a href=" {{ URL::to('/register') }}">Don't Have Account <b>Register</b></a></div>
                         @if(Session::has('error'))
                         <div class="alert alert-warning" role="alert">
                       <b>  {{Session::get('error')}} </b>
@@ -76,5 +81,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

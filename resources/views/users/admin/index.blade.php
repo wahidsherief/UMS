@@ -1,9 +1,9 @@
 
 @extends('users.admin.layout')
-@section('title',"admin dashboard")
+@section('title',"Admin Dashboard")
 
 @section('content')
 <div class="container">
-    <h3>Dashboard</h3>
+    <h3>Admin Dashboard</h3>
 </div>
 @endsection

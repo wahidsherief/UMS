@@ -20,6 +20,7 @@
               <th>Status</th>
               <th>Date</th>
               <th>Title</th>
+              <th>show</th>
             </tr>
           </thead>
           <tbody>
@@ -30,28 +31,29 @@
 
 
             <tr data-widget="expandable-table" aria-expanded="false">
-              <td>  <img class="img-circle img-bordered-sm" src="{{$notify->picture}}" alt="Teacher's image"width="50"></td>
-              <td>{{$notify->name}}</td>
+              <td>  <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="Teacher's image"width="50"></td>
+              <td>{{$notify->user->name}}</td>
               <td>Teacher</td>
               <td> <span class="description">{{$notify->created_at->diffForHumans()}}</span></td>
 
               <td>{{$notify->notice_title}}</td>
-            </tr>
-            <tr class="expandable-body d-none">
-              <td colspan="5">
-                <p style="display: none;">
-                    {!! $notify->notice_body !!}
-                    <img src="{{asset('users//images/notice')}}/{{$notify->notice_file}}"/>
-                </p>
+              <td>
+                  <a href="{{route('student.single_notice',$notify->id)}}" class="btn btn-info"> show</a>
               </td>
             </tr>
+
 
 @endforeach
 </tbody>
 </table>
+
 </div>
-
-
+{{$notice->links()}}
+<style>
+    .w-5{
+        display:none;
+    }
+</style>
       <!-- /.card-body -->
 
 

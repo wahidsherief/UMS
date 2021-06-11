@@ -29,7 +29,15 @@
   <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
+<style>
+    .main-footer{
+       display:none
+    }
+    hr.style5 {
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -48,7 +56,11 @@
       </li>
 
       <li class="nav-item d-none d-sm-inline-block">
-
+        <a class="dropdown-item" href="{{ route('index') }}"
+       >Home
+     </a>
+    </li>
+    <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -184,6 +196,12 @@
 <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+
+<script src="plugins/jquery-ui/jquery-ui.css"></script>
+<script src="plugins/jquery-ui/jquery-ui.theme.css"></script>
+<script src="plugins/jquery-ui/jquery-ui.structure.css"></script>
+
+
 <!-- daterangepicker -->
 <script src="plugins/moment/moment.min.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>

@@ -1,10 +1,15 @@
-@extends('layouts.app')
-
+@extends('frontend.layout')
+@section('title','Login')
 @section('content')
+<style>.form-control{
+    color:black;
+}
+    </style>
+<div  style="background:url('frontend/images/login.jpg');padding-top:18%;padding-bottom:20%;">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="padding:20px">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -94,9 +99,10 @@
                             </div>
                         </div>
                     </form>
+                    <div class="alert alert-primary mt-3" role="primary"><a href=" {{ URL::to('/login') }}">Already Have account <b>Login</b></a></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div></div>
 @endsection

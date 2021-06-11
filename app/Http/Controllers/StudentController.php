@@ -21,12 +21,21 @@ class StudentController extends Controller
     public function setting(){
         return view('users.student.setting');
     }
+
+
     public function notice(){
-
-        $notice= Notice::orderBy('id','DESC')->get();
+        $notice= Notice::with('user')->orderBy('id','DESC')->paginate(10);
         return view('users.student.notice',compact('notice'));
-
     }
+
+    public function single_notice($id){
+        $notice= Notice::with('user')->where('id',$id)->get();
+        return view('users.student.single_notice',compact('notice'));
+    }
+
+
+
+
     function updateInfo(Request $request){
 
         $request->validate([
