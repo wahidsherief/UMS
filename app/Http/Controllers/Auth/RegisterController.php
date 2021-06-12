@@ -8,8 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
 use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -73,44 +73,35 @@ class RegisterController extends Controller
     //     ]);
     // }
 
-function register(Request $request){
-$request->validate([
-    'name' => ['required', 'string', 'max:55'],
-    'role' => ['required'],
-    'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-    'password' => ['required', 'string', 'min:8', 'confirmed'],
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:55'],
+            'role' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
 
-]);
+        $path = 'users/images/';
+        $fontPath = public_path('fonts/AppleGaramond.ttf');
+        $char = strtoupper($request->name[0]);
+        $newAvatarName = rand(12, 3453) . time() . '_avatar.png';
+        $dest = $path . $newAvatarName;
 
-$path='users/images/';
-$fontPath= public_path('fonts/AppleGaramond.ttf');
-$char= strtoupper($request->name[0]);
-$newAvatarName= rand(12,3453).time().'_avatar.png';
-$dest= $path.$newAvatarName;
+        $createAvatar = makeAvatar($fontPath, $dest, $char);
+        $picture = $createAvatar == true ? $newAvatarName : '';
 
-$createAvatar= makeAvatar($fontPath, $dest, $char);
-$picture= $createAvatar ==true ? $newAvatarName: '';
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = $request->role;
+        $user->picture = $picture;
+        $user->password = Hash::make($request->password);
 
-
-
-$user = new User();
-$user->name=$request->name;
-$user->email=$request->email;
-$user->role=$request->role;
-$user->picture=$picture;
-$user->password = Hash::make($request->password);
-
-
-
-
-if($user->save()){
-    return redirect()->back()->with('success','Registration Successful.');
-}
-
-
-else{
-    return redirect()->back()->with('error','Failed Try again later Thank you!!!');
-}
-}
-
+        if ($user->save()) {
+            return redirect()->back()->with('success', 'Registration Successful.');
+        } else {
+            return redirect()->back()->with('error', 'Failed Try again later Thank you!!!');
+        }
+    }
 }
