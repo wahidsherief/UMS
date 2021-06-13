@@ -130,8 +130,4 @@ class AdminController extends Controller
         }
     }
 
-    public function department()
-    {
-        return view('users.admin.department');
-    }
 }

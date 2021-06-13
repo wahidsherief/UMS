@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\BatchController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -18,13 +20,15 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //frontend
 
-Route::view('/', 'frontend.index')->name('index');
-Route::view('/about', 'frontend.about')->name('about');
-Route::view('/courses', 'frontend.courses')->name('courses');
-Route::view('/news', 'frontend.news')->name('news');
-Route::view('/contact', 'frontend.contact')->name('contact');
+Route::view('/', 'website.index')->name('index');
+Route::view('/about', 'website.about')->name('about');
+Route::view('/courses', 'website.courses')->name('courses');
+Route::view('/news', 'website.news')->name('news');
+Route::view('/contact', 'website.contact')->name('contact');
+
 
 Auth::routes();
 
@@ -46,15 +50,29 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('addnotice', [AdminController::class, 'addnotice'])->name('admin.addnotice');
     Route::get('notice', [AdminController::class, 'notice'])->name('admin.notice');
     Route::get('notice/{id}', [AdminController::class, 'single_notice'])->name('admin.single_notice');
-    Route::get('departments', [AdminController::class, 'department'])->name('admin.department');
-
-    Route::get('department', [AdminController::class, 'add_department'])->name('admin.add_department');
 
     Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('admin_insertNotice');
     Route::post('update-profile-info', [TeacherController::class, 'updateInfo'])->name('admin.UpdateInfo');
     Route::post('change-profile-picture', [TeacherController::class, 'updatePicture'])->name('adminPictureUpdate');
 
     Route::post('change-password', [TeacherController::class, 'ChangePassword'])->name('adminChangePassword');
+
+
+// Department parts
+
+Route::get('department', [DepartmentController::class, 'add_department'])->name('add.department');
+Route::get('departments', [DepartmentController::class, 'department_data'])->name('department_data');
+
+Route::post('department', [DepartmentController::class, 'add_department_submit'])->name('add.department.submit');
+
+// Batch parts
+
+Route::get('batch', [BatchController::class, 'add_batch'])->name('add.batch');
+Route::get('batches', [BatchController::class, 'batch_data'])->name('batch_data');
+
+Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('add.batch.submit');
+
+
 });
 
 //Teacher
@@ -87,4 +105,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
     Route::post('change-profile-picture', [StudentController::class, 'updatePicture'])->name('studentPictureUpdate');
 
     Route::post('change-password', [StudentController::class, 'ChangePassword'])->name('studentChangePassword');
+
+    Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
+
+    Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.profile');
+
+
+
+
+
 });

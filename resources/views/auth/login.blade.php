@@ -1,11 +1,11 @@
-@extends('frontend.layout')
+@extends('website.layout')
 @section('title','Login')
 @section('content')
 {{-- <div class="home">
     <div class=" ">
 
     </div> --}}
-   <div  style="background:url('frontend/images/login.jpg');padding-top:13%;padding-bottom:20%;">
+   <div  style="background:url('/images/login.jpg');padding-top:13%;padding-bottom:20%;">
 <div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8" >

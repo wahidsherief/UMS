@@ -113,11 +113,29 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-     <li class="nav-item">
-                <a href="{{route('student.dashboard')}}" class="nav-link {{ (request()->is('student/dashboard'))?'active': ''}}">
-                  <i class="nav-icon fas fa-home"></i>
-                  <p>Dashboard</p>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('student.dashboard')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Complete Profile</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('student.profile')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Show Profile</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
           <li class="nav-item">
             <a href="{{route('student.profile')}}" class="nav-link {{ (request()->is('student/profile'))?'active': ''}}">

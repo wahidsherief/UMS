@@ -1,11 +1,11 @@
-@extends('frontend.layout')
+@extends('website.layout')
 @section('title','Login')
 @section('content')
 <style>.form-control{
     color:black;
 }
     </style>
-<div  style="background:url('frontend/images/login.jpg');padding-top:18%;padding-bottom:20%;">
+<div  style="padding-top:13%;padding-bottom:5%;">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

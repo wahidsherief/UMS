@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
+use App\Models\student;
 use Illuminate\Auth\Events\Validated;
 
 use Illuminate\Support\Facades\Hash;
@@ -148,13 +149,35 @@ if( !$validator->passes() ){
     return redirect()->back()->with('error_password_update','Something went wrong try again later');
  }else{
     return redirect()->back()->with('success_password_update','Password Updated Successfully.');
+}}}
+
+
+
+//Student Full Profile
+public function full_profile(Request $request, $id){
+    $user=User::find(Auth::user()->id);
+
+$students= new Student;
+$students->firstname=$request->firstname;
+$students->lastname=$request->lastname;
+$students->roll_number=$request->roll_number;
+$students->registration_number=$request->registration_number;
+$students->phone=$request->phone;
+$students->address=$request->address;
+$students->blood_group=$request->blood_group;
+$students->hsc_gpa=$request->hsc_gpa;
+$students->ssc_gpa=$request->ssc_gpa;
+$students->jsc_gpa=$request->jsc_gpa;
+$students->psc_gpa=$request->firstname;
+$user->student()->save($students);
+return redirect()->back()->with('pending','Your Profile is pending');
+
+}
+
+public function show_student_data(){
+    $students= Student::with('user')->orderBy('id','DESC')->paginate(10);
+    return view('users.student.student_data',compact('students'));
 }
 
 
-}
-
-
-
-
-}
 }
