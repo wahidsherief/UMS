@@ -2,6 +2,14 @@
 
 @section('title','Home Page')
 
+
+@section('website_links')
+
+<link rel="stylesheet" type="text/css" href="website/styles/contact.css">
+<link href="website/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+@endsection
+
+
 @section('content')
 
 	<div class="home">

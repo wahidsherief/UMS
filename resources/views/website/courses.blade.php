@@ -2,6 +2,12 @@
 
 @section('title','Courses Page')
 
+@section('website_links')
+<link rel="stylesheet" type="text/css" href="website/styles/course.css">
+<link rel="stylesheet" type="text/css" href="website/styles/course_responsive.css">
+@endsection
+
+
 @section('content')
 	<!-- Home -->
 

@@ -1,7 +1,11 @@
 @extends('website.layout')
 
 @section('title','Home Page')
+@section('website_links')
 
+<link rel="stylesheet" type="text/css" href="website/styles/about.css">
+<link rel="stylesheet" type="text/css" href="website/styles/about_responsive.css">
+@endsection
 @section('content')
 <div class="home">
     <div class="breadcrumbs_container">

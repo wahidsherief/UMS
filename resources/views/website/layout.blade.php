@@ -13,15 +13,8 @@
 <link rel="stylesheet" type="text/css" href="website/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="website/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="website/styles/responsive.css">
-<link rel="stylesheet" type="text/css" href="website/styles/about.css">
-<link rel="stylesheet" type="text/css" href="website/styles/about_responsive.css">
-<link rel="stylesheet" type="text/css" href="website/styles/course.css">
-<link rel="stylesheet" type="text/css" href="website/styles/course_responsive.css">
-<link rel="stylesheet" type="text/css" href="website/styles/blog.css">
-<link rel="stylesheet" type="text/css" href="website/styles/blog_responsive.css">
-<link rel="stylesheet" type="text/css" href="website/styles/courses.css">
-<link rel="stylesheet" type="text/css" href="website/styles/courses_responsive.css">
-<link rel="stylesheet" type="text/css" href="website/styles/contact.css">
+@yield('website_links')
+
 <link href="website/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 </head>
 </head>
@@ -44,15 +37,36 @@
 									<li><div class="question">Have any questions?</div></li>
 									<li>
 										<i class="fa fa-phone" aria-hidden="true"></i>
-										<div>001-1234-88888</div>
+										<div>01774861411</div>
 									</li>
 									<li>
 										<i class="fa fa-envelope-o" aria-hidden="true"></i>
-										<div>info.deercreative@gmail.com</div>
+										<div>info.ums.com</div>
 									</li>
 								</ul>
 								<div class="top_bar_login ml-auto">
-									<div class="login_button"><a href="#">Register or Login</a></div>
+
+                                    @if (Route::has('login'))
+
+                                    @auth
+
+									<div class="login_button"><a href="{{ route('student.dashboard') }}">Dashboard</a></div>
+
+                                    @else
+
+									<div class="login_button"><a href="{{ route('login') }}">Register or Login</a></div>
+
+                                        {{-- @if (Route::has('register'))
+                                        <li class="main_nav_item">   <a href="{{ route('register') }}">Register</a></li>
+                                        @endif --}}
+                                    @endauth
+
+                            @endif
+
+
+
+
+
 								</div>
 							</div>
 						</div>
@@ -69,7 +83,7 @@
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<div class="logo_container">
 								<a href="#">
-									<div class="logo_text">Unic<span>at</span></div>
+									<div class="logo_text">U<span>MS</span></div>
 								</a>
 							</div>
 							<nav class="main_nav_contaner ml-auto">

@@ -2,6 +2,15 @@
 
 @section('title','Home Page')
 
+
+
+@section('website_links')
+
+<link rel="stylesheet" type="text/css" href="website/styles/blog.css">
+<link rel="stylesheet" type="text/css" href="website/styles/blog_responsive.css">
+@endsection
+
+
 @section('content')
 
 <div class="home">
