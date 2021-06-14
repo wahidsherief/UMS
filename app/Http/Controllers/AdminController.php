@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
+use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -129,5 +130,28 @@ class AdminController extends Controller
             }
         }
     }
+    public function pendingstudent(){
+        $students= Student::with(['user','department','batch'])->orderBy('id', 'DESC')->get();
+        // dd($students);
+        return view('users.admin.pendingstudent',compact('students'));
+    }
+
+
+    public function pendingteacher(){
+        return view('users.admin.pendingteacher');
+    }
+public function studentaccountaccept(Request $request, $id){
+    $student=User::find($id);
+//     ->update([
+// $student->'account_status'=$request->1
+//     ]);
+    // dd($student);
+$student->account_status=1;
+$student->save();
+    return redirect()->back()->with('account_approved','Account Has Been Approved');
+}
+
+
+
 
 }

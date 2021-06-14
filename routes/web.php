@@ -7,7 +7,9 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -72,6 +74,31 @@ Route::get('batches', [BatchController::class, 'batch_data'])->name('batch_data'
 
 Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('add.batch.submit');
 
+// Semester parts
+
+Route::get('semester', [SemesterController::class, 'add_semester'])->name('add.semester');
+Route::get('semesters', [SemesterController::class, 'semester_data'])->name('semester_data');
+
+Route::post('batch', [SemesterController::class, 'add_semester_submit'])->name('add.semester.submit');
+
+// Courses parts
+
+Route::get('course', [CourseController::class, 'add_course'])->name('add.course');
+Route::get('courses', [CourseController::class, 'course_data'])->name('course_data');
+
+Route::post('course', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
+
+
+
+
+//pending account
+
+Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');
+Route::get('teacheraccount', [AdminController::class, 'pendingteacher'])->name('admin.pending.teacher');
+
+
+Route::post('accountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
+
 
 });
 
@@ -108,7 +135,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
 
     Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
 
-    Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.profile');
+    Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.data');
 
 
 

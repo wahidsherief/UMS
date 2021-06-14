@@ -10,5 +10,12 @@ class Department extends Model
     use HasFactory  ,Notifiable;
     protected $table="departments";
 
-
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function course()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

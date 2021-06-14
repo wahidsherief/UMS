@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
-use App\Models\student;
+use App\Models\Student;
+use App\Models\Department;
+use App\Models\Batch;
 use Illuminate\Auth\Events\Validated;
 
 use Illuminate\Support\Facades\Hash;
@@ -13,9 +15,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Filesystem\Filesystem\File;
 class StudentController extends Controller
 {
-    public function index(){
-        return view('users.student.index');
-    }
+
+
+
     public function profile(){
         return view('users.student.profile');
     }
@@ -158,8 +160,14 @@ public function full_profile(Request $request, $id){
     $user=User::find(Auth::user()->id);
 
 $students= new Student;
+
+$students->department_id=$request->department_id;
+$students->batch_id=$request->batch_id;
+
 $students->firstname=$request->firstname;
 $students->lastname=$request->lastname;
+
+
 $students->roll_number=$request->roll_number;
 $students->registration_number=$request->registration_number;
 $students->phone=$request->phone;
@@ -175,9 +183,16 @@ return redirect()->back()->with('pending','Your Profile is pending');
 }
 
 public function show_student_data(){
-    $students= Student::with('user')->orderBy('id','DESC')->paginate(10);
+$id=Auth::user()->id;
+
+    $students= Student::where('user_id',$id)->with(['user','department','batch'])->get();
+    // dd($students);
     return view('users.student.student_data',compact('students'));
 }
-
+public function index(){
+    $departments = Department::all();
+    $batches = Batch::all();
+    return view('users.student.index',compact('departments','batches'));
+}
 
 }

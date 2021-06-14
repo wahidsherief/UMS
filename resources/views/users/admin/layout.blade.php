@@ -112,6 +112,11 @@
                   <p>Dashboard</p>
                 </a>
               </li>
+
+
+
+
+
           <li class="nav-item">
             <a href="{{route('admin.profile')}}" class="nav-link {{ (request()->is('admin/profile'))?'active': ''}}">
                 <i class="nav-icon fas fa-user"></i>
@@ -180,6 +185,84 @@
                           </li>
                         </ul>
                       </li>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <i class="nav-icon fas fa-chart-pie"></i>
+                          <p>
+                            Semesters
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="{{route('add.semester')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Add Semester</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('semester_data')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Show Semester</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <i class="nav-icon fas fa-chart-pie"></i>
+                          <p>
+                            Courses
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="{{route('add.course')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Add Course</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('course_data')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Show Course</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+
+
+
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <i class="nav-icon fas fa-chart-pie"></i>
+                          <p>
+                            Pending Requests
+
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+
+                          <li class="nav-item">
+                            <a href="{{route('admin.pending.student')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Student Profile</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('admin.pending.teacher')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Teacher Profile</p>
+                            </a>
+                          </li>
+                     </li>
+
 
         </ul>
       </nav>

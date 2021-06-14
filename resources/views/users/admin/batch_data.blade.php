@@ -34,7 +34,7 @@
               <td> {{$batches->firstItem()+$loop->index}}  </td>
               <td>{{$batch->batch_id}}</td>
               <td>{{$batch->batch_name}}</td>
-              <td> <span class="description">{{$batch->created_at->diffForHumans()}}</span></td>
+              {{-- <td> <span class="description">{{$batch->created_at->diffForHumans()}}</span></td> --}}
 
               <td>
                   <a href="{{route('student.single_notice',$batch->id)}}" class="btn btn-info"> Update</a>

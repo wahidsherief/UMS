@@ -107,7 +107,7 @@
         </div>
       </div>
 
-
+@php $account_status=Auth::user()->account_status; @endphp
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -119,10 +119,13 @@
                   <i class="nav-icon fas fa-chart-pie"></i>
                   <p>
                     Dashboard
+
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+
+                    @if($account_status==0)
                   <li class="nav-item">
                     <a href="{{route('student.dashboard')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
@@ -130,13 +133,32 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{route('student.profile')}}" class="nav-link">
+                    <a href="{{route('student.data')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Show Profile</p>
                     </a>
                   </li>
+@endif
+@if($account_status==1)
+        <li class="nav-item">
+                    <a href="{{route('student.dashboard')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>After Completing Profile</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('student.data')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>After Completing Profile</p>
+                    </a>
+                  </li>
+@endif
                 </ul>
               </li>
+
+@if($account_status==1)
+
+
           <li class="nav-item">
             <a href="{{route('student.profile')}}" class="nav-link {{ (request()->is('student/profile'))?'active': ''}}">
                 <i class="nav-icon fas fa-user"></i>
@@ -149,6 +171,7 @@
                     <p>Notice <span class="right badge badge-danger">New</span></p>
                   </a>
                   </li>
+    @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

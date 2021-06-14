@@ -126,7 +126,9 @@ class TeacherController extends Controller
                 return redirect()->back()->with('error_password_update', 'Something went wrong try again later');
             } else {
                 return redirect()->back()->with('success_password_update', 'Password Updated Successfully.');
-            }
-        }
-    }
+            }}}
+
+
+
+
 }

@@ -9,85 +9,104 @@
   <div class="tab-pane active" id="activity">
 
     <div class="card-header">
-        <h3 class="card-title">Expandable Table</h3>
+        <h3 class="card-title">Your Profile Information</h3>
       </div>
       <div class="card-body">
         <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Serial</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Roll Number</th>
-              <th>Registration Number</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Blood</th>
-              <th>HSC</th>
-              <th>SSC</th>
-              <th>JSC</th>
-              <th>PSC</th>
-            </tr>
-          </thead>
-          <tbody>
+
     @foreach($students as $student)
 
 
 
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td> {{$students->firstItem()+$loop->index}}  </td>
-              <td>{{$student->firstname}}</td>
-              <td>{{$student->lastname}}</td>
-              <td>{{$student->roll_number}}</td>
-              <td>{{$student->registration_number}}</td>
-              <td>{{$student->phone}}</td>
-              <td>{{$student->address}}</td>
-              <td>{{$student->blood_group}}</td>
-              <td>{{$student->hsc_gpa}}</td>
-              <td>{{$student->ssc_gpa}}</td>
-              <td>{{$student->jsc_gpa}}</td>
-              <td>{{$student->psc_gpa}}</td>
-
-            </tr>
+    <div class="card-body">
 
 
-@endforeach
-</tbody>
-</table>
-
-</div>
-{{$students->links()}}
-<style>
-    .w-5{
-        display:none;
-    }
-</style>
-
-      <!-- /.card-body -->
-
-
-
-
-
-
-    {{-- <div class="post">
-      <div class="user-block">
-        <img class="img-circle img-bordered-sm" src="{{$notify->picture}}" alt="Teacher's image">
-        <span class="username">
-          <b>{{$notify->name}}</b>
-        </span>
-        <span class="description">{{$notify->created_at->diffForHumans()}}</span>
+     <div class="row">
+    <div class="col">
+        <div class="form-group">
+                    <label for="exampleInputEmail1">Department</label>
+                    <input type="text" class="form-control" id="text" placeholder="Enter First Name" name="firstname"
+                value=" {{$student->department->department_name}}" readonly>
+                </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Batch</label>
+                        <input type="text" class="form-control" id="text" placeholder="Enter First Name" name="firstname"
+                    value=" {{$student->batch->batch_name}}"readonly>
+                    </div></div></div>
+<div class="row">
+<div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter First Name" name="firstname" value="{{$student->firstname}}"readonly>
       </div>
-      <h3></h3>
-      <!-- /.user-block -->
-      <p style="color:black;font-size:18px;">
+    </div>
+    <div class="col">
+<div class="form-group">
+        <label for="exampleInputEmail1">Last Name</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter Last Name" name="lastname"value="{{$student->lastname}}"readonly>
+      </div>
+    </div></div>
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Registration Number</label>
+          <input type="text" class="form-control" id="text" placeholder="Enter Registration Number" name="registration_number"value="{{$student->registration_number}}"readonly>
+        </div>
+      </div>
 
-      </p>
+    <div class="col">
+<div class="form-group">
+        <label for="exampleInputEmail1">ID Number</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter Id Number" name="roll_number" value="{{$student->roll_number}}"readonly>
+      </div>
+    </div>
+
+    </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Phone Number</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter Phone Number" name="phone"value="{{$student->phone}}"readonly>
+      </div>
 
 
-    <!-- /.post -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" class="form-control" id="text" placeholder="Enter Present Address" name="address"value="{{$student->address}}"readonly>
+      </div>
 
-   </div> --}}
 
-</div></div></div></div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Blood Group</label>
+        <input type="text" class="form-control" id="text" placeholder="Ex: A+" name="blood_group"value="{{$student->blood_group}}"readonly>
+      </div>
+
+<div class="row">
+<div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">HSC GPA</label>
+        <input type="text" class="form-control" id="text" placeholder="ex:4.50" name="hsc_gpa"value="{{$student->hsc_gpa}}"readonly>
+      </div>
+    </div>
+<div class="col">
+<div class="form-group">
+        <label for="exampleInputEmail1">SSC Gpa</label>
+        <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="ssc_gpa"value="{{$student->ssc_gpa}}"readonly>
+      </div>
+    </div>
+
+<div class="col">                  <div class="form-group">
+        <label for="exampleInputEmail1">JSC GPA</label>
+        <input type="text" class="form-control" id="text" placeholder="ex: 4.86" name="jsc_gpa"value="{{$student->jsc_gpa}}"readonly>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">PSC GPA</label>
+        <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="psc_gpa"value="{{$student->psc_gpa}}"readonly>
+      </div></div></div></div></div></div></div></div>
+
+      @endforeach
 @endsection

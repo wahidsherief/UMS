@@ -22,7 +22,41 @@
                     </div>
                             @endif
                 <div class="card-body">
-<div class="row">
+
+                   <div class="row">
+                        <div class="col">
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Department</label>
+
+                                       <select class="form-control" name="department_id">
+                                           @foreach($departments as $department)
+                                           <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                           @endforeach
+                                       </select>
+
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Batch</label>
+
+
+                                        <select class="form-control" name="batch_id">
+                                            @foreach($batches as $batch)
+                                            <option value="{{$batch->id}}">{{$batch->batch_name}}</option>
+                                            @endforeach
+                                        </select></div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+ <div class="row">
     <div class="col">
                   <div class="form-group">
                     <label for="exampleInputEmail1">First Name</label>
