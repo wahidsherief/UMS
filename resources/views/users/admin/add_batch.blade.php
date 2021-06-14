@@ -9,7 +9,7 @@
         <div class="col-md-8 offset-md-2">
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('add.batch.submit')}}" method="POST">
+              <form action="" method="POST">
                   @csrf
                 <div class="alert alert-primary" role="alert">
                     <div class="card-header">

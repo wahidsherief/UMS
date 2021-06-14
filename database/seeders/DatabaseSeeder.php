@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
 DepartmentSeeder::class,
 Batchseeder::class,
 FirstSemester::class,
-SecondSemester::class,
         ]);
     }
 }

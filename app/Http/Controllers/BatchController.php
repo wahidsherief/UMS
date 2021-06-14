@@ -16,11 +16,11 @@ $batches=new Batch();
 $batches->batch_id=$request->batch_id;
 $batches->batch_name=$request->batch_name;
 $batches->save();
-return redirect()->back()->with('batch_created','Department Has Been Created Successfully');
+return redirect()->back()->with('batch_created','Batch Has Been Created Successfully');
     }
 
     public function batch_data(){
-$batches= Batch::latest()->paginate(2);
+$batches= Batch::latest()->get();
         return view('users.admin.batch_data',compact('batches'));
     }
 }

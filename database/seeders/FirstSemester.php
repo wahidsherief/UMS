@@ -13,11 +13,15 @@ class FirstSemester extends Seeder
      */
     public function run()
     {
-        DB::table('semesters')->insert([
-            'semester_name'=>'1st semester',
-            'advisor_name'=>'MD. Wahidul Alam',
-
-
-        ]);
+        $courses= [[
+            'semester_name' => '3rd ',
+            'advisor_name' => 'MD. Wahidul Alam',
+        ],
+        [
+            'semester_name' => '4rd ',
+            'advisor_name' => 'MD. Wahidul Alam',
+        ],
+    ];
+        DB::table('semesters')->insert($courses);
     }
 }

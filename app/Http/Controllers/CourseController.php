@@ -14,10 +14,12 @@ class CourseController extends Controller
 {
     public function course_data (){
 
-            $courses= Course::with(['semester','course','batch'])->orderBy('id','DESC')->get();
+            $courses= Course::with(['semester','department','batch'])->orderBy('id','DESC')->get();
             // dd($students);
             return view('users.admin.course_data',compact('courses'));
         }
+
+
         public function add_course(){
         $departments = Department::all();
         $semesters = Semester::all();

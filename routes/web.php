@@ -72,14 +72,14 @@ Route::post('department', [DepartmentController::class, 'add_department_submit']
 Route::get('batch', [BatchController::class, 'add_batch'])->name('add.batch');
 Route::get('batches', [BatchController::class, 'batch_data'])->name('batch_data');
 
-Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('add.batch.submit');
+Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('batch.submit');
 
 // Semester parts
 
 Route::get('semester', [SemesterController::class, 'add_semester'])->name('add.semester');
 Route::get('semesters', [SemesterController::class, 'semester_data'])->name('semester_data');
 
-Route::post('batch', [SemesterController::class, 'add_semester_submit'])->name('add.semester.submit');
+Route::post('semesters', [SemesterController::class, 'add_semester_submit'])->name('add.semester.submit');
 
 // Courses parts
 

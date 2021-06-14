@@ -24,6 +24,7 @@
             </tr>
           </thead>
           <tbody>
+              @php $i=1; @endphp
     @foreach($batches as $batch)
 
 
@@ -31,7 +32,7 @@
 
 
             <tr data-widget="expandable-table" aria-expanded="false">
-              <td> {{$batches->firstItem()+$loop->index}}  </td>
+              <td> {{$i++}} </td>
               <td>{{$batch->batch_id}}</td>
               <td>{{$batch->batch_name}}</td>
               {{-- <td> <span class="description">{{$batch->created_at->diffForHumans()}}</span></td> --}}
@@ -48,12 +49,6 @@
 </table>
 
 </div>
-{{$batches->links()}}
-<style>
-    .w-5{
-        display:none;
-    }
-</style>
       <!-- /.card-body -->
 
 
