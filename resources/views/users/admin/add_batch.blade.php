@@ -13,17 +13,18 @@
                   @csrf
                 <div class="alert alert-primary" role="alert">
                     <div class="card-header">
-                     Add Department(Unique)</div>
+                     Add Batch(Unique)</div>
                     </div>
                 <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Batch Name</label>
+                        <input type="text" class="form-control" id="text" placeholder="Enter Batch Name" name="batch_name">
+                      </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Batch Id</label>
-                    <input type="text" class="form-control" id="text" placeholder="Enter Department Name" name="batch_id">
+                    <label for="exampleInputEmail1">Batch Advisor</label>
+                    <input type="text" class="form-control" id="text" placeholder="Enter Department Name" name="batch_advisor">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Batch Name</label>
-                    <input type="text" class="form-control" id="text" placeholder="Enter Department Head" name="batch_name">
-                  </div>
+
 
 
 

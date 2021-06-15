@@ -71,7 +71,6 @@ Route::post('department', [DepartmentController::class, 'add_department_submit']
 
 Route::get('batch', [BatchController::class, 'add_batch'])->name('add.batch');
 Route::get('batches', [BatchController::class, 'batch_data'])->name('batch_data');
-
 Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('batch.submit');
 
 // Semester parts

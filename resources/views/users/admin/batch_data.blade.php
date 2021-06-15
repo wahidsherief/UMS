@@ -33,8 +33,9 @@
 
             <tr data-widget="expandable-table" aria-expanded="false">
               <td> {{$i++}} </td>
-              <td>{{$batch->batch_id}}</td>
+
               <td>{{$batch->batch_name}}</td>
+              <td>{{$batch->batch_advisor}}</td>
               {{-- <td> <span class="description">{{$batch->created_at->diffForHumans()}}</span></td> --}}
 
               <td>

@@ -15,8 +15,9 @@ class Batchseeder extends Seeder
     public function run()
     {
         DB::table('batches')->insert([
-            'batch_id'=>'29',
+
             'batch_name'=>'29CSE',
+            'batch_advisor'=>'MD. Wahidul Alam',
 
         ]);
     }
