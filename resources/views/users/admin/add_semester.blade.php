@@ -20,14 +20,6 @@
                     <label for="exampleInputEmail1">Semester Name </label>
                     <input type="text" class="form-control" id="text" placeholder="Enter Semester Name" name="semester_name">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Advisor Name</label>
-                    <input type="text" class="form-control" id="text" placeholder="Enter Semester Advisor Name" name="advisor_name">
-                  </div>
-
-
-
-
                 </div>
                 <!-- /.card-body -->
 

@@ -17,7 +17,6 @@
             <tr>
               <th>Serial</th>
               <th>semester Name</th>
-              <th>semester Advisor</th>
               <th>Created At</th>
 
               <th>Action</th>
@@ -34,7 +33,6 @@
             <tr data-widget="expandable-table" aria-expanded="false">
               <td> {{$i++}}  </td>
               <td>{{$semester->semester_name}}</td>
-              <td>{{$semester->advisor_name}}</td>
               {{-- <td> <span class="description">{{$semester->created_at->diffForHumans()}}</span></td> --}}
 
               <td>

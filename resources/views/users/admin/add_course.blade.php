@@ -33,13 +33,13 @@
                                       </div>
                                     </div>
                                     <div class="col">
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                      <label for="exampleInputEmail1">Batch</label>
                      <select class="form-control" name="batch_id">
                                             @foreach($batches as $batch)
                                             <option value="{{$batch->id}}">{{$batch->batch_name}}</option>
                                             @endforeach
-                                        </select></div>
+                                        </select></div> --}}
                          </div>
   <div class="col">
                                         <div class="form-group">
@@ -65,7 +65,12 @@
                     <label for="exampleInputEmail1">Course Name</label>
                     <input type="text" class="form-control" id="text" placeholder="Enter course name" name="course_name">
                   </div></div>
+                  <div class="col">
 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Course Code</label>
+                      <input type="text" class="form-control" id="text" placeholder="Enter course Code" name="course_code">
+                    </div></div>
     <div class="col">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Course Credit</label>

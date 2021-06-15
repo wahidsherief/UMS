@@ -14,11 +14,20 @@ class Batchseeder extends Seeder
      */
     public function run()
     {
-        DB::table('batches')->insert([
-
-            'batch_name'=>'29CSE',
-            'batch_advisor'=>'MD. Wahidul Alam',
-
-        ]);
+        $semester= [
+            [
+                'batch_name' => '2rd ',
+                'batch_advisor' => 'MS Fatema Tuj Zohora',
+            ],
+            [
+            'batch_name' => '3rd ',
+            'batch_advisor' => 'MD. Wahidul Alam',
+        ],
+        [
+            'batch_name' => '4th ',
+            'batch_advisor' => 'MRS. Israth Jahan',
+        ],
+    ];
+        DB::table('batches')->insert($semester);
     }
 }

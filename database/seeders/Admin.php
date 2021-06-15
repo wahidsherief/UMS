@@ -20,8 +20,6 @@ class Admin extends Seeder
             'role'=>'2',
             'password'=>'admin@gmail.com',
             'account_status'=>'1',
-
-
         ]);
 
     }

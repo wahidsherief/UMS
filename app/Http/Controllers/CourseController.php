@@ -29,9 +29,10 @@ class CourseController extends Controller
         public function add_course_submit(Request $request){
             $courses=new Course();
             $courses->department_id=$request->department_id;
-            $courses->batch_id=$request->batch_id;
+            // $courses->batch_id=$request->batch_id;
             $courses->semester_id=$request->semester_id;
             $courses->course_name=$request->course_name;
+            $courses->course_code=$request->course_code;
             $courses->course_credit=$request->course_credit;
             $courses->save();
             return redirect()->back()->with('course_created','course Has Been Created Successfully');

@@ -34,10 +34,11 @@
                 <tr data-widget="expandable-table" aria-expanded="false">
                   <td> {{$i++}}</td>
                   <td>{{$course->department->department_name}}</td>
-                  <td>{{$course->batch->batch_name}}</td>
+                  {{-- <td>{{$course->batch->batch_name}}</td> --}}
                   <td>{{$course->semester->semester_name}}</td>
 
                   <td>{{$course->course_name}}</td>
+                  <td>{{$course->course_code}}</td>
                   <td>{{$course->course_credit}}</td>
                   {{-- <td> <span class="description">{{$department->created_at->diffForHumans()}}</span></td> --}}
 

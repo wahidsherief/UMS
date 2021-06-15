@@ -7,18 +7,21 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 class DepartmentSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('departments')->insert([
-            'department_name'=>'CSE',
-            'department_head'=>'KNS',
-
-
+        [
+        'department_name'=>'CSE',
+        'department_head'=>'KNS',
+        ],
+        [
+            'department_name'=>'EEE',
+            'department_head'=>'MSH',
+         ],
+         [
+            'department_name'=>'ETE',
+            'department_head'=>'WHA',
+            ],
         ]);
 
     }

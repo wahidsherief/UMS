@@ -13,7 +13,7 @@ class FirstSemester extends Seeder
      */
     public function run()
     {
-        $courses= [[
+        $semester= [[
             'semester_name' => '3rd ',
             'advisor_name' => 'MD. Wahidul Alam',
         ],
@@ -22,6 +22,6 @@ class FirstSemester extends Seeder
             'advisor_name' => 'MD. Wahidul Alam',
         ],
     ];
-        DB::table('semesters')->insert($courses);
+        DB::table('semesters')->insert($semester);
     }
 }
