@@ -14,7 +14,7 @@ class CourseController extends Controller
 {
     public function course_data (){
 
-            $courses= Course::with(['semester','department','batch'])->orderBy('id','DESC')->get();
+            $courses= Course::with(['semester','department','batch'])->orderBy('id','ASC')->get();
             // dd($students);
             return view('users.admin.course_data',compact('courses'));
         }

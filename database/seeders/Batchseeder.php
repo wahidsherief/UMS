@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Db;
-class Batchseeder extends Seeder
+class BatchSeeder extends Seeder
 {
     /**
      * Run the database seeds.

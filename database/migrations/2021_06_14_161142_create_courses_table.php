@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->bigInteger('department_id')->unsigned();
             // $table->bigInteger('batch_id')->unsigned();
             $table->bigInteger('semester_id')->unsigned();
+            $table->bigInteger('coursetype_id')->unsigned()->nullable();
             $table->string('course_name');
             $table->string('course_code');
             $table->string('course_credit');

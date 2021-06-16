@@ -10,21 +10,12 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CoursetypeController;
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Auth::routes();
 
 //frontend
-
 Route::view('/', 'website.index')->name('index');
 Route::view('/about', 'website.about')->name('about');
 Route::view('/courses', 'website.courses')->name('courses');
@@ -32,9 +23,7 @@ Route::view('/news', 'website.news')->name('news');
 Route::view('/contact', 'website.contact')->name('contact');
 
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Superadmin Functionality
 
@@ -87,9 +76,12 @@ Route::get('courses', [CourseController::class, 'course_data'])->name('course_da
 
 Route::post('course', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
 
+//Coursetype parts
 
 
-
+Route::get('coursetype', [CoursetypeController::class, 'add_coursetype'])->name('add.coursetype');
+Route::get('coursetypes', [CoursetypeController::class, 'coursetype_data'])->name('coursetype_data');
+Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.course.submit');
 //pending account
 
 Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');
@@ -112,10 +104,8 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::get('notice/{id}', [TeacherController::class, 'single_notice'])->name('teacher.single_notice');
 
     Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('insertNotice');
-
     Route::post('update-profile-info', [TeacherController::class, 'updateInfo'])->name('teacher.UpdateInfo');
     Route::post('change-profile-picture', [TeacherController::class, 'updatePicture'])->name('teacherPictureUpdate');
-
     Route::post('change-password', [TeacherController::class, 'ChangePassword'])->name('teacherChangePassword');
 });
 
@@ -126,18 +116,21 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
     Route::get('setting', [StudentController::class, 'setting'])->name('student.setting');
     Route::get('notice', [StudentController::class, 'notice'])->name('student.notice');
     Route::get('notice/{id}', [StudentController::class, 'single_notice'])->name('student.single_notice');
+    Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.data');
 
     Route::post('update-profile-info', [StudentController::class, 'updateInfo'])->name('student.UpdateInfo');
     Route::post('change-profile-picture', [StudentController::class, 'updatePicture'])->name('studentPictureUpdate');
-
     Route::post('change-password', [StudentController::class, 'ChangePassword'])->name('studentChangePassword');
-
     Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
 
-    Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.data');
 
 
+    //Department Admin Functionality
 
-
+Route::group(['prefix' => 'superadmin', 'middleware' => ['isSuperAdmin', 'auth', 'PreventBackHistory']], function () {
+    Route::get('dashboard', [SuperAdminController::class, 'index'])->name('superadmin.dashboard');
+    Route::get('profile', [SuperAdminController::class, 'profile'])->name('superadmin.profile');
+    Route::get('setting', [SuperAdminController::class, 'setting'])->name('superadmin.setting');
+});
 
 });

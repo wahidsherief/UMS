@@ -18,6 +18,7 @@ class Admin extends Seeder
             'name'=>'Admin',
             'email'=>'admin@gmail.com',
             'role'=>'2',
+            'picture'=>'16531623773774_avatar',
             'password'=>'admin@gmail.com',
             'account_status'=>'1',
         ]);

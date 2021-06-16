@@ -231,6 +231,19 @@
                               <p>Show Course</p>
                             </a>
                           </li>
+{{-- Course type --}}
+                          <li class="nav-item">
+                            <a href="{{route('add.coursetype')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Add Course Type</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('coursetype_data')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>All Course Type</p>
+                            </a>
+                          </li>
                         </ul>
                       </li>
 
@@ -295,14 +308,7 @@
 
 
 
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="">Oursempire</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
-    </div>
-  </footer>
+
 
   <!-- Control Sidebar -->
 
@@ -349,8 +355,6 @@
 
 <script>
       $(document).ready(function(){
-
-
 $(document).on('click','#change_picture_btn',function(){
         $('#upload_profile_image').click();
     });
