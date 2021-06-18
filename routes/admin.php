@@ -7,6 +7,7 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\ProfileController;
 // Admin functionality
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -17,10 +18,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('notice/{id}', [AdminController::class, 'single_notice'])->name('admin.single_notice');
 
     Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('admin_insertNotice');
-    Route::post('update-profile-info', [TeacherController::class, 'updateInfo'])->name('admin.UpdateInfo');
-    Route::post('change-profile-picture', [TeacherController::class, 'updatePicture'])->name('adminPictureUpdate');
 
-    Route::post('change-password', [TeacherController::class, 'ChangePassword'])->name('adminChangePassword');
+    Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('admin.UpdateInfo');
+    Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('adminPictureUpdate');
+
+    Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('adminChangePassword');
 
 
 // Department parts

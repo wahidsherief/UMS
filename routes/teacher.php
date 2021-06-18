@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
@@ -18,9 +19,10 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::get('notice/{id}', [TeacherController::class, 'single_notice'])->name('teacher.single_notice');
 
     Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('insertNotice');
-    Route::post('update-profile-info', [TeacherController::class, 'updateInfo'])->name('teacher.UpdateInfo');
-    Route::post('change-profile-picture', [TeacherController::class, 'updatePicture'])->name('teacherPictureUpdate');
-    Route::post('change-password', [TeacherController::class, 'ChangePassword'])->name('teacherChangePassword');
+
+    Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('teacher.UpdateInfo');
+    Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('teacherPictureUpdate');
+    Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('teacherChangePassword');
 });
 
 ?>

@@ -7,6 +7,7 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\ProfileController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [StudentController::class, 'index'])->name('student.dashboard');
@@ -17,9 +18,10 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
     Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.data');
 
     Route::post('update-profile-info', [StudentController::class, 'updateInfo'])->name('student.UpdateInfo');
-    Route::post('change-profile-picture', [StudentController::class, 'updatePicture'])->name('studentPictureUpdate');
-    Route::post('change-password', [StudentController::class, 'ChangePassword'])->name('studentChangePassword');
-    Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
+
+    Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('studentPictureUpdate');
+    Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('studentChangePassword');
+    Route::post('student_profile/{id}', [ProfileController::class, 'full_profile'])->name('student.profile.submit');
 
 
 });
