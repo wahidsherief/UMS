@@ -17,6 +17,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('notice', [AdminController::class, 'notice'])->name('admin.notice');
     Route::get('notice/{id}', [AdminController::class, 'single_notice'])->name('admin.single_notice');
 
+    //delete operation
+    Route::get('delete-notice/{id}', [AdminController::class, 'deletenotice'])->name('admin.deletenotice');
+    Route::get('delete-batch/{id}', [AdminController::class, 'deletebatch'])->name('admin.deletebatch');
+    Route::get('delete-department/{id}', [AdminController::class, 'deletedepartment'])->name('admin.deletedepartment');
+    Route::get('delete-semester/{id}', [AdminController::class, 'deletesemester'])->name('admin.deletesemester');
+
+    Route::get('account-delete/{id}', [AdminController::class, 'teacheraccountdelete'])->name('admin.teacher_account_delete');
+    Route::get('saccount-delete/{id}', [AdminController::class, 'studentaccountdelete'])->name('admin.student_account_delete');
+
+
     Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('admin_insertNotice');
 
     Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('admin.UpdateInfo');
@@ -64,7 +74,8 @@ Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('
 Route::get('teacheraccount', [AdminController::class, 'pendingteacher'])->name('admin.pending.teacher');
 
 
-Route::post('accountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
+Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
+Route::POST('accountapproved/{id}', [AdminController::class, 'teacheraccountaccept'])->name('admin.teacher_account_approve');
 
 
 });

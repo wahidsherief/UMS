@@ -1,6 +1,6 @@
 
 @extends('users.admin.layout')
-@section('title',"notice")
+@section('title',"Semester")
 
 @section('content')
 <div class="container" style="padding-top:20px;">
@@ -9,7 +9,7 @@
   <div class="tab-pane active" id="activity">
     <!-- Post -->
     <div class="card-header">
-        <h3 class="card-title">Expandable Table</h3>
+        <h3 class="card-title">Semester Data</h3>
       </div>
       <div class="card-body">
         <table class="table table-bordered table-hover">
@@ -33,13 +33,13 @@
             <tr data-widget="expandable-table" aria-expanded="false">
               <td> {{$i++}}  </td>
               <td>{{$semester->semester_name}}</td>
-              {{-- <td> <span class="description">{{$semester->created_at->diffForHumans()}}</span></td> --}}
-
+              <td>  {{--  <span class="description">{{$semester->created_at->diffForHumans()}}</span> --}}
+              </td>
               <td>
 
-                  {{-- <a href="{{route('student.single_notice',$semester->id)}}" class="btn btn-info"> Update</a>
-                  <a href="{{route('student.single_notice',$semester->id)}}" class="btn btn-danger"> Delete</a>
-               --}}
+                  <a href="{{route('student.single_notice',$semester->id)}}" class="btn btn-warning"> Update</a>
+                  <a href="{{route('admin.deletesemester',$semester->id)}}" class="btn btn-danger"> Delete</a>
+
                 </td>
             </tr>
 

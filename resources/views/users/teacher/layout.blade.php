@@ -35,10 +35,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  {{-- <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div> --}}
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -101,16 +97,44 @@
       </div>
 
 
+      @php $account_status=Auth::user()->account_status;
+      @endphp
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-     <li class="nav-item">
-                <a href="{{route('teacher.dashboard')}}" class="nav-link {{ (request()->is('student/dashboard'))?'active': ''}}">
-                  <i class="nav-icon fas fa-home"></i>
-                  <p>Dashboard</p>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Dashboard
+
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+
+                    @if($account_status==0)
+
+
+@endif
+@if($account_status==1)
+        <li class="nav-item">
+                    <a href="{{route('teacher.dashboard')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>After Completing Profile</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('teacher.data')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>After Completing Profile</p>
+                    </a>
+                  </li>
+
+                </ul>
               </li>
           <li class="nav-item">
             <a href="{{route('teacher.profile')}}" class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">
@@ -131,7 +155,7 @@
                     <p>All Notice</p>
                   </a>
                   </li>
-
+@endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -157,24 +181,6 @@
 </div>
 
   </aside>
-
-
-
-
-
-
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="">Oursempire</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
-    </div>
-  </footer>
-
-  <!-- Control Sidebar -->
-
-  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 

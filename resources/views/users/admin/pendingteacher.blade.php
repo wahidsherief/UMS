@@ -1,6 +1,6 @@
 
 @extends('users.admin.layout')
-@section('title',"Pending Student")
+@section('title',"Pending Teacher")
 
 
 @section('content')
@@ -12,66 +12,55 @@
     <div class="card-header">
         @if(Session::has('account_approved'))
         <div class="alert alert-success" role='alert'>
-
         {{Session::get('account_approved')}}
-
         </div>
         @elseif(Session::has('request_removed'))
         <div class="alert alert-danger" role='alert'>
             {{Session::get('request_removed')}}
             </div>
                 @endif
-        <h3 class="card-title">Expandable Table</h3>
+        <h3 class="card-title">Pending Teacher Account</h3>
       </div>
       <div class="card-body">
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
               <th>Department</th>
-              <th>Batch</th>
+
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Roll Number</th>
-              <th>Registration Number</th>
+              <th>Status</th>
               <th>Phone</th>
               <th>Address</th>
               <th>Blood</th>
-              <th>HSC</th>
-              <th>SSC</th>
-              <th>JSC</th>
-              <th>PSC</th>
+
               <th>Action  </th>
             </tr>
           </thead>
           <tbody>
-    @foreach($students as $student)
+    @foreach($teachers as $teacher)
 
 
-    @php $account_status=$student->user->account_status; @endphp
+    @php $account_status=$teacher->user->account_status; @endphp
     @if($account_status==0)
             <tr data-widget="expandable-table" aria-expanded="false">
 
-              <td>{{$student->department->department_name}}</td>
-              <td>{{$student->batch->batch_name}}</td>
-              <td>{{$student->firstname}}</td>
-              <td>{{$student->lastname}}</td>
-              <td>{{$student->roll_number}}</td>
-              <td>{{$student->registration_number}}</td>
-              <td>{{$student->phone}}</td>
-              <td>{{$student->address}}</td>
-              <td>{{$student->blood_group}}</td>
-              <td>{{$student->hsc_gpa}}</td>
-              <td>{{$student->ssc_gpa}}</td>
-              <td>{{$student->jsc_gpa}}</td>
-              <td>{{$student->psc_gpa}}</td>
-<td>
+              <td>{{$teacher->department->department_name}}</td>
 
-    <form method="POST" action="{{route('admin.student_account_approve',$student->user->id)}}">
+              <td>{{$teacher->firstname}}</td>
+              <td>{{$teacher->lastname}}</td>
+              <td>{{$teacher->status}}</td>
+              <td>{{$teacher->phone}}</td>
+              <td>{{$teacher->address}}</td>
+              <td>{{$teacher->blood_group}}</td>
+<td>
+    <form method="POST" action="{{route('admin.teacher_account_approve',$teacher->user->id)}}">
         @csrf
         <input type="submit" class="btn btn-success" value="Approve">
-    </form>
-    <a href="{{route('admin.student_account_delete',$student->id)}}" class="btn btn-danger">reject</a>
 
+
+    </form>
+    <a href="{{route('admin.teacher_account_delete',$teacher->id)}}" class="btn btn-danger">reject</a>
 </td>
 
 

@@ -34,11 +34,11 @@
               <td> {{$departments->firstItem()+$loop->index}}  </td>
               <td>{{$department->department_name}}</td>
               <td>{{$department->department_head}}</td>
-              {{-- <td> <span class="description">{{$department->created_at->diffForHumans()}}</span></td> --}}
-
+              <td> {{-- <span class="description">{{$department->created_at->diffForHumans()}}</span> --}}
+            </td>
               <td>
                   <a href="{{route('student.single_notice',$department->id)}}" class="btn btn-info"> Update</a>
-                  <a href="{{route('student.single_notice',$department->id)}}" class="btn btn-danger"> Delete</a>
+                  <a href="{{route('admin.deletedepartment',$department->id)}}" class="btn btn-danger"> Delete</a>
               </td>
             </tr>
 

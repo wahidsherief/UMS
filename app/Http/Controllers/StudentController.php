@@ -59,7 +59,7 @@ $students->blood_group=$request->blood_group;
 $students->hsc_gpa=$request->hsc_gpa;
 $students->ssc_gpa=$request->ssc_gpa;
 $students->jsc_gpa=$request->jsc_gpa;
-$students->psc_gpa=$request->firstname;
+$students->psc_gpa=$request->ssc_gpa;
 $user->student()->save($students);
 return redirect()->back()->with('pending','Your Profile is pending');
 
@@ -72,6 +72,8 @@ $id=Auth::user()->id;
     // dd($students);
     return view('users.student.student_data',compact('students'));
 }
+
+
 public function index(){
     $departments = Department::all();
     $batches = Batch::all();

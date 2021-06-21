@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
 use App\Models\Student;
+use App\Models\Teacher;
+use App\Models\Batch;
+use App\Models\Department;
+use App\Models\Semester;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -41,6 +45,40 @@ class AdminController extends Controller
         $notice = Notice::with('user')->where('id', $id)->get();
         return view('users.admin.single_notice', compact('notice'));
     }
+    public function deletenotice($id)
+    {
+        Notice::where('id',$id)->delete();
+        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
+    }
+    public function deletebatch($id)
+    {
+        Batch::where('id',$id)->delete();
+        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
+    }
+
+    public function deletedepartment($id)
+    {
+        Department::where('id',$id)->delete();
+        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
+    }
+    public function deletesemester($id)
+    {
+        Semester::where('id',$id)->delete();
+        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function pendingstudent(){
         $students= Student::with(['user','department','batch'])->orderBy('id', 'DESC')->get();
@@ -50,8 +88,10 @@ class AdminController extends Controller
 
 
     public function pendingteacher(){
-        return view('users.admin.pendingteacher');
+        $teachers= Teacher::with(['user','department'])->orderBy('id', 'DESC')->get();
+        return view('users.admin.pendingteacher',compact('teachers'));
     }
+
 public function studentaccountaccept(Request $request, $id){
     $student=User::find($id);
 //     ->update([
@@ -63,7 +103,23 @@ $student->save();
     return redirect()->back()->with('account_approved','Account Has Been Approved');
 }
 
+public function teacheraccountaccept(Request $request, $id){
+    $teacher=User::find($id);
+//     ->update([
+// $student->'account_status'=$request->1
+//     ]);
+    // dd($student);
+$teacher->account_status=1;
+$teacher->save();
+    return redirect()->back()->with('account_approved','Account Has Been Approved');
+}
 
-
-
+public function teacheraccountdelete($id){
+   Teacher::where('id',$id)->delete();
+    return redirect()->back()->with('request_removed','Request Has Been Removed');
+}
+public function studentaccountdelete($id){
+    Student::where('id',$id)->delete();
+     return redirect()->back()->with('request_removed','Request Has Been Removed');
+ }
 }

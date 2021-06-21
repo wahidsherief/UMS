@@ -18,7 +18,6 @@
               <th>Serial</th>
               <th>Batch Name</th>
               <th>Created At</th>
-
               <th>Action</th>
             </tr>
           </thead>
@@ -34,12 +33,13 @@
               <td> {{$i++}} </td>
 
               <td>{{$batch->batch_name}}</td>
-              {{-- <td>{{$batch->batch_advisor}}</td> --}}
-              {{-- <td> <span class="description">{{$batch->created_at->diffForHumans()}}</span></td> --}}
 
+<td>
+{{-- <span class="description">{{$batch->created_at->diffForHumans()}}</span>--}}
+</td>
               <td>
-                  <a href="{{route('student.single_notice',$batch->id)}}" class="btn btn-info"> Update</a>
-                  <a href="{{route('student.single_notice',$batch->id)}}" class="btn btn-danger"> Delete</a>
+                  <a href="{{route('student.single_notice',$batch->id)}}" class="btn btn-warning"> Update</a>
+                  <a href="{{route('admin.deletebatch',$batch->id)}}" class="btn btn-danger"> Delete</a>
               </td>
             </tr>
 

@@ -17,11 +17,11 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
     Route::get('notice/{id}', [StudentController::class, 'single_notice'])->name('student.single_notice');
     Route::get('student_profile', [StudentController::class, 'show_student_data'])->name('student.data');
 
-    Route::post('update-profile-info', [StudentController::class, 'updateInfo'])->name('student.UpdateInfo');
-
+    Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('student.UpdateInfo');
     Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('studentPictureUpdate');
     Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('studentChangePassword');
-    Route::post('student_profile/{id}', [ProfileController::class, 'full_profile'])->name('student.profile.submit');
+
+    Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
 
 
 });

@@ -21,6 +21,7 @@ class User extends Authenticatable
         'role',
         'picture',
         'password',
+        'account_status'
     ];
 
     /**
@@ -59,5 +60,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Student::class);
     }
-
+    public function teacher()
+    {
+        return $this->hasMany(Teacher::class);
+    }
 }

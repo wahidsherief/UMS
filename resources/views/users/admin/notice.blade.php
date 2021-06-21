@@ -9,8 +9,14 @@
   <div class="tab-pane active" id="activity">
     <!-- Post -->
     <div class="card-header">
-        <h3 class="card-title">Expandable Table</h3>
-      </div>
+        <h3 class="card-title">Available Notices</h3>
+        @if(Session::has('notice_deleted'))
+
+            <script>
+                swal("Removed", "Notice Has Been Removed Successfully", "warning");
+        </script>
+        @endif
+
       <div class="card-body">
         <table class="table table-bordered table-hover">
           <thead>
@@ -38,8 +44,11 @@
 
               <td>{{$notify->notice_title}}</td>
               <td>
-                  <a href="{{route('student.single_notice',$notify->id)}}" class="btn btn-info"> show</a>
+                  <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-info"> Show</a>
+                  <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-warning"> Update</a>
+                  <a href="{{route('admin.deletenotice',$notify->id)}}" class="btn btn-danger"> Delete</a>
               </td>
+
             </tr>
 
 
