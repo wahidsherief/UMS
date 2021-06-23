@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
+use app\Models\User;
+use Illuminate\Support\Facades\Hash;
 class SuperAdminController extends Controller
 {
     public function index()
@@ -18,4 +20,5 @@ class SuperAdminController extends Controller
     {
         return view('users.superadmin.setting');
     }
+
 }

@@ -125,20 +125,7 @@
                 </a>
                 <ul class="nav nav-treeview">
 
-                    @if($account_status==0)
-                  <li class="nav-item">
-                    <a href="{{route('student.dashboard')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Complete Profile</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{route('student.data')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Show Profile</p>
-                    </a>
-                  </li>
-@endif
+
 @if($account_status==1)
         <li class="nav-item">
                     <a href="{{route('student.dashboard')}}" class="nav-link">

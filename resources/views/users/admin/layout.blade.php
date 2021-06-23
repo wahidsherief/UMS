@@ -142,30 +142,6 @@
                         <a href="#" class="nav-link">
                           <i class="nav-icon fas fa-chart-pie"></i>
                           <p>
-                            Departments
-                            <i class="right fas fa-angle-left"></i>
-                          </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <a href="{{route('add.department')}}" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Add Department</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="{{route('department_data')}}" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Show Departments</p>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon fas fa-chart-pie"></i>
-                          <p>
                             Batch
                             <i class="right fas fa-angle-left"></i>
                           </p>

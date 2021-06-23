@@ -1,5 +1,5 @@
 
-@extends('users.admin.layout')
+@extends('users.superadmin.layout')
 @section('title',"Department")
 
 @section('content')

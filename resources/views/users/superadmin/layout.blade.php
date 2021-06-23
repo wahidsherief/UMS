@@ -114,6 +114,62 @@
                     <p>Setting</p>
                   </a>
                   </li>
+
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Departments
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('add.department')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add Department</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('department_data')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Show Departments</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+
+
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Admins
+
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+
+                      <li class="nav-item">
+                        <a href="{{route('superadmin.all.admin')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>All Admin</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('superadmin.add.admin')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Add Admin</p>
+                        </a>
+                      </li>
+                 </li>
+
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -144,15 +200,6 @@
 
 
 
-
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="">Oursempire</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
-    </div>
-  </footer>
 
   <!-- Control Sidebar -->
 

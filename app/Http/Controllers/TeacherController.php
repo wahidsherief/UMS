@@ -40,6 +40,11 @@ class TeacherController extends Controller
         return view('users.teacher.single_notice', compact('notice'));
     }
 
+    public function students(){
+        $role=Auth::user()->role;
+        $users = User::orderBy('id', 'DESC')->get();
+        return view('users.teacher.students',compact('users'));
+    }
 
 //teacher Full Profile
 public function full_profile(Request $request, $id){

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Notice;
 use App\Models\User;
-use Auth;
+
 
 class NoticeController extends Controller
 {

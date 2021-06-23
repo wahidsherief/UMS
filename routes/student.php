@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [StudentController::class, 'index'])->name('student.dashboard');
+ Route::group(['middleware' => 'isAccountStatus'], function (){
     Route::get('profile', [StudentController::class, 'profile'])->name('student.profile');
     Route::get('setting', [StudentController::class, 'setting'])->name('student.setting');
     Route::get('notice', [StudentController::class, 'notice'])->name('student.notice');
@@ -22,7 +23,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
     Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('studentChangePassword');
 
     Route::post('student_profile/{id}', [StudentController::class, 'full_profile'])->name('student.profile.submit');
-
+});
 
 });
 ?>

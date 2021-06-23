@@ -35,12 +35,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('adminChangePassword');
 
 
-// Department parts
-
-Route::get('department', [DepartmentController::class, 'add_department'])->name('add.department');
-Route::get('departments', [DepartmentController::class, 'department_data'])->name('department_data');
-
-Route::post('department', [DepartmentController::class, 'add_department_submit'])->name('add.department.submit');
 
 // Batch parts
 

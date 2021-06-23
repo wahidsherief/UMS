@@ -16,12 +16,20 @@ class UserSeeder extends Seeder
     {
 
        $user=[ [
-        'name'=>'Admin',
-        'email'=>'admin@gmail.com',
-        'role'=>'2',
+        'name'=>'Superadmin',
+        'email'=>'superadmin@gmail.com',
+        'role'=>'1',
         'picture'=>'16531623773774_avatar',
-        'password'=>Hash::make('admin@gmail.com'),
+        'password'=>Hash::make('superadmin@gmail.com'),
         'account_status'=>'1',
+        ],
+        [
+            'name'=>'Admin',
+            'email'=>'admin@gmail.com',
+            'role'=>'2',
+            'picture'=>'16531623773774_avatar',
+            'password'=>Hash::make('admin@gmail.com'),
+            'account_status'=>'0',
         ],
         [
             'name'=>'Teacher',

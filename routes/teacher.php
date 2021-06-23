@@ -12,6 +12,7 @@ use App\Http\Controllers\CoursetypeController;
 
 Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
+    Route::group(['middleware' => 'isAccountStatus'], function (){
     Route::get('complete-profile', [TeacherController::class, 'pending'])->name('teacher.pending');
     Route::get('profile', [TeacherController::class, 'profile'])->name('teacher.profile');
     Route::get('setting', [TeacherController::class, 'setting'])->name('teacher.setting');
@@ -28,6 +29,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
     Route::post('student_profile/{id}', [TeacherController::class, 'full_profile'])->name('teacher.profile.submit');
 
+    Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
+
+});
 });
 
 ?>

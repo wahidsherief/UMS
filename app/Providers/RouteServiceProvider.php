@@ -45,6 +45,11 @@ Route::middleware('web')
 ->namespace($this->namespace)
 ->group(base_path('routes/admin.php'));
 
+//Superadmin route
+Route::middleware('web')
+->namespace($this->namespace)
+->group(base_path('routes/superadmin.php'));
+
 
 
 

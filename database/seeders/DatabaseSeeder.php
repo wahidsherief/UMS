@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
 // StudentProfileSeeder::class,
 DepartmentSeeder::class,
  BatchSeeder::class,
-//  SemesterSeeder::class,
+ SemesterSeeder::class,
 // CourseSeeder::class,
-// UserSeeder::class,
+UserSeeder::class,
 // CoursetypeSeeder::class,
         ]);
     }
