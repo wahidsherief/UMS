@@ -11,11 +11,11 @@ class activities extends Controller
     public function activities(){
 
         $id=Auth::user()->id;
-        $assign_courses= Batchdesign::where('teacher_internal_id',$id)->with(['user','department','semester'])->get();
+        $internal_courses= Batchdesign::where('teacher_internal_id',$id)->with(['user','department','semester'])->get();
+        $external_courses= Batchdesign::where('teacher_external_id',$id)->with(['user','department','semester'])->get();
 
-        $batchdesigns= Batchdesign::with(['department','semester','course'])->get();
         // dd($batchdesigns);
-        return view('users.teacher.teacher_internal',compact('assign_courses'));
+        return view('users.teacher.teacher_internal',compact(['internal_courses','external_courses']));
 
     }
     public function external_activities(){
