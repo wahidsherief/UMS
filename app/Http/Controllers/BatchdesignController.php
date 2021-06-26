@@ -16,9 +16,9 @@ class BatchdesignController extends Controller
         foreach ($assign_courses as $assign_course){
             $teacher_internal = Teacher::where('id', $assign_course->teacher_internal_id)->first()->teachers_short_name;
 
-             $teacher_external = Teacher::where('id', $assign_course->teacher_external_id)->first()->teachers_short_name;
+            $teacher_external = Teacher::where('id', $assign_course->teacher_external_id)->first()->teachers_short_name;
             $assign_course->teacher_internal = $teacher_internal;
-             $assign_course->teacher_external = $teacher_external;
+            $assign_course->teacher_external = $teacher_external;
         }
         // dd($assign_courses);
 

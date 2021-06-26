@@ -31,7 +31,8 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::post('student_profile/{id}', [TeacherController::class, 'full_profile'])->name('teacher.profile.submit');
 
     Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
-    Route::get('activities', [activities::class, 'activities'])->name('teacher.activities');
+    Route::get('internal-activities', [activities::class, 'activities'])->name('teacher.activities');
+    Route::get('external-activities', [activities::class, 'external_activities'])->name('teacher.external');
 
 
 
