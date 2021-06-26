@@ -10,7 +10,16 @@ class BatchController extends Controller
     public function add_batch()
     {
 
-        return view('users.admin.add_batch');
+        $batches = Batch::latest()->get();
+        return view('users.admin.add_batch', compact('batches'));
+
+    }
+    public function update_batch($id)
+    {
+
+        $batches = Batch::where('id',$id)->first();
+        return view('users.admin.update_batch', compact('batches'));
+
     }
 
     public function add_batch_submit(Request $request)
@@ -23,9 +32,13 @@ class BatchController extends Controller
         return redirect()->back()->with('batch_created', 'Batch Has Been Created Successfully');
     }
 
-    public function batch_data()
-    {
-        $batches = Batch::latest()->get();
-        return view('users.admin.batch_data', compact('batches'));
+
+    public function update_batch_submit(Request $request, $id){
+        $batches=Batch::find($id);
+    $batches->batch_name=$request->batch_name;
+    $batches->batch_advisor=$request->batch_advisor;
+    $batches->save();
+        return redirect()->route('add.batch')->with('batch_updated','Account Has Been Approved');
     }
+
 }

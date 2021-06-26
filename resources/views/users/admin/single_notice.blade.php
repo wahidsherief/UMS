@@ -14,12 +14,14 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-8">
-              <img class="img-circle img-bordered-sm" src="{{$notice->user->picture}}" alt="Teacher's image" width="80">
-              <span class="username">
+              <img class="img-circle img-bordered-sm" src="{{$notice->user->picture}}" alt="Notice" width="80"/>
+              <span class="username" style="font-size:18px;color:purple;margin-right:15px">
                 {{$notice->user->name}}
               </span>
-              <h3 class="my-3">
                 <span class="description">Shared publicly {{$notice->created_at->diffForHumans()}}</span>
+
+              <h3 class="my-3">
+
                 <h2 style="color:black;margin:10px 0; text-align:center"> {{$notice->notice_title}}</h2>
               </h3>
               <p>

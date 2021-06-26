@@ -40,8 +40,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
 // Batch parts
 
 Route::get('batch', [BatchController::class, 'add_batch'])->name('add.batch');
-Route::get('batches', [BatchController::class, 'batch_data'])->name('batch_data');
+Route::get('update-batch/{id}', [BatchController::class, 'update_batch'])->name('update.batch');
+Route::POST('update-batch/{id}', [BatchController::class, 'update_batch_submit'])->name('update.batch');
 Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('batch.submit');
+Route::get('delete-batch/{id}', [AdminController::class, 'deletesemester'])->name('delete.batch');
 
 // Semester parts
 

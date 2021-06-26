@@ -152,7 +152,7 @@
 
                       <li class="nav-item">
 <a href="" class="nav-link">
-                          <i class="nav-icon fas fa-chart-pie"></i>
+                          <i class="nav-icon https://us04web.zoom.us/j/72787155842?pwd=Y0QyWDlUanIvazFEOFlCeGlmY0FkUT09"></i>
                           <p>
                             Activities
 

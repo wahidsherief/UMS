@@ -10,7 +10,6 @@
     <!-- /.card-header -->
     <div class="card-body">
       @if(Session::has('notice_deleted'))
-
       <script>
         swal("Removed", "Notice Has Been Removed Successfully", "warning");
       </script>
@@ -36,7 +35,7 @@
 
 
             <tr data-widget="expandable-table" aria-expanded="false">
-              <td> <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="Teacher's image"
+              <td> <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="image"
                   width="50"></td>
               <td>{{$notify->user->name}}</td>
               <td>Teacher</td>
@@ -44,9 +43,9 @@
 
               <td>{{$notify->notice_title}}</td>
               <td>
-                <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-info"> Show</a>
-                <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-warning"> Update</a>
-                <a href="{{route('admin.deletenotice',$notify->id)}}" class="btn btn-danger"> Delete</a>
+                <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-info"> <i class="fas fa-eye"></i></a>
+                <a href="{{route('admin.single_notice',$notify->id)}}" class="btn btn-warning"> <i class="fas fa-edit"></i></a>
+                <a href="{{route('admin.deletenotice',$notify->id)}}" class="btn btn-danger"> <i class="fas fa-trash"></i></a>
               </td>
 
             </tr>

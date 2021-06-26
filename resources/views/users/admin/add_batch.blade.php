@@ -33,11 +33,74 @@
           </form>
 
           @if(Session::has('batch_created'))
-          <div class="alert alert-success" role='alert'>
-            {{Session::get('batch_created')}}
-          </div>
+            <script>
+                swal("Success", "Batch has been added successfully", "success");
+              </script>
           @endif
+
+          @if(Session::has('batch_updated'))
+          <script>
+              swal("Updated", "Batch has been Updated successfully", "success");
+            </script>
+        @endif
         </div>
       </div>
     </div>
+
+
+
+    <div class="container">
+        <div class="card card-secondary">
+          <div class="card-header">
+            <h3 class="card-title">All Batches of CSE</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="card-body table-responsive p-0">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Serial</th>
+                    <th>Batch Name</th>
+                    <th>Batch Advisor</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @php $i=1; @endphp
+                  @foreach($batches as $batch)
+
+
+                  <!-- ./card-header -->
+
+
+                  <tr data-widget="expandable-table" aria-expanded="false">
+                    <td> {{$i++}} </td>
+
+                    <td>{{$batch->batch_name}}</td>
+
+                    <td>
+                        {{$batch->batch_advisor}}
+                    </td>
+                    <td>
+                      <a href="{{route('update.batch',$batch->id)}}" class="btn btn-warning mr-3"> <i class="fas fa-edit"></i></a>
+                      <a href="{{route('delete.batch',$batch->id)}}" class="btn btn-danger"> <i class="fas fa-trash"></i></a>
+                    </td>
+                  </tr>
+
+
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
+
     @endsection
