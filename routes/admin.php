@@ -2,8 +2,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NoticeController;
-use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\admin\Activities;
 use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\BatchdesignController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
@@ -70,6 +71,15 @@ Route::get('teacheraccount', [AdminController::class, 'pendingteacher'])->name('
 
 Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
 Route::POST('accountapproved/{id}', [AdminController::class, 'teacheraccountaccept'])->name('admin.teacher_account_approve');
+
+
+//activity
+Route::get('activity', [Activities::class, 'add_activities'])->name('admin.add.activities');
+Route::get('activities', [Activities::class, 'activities_data'])->name('admin.show.activities');
+Route::get('show-batch-design', [BatchdesignController::class, 'show_batch_design'])->name('admin.show.batch.design');
+Route::get('update-activity/{id}', [BatchdesignController::class, 'update_batch_design'])->name('admin.batch.activity');
+Route::POST('update-activity/{id}', [BatchdesignController::class, 'update_batch_design_submit'])->name('admin.batch.activity.submit');
+Route::POST('activity', [Activities::class, 'add_activities_submit'])->name('admin.add.activities.submit');
 
 
 });

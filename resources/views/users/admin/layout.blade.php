@@ -66,7 +66,11 @@
 
       </li>
 
-
+      <li class="nav-item d-none d-sm-inline-block btn btn-warning">
+        <a class="dropdown-item btn btn-warning" href="{{ route('admin.show.activities') }}"
+       >Activities
+     </a>
+    </li>
 
 
 

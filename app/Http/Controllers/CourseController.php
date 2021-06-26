@@ -19,8 +19,7 @@ class CourseController extends Controller
             return view('users.admin.course_data',compact('courses'));
         }
 
-
-        public function add_course(){
+    public function add_course(){
         $departments = Department::all();
         $semesters = Semester::all();
         $batches = Batch::all();

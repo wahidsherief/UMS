@@ -67,9 +67,7 @@ return redirect()->back()->with('pending','Your Profile is pending');
 
 public function show_student_data(){
 $id=Auth::user()->id;
-
     $students= Student::where('user_id',$id)->with(['user','department','batch'])->get();
-    // dd($students);
     return view('users.student.student_data',compact('students'));
 }
 

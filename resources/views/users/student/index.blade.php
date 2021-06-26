@@ -14,7 +14,8 @@
                 <div class="alert alert-primary" role="alert">
                     <div class="card-header">
                      Complete Your Profile</div>
-                    </div>  @if(Session::has('pending'))
+                    </div>
+                    @if(Session::has('pending'))
                     <div class="alert alert-warning" role='alert'>
 
                     {{Session::get('pending')}}

@@ -16,7 +16,7 @@
               <thead>
                 <tr>
                   <th>Serial</th>
-                  <th>Department Name</th>
+                  {{-- <th>Department Name</th> --}}
                   <th>Batch Name</th>
                   <th>Semester Name</th>
                   <th>Course Name</th>
@@ -33,7 +33,7 @@
 
                 <tr data-widget="expandable-table" aria-expanded="false">
                   <td> {{$i++}}</td>
-                  <td>{{$course->department->department_name}}</td>
+                  {{-- <td>{{$course->department->department_name}}</td> --}}
                   {{-- <td>{{$course->batch->batch_name}}</td> --}}
                   <td>{{$course->semester->semester_name}}</td>
 

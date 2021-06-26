@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\teacher\activities;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
@@ -30,6 +31,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::post('student_profile/{id}', [TeacherController::class, 'full_profile'])->name('teacher.profile.submit');
 
     Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
+    Route::get('activities', [activities::class, 'activities'])->name('teacher.activities');
+
+
 
 });
 });

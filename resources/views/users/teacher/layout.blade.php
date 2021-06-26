@@ -148,6 +148,12 @@
                     <p>Students</p>
                   </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{route('teacher.activities')}}" class="nav-link {{ (request()->is('teacher/activities'))?'active': ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Activities</p>
+                      </a>
+                      </li>
               <li class="nav-item">
                 <a href="{{route('teacher.addnotice')}}" class="nav-link {{ (request()->is('teacher/addnotice'))?'active': ''}}">
                     <i class="nav-icon fas fa-user"></i>

@@ -24,6 +24,10 @@ class Course extends Model
     {
         return $this->belongsTo(Semester::class);
     }
+    public function batchdesign()
+    {
+        return $this->belongsTo(Batchdesign::class);
+    }
 
 
 }
