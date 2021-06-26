@@ -34,6 +34,9 @@
     referrerpolicy="origin"></script>
 
 
+  <link rel="stylesheet" href="{{ asset('css/ums.css') }}">
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

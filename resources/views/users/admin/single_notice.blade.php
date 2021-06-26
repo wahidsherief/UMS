@@ -1,40 +1,55 @@
-student.single_notice
 @extends('users.admin.layout')
 @section('title',"SingleNnotice")
 
 @section('content')
-<div class="container" style="padding-top:20px;">
-<div class="col-md-12 ">
-<div class="tab-content">
-  <div class="tab-pane active" id="activity">
-    <!-- Post -->
 
-
-    @foreach($notice as $notify)
-
-<div class="post">
-    <div class="user-block">
-        <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="Teacher's image"width="80">
-        <span class="username">
-            {{$notify->user->name}}
-
-        </span>
-        <span class="description">Shared publicly {{$notify->created_at->diffForHumans()}}</span>
-    <h2 style="color:black;margin:10px 0; text-align:center">      {{$notify->notice_title}}</h2>
+<div class="container">
+  <div class="card card-secondary">
+    <div class="card-header">
+      <h3 class="card-title">Notice</h3>
     </div>
-      <!-- /.user-block -->
-      <p>
-        @if(!$notify->notice_file==NULL)<img src="{{asset('users//images/notice')}}/{{$notify->notice_file}}" width="100%"/>
-      @endif
-        {!! $notify->notice_body !!}
-      </p>
-    </div>
-    <br>
-<hr class="style5">
-<br>
-@endforeach
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="card card-solid">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-sm-8">
+              <img class="img-circle img-bordered-sm" src="{{$notice->user->picture}}" alt="Teacher's image" width="80">
+              <span class="username">
+                {{$notice->user->name}}
+              </span>
+              <h3 class="my-3">
+                <span class="description">Shared publicly {{$notice->created_at->diffForHumans()}}</span>
+                <h2 style="color:black;margin:10px 0; text-align:center"> {{$notice->notice_title}}</h2>
+              </h3>
+              <p>
 
-</div>
+                {!! $notice->notice_body !!}
+              </p>
+            </div>
+            <div class="col-12 col-sm-4">
+              <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+              <div class="col-12">
+                @if(!$notice->notice_file==NULL)<img src="{{asset('users//images/notice')}}/{{$notice->notice_file}}"
+                  width="100%" />
+                @endif
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+
+
+        <div class="container" style="padding-top:20px;">
+          <div class="col-md-12 ">
+            <div class="tab-content">
+              <div class="tab-pane active" id="activity">
+                <!-- Post -->
+
+
+
+
+              </div>
 
 
 
@@ -43,5 +58,8 @@ student.single_notice
 
 
 
-</div></div></div></div>
-@endsection
+            </div>
+          </div>
+        </div>
+      </div>
+      @endsection

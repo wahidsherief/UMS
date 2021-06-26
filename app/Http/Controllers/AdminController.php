@@ -42,7 +42,7 @@ class AdminController extends Controller
 
     public function single_notice($id)
     {
-        $notice = Notice::with('user')->where('id', $id)->get();
+        $notice = Notice::with('user')->where('id', $id)->first();
         return view('users.admin.single_notice', compact('notice'));
     }
     public function deletenotice($id)

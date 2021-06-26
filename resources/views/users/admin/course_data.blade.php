@@ -12,7 +12,7 @@
     <div class="card-body">
       <form action="{{route('add.course.submit')}}" method="POST">
         @csrf
-        <div class="card-body">
+        <div class="card-body table-responsive p-0">
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
