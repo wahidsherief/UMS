@@ -16,6 +16,10 @@ class Course extends Model
     }
 
 
+    public function coursetype()
+    {
+        return $this->belongsTo(Coursetype::class);
+    }
     public function batch()
     {
         return $this->belongsTo(Batch::class);

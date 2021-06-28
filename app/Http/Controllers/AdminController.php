@@ -50,22 +50,13 @@ class AdminController extends Controller
         Notice::where('id',$id)->delete();
         return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
     }
-    public function deletebatch($id)
-    {
-        Batch::where('id',$id)->delete();
-        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
-    }
 
     public function deletedepartment($id)
     {
         Department::where('id',$id)->delete();
         return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
     }
-    public function deletesemester($id)
-    {
-        Semester::where('id',$id)->delete();
-        return redirect()->back()->with('notice_deleted','Notice Has Been Removed');
-    }
+
 
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Student;
+use App\Models\Batch;
 use App\Models\Batchdesign;
 use Illuminate\Support\Facades\Auth;
 class activities extends Controller
@@ -26,6 +28,14 @@ class activities extends Controller
         $batchdesigns= Batchdesign::with(['department','semester','course'])->get();
         // dd($batchdesigns);
         return view('users.teacher.teacher_external',compact('assign_courses'));
+
+    }
+
+    public function student_details($id){
+        $batch=Batch::first();
+
+$semester_students=Student::where('semester_id',$id)->orderBy('id','ASC')->get();
+return view('users.teacher.semester_students_details',compact(['semester_students','batch']));
 
     }
 

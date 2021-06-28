@@ -14,36 +14,28 @@ class SemesterSeeder extends Seeder
     public function run()
     {
         $semester= [[
-            'department_id'=>'1',
-            'semester_name' => '1st ',
+            'semester_name' => '1st semester',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '2nd ',
+            'semester_name' => '2nd semester',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '3rd ',
+            'semester_name' => '3rd semester ',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '4th ',
+            'semester_name' => '4th semester ',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '5th ',
+            'semester_name' => '5th semester ',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '6th ',
+            'semester_name' => '6th semester ',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '7th ',
+            'semester_name' => '7th semester ',
         ],
         [
-            'department_id'=>'1',
-            'semester_name' => '8th ',
+            'semester_name' => '8th semester ',
         ],
     ];
         DB::table('semesters')->insert($semester);

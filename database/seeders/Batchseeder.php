@@ -16,15 +16,15 @@ class BatchSeeder extends Seeder
     {
         $semester= [
             [
-                'batch_name' => '2rd ',
+                'batch_name' => '29CSE ',
                 'batch_advisor' => 'MS Fatema Tuj Zohora',
             ],
             [
-            'batch_name' => '3rd ',
+            'batch_name' => '30CSE ',
             'batch_advisor' => 'MD. Wahidul Alam',
         ],
         [
-            'batch_name' => '4th ',
+            'batch_name' => '31CSE ',
             'batch_advisor' => 'MRS. Israth Jahan',
         ],
     ];

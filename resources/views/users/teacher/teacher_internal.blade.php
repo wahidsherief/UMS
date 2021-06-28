@@ -47,7 +47,7 @@
                   <td>{{$internal_course->course->course_code}}</td>
                   <td>{{$internal_course->course->course_name}}</td>
                   <td>{{$internal_course->semester->semester_name}}</td>
-                  <td><a href="#"class='btn btn-info'>Add Result</a></td>
+                  <td><a href="{{route('teacher.student_details',$internal_course->semester->id)}}"class='btn btn-info'>Add Result</a></td>
 
     @endforeach
     </tbody>

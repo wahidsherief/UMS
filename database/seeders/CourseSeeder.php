@@ -13,7 +13,7 @@ class CourseSeeder extends Seeder
         $courses= [
             //first semester
             [
-            'department_id' => '1 ',
+
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Computer Fundamentals',
@@ -22,7 +22,6 @@ class CourseSeeder extends Seeder
 
         ],
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Physics',
@@ -30,7 +29,6 @@ class CourseSeeder extends Seeder
             'course_credit' => '3.00',
         ],
         [
-            'department_id' => '1 ',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Physics  Lab',
@@ -39,7 +37,6 @@ class CourseSeeder extends Seeder
 
         ],
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Structured Programming  Language',
@@ -47,7 +44,6 @@ class CourseSeeder extends Seeder
             'course_credit' => '3.00',
         ],
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Structured Programming  Language Lab',
@@ -56,7 +52,6 @@ class CourseSeeder extends Seeder
         ],
 
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'Differential Calculus and Integral Calculus',
@@ -64,7 +59,6 @@ class CourseSeeder extends Seeder
             'course_credit' => '3.00',
         ],
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'English',
@@ -72,7 +66,6 @@ class CourseSeeder extends Seeder
             'course_credit' => '3.00',
         ],
         [
-            'department_id' => '1',
             'semester_id' => '1',
             'coursetype_id'=>'1',
             'course_name' => 'GED Course',
@@ -86,7 +79,6 @@ class CourseSeeder extends Seeder
 
 
   [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Developing English Skills Lab',
@@ -95,7 +87,6 @@ class CourseSeeder extends Seeder
 
 ],
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Discrete Mathematics',
@@ -103,7 +94,6 @@ class CourseSeeder extends Seeder
     'course_credit' => '3.00',
 ],
 [
-    'department_id' => '1 ',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Object Oriented Programming',
@@ -112,7 +102,6 @@ class CourseSeeder extends Seeder
 
 ],
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Object Oriented Programming Lab',
@@ -120,7 +109,6 @@ class CourseSeeder extends Seeder
     'course_credit' => '1.50',
 ],
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Introduction to Electrical Engineering',
@@ -129,7 +117,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Introduction to Electrical Engineering Lab',
@@ -138,7 +125,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Ordinary and Partial Differential Equations',
@@ -147,7 +133,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Chemistry',
@@ -156,7 +141,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '2',
     'coursetype_id'=>'1',
     'course_name' => 'Chemistry  Lab',
@@ -170,7 +154,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1 ',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Data Structure',
@@ -179,7 +162,6 @@ class CourseSeeder extends Seeder
 
 ],
 [
-    'department_id' => '1',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Data Structure Lab',
@@ -187,7 +169,6 @@ class CourseSeeder extends Seeder
     'course_credit' => '1.50',
 ],
 [
-    'department_id' => '1 ',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Electronic Devices and Circuits',
@@ -196,7 +177,6 @@ class CourseSeeder extends Seeder
 
 ],
 [
-    'department_id' => '1',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Electronic Devices and Circuits  Lab',
@@ -204,7 +184,6 @@ class CourseSeeder extends Seeder
     'course_credit' => '1.50',
 ],
 [
-    'department_id' => '1',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Basic Mechanical Engineering',
@@ -213,7 +192,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'Co-ordinate Geometry and Vector Analysis',
@@ -224,7 +202,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '3',
     'coursetype_id'=>'1',
     'course_name' => 'GED Course',
@@ -237,7 +214,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Algorithms',
@@ -246,7 +222,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Algorithms Lab',
@@ -256,7 +231,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Database Management Systems',
@@ -265,7 +239,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Database Management Systems Lab',
@@ -274,7 +247,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Digital Logic Design',
@@ -283,7 +255,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Digital Logic Design Lab',
@@ -292,7 +263,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Theory of Computing',
@@ -301,7 +271,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'Linear Algebra and Complex Variables',
@@ -310,7 +279,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '4',
     'coursetype_id'=>'1',
     'course_name' => 'GED Course',
@@ -323,7 +291,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Numerical Analysis',
@@ -332,7 +299,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Numerical Analysis Lab',
@@ -342,7 +308,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Data Communication',
@@ -351,7 +316,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I',
@@ -360,7 +324,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I Lab',
@@ -369,7 +332,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Computer Architecture',
@@ -379,7 +341,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'GED Course',
@@ -389,7 +350,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '5',
     'coursetype_id'=>'1',
     'course_name' => 'Statistics and Probability',
@@ -402,7 +362,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Compiler Design',
@@ -411,7 +370,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Compiler Design Lab',
@@ -421,7 +379,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Artificial Intelligence & Expert systems',
@@ -430,7 +387,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Artificial Intelligence & Expert systems Lab',
@@ -439,7 +395,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Computer Networks',
@@ -448,7 +403,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Computer Networks Lab',
@@ -458,7 +412,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Operating Systems',
@@ -468,7 +421,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'Operating Systems Lab',
@@ -476,7 +428,7 @@ class CourseSeeder extends Seeder
     'course_credit' => '1.50',
 ],
 [
-    'department_id' => '1',
+
     'semester_id' => '6',
     'coursetype_id'=>'1',
     'course_name' => 'GED Course',
@@ -489,7 +441,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Project and Thesis',
@@ -498,7 +449,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'System Analysis and Design Lab',
@@ -508,7 +458,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Advance Core Course',
@@ -517,7 +466,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Software Engineering',
@@ -526,7 +474,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Software Engineering Lab',
@@ -535,7 +482,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I',
@@ -545,7 +491,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I lab',
@@ -555,7 +500,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I',
@@ -565,7 +509,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '7',
     'coursetype_id'=>'1',
     'course_name' => 'Elective I lab',
@@ -578,7 +521,6 @@ class CourseSeeder extends Seeder
 
 
 [
-    'department_id' => '1',
     'semester_id' => '8',
     'coursetype_id'=>'1',
     'course_name' => 'Project and Thesis',
@@ -587,7 +529,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '8',
     'coursetype_id'=>'1',
     'course_name' => 'Communication Engineering',
@@ -595,7 +536,6 @@ class CourseSeeder extends Seeder
     'course_credit' => '3.00',
 ],
 [
-    'department_id' => '1',
     'semester_id' => '8',
     'coursetype_id'=>'1',
     'course_name' => 'Elective II',
@@ -604,7 +544,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '8',
     'coursetype_id'=>'1',
     'course_name' => 'Elective II',
@@ -613,7 +552,6 @@ class CourseSeeder extends Seeder
 ],
 
 [
-    'department_id' => '1',
     'semester_id' => '8',
     'coursetype_id'=>'1',
     'course_name' => 'Elective II',

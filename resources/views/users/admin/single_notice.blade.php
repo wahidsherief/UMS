@@ -9,7 +9,7 @@
       <h3 class="card-title">Notice</h3>
     </div>
     <!-- /.card-header -->
-    <div class="card-body">
+    <div class="card-body  table-responsive p-0">
       <div class="card card-solid">
         <div class="card-body">
           <div class="row">

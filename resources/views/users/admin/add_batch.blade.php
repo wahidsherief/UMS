@@ -14,7 +14,7 @@
           <!-- form start -->
           <form action="" method="POST">
             @csrf
-            <div class="card-body">
+            <div class="card-body  table-responsive p-0">
               <div class="form-group">
                 <label for="exampleInputEmail1">Batch Name</label>
                 <input type="text" class="form-control" id="text" placeholder="Enter Batch Name" name="batch_name">
@@ -43,6 +43,11 @@
               swal("Updated", "Batch has been Updated successfully", "success");
             </script>
         @endif
+        @if(Session::has('batch_deleted'))
+        <script>
+            swal("Deleted", "Batch has been Deleted successfully", "error");
+          </script>
+      @endif
         </div>
       </div>
     </div>

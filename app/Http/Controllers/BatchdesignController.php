@@ -12,7 +12,7 @@ class BatchdesignController extends Controller
     public function show_batch_design()
     {
         $assign_courses = Batchdesign::with(['department', 'semester', 'course'])->get();
-        // dd($assign_courses);
+       // dd($assign_courses[0]->semester);
         foreach ($assign_courses as $assign_course){
             $teacher_internal = Teacher::where('id', $assign_course->teacher_internal_id)->first()->teachers_short_name;
 
@@ -20,7 +20,7 @@ class BatchdesignController extends Controller
             $assign_course->teacher_internal = $teacher_internal;
             $assign_course->teacher_external = $teacher_external;
         }
-        // dd($assign_courses);
+     //  dd($assign_courses[0]->semester);
 
 
         return view('users.admin.show_batchdesign', compact('assign_courses'));

@@ -18,4 +18,8 @@ class Semester extends Model
     {
         return $this->hasMany(Batchdesign::class);
     }
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

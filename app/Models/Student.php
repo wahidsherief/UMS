@@ -23,6 +23,9 @@ class Student extends Model
     {
         return $this->belongsTo(Batch::class);
     }
-
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
 
 }

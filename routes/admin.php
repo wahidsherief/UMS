@@ -20,9 +20,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
 
     //delete operation
     Route::get('delete-notice/{id}', [AdminController::class, 'deletenotice'])->name('admin.deletenotice');
-    Route::get('delete-batch/{id}', [AdminController::class, 'deletebatch'])->name('admin.deletebatch');
-    Route::get('delete-department/{id}', [AdminController::class, 'deletedepartment'])->name('admin.deletedepartment');
-    Route::get('delete-semester/{id}', [AdminController::class, 'deletesemester'])->name('admin.deletesemester');
+     Route::get('delete-department/{id}', [AdminController::class, 'deletedepartment'])->name('admin.deletedepartment');
 
     Route::get('account-delete/{id}', [AdminController::class, 'teacheraccountdelete'])->name('admin.teacher_account_delete');
     Route::get('saccount-delete/{id}', [AdminController::class, 'studentaccountdelete'])->name('admin.student_account_delete');
@@ -43,28 +41,29 @@ Route::get('batch', [BatchController::class, 'add_batch'])->name('add.batch');
 Route::get('update-batch/{id}', [BatchController::class, 'update_batch'])->name('update.batch');
 Route::POST('update-batch/{id}', [BatchController::class, 'update_batch_submit'])->name('update.batch');
 Route::post('batch', [BatchController::class, 'add_batch_submit'])->name('batch.submit');
-Route::get('delete-batch/{id}', [AdminController::class, 'deletesemester'])->name('delete.batch');
+Route::get('delete-batch/{id}', [BatchController::class, 'deletebatch'])->name('delete.batch');
 
 // Semester parts
 
 Route::get('semester', [SemesterController::class, 'add_semester'])->name('add.semester');
-Route::get('semesters', [SemesterController::class, 'semester_data'])->name('semester_data');
-
-Route::post('semesters', [SemesterController::class, 'add_semester_submit'])->name('add.semester.submit');
+Route::get('update-semester/{id}', [SemesterController::class, 'update_semester'])->name('update.semester');
+Route::POST('update-semester/{id}', [SemesterController::class, 'update_semester_submit'])->name('update.semester');
+Route::POST('semester', [SemesterController::class, 'add_semester_submit'])->name('add.semester.submit');
+Route::get('delete-semester/{id}', [SemesterController::class, 'deletesemester'])->name('delete.semester');
 
 // Courses parts
 
 Route::get('course', [CourseController::class, 'add_course'])->name('add.course');
 Route::get('courses', [CourseController::class, 'course_data'])->name('course_data');
 
-Route::post('course', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
+Route::POST('course', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
 
 //Coursetype parts
 
 
 Route::get('coursetype', [CoursetypeController::class, 'add_coursetype'])->name('add.coursetype');
 Route::get('coursetypes', [CoursetypeController::class, 'coursetype_data'])->name('coursetype_data');
-Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.course.submit');
+//Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.course.submit');
 //pending account
 
 Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');

@@ -15,9 +15,7 @@ class CreateSemestersTable extends Migration
     {
         Schema::create('semesters', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('department_id')->unsigned();
             $table->string('semester_name');
-
             $table->timestamps();
         });
     }

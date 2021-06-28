@@ -16,7 +16,6 @@ class BatchController extends Controller
     }
     public function update_batch($id)
     {
-
         $batches = Batch::where('id',$id)->first();
         return view('users.admin.update_batch', compact('batches'));
 
@@ -40,5 +39,9 @@ class BatchController extends Controller
     $batches->save();
         return redirect()->route('add.batch')->with('batch_updated','Account Has Been Approved');
     }
-
+    public function deletebatch($id)
+    {
+        Batch::where('id',$id)->delete();
+        return redirect()->back()->with('batch_deleted','Notice Has Been Removed');
+    }
 }

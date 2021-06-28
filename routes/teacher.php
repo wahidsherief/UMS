@@ -34,6 +34,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::get('internal-activities', [activities::class, 'activities'])->name('teacher.activities');
     Route::get('external-activities', [activities::class, 'external_activities'])->name('teacher.external');
 
+    Route::get('student-details/{id}', [activities::class, 'student_details'])->name('teacher.student_details');
 
 
 });
