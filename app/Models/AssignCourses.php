@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Batchdesign extends Model
+class AssignCourses extends Model
 {
     use HasFactory;
-    protected $table="batchdesigns";
+    protected $table="assign_courses";
+
     public function department()
     {
         return $this->belongsTo(Department::class);
@@ -25,12 +26,9 @@ class Batchdesign extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // public function teacher()
-    // {
-    //     return $this->belongsTo(Teacher::class, 'teacher_id');
-    // }
-    public function activity()
+
+    public function session()
     {
-        return $this->belongsTo(Activity::class);
+        return $this->belongsTo(Session::class);
     }
 }

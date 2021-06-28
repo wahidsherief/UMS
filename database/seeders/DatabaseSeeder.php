@@ -22,8 +22,8 @@ DepartmentSeeder::class,
  CourseSeeder::class,
 UserSeeder::class,
 CoursetypeSeeder::class,
-Batchdesign::class,
- ActivitiesSeeder::class,
+AssignCoursesSeeder::class,
+ SessionSeeder::class,
   TeacherSeeder::class,
         ]);
     }

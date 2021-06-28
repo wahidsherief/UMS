@@ -151,34 +151,14 @@
 
 
                       <li class="nav-item">
-<a href="" class="nav-link">
-                          <i class="nav-icon https://us04web.zoom.us/j/72787155842?pwd=Y0QyWDlUanIvazFEOFlCeGlmY0FkUT09"></i>
+<a href="{{route('teacher.activities')}}" class="nav-link">
+                          <i class="nav-icon fas fa-user"></i>
                           <p>
-                            Activities
+                            Sessions
 
-                            <i class="right fas fa-angle-left"></i>
                           </p>
                         </a>
-                        <ul class="nav nav-treeview">
-
-
-                          <li class="nav-item">
-                            <a href="{{route('teacher.activities')}}" class="nav-link {{ (request()->is('teacher/internal-activities'))?'active': ''}}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Internal</p>
-                            </a>
-                          </li>
-
-                          <li class="nav-item">
-                            <a href="{{route('teacher.external')}}" class="nav-link {{ (request()->is('teacher/'))?'active': ''}}">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>External</p>
-                            </a>
-                          </li>
-
                      </li>
-                    </ul>
-
 
 
               <li class="nav-item">

@@ -2,13 +2,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NoticeController;
-use App\Http\Controllers\admin\Activities;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\BatchdesignController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AssignCoursesController;
+
 // Admin functionality
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -74,13 +75,21 @@ Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentacco
 Route::POST('accountapproved/{id}', [AdminController::class, 'teacheraccountaccept'])->name('admin.teacher_account_approve');
 
 
-//activity
-Route::get('activity', [Activities::class, 'add_activities'])->name('admin.add.activities');
-Route::get('activities', [Activities::class, 'activities_data'])->name('admin.show.activities');
-Route::get('show-batch-design', [BatchdesignController::class, 'show_batch_design'])->name('admin.show.batch.design');
-Route::get('update-activity/{id}', [BatchdesignController::class, 'update_batch_design'])->name('admin.batch.activity');
-Route::POST('update-activity/{id}', [BatchdesignController::class, 'update_batch_design_submit'])->name('admin.batch.activity.submit');
-Route::POST('activity', [Activities::class, 'add_activities_submit'])->name('admin.add.activities.submit');
+//Session Information
+//Create
+Route::get('session', [SessionController::class, 'add_session'])->name('admin.add_session');
+Route::POST('session', [SessionController::class, 'add_session_submit'])->name('admin.add.session.submit');
+//update
+Route::get('update-session/{id}', [SessionController::class, 'update_session'])->name('admin.update_session');
+Route::POST('update-session/{id}', [SessionController::class, 'update_session_submit'])->name('admin.update_session.submit');
+//delete
+Route::get('delete-session/{id}', [SessionController::class, 'delete_session'])->name('admin.delete_session');
+
+
+
+Route::get('Assign-courses', [AssignCoursesController::class, 'assign_courses'])->name('admin.assign_courses');
+Route::get('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses'])->name('admin.assign_courses_update');
+Route::POST('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses_submit'])->name('admin.assign_courses_update.submit');
 
 
 });

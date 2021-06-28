@@ -68,6 +68,7 @@ return redirect()->route('teacher.data')->with('pending','Your Profile is pendin
 
 public function index(){
     $departments = Department::all();
+    $teachers = Teacher::all();
     $id=Auth::user()->id;
     $teachers=Teacher::where('user_id',$id)->with(['user','department'])->get();
     return view('users.teacher.index',compact(['departments','teachers']));

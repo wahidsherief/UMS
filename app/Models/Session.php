@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class activity extends Model
+class Session extends Model
 {
-    protected $table="activities";
     use HasFactory;
-    public function batchdesign()
+    protected $table="sessions";
+    public function assigncourses()
     {
-        return $this->hasMany(Batchdesign::class);
+        return $this->hasMany(AssignCourses::class);
     }
 }

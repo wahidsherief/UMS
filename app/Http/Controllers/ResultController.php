@@ -13,7 +13,7 @@ return view('users.teacher.add_result');
 
     public function add_result_submit(Request $request, $id){
         $student=Student::where('id',$id);
-        dd($student);
+        //dd($student);
      $results=new Result();
 
 $results->student_id=$student->id;

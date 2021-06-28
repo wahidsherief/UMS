@@ -1,5 +1,5 @@
 @extends('users.teacher.layout')
-@section('title',"notice")
+@section('title',"Student")
 
 @section('content')
 

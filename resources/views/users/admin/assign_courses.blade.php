@@ -1,5 +1,5 @@
 @extends('users.admin.layout')
-@section('title',"Batch Activities")
+@section('title',"Assign Courses")
 @section('content')
 <div class="container" style="padding-top:20px;">
     <div class="col-md-12">
@@ -7,7 +7,7 @@
       <div class="tab-pane active" id="activity">
         <!-- Post -->
         <div class="card-header">
-            <h3 class="card-title">Batch Activities</h3>
+            <h3 class="card-title">Assign Courses</h3>
           </div>
           @if(Session::has('updated'))
           <div class="alert alert-warning" role='alert'>
@@ -19,8 +19,9 @@
 
 
 
-          <div class="card-body">
-            <table class="table table-bordered table-hover">
+                  <div class="card-body">
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-bordered table-hover">
               <thead>
                 <tr>
                   <th>Serial</th>
@@ -47,7 +48,7 @@
                   <td>{{$assign_course->teacher_internal}}</td>
                   <td>{{$assign_course->teacher_external}}</td>
                   <td>
-                  <a href="{{route('admin.batch.activity',$assign_course->id)}}" class="btn btn-info"> Update</a>
+                  <a href="{{route('admin.assign_courses_update',$assign_course->id)}}" class="btn btn-info"> Update</a>
               </td>
             </tr>
 
