@@ -9,6 +9,8 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\ResultController;
+
 //Teacher
 
 Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'PreventBackHistory']], function () {
@@ -35,6 +37,8 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
     Route::get('external-activities', [activities::class, 'external_activities'])->name('teacher.external');
 
     Route::get('student-details/{id}', [activities::class, 'student_details'])->name('teacher.student_details');
+    Route::get('results/{id}', [ResultController::class, 'add_result'])->name('add.result');
+  Route::POST('results/{id}', [ResultController::class, 'add_result_submit'])->name('teacher.add_result_submit');
 
 
 });

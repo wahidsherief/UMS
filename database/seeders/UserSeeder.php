@@ -190,6 +190,22 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('marjan@gmail.com'),
                 'account_status' => '1',
             ],
+            [
+                'name' => 'student1',
+                'email' => 'student1@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student1@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'student2',
+                'email' => 'student2@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student2@gmail.com'),
+                'account_status' => '1',
+            ],
 
         ];
         DB::table('users')->insert($user);

@@ -43,7 +43,7 @@
                   <td>{{$semester_student->roll_number}}</td>
                   <td>{{$semester_student->registration_number}}</td>
                   <td>
-                  <a href="#" class="btn btn-info"> Add Result</a>
+                  <a href="{{route('add.result',$semester_student->id)}}" class="btn btn-info"> Add Result</a>
               </td>
             </tr>
 
