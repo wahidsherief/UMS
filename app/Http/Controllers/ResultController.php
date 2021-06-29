@@ -8,15 +8,15 @@ use App\Models\Student;
 class ResultController extends Controller
 {
     public function add_result(){
+$student=Student::first();
 return view('users.teacher.add_result');
+
     }
 
-    public function add_result_submit(Request $request, $id){
-        $student=Student::where('id',$id);
-        //dd($student);
+    public function add_result_submit(Request $request){
+
      $results=new Result();
 
-$results->student_id=$student->id;
 
 $results->classtest_1=$request->classtest_1;
 $results->classtest_2=$request->classtest_2;
@@ -28,4 +28,11 @@ $results->part_b=$request->part_b;
 $results->save();
 return redirect()->back()->with('result_created','Result Has Been Created Successfully');
     }
+
+
+public function show_result(Request $request){
+    $results=Result::latest()->get();
+
+return view('users.teacher.show_result',compact('results'));
+}
 }

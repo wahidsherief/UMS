@@ -11,7 +11,6 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <!-- form start -->
           <form action="" method="POST">
             @csrf
             <div class="card-body table-responsive p-0">

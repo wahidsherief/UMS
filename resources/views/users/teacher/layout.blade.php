@@ -160,6 +160,15 @@
                         </a>
                      </li>
 
+                     <li class="nav-item">
+                        <a href="{{route('show.result')}}" class="nav-link">
+                                                  <i class="nav-icon fas fa-user"></i>
+                                                  <p>
+                                                    Results
+
+                                                  </p>
+                                                </a>
+                                             </li>
 
               <li class="nav-item">
                 <a href="{{route('teacher.addnotice')}}" class="nav-link {{ (request()->is('teacher/addnotice'))?'active': ''}}">

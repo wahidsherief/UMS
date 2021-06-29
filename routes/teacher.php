@@ -40,7 +40,8 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
     Route::get('student-details/{id}', [activities::class, 'student_details'])->name('teacher.student_details');
     Route::get('results/{id}', [ResultController::class, 'add_result'])->name('add.result');
-  Route::POST('results/{id}', [ResultController::class, 'add_result_submit'])->name('teacher.add_result_submit');
+  Route::POST('results', [ResultController::class, 'add_result_submit'])->name('submit.result');
+  Route::get('show-result', [ResultController::class, 'show_result'])->name('show.result');
 
 
 });

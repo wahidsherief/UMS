@@ -1,19 +1,20 @@
 @extends('users.admin.layout')
 @section('title',"Course Data")
 
-
 @section('content')
+
 <div class="container">
   <div class="card card-secondary">
+
     <div class="card-header">
       <h3 class="card-title">All Course of CSE</h3>
     </div>
+
     <!-- /.card-header -->
     <div class="card-body">
       <form action="{{route('add.course.submit')}}" method="POST">
         @csrf
         <div class="card-body table-responsive p-0">
-          <table class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Serial</th>
@@ -49,7 +50,5 @@
         </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 @endsection
