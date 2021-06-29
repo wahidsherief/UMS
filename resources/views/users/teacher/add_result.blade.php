@@ -13,9 +13,9 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-8 offset-md-2">
-<form action="{{route('submit.result') }}" method="POST"  enctype="multipart/form-data">
+<form action="{{route('submit.result',[$session_id,$student->id,$semester->id,$course->id]) }}" method="POST">
  @csrf
- <label for="exampleInputEmail1">Class Test / Assignment</label>
+ <label for="exampleInputEmail1">Class Test (Marks)</label>
                 <div class="row">
                         <div class="col">
                      <div class="form-group">
@@ -42,7 +42,7 @@
                     </div>
                  {{-- Attandance --}}
 
-                 <label for="exampleInputEmail1">Attendance</label>
+                 <label for="exampleInputEmail1">Attendance (Marks)</label>
                  <div class="row">
                     <div class="col">
                  <div class="form-group">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-    <label for="exampleInputEmail1">Final Exam PartA PartB</label>
+    <label for="exampleInputEmail1">Final Exam (Marks)</label>
 <div class="row">
 
         <div class="col">

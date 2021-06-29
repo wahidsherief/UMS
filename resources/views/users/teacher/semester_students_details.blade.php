@@ -7,7 +7,7 @@
       <div class="tab-pane active" id="activity">
         <!-- Post -->
         <div class="card-header">
-            <h3 class="card-title">Batch -<span style="font-size:18px;font-weight:bold;color:purple"> {{$batch->batch_name}} </span> Students Details</h3>
+            {{-- <h3 class="card-title">Batch -<span style="font-size:18px;font-weight:bold;color:purple"> {{$batch->batch_name}} </span> Students Details</h3> --}}
           </div>
           @if(Session::has('updated'))
           <div class="alert alert-warning" role='alert'>
@@ -43,7 +43,7 @@
                   <td>{{$semester_student->roll_number}}</td>
                   <td>{{$semester_student->registration_number}}</td>
                   <td>
-                  <a href="{{route('add.result',$semester_student->id)}}" class="btn btn-info"> Add Result</a>
+                  <a href="{{route('add.result',[$session_id,$semester_student->id,$semester->id,$course->id])}}" class="btn btn-info"> Add Result</a>
               </td>
             </tr>
 

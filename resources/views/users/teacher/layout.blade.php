@@ -62,13 +62,6 @@
 
       </li>
 
-
-
-
-
-
-
-
     </ul>
 
     <!-- Right navbar links -->
@@ -151,11 +144,10 @@
 
 
                       <li class="nav-item">
-<a href="{{route('teacher.activities')}}" class="nav-link">
+<a href="{{route('teacher.sessions')}}" class="nav-link">
                           <i class="nav-icon fas fa-user"></i>
                           <p>
                             Sessions
-
                           </p>
                         </a>
                      </li>
@@ -165,7 +157,6 @@
                                                   <i class="nav-icon fas fa-user"></i>
                                                   <p>
                                                     Results
-
                                                   </p>
                                                 </a>
                                              </li>

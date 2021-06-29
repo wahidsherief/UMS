@@ -28,9 +28,13 @@ class Course extends Model
     {
         return $this->belongsTo(Semester::class);
     }
-    public function batchdesign()
+    public function assigncourses()
     {
-        return $this->belongsTo(Batchdesign::class);
+        return $this->belongsTo(AssignCourses::class);
+    }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
     }
 
 

@@ -45,12 +45,12 @@ class AssignCoursesController extends Controller
 
     public function update_assign_courses_submit(Request $request, $id)
     {
-        $batchdesign = AssignCourses::find($id);
+        $assign_courses = AssignCourses::find($id);
 
-        $batchdesign->course_id = $request->course_id;
-        $batchdesign->teacher_internal_id = $request->internal;
-        $batchdesign->teacher_external_id = $request->external;
-        $batchdesign->save();
+        $assign_courses->course_id = $request->course_id;
+        $assign_courses->teacher_internal_id = $request->internal;
+        $assign_courses->teacher_external_id = $request->external;
+        $assign_courses->save();
         return redirect()->route('admin.assign_courses')->with('updated', 'Updated Successfully');
     }
 }

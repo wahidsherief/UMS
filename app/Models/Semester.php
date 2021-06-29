@@ -14,12 +14,21 @@ class Semester extends Model
     {
         return $this->hasMany(Course::class);
     }
-    public function batchdesign()
+    public function assigncourses()
     {
-        return $this->hasMany(Batchdesign::class);
+        return $this->hasMany(AssignCourses::class);
     }
+
     public function student()
     {
         return $this->hasMany(Student::class);
+    }
+    public function batch()
+    {
+        return $this->hasMany(Batch::class);
+    }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
     }
 }

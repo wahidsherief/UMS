@@ -16,9 +16,9 @@ class TeacherSeeder extends Seeder
     {
         $teacher = [
             [
-                'user_id' => 3,
-                'firstname' => 'first',
-                'lastname' => 'last',
+                'user_id' => 1,
+                'firstname' => 'Fatema',
+                'lastname' => 'Zohora',
                 'teachers_short_name' => 'FTJ',
                 'status' => 'teacher',
                 'phone' => '555657',
@@ -26,7 +26,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 4,
+                'user_id' => 2,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'WDA',
@@ -36,7 +36,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 5,
+                'user_id' =>3,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'ST',
@@ -46,7 +46,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 6,
+                'user_id' => 4,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'DMR',
@@ -56,7 +56,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 7,
+                'user_id' => 5,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'KNAS',
@@ -66,7 +66,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 8,
+                'user_id' => 6,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'MTK',
@@ -76,7 +76,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 9,
+                'user_id' =>7,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'ZI',
@@ -86,7 +86,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 10,
+                'user_id' => 8,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'ABJ',
@@ -96,7 +96,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 11,
+                'user_id' => 9,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'SBS',
@@ -106,7 +106,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 12,
+                'user_id' => 10,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'IJC',
@@ -116,7 +116,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 13,
+                'user_id' => 11,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'DZK',
@@ -126,7 +126,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 14,
+                'user_id' => 12,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'SC',
@@ -136,7 +136,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 15,
+                'user_id' => 13,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'IAC',
@@ -146,7 +146,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' => 16,
+                'user_id' => 14,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'DHK',

@@ -13,4 +13,8 @@ class Session extends Model
     {
         return $this->hasMany(AssignCourses::class);
     }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

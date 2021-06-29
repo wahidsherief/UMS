@@ -14,10 +14,7 @@ class Batch extends Model
     {
         return $this->hasMany(Student::class);
     }
-    public function semester()
-    {
-        return $this->hasMany(Semester::class);
-    }
+
      public function course()
     {
         return $this->hasMany(Course::class);
@@ -25,5 +22,9 @@ class Batch extends Model
     public function coursetype()
     {
         return $this->hasMany(Coursetype::class);
+    }
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
     }
 }

@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\teacher\SessionController;
 use App\Http\Controllers\teacher\activities;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
@@ -34,15 +35,15 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
     Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
 
+    Route::get('assign-courses', [AssignCoursesController::class, 'assign_courses'])->name('teacher.assign_courses');
+    Route::get('sessions', [SessionController::class, 'session'])->name('teacher.sessions');
 
-    Route::get('internal-activities', [activities::class, 'activities'])->name('teacher.activities');
-    Route::get('external-activities', [activities::class, 'external_activities'])->name('teacher.external');
+    Route::get('internal-activities/{id}', [SessionController::class, 'internal_activities'])->name('teacher.activities');
 
-    Route::get('student-details/{id}', [activities::class, 'student_details'])->name('teacher.student_details');
-    Route::get('results/{id}', [ResultController::class, 'add_result'])->name('add.result');
-  Route::POST('results', [ResultController::class, 'add_result_submit'])->name('submit.result');
-  Route::get('show-result', [ResultController::class, 'show_result'])->name('show.result');
-
+    Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
+    Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
+    Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result_submit'])->name('submit.result');
+    Route::get('show-result', [ResultController::class, 'show_result'])->name('show.result');
 
 });
 });

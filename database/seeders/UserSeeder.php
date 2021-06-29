@@ -17,22 +17,7 @@ class UserSeeder extends Seeder
     {
 
         $user = [
-            [
-                'name' => 'Superadmin',
-                'email' => 'superadmin@gmail.com',
-                'role' => '1',
-                'picture' => '16531623773774_avatar',
-                'password' => Hash::make('superadmin@gmail.com'),
-                'account_status' => '1',
-            ],
-            [
-                'name' => 'Admin',
-                'email' => 'admin@gmail.com',
-                'role' => '2',
-                'picture' => '16531623773774_avatar',
-                'password' => Hash::make('admin@gmail.com'),
-                'account_status' => '0',
-            ],
+
             [
                 'name' => 'ftjteacher',
                 'email' => 'ftj@gmail.com',
@@ -205,6 +190,70 @@ class UserSeeder extends Seeder
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student2@gmail.com'),
                 'account_status' => '1',
+            ],
+            [
+                'name' => 'Joy Dhar',
+                'email' => 'joyustcian11@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('joyustcian11@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'Marjan',
+                'email' => 'marjan11@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('marjan11@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'student1',
+                'email' => 'student11@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student11@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'student21',
+                'email' => 'student21@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student12@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'student1',
+                'email' => 'student111@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student111@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'student2',
+                'email' => 'student112@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('student112@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'Superadmin',
+                'email' => 'superadmin@gmail.com',
+                'role' => '1',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('superadmin@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'role' => '2',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('admin@gmail.com'),
+                'account_status' => '0',
             ],
 
         ];

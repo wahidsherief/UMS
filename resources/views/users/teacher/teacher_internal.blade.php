@@ -33,7 +33,7 @@
               </thead>
               <tbody>
                 @php $i=1;
-    $userid=Auth::user()->id;
+
                 @endphp
 @foreach($internal_courses as $internal_course)
 
@@ -42,12 +42,12 @@
 {{-- @php $semester= $batchdesign->semester->id; @endphp
           <!-- ./card-header -->
 @if($semester==$i) --}}
-                <tr data-widget="expandable-table" aria-expanded="false">
-                  <td>{{$i++}}  </td>
-                  <td>{{$internal_course->course->course_code}}</td>
-                  <td>{{$internal_course->course->course_name}}</td>
-                  <td>{{$internal_course->semester->semester_name}}</td>
-                  <td><a href="{{route('teacher.student_details',$internal_course->semester->id)}}"class='btn btn-info'>Add Result</a></td>
+         <tr data-widget="expandable-table" aria-expanded="false">
+          <td>{{$i++}}  </td>
+          <td>{{$internal_course->course->course_code}}</td>
+          <td>{{$internal_course->course->course_name}}</td>
+         <td>{{$internal_course->semester->semester_name}}</td>
+          <td><a href="{{route('teacher.student_details',[$session_id,$internal_course->semester->id,$internal_course->course->id])}}"class='btn btn-info'>Add Result</a></td>
 
     @endforeach
     </tbody>
