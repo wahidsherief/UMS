@@ -15,9 +15,7 @@
             <thead>
               <tr>
                 <th>Serial</th>
-                <th>Session</th>
                 <th>Student Name</th>
-                <th>Semester</th>
                 <th>Course Name</th>
                 <th>Attendance</th>
                 <th>CT1</th>
@@ -26,6 +24,9 @@
                 <th>CT4</th>
                 <th>PartA</th>
                 <th>PartB</th>
+                <th>Percentage</th>
+                <th>N_Grade</th>
+                <th>L_Grade</th>
               </tr>
             </thead>
             <tbody>
@@ -38,10 +39,10 @@
 
               <tr data-widget="expandable-table" aria-expanded="false">
                 <td> {{$i++}} </td>
-                <td>{{$result->session->session_name}}</td>
+                {{-- <td>{{$result->session->session_name}}</td> --}}
                 <td>{{$result->student->firstname}} {{$result->student->lastname}}</td>
 
-                <td>{{$result->semester->semester_name}}</td>
+                {{-- <td>{{$result->semester->semester_name}}</td> --}}
                 <td>{{$result->course->course_name}}</td>
                 <td>{{$result->attandance}}</td>
                 <td>{{$result->classtest_1}}</td>
@@ -50,6 +51,9 @@
                 <td>{{$result->classtest_4}}</td>
                 <td>{{$result->part_a}}</td>
                 <td>{{$result->part_b}}</td>
+                <td>@php echo number_format($result->percentage, 2, '.', ',');@endphp</td>
+                <td>{{$result->n_grade}}</td>
+                <td>{{$result->l_grade}}</td>
 
                 {{-- <td>
 

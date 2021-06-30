@@ -13,7 +13,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-8 offset-md-2">
-<form action="{{route('submit.result',[$session_id,$student->id,$semester->id,$course->id]) }}" method="POST">
+<form action="{{route('submit.result',[$session_id,$student->id,$semester->id,$course->id,$course->course_credit]) }}" method="POST">
  @csrf
  <label for="exampleInputEmail1">Class Test (Marks)</label>
                 <div class="row">
@@ -46,7 +46,7 @@
                  <div class="row">
                     <div class="col">
                  <div class="form-group">
-          <input type="text" class="form-control" id="email" placeholder="Attendance Number" name="attandance">
+          <input type="text" class="form-control" id="email" placeholder="Attendance Number" name="attendance">
                       </div>
                     </div>
                 </div>

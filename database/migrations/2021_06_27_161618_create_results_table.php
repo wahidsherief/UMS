@@ -26,6 +26,9 @@ class CreateResultsTable extends Migration
             $table->string('attandance');
             $table->string('part_a');
             $table->string('part_b');
+            $table->string('percentage')->nullable();
+            $table->string('n_grade')->nullable();
+            $table->string('l_grade')->nullable();
             $table->timestamps();
         });
     }

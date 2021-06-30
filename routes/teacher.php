@@ -42,7 +42,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
     Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
     Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
-    Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result_submit'])->name('submit.result');
+    Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'add_result_submit'])->name('submit.result');
     Route::get('show-result', [ResultController::class, 'show_result'])->name('show.result');
 
 });
