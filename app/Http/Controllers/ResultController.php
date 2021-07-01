@@ -31,14 +31,12 @@ class ResultController extends Controller
         $results->student_id = $student_id;
         $results->semester_id = $semester_id;
         $results->course_id = $course_id;
-        // dd($details);
 
-        //dd($marks);
-        //dd($results);
         $ct1 = $results->classtest_1 = $request->classtest_1;
         $ct2 =  $results->classtest_2 = $request->classtest_2;
         $ct3 =  $results->classtest_3 = $request->classtest_3;
         $ct4 =  $results->classtest_4 = $request->classtest_4;
+        
         $attendance = $results->attendance = $request->attendance;
         $parta = $results->part_a = $request->part_a;
         $partb =  $results->part_b = $request->part_b;
@@ -53,14 +51,6 @@ class ResultController extends Controller
         $results->l_grade = $letter_grade;
 
         $results->save();
-
-        //dd($course_code);
-
-
-
-
-
-        // dd($result_calculation);
         return redirect()->route('show_result')->with('result_created', 'Result Has Been Created Successfully', compact('results'));
     }
 

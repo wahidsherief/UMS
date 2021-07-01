@@ -29,16 +29,16 @@
                     </select></div>
                 </div>
                 <div class="col-md-8">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Course Type</label>
-                      <select class="form-control" name="coursetype_id">
-                        @foreach($coursetypes as $coursetype)
-                        <option value="{{$coursetype->id}}">{{$coursetype->course_type}}</option>
-                        @endforeach
-                      </select>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Course Type</label>
+                    <select class="form-control" name="coursetype_id">
+                      @foreach($coursetypes as $coursetype)
+                      <option value="{{$coursetype->id}}">{{$coursetype->course_type}}</option>
+                      @endforeach
+                    </select>
 
-                    </div>
                   </div>
+                </div>
               </div>
               <div class="row">
                 <div class="col">

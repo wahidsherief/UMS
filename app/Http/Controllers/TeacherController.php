@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
-
     public function profile()
     {
         return view('users.teacher.profile');
@@ -40,47 +39,46 @@ class TeacherController extends Controller
         return view('users.teacher.single_notice', compact('notice'));
     }
 
-    public function students(){
+    public function students()
+    {
         $role=Auth::user()->role;
         $users = User::orderBy('id', 'DESC')->get();
-        return view('users.teacher.students',compact('users'));
+        return view('users.teacher.students', compact('users'));
     }
 
-//teacher Full Profile
-public function full_profile(Request $request, $id){
-    $user=User::find(Auth::user()->id);
+    public function full_profile(Request $request, $id)
+    {
+        $user=User::find(Auth::user()->id);
 
-$teachers= new Teacher;
+        $teachers= new Teacher;
 
-$teachers->department_id=$request->department_id;
+        $teachers->department_id=$request->department_id;
 
-$teachers->firstname=$request->firstname;
-$teachers->lastname=$request->lastname;
+        $teachers->firstname=$request->firstname;
+        $teachers->lastname=$request->lastname;
 
-$teachers->status=$request->status;
-$teachers->phone=$request->phone;
-$teachers->address=$request->address;
-$teachers->blood_group=$request->blood_group;
-$user->teacher()->save($teachers);
-return redirect()->route('teacher.data')->with('pending','Your Profile is pending');
+        $teachers->status=$request->status;
+        $teachers->phone=$request->phone;
+        $teachers->address=$request->address;
+        $teachers->blood_group=$request->blood_group;
+        $user->teacher()->save($teachers);
+        return redirect()->route('teacher.data')->with('pending', 'Your Profile is pending');
+    }
 
-}
+    public function index()
+    {
+        $departments = Department::all();
+        $teachers = Teacher::all();
+        $id=Auth::user()->id;
+        $teachers=Teacher::where('user_id', $id)->with(['user','department'])->get();
+        return view('users.teacher.index', compact(['departments','teachers']));
+    }
 
-public function index(){
-    $departments = Department::all();
-    $teachers = Teacher::all();
-    $id=Auth::user()->id;
-    $teachers=Teacher::where('user_id',$id)->with(['user','department'])->get();
-    return view('users.teacher.index',compact(['departments','teachers']));
-}
-
- public function show_teacher_data(){
-    $departments = Department::all();
- $id=Auth::user()->id;
-    $teachers= teacher::where('user_id',$id)->with(['user','department'])->get();
-    // dd($teachers);
-    return redirect()->back()->with('pending','Pending',compact(['teachers','departments']));
-}
-
-
+    public function show_teacher_data()
+    {
+        $departments = Department::all();
+        $id=Auth::user()->id;
+        $teachers= teacher::where('user_id', $id)->with(['user','department'])->get();
+        return redirect()->back()->with('pending', 'Pending', compact(['teachers','departments']));
+    }
 }
