@@ -6,7 +6,7 @@
 <div class="container">
     <div class="card card-secondary  table-responsive p-0">
       <div class="card-header">
-        <h3 class="card-title">Show Result</h3>
+        <h3 class="card-title">{{ $semester->semester_name }}</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -16,6 +16,7 @@
               <tr>
                 <th>Serial</th>
                 <th>Student Name</th>
+                <th>Student ID</th>
                 <th>Course Name</th>
                 <th>Attendance</th>
                 <th>CT1</th>
@@ -41,10 +42,11 @@
                 <td> {{$i++}} </td>
                 {{-- <td>{{$result->session->session_name}}</td> --}}
                 <td>{{$result->student->firstname}} {{$result->student->lastname}}</td>
+                <td>{{$result->student->roll_number}}</td>
 
                 {{-- <td>{{$result->semester->semester_name}}</td> --}}
                 <td>{{$result->course->course_name}}</td>
-                <td>{{$result->attandance}}</td>
+                <td>{{$result->attendance}}</td>
                 <td>{{$result->classtest_1}}</td>
                 <td>{{$result->classtest_2}}</td>
                 <td>{{$result->classtest_3}}</td>

@@ -153,7 +153,7 @@
                      </li>
 
                      <li class="nav-item">
-                        <a href="{{route('show.result')}}" class="nav-link">
+                        <a href="{{route('teacher.session_result')}}" class="nav-link">
                                                   <i class="nav-icon fas fa-user"></i>
                                                   <p>
                                                     Results

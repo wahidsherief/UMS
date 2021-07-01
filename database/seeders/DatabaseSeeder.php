@@ -26,6 +26,7 @@ AssignCoursesSeeder::class,
  SessionSeeder::class,
   TeacherSeeder::class,
 BatchSeeder::class,
+ResultSeeder::class
         ]);
     }
 }

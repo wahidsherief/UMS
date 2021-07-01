@@ -23,7 +23,7 @@ class CreateResultsTable extends Migration
             $table->string('classtest_2');
             $table->string('classtest_3');
             $table->string('classtest_4');
-            $table->string('attandance');
+            $table->string('attendance');
             $table->string('part_a');
             $table->string('part_b');
             $table->string('percentage')->nullable();
