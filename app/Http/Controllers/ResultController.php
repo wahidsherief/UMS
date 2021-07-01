@@ -20,7 +20,6 @@ class ResultController extends Controller
     }
     public function add_result_submit(Request $request, $session_id, $student_id, $semester_id, $course_id, $course_credit)
     {
-
         $courses_data =  Course::where('id', $course_id)->first();
         //dd($courses_data);
         $course_credit = $courses_data->course_credit;
@@ -46,48 +45,12 @@ class ResultController extends Controller
 
         $percentage = (($ct1 + $ct2 + $ct3 + $ct4 + $attendance + $parta + $partb) / $course_credit);
 
-        if ($percentage < 40) {
-            $n_grade = 0.0;
-            $l_grade = 'F';
-        } else if ($percentage >= 40 && $percentage < 45) {
-            $n_grade = 2.00;
-            $l_grade = 'D';
-        } else if ($percentage >= 45 && $percentage < 50) {
-            $n_grade = 2.25;
-            $l_grade = 'C';
-        } else if ($percentage >= 50 && $percentage < 55) {
-            $n_grade = 2.50;
-            $l_grade = 'C+';
-        } else if ($percentage >= 55 && $percentage < 60) {
-            $n_grade = 2.75;
-            $l_grade = 'B-';
-        } else if ($percentage >= 60 && $percentage < 65) {
-            $n_grade = 3.00;
-            $l_grade = 'B';
-        } else if ($percentage >= 65 && $percentage < 70) {
-            $n_grade = 3.25;
-            $l_grade = 'B+';
-        } else if ($percentage >= 70 && $percentage < 75) {
-            $n_grade = 3.50;
-            $l_grade = 'A-';
-        } else if ($percentage >= 75 && $percentage < 80) {
-            $n_grade = 3.75;
-            $l_grade = 'A';
-        } else if ($percentage >= 80) {
-            $n_grade = 4.0;
-            $l_grade = 'A+';
-        } else {
-            $n_grade = "enter Corrent Marks";
-            $l_grade = "enter Corrent Marks";
-        }
-        //dd($percentage);
-        //dd($n_grade);
-        //dd($l_grade);
-
+        $number_grade = $this->get_number_grade($percentage);
+        $letter_grade = $this->get_letter_grade($percentage);
 
         $results->percentage = $percentage;
-        $results->n_grade = $n_grade;
-        $results->l_grade = $l_grade;
+        $results->n_grade = $number_grade;
+        $results->l_grade = $letter_grade;
 
         $results->save();
 
@@ -98,15 +61,14 @@ class ResultController extends Controller
 
 
         // dd($result_calculation);
-        return redirect()->route('show.result')->with('result_created', 'Result Has Been Created Successfully', compact('results'));
+        return redirect()->route('show_result')->with('result_created', 'Result Has Been Created Successfully', compact('results'));
     }
 
 
-// needs whre clause
+    // needs whre clause
     public function show_result_session()
     {
-
-    $sessions = Session::latest()->get();
+        $sessions = Session::latest()->get();
         return view('users.teacher.session_results', compact('sessions'));
     }
 
@@ -121,10 +83,63 @@ class ResultController extends Controller
 
     public function show_result($semester_id)
     {
-        $results = Result::where('semester_id',$semester_id)->with(['session', 'student', 'semester', 'course'])->latest()->get();
-$semester=Semester::where('id',$semester_id)->first();
+        $results = Result::where('semester_id', $semester_id)->with(['session', 'student', 'semester', 'course'])->latest()->get();
+        $semester=Semester::where('id', $semester_id)->first();
         //dd($results);
-        return view('users.teacher.show_result', compact('results','semester'));
+        return view('users.teacher.show_result', compact('results', 'semester'));
     }
 
+    private function get_number_grade($percentage)
+    {
+        if ($percentage < 40) {
+            return $n_grade = 0.0;
+        } elseif ($percentage >= 40 && $percentage < 45) {
+            return $n_grade = 2.00;
+        } elseif ($percentage >= 45 && $percentage < 50) {
+            return $n_grade = 2.25;
+        } elseif ($percentage >= 50 && $percentage < 55) {
+            return $n_grade = 2.50;
+        } elseif ($percentage >= 55 && $percentage < 60) {
+            return $n_grade = 2.75;
+        } elseif ($percentage >= 60 && $percentage < 65) {
+            return $n_grade = 3.00;
+        } elseif ($percentage >= 65 && $percentage < 70) {
+            return $n_grade = 3.25;
+        } elseif ($percentage >= 70 && $percentage < 75) {
+            return $n_grade = 3.50;
+        } elseif ($percentage >= 75 && $percentage < 80) {
+            return $n_grade = 3.75;
+        } elseif ($percentage >= 80) {
+            return $n_grade = 4.0;
+        } else {
+            return null;
+        }
+    }
+
+    private function get_letter_grade($percentage)
+    {
+        if ($percentage < 40) {
+            return $l_grade = 'F';
+        } elseif ($percentage >= 40 && $percentage < 45) {
+            return $l_grade = 'D';
+        } elseif ($percentage >= 45 && $percentage < 50) {
+            return $l_grade = 'C';
+        } elseif ($percentage >= 50 && $percentage < 55) {
+            return $l_grade = 'C+';
+        } elseif ($percentage >= 55 && $percentage < 60) {
+            return $l_grade = 'B-';
+        } elseif ($percentage >= 60 && $percentage < 65) {
+            return $l_grade = 'B';
+        } elseif ($percentage >= 65 && $percentage < 70) {
+            return $l_grade = 'B+';
+        } elseif ($percentage >= 70 && $percentage < 75) {
+            return $l_grade = 'A-';
+        } elseif ($percentage >= 75 && $percentage < 80) {
+            return $l_grade = 'A';
+        } elseif ($percentage >= 80) {
+            return $l_grade = 'A+';
+        } else {
+            return null;
+        }
+    }
 }
