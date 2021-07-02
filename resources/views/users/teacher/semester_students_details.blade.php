@@ -43,7 +43,7 @@
                   <td>{{$semester_student->roll_number}}</td>
                   <td>{{$semester_student->registration_number}}</td>
                   <td>
-                  <a href="{{route('add.result',[$session_id,$semester_student->id,$semester->id,$course->id])}}" class="btn btn-info"> Add Result</a>
+                  <a href="{{route('add.result',[$session_id,$semester_student->id,$semester->id,$course->id])}}" class="btn btn-info btn-sm"><i class="fas fa-plus-circle"></i>  Add Result </a>
               </td>
             </tr>
 

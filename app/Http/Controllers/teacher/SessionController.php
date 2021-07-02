@@ -22,18 +22,17 @@ class SessionController extends Controller
         return view('users.teacher.sessions', compact('sessions'));
     }
 
-    public function student_details($session_id,$semester_id,$course_id)
+    public function student_details($session_id, $semester_id, $course_id)
     {
-$course=Course::where('id',$course_id)->first();
-$semester=Semester::where('id',$semester_id)->first();
-// dd($course);
+        $course=Course::where('id', $course_id)->first();
+        $semester=Semester::where('id', $semester_id)->first();
+        // dd($course);
         $semester_students = Student::where('semester_id', $semester_id)->orderBy('id', 'ASC')->get();
         return view('users.teacher.semester_students_details', compact(['semester_students','course','semester','session_id']));
     }
 
     public function internal_activities($session_id)
     {
-
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
         $teacher = Teacher::find($auth_id);
@@ -47,7 +46,6 @@ $semester=Semester::where('id',$semester_id)->first();
     }
     public function external_activities()
     {
-
         $id = Auth::user()->id;
         $assign_courses = AssignCourses::where('teacher_external_id', $id)->with(['user', 'department', 'semester'])->get();
 

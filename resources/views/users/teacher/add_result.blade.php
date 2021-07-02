@@ -74,9 +74,9 @@
                       </div></div>
 
         @if(Session::has('result_created'))
-        <div class="alert alert-success" role='alert'>
-
-        {{Session::get('result_created')}}
+        <script>
+            swal("Success", "Result has been Updated successfully", "success");
+          </script>
 
         </div></div></div></div>
                 @endif

@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
         $user = [
 
             [
@@ -162,7 +161,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Joy Dhar',
                 'email' => 'joyustcian@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('joyustcian@gmail.com'),
                 'account_status' => '1',
@@ -170,7 +169,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Marjan',
                 'email' => 'marjan@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('marjan@gmail.com'),
                 'account_status' => '1',
@@ -178,7 +177,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student1',
                 'email' => 'student1@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student1@gmail.com'),
                 'account_status' => '1',
@@ -186,7 +185,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student2',
                 'email' => 'student2@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student2@gmail.com'),
                 'account_status' => '1',
@@ -194,7 +193,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Joy Dhar',
                 'email' => 'joyustcian11@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('joyustcian11@gmail.com'),
                 'account_status' => '1',
@@ -202,7 +201,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Marjan',
                 'email' => 'marjan11@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('marjan11@gmail.com'),
                 'account_status' => '1',
@@ -210,7 +209,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student1',
                 'email' => 'student11@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student11@gmail.com'),
                 'account_status' => '1',
@@ -218,7 +217,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student21',
                 'email' => 'student21@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student12@gmail.com'),
                 'account_status' => '1',
@@ -226,7 +225,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student1',
                 'email' => 'student111@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student111@gmail.com'),
                 'account_status' => '1',
@@ -234,7 +233,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'student2',
                 'email' => 'student112@gmail.com',
-                'role' => '3',
+                'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('student112@gmail.com'),
                 'account_status' => '1',

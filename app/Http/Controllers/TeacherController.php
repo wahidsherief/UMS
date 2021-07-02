@@ -71,6 +71,7 @@ class TeacherController extends Controller
         $teachers = Teacher::all();
         $id=Auth::user()->id;
         $teachers=Teacher::where('user_id', $id)->with(['user','department'])->get();
+        //dd($teachers);
         return view('users.teacher.index', compact(['departments','teachers']));
     }
 

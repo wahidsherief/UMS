@@ -65,6 +65,11 @@
           </form>
 
         </li>
+        <li class="nav-item d-none d-sm-inline-block ">
+            <a class="dropdown-item btn btn-grad btn-md" href="{{ route('teacher.sessions') }}">Sessions
+            </a>
+          </li>
+
 
       </ul>
 
@@ -150,14 +155,7 @@
             </li>
 
 
-            <li class="nav-item">
-              <a href="{{route('teacher.sessions')}}" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                <p>
-                  Sessions
-                </p>
-              </a>
-            </li>
+
 
             <li class="nav-item">
               <a href="{{route('teacher.session_result')}}" class="nav-link">

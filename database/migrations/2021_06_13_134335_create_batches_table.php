@@ -18,7 +18,6 @@ class CreateBatchesTable extends Migration
 
             $table->bigInteger('semester_id')->unsigned();
             $table->string('batch_name');
-            $table->string('batch_advisor');
             $table->timestamps();
         });
     }

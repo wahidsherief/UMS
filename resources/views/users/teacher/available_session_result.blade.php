@@ -21,12 +21,12 @@
             </thead>
               <tbody>
                   @php $i=1; @endphp
-        @foreach($semesters as $semester)
+        @foreach($internal_courses as $internal_course)
 
                 <tr data-widget="expandable-table" aria-expanded="false">
                   <td> {{$i++}} </td>
 
-                  <td>   <a href="{{route('show_result',$semester->id)}}"> {{$semester->semester_name}}</a></td>
+                  <td>   <a href="{{route('show_result',$internal_course->semester->id)}}"> {{$internal_course->semester->semester_name}}</a></td>
                 </tr>
 
 

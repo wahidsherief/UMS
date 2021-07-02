@@ -8,6 +8,13 @@
   <div class="card card-secondary">
     <div class="card-header">
       <h3 class="card-title">Internal</h3>
+      <div align="right">
+        <li class="nav-item d-none d-sm-inline-block ">
+            <a class="btn btn-primary btn-md" href="{{ route('teacher.semester_result',[$session_id]) }}"> <i class="fas fa-eye"></i> View Result
+            </a>
+          </li>
+
+      </div>
     </div>
     <div class="card-body">
       <form action="{{route('add.course.submit')}}" method="POST">
@@ -21,7 +28,7 @@
                 <th>Course Code</th>
                 <th>Course Title</th>
                 <th>Semester</th>
-                <th>Result</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +41,7 @@
                 <td>{{$internal_course->semester->semester_name}}</td>
                 <td><a
                     href="{{route('teacher.student_details',[$session_id,$internal_course->semester->id,$internal_course->course->id])}}"
-                    class='btn btn-info btn-sm'>Add Result</a></td>
+                    class='btn btn-info btn-sm'><i class="fas fa-info-circle"></i> Show Details </a></td>
               </tr>
               @endforeach
             </tbody>
@@ -59,7 +66,7 @@
                 <th>Course Code</th>
                 <th>Course Title</th>
                 <th>Semester</th>
-                <th>Result</th>
+                <th>Student Details</th>
               </tr>
             </thead>
             <tbody>
@@ -72,7 +79,7 @@
                 <td>{{$external_course->course->course_code}}</td>
                 <td>{{$external_course->course->course_name}}</td>
                 <td>{{$external_course->semester->semester_name}}</td>
-                <td><a href="#" class='btn btn-info'>Add Result</a></td>
+                <td><a href="#" class='btn btn-info'>Details</a></td>
               </tr>
 
               @endforeach

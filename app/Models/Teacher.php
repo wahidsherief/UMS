@@ -18,9 +18,12 @@ class Teacher extends Model
     {
         return $this->belongsTo(Department::class);
     }
+    public function batch()
+    {
+        return $this->hasMany(Batch::class);
+    }
     // public function Batchdesign()
     // {
     //     return $this->hasMany(Batchdesign::class,'batchdesign_id');
     // }
-
 }

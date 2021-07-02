@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Db;
+
 class StudentProfileSeeder extends Seeder
 {
     /**
@@ -13,9 +14,44 @@ class StudentProfileSeeder extends Seeder
      */
     public function run()
     {
-$students=[
+        $students=[
 
 // 1 out of 10
+
+[
+    'user_id'=>'17',
+    'department_id'=>'1',
+    'semester_id'=>'8',
+    'batch_id'=>'1',
+    'firstname'=>'Joy',
+    'lastname'=>'dhar',
+    'roll_number'=>'17010132',
+    'registration_number'=>'682',
+    'phone'=>'01774861411',
+    'address'=>'anwara',
+    'blood_group'=>'A+',
+    'hsc_gpa'=>'4.17',
+    'ssc_gpa'=>'5.00',
+    'jsc_gpa'=>'4.86',
+    'psc_gpa'=>'5.00',
+],  [
+    'user_id'=>'18',
+    'department_id'=>'1',
+    'semester_id'=>'8',
+    'batch_id'=>'1',
+    'firstname'=>'student1',
+    'lastname'=>'dhar',
+    'roll_number'=>'17010132',
+    'registration_number'=>'682',
+    'phone'=>'01774861411',
+    'address'=>'anwara',
+    'blood_group'=>'A+',
+    'hsc_gpa'=>'4.17',
+    'ssc_gpa'=>'5.00',
+    'jsc_gpa'=>'4.86',
+    'psc_gpa'=>'5.00',
+],
+
 
     [
         'user_id'=>'19',
@@ -446,7 +482,6 @@ $students=[
 
 
 
-      DB::table('students')->insert($students);
-
+        DB::table('students')->insert($students);
     }
 }

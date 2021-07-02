@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
@@ -46,9 +47,10 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
 
 
-        Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
 
         Route::get('semester/{session_id}', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
+
+        Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
     });
 });
