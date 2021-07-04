@@ -13,7 +13,7 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-6 offset-md-3">
                     <form action="" method="POST">
                         @csrf
                         <div class="card-body table-responsive p-0">
@@ -22,7 +22,7 @@
                                 <input type="text" class="form-control" id="text" placeholder="Enter Batch Name"
                                     name="batch_name">
                             </div>
-
+                            <div class="form-group">
                             <select class="form-control" name="semester_id">
 
                                 <label for="exampleInputEmail1">Select Semester</label>
@@ -31,9 +31,17 @@
                                 </option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="batch_advisor">
 
-
-
+                                <label for="exampleInputEmail1">Select Batch Advisor</label>
+                                @foreach ($teachers as $teacher)
+                                <option value="{{ $teacher->id }}">{{ $teacher->teachers_short_name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
 
 
                             <div align="right">
@@ -77,9 +85,10 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>Serial</th>
+                                    <th class="sl">SL</th>
                                     <th>Batch Name</th>
                                     <th>Semester Name</th>
+                                    <th>Batch Advisor</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -96,6 +105,7 @@
 
                                     <td>{{$batch->batch_name}}</td>
                                     <td>{{$batch->semester->semester_name}}</td>
+                                    <td>{{$batch->teacher->teachers_short_name}}</td>
 
 
 

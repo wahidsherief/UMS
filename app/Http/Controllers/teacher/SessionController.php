@@ -31,7 +31,7 @@ class SessionController extends Controller
         return view('users.teacher.semester_students_details', compact(['semester_students','course','semester','session_id']));
     }
 
-    public function internal_activities($session_id)
+    public function my_courses($session_id)
     {
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
@@ -52,5 +52,17 @@ class SessionController extends Controller
         $AssignCoursess = AssignCourses::with(['department', 'semester', 'course'])->get();
         // dd($AssignCoursess);
         return view('users.teacher.teacher_external', compact('assign_courses'));
+    }
+
+    public function my_batch()
+    {
+        $auth_id = Auth::user()->id;
+        // dd($teacher_id);
+        $teacher = Teacher::find($auth_id);
+        //  dd($teacher->teachers_short_name);
+        $my_batch=Batch::where('teacher_id', $teacher->id)->first();
+        //dd($my_batch->id);
+        $my_batch_students=Student::where('batch_id', $my_batch->id)->get();
+        return view('users.teacher.my_batch', compact(['my_batch_students','my_batch']));
     }
 }

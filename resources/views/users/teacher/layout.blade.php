@@ -66,7 +66,7 @@
 
         </li>
         <li class="nav-item d-none d-sm-inline-block ">
-            <a class="dropdown-item btn btn-grad btn-md" href="{{ route('teacher.sessions') }}">Sessions
+            <a class="dropdown-item btn btn-grad btn-md" href="{{ route('teacher.sessions') }}"><i class="fas fa-upload"></i> Upload Question
             </a>
           </li>
 
@@ -207,6 +207,10 @@
 
     </aside>
   </div>
+</body>
+
+</html>
+
   <!-- ./wrapper -->
 
   <!-- jQuery -->
@@ -285,7 +289,3 @@ $(document).on('click','#change_picture_btn',function(){
 
             })
   </script>
-
-</body>
-
-</html>

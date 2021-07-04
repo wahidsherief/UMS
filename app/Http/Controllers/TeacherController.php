@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Teacher;
+use App\Models\Session;
 use App\Models\Department;
 use App\Models\Notice;
 
@@ -67,12 +68,14 @@ class TeacherController extends Controller
 
     public function index()
     {
+        $sessions = Session::latest()->first();
+        //dd($sessions);
         $departments = Department::all();
         $teachers = Teacher::all();
         $id=Auth::user()->id;
         $teachers=Teacher::where('user_id', $id)->with(['user','department'])->get();
         //dd($teachers);
-        return view('users.teacher.index', compact(['departments','teachers']));
+        return view('users.teacher.index', compact(['departments','teachers','sessions']));
     }
 
     public function show_teacher_data()

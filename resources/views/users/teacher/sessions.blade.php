@@ -26,7 +26,7 @@
                 <tr data-widget="expandable-table" aria-expanded="false">
                   <td> {{$i++}} </td>
 
-                  <td>   <a href="{{route('teacher.activities',$session->id)}}"> {{$session->session_name}}</a></td>
+                  <td>   <a href="{{route('teacher.my_courses',$session->id)}}"> {{$session->session_name}}</a></td>
                 </tr>
 
 
