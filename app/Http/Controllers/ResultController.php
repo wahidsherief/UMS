@@ -102,16 +102,14 @@ class ResultController extends Controller
     {
         $result=Result::where([   ['student_id', $student_id],['course_id', $course_id], ])->first();
 
-
-        //dd($result);
-        //     ->update([
-        // $student->'account_status'=$request->1
-        //     ]);
-        // dd($student);
-
         $result->status=1;
         $result->save();
         return redirect()->back()->with('accepted', 'result has been accepted');
+    }
+    public function delete_result($student_id, $course_id)
+    {
+        Result::where([['student_id', $student_id],['course_id', $course_id], ])->delete();
+        return redirect()->back()->with('removed', 'Result Has Been Removed');
     }
 
 

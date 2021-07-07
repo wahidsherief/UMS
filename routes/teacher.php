@@ -58,6 +58,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
         Route::get('My-batch', [SessionController::class, 'my_batch'])->name('teacher.my_batch');
         Route::get('Student-result/{id}', [ResultController::class, 'student_full_result'])->name('student_semester_result');
+        Route::get('remove/{student_id}/{course_id}}', [ResultController::class, 'delete_result'])->name('advisor.delete_result');
 
 
 

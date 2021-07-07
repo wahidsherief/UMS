@@ -60,7 +60,7 @@
     </form>
 </div>
 <div class="col">
-    <a href="" class="btn btn-danger btn-md style_button"><i class="fas fa-trash"></i>  </a>
+    <a href="{{ route('advisor.delete_result',[$student_result->student->id,$student_result->course->id]) }}" class="btn btn-danger btn-md style_button"><i class="fas fa-trash"></i>  </a>
 </div></div>
 @else
 <button class="btn btn-success btn-md style_button" disabled>Accepted </button>
@@ -98,5 +98,9 @@
     swal("Accepted", "Result has been accepted", "success");
 </script>
 @endif
-
+@if(Session::has('removed'))
+<script>
+    swal("removed", "Result has been removed", "error");
+</script>
+@endif
 @endsection
