@@ -31,7 +31,7 @@
 
 
             <tr data-widget="expandable-table" aria-expanded="false">
-              <td>  <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="Teacher's image"width="50"></td>
+              <td>  <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="U"width="50"></td>
               <td>{{$notify->user->name}}</td>
               <td>Teacher</td>
               <td> <span class="description">{{$notify->created_at->diffForHumans()}}</span></td>

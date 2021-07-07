@@ -68,4 +68,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Batchdesign::class);
     }
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

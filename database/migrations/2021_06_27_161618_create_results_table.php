@@ -19,16 +19,14 @@ class CreateResultsTable extends Migration
             $table->bigInteger('student_id')->unsigned()->nullable();
             $table->bigInteger('semester_id')->unsigned()->nullable();
             $table->bigInteger('course_id')->unsigned()->nullable();
-            $table->string('classtest_1');
-            $table->string('classtest_2');
-            $table->string('classtest_3');
-            $table->string('classtest_4');
+            $table->string('class_test');
             $table->string('attendance');
             $table->string('part_a');
             $table->string('part_b');
             $table->string('percentage')->nullable();
             $table->string('n_grade')->nullable();
             $table->string('l_grade')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

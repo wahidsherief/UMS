@@ -17,4 +17,8 @@ class Session extends Model
     {
         return $this->hasMany(Result::class);
     }
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

@@ -11,7 +11,9 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 //Teacher
 
@@ -51,7 +53,20 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('semester/{session_id}', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
         Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
+        Route::POST('accept-result/{student_id}/{course_id}', [ResultController::class, 'accept_my_batch_result'])->name('accept_my_batch_result');
+
 
         Route::get('My-batch', [SessionController::class, 'my_batch'])->name('teacher.my_batch');
+        Route::get('Student-result/{id}', [ResultController::class, 'student_full_result'])->name('student_semester_result');
+
+
+
+
+        //Question
+        Route::get('upload-question/{session_id}/{course_id}', [QuestionController::class, 'upload_question'])->name('teacher.upload_question');
+        Route::POST('upload-question-submit/{session_id}/{course_id}', [QuestionController::class, 'upload_question_submit'])->name('upload_question_submit');
+        Route::get('questions', [QuestionController::class, 'show_question'])->name('teacher.show_questions');
+        Route::get('download-question/{id}', [QuestionController::class, 'download'])->name('teacher.question_download');
+        Route::get('search-question', [QuestionController::class, 'search'])->name('question.search');
     });
 });

@@ -30,8 +30,7 @@
               </p>
             </div>
             <div class="col-12 col-sm-4">
-              <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-              <div class="col-12">
+            <div class="col-12">
                 @if(!$notice->notice_file==NULL)<img src="{{asset('users//images/notice')}}/{{$notice->notice_file}}"
                   width="100%" />
                 @endif

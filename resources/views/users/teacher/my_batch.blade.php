@@ -36,7 +36,7 @@
                                 <td>{{$my_batch_student->registration_number}}</td>
                                 <td>{{$my_batch_student->roll_number}}</td>
                                 <td>{{$my_batch_student->firstname}} {{ $my_batch_student->lastname }}</td>
-                                <td> <a href="" class="btn btn-info btn-btn-sm"> Result</a></td>
+                                <td> <a href="{{route('student_semester_result',$my_batch_student->id)}}" class="btn btn-info btn-btn-sm"> Result</a></td>
 
 
 

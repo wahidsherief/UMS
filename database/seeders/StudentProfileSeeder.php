@@ -22,7 +22,7 @@ class StudentProfileSeeder extends Seeder
     'user_id'=>'17',
     'department_id'=>'1',
     'semester_id'=>'8',
-    'batch_id'=>'1',
+    'batch_id'=>'8',
     'firstname'=>'Joy',
     'lastname'=>'dhar',
     'roll_number'=>'17010132',

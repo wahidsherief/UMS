@@ -36,16 +36,13 @@ class ResultController extends Controller
         $results->semester_id = $semester_id;
         $results->course_id = $course_id;
 
-        $ct1 = $results->classtest_1 = $request->classtest_1;
-        $ct2 =  $results->classtest_2 = $request->classtest_2;
-        $ct3 =  $results->classtest_3 = $request->classtest_3;
-        $ct4 =  $results->classtest_4 = $request->classtest_4;
+        $class_test = $results->class_test = $request->class_test;
 
         $attendance = $results->attendance = $request->attendance;
         $parta = $results->part_a = $request->part_a;
         $partb =  $results->part_b = $request->part_b;
 
-        $percentage = (($ct1 + $ct2 + $ct3 + $ct4 + $attendance + $parta + $partb) / $course_credit);
+        $percentage = (($class_test + $attendance + $parta + $partb) / $course_credit);
 
         $number_grade = $this->get_number_grade($percentage);
         $letter_grade = $this->get_letter_grade($percentage);
@@ -85,8 +82,38 @@ class ResultController extends Controller
         $results = Result::where('semester_id', $semester_id)->with(['session', 'student', 'semester', 'course'])->latest()->get();
         $semester=Semester::where('id', $semester_id)->first();
         //dd($results);
+
         return view('users.teacher.show_result', compact('results', 'semester'));
     }
+
+    public function student_full_result($id)
+    {
+        $student_id= $id;
+        //  dd($student_id);
+        $student_info=Student::where('id', $student_id)->first();
+        $student_results=Result::where('student_id', $student_id)->with(['course', 'semester', 'student'])->latest()->get();
+        //dd($student_result);
+        return view('users.teacher.student_full_result', compact(['student_results', 'student_info']));
+    }
+
+
+
+    public function accept_my_batch_result(Request $request, $student_id, $course_id)
+    {
+        $result=Result::where([   ['student_id', $student_id],['course_id', $course_id], ])->first();
+
+
+        //dd($result);
+        //     ->update([
+        // $student->'account_status'=$request->1
+        //     ]);
+        // dd($student);
+
+        $result->status=1;
+        $result->save();
+        return redirect()->back()->with('accepted', 'result has been accepted');
+    }
+
 
     private function get_number_grade($percentage)
     {

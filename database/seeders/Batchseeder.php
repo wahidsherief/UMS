@@ -23,7 +23,7 @@ class BatchSeeder extends Seeder
             ],
             [
                 'semester_id'=>'2',
-                'teacher_id' => '2 ',
+                'teacher_id' => '10 ',
                 'batch_name' => '36CSE ',
             ],
             [
@@ -57,7 +57,7 @@ class BatchSeeder extends Seeder
             [
                 'semester_id'=>'8',
 
-                'teacher_id' => '8 ',
+                'teacher_id' => '2 ',
                 'batch_name' => '30CSE ',
             ],
 

@@ -10,8 +10,8 @@
       <h3 class="card-title">Internal</h3>
       <div align="right">
         <li class="nav-item d-none d-sm-inline-block ">
-            <a class="btn btn-primary btn-md" href="{{ route('teacher.semester_result',[$session_id]) }}"> <i class="fas fa-eye"></i> View Result
-            </a>
+            <a href="{{ route('teacher.show_questions') }}" class="btn btn-info">All Questions</a>
+        
           </li>
 
       </div>
@@ -39,9 +39,13 @@
                 <td>{{$internal_course->course->course_code}}</td>
                 <td>{{$internal_course->course->course_name}}</td>
                 <td>{{$internal_course->semester->semester_name}}</td>
-                <td><a
-                    href="{{route('teacher.student_details',[$session_id,$internal_course->semester->id,$internal_course->course->id])}}"
-                    class='btn btn-info btn-sm'><i class="fas fa-info-circle"></i> Show Details </a></td>
+                <td>
+                    <a href="{{route('teacher.student_details',[$session_id,$internal_course->semester->id,$internal_course->course->id])}}"
+                    class='btn btn-info btn-sm'><i class="fas fa-info-circle"></i> Show Details </a>
+
+                    <a class="btn btn-warning btn-sm" href="{{ route('teacher.upload_question',[$session_id, $internal_course->course->id]) }}"><i class="fas fa-upload"></i> Upload Question
+
+                </td>
               </tr>
               @endforeach
             </tbody>

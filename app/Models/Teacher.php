@@ -22,8 +22,8 @@ class Teacher extends Model
     {
         return $this->hasMany(Batch::class);
     }
-    // public function Batchdesign()
-    // {
-    //     return $this->hasMany(Batchdesign::class,'batchdesign_id');
-    // }
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

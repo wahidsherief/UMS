@@ -30,20 +30,20 @@
               @php $i=1; @endphp
               @foreach($results as $result)
 
-
+@php
+$status= $result->status;
+@endphp
               <!-- ./card-header -->
 
-
+@if($status==1)
               <tr data-widget="expandable-table" aria-expanded="false">
                 <td> {{$i++}} </td>
 
                 <td>{{$result->course->course_code}}</td>
                 <td>{{$result->course->course_name}}</td>
                 <td>{{$result->attendance}}</td>
-                <td>{{$result->classtest_1}}</td>
-                <td>{{$result->classtest_2}}</td>
-                <td>{{$result->classtest_3}}</td>
-                <td>{{$result->classtest_4}}</td>
+                <td>{{$result->class_test}}</td>
+
                 <td>{{$result->part_a}}</td>
                 <td>{{$result->part_b}}</td>
                 <td>@php echo number_format($result->percentage, 2, '.', ',');@endphp</td>
@@ -52,6 +52,7 @@
 
 
               </tr>
+              @endif
               @endforeach
             </tbody>
           </table>

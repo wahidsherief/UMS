@@ -89,6 +89,7 @@ class AdminController extends Controller
         // $student->'account_status'=$request->1
 //     ]);
         // dd($student);
+        
         $teacher->account_status=1;
         $teacher->save();
         return redirect()->back()->with('account_approved', 'Account Has Been Approved');

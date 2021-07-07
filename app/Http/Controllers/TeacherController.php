@@ -8,7 +8,7 @@ use App\Models\Teacher;
 use App\Models\Session;
 use App\Models\Department;
 use App\Models\Notice;
-
+use \PDF;
 use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
@@ -36,6 +36,9 @@ class TeacherController extends Controller
 
     public function single_notice($id)
     {
+        // $notice=Notice::where('id', $id)->with('user')->first();
+        // $pdf=PDF::loadView('users.teacher.download', compact('notice'));
+        // return $pdf->download('Question.pdf');
         $notice = Notice::with('user')->where('id', $id)->get();
         return view('users.teacher.single_notice', compact('notice'));
     }
