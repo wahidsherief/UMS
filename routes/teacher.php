@@ -60,8 +60,17 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('Student-result/{id}', [ResultController::class, 'student_full_result'])->name('student_semester_result');
         Route::get('remove/{student_id}/{course_id}}', [ResultController::class, 'delete_result'])->name('advisor.delete_result');
 
+        //my batch students
+        Route::get('my-batch-students', [TeacherController::class, 'batch_all_student'])->name('teacher.batch_all_student');
+        Route::get('my-batch-students/{id}', [TeacherController::class, 'my_batch_student_profile'])->name('teacher.my_batch_student_profile');
 
+        Route::get('my-batch-courses', [TeacherController::class, 'my_batch_courses'])->name('teacher.my_batch_courses');
+        Route::get('my-result-list/{semester_id}/{course_id}', [TeacherController::class, 'my_batch_result_list'])->name('teacher.my_batch_result_list');
+        Route::get('export-results/{course_id}', [TeacherController::class, 'my_batch_result_export'])->name('teacher.my_batch_result_export');
 
+        //As Internal Semester Result
+        Route::get('my-course-result/{session_id}/{semester_id}/{course_id}', [TeacherController::class, 'my_courses_result'])->name('teacher.my_courses_result');
+        Route::get('export-result/{course_id}', [TeacherController::class, 'my_courses_result_export'])->name('teacher.my_course_result_export');
 
         //Question
         Route::get('upload-question/{session_id}/{course_id}', [QuestionController::class, 'upload_question'])->name('teacher.upload_question');

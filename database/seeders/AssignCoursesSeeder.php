@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
 class AssignCoursesSeeder extends Seeder
 {
     /**
@@ -366,7 +367,7 @@ class AssignCoursesSeeder extends Seeder
                 'semester_id' => '8',
                 'session_id'=>'1',
                 'course_id'=>'42',
-                'teacher_internal_id'=>'5',
+                'teacher_internal_id'=>'2',
                 'teacher_external_id'=>'7'
             ],
             [
@@ -382,7 +383,7 @@ class AssignCoursesSeeder extends Seeder
                 'semester_id' => '8',
                 'session_id'=>'1',
                 'course_id'=>'44',
-                'teacher_internal_id'=>'11',
+                'teacher_internal_id'=>'2',
                 'teacher_external_id'=>'9'
             ],
             [
@@ -396,6 +397,6 @@ class AssignCoursesSeeder extends Seeder
 
 
             ];
-            DB::table('assign_courses')->insert($assigncourses);
+        DB::table('assign_courses')->insert($assigncourses);
     }
 }

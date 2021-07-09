@@ -167,19 +167,19 @@ class UserSeeder extends Seeder
                 'account_status' => '1',
             ],
             [
+                'name' => 'Piku',
+                'email' => 'piku@gmail.com',
+                'role' => '4',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('piku@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
                 'name' => 'Marjan',
                 'email' => 'marjan@gmail.com',
                 'role' => '4',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('marjan@gmail.com'),
-                'account_status' => '1',
-            ],
-            [
-                'name' => 'student1',
-                'email' => 'student1@gmail.com',
-                'role' => '4',
-                'picture' => '16531623773774_avatar',
-                'password' => Hash::make('student1@gmail.com'),
                 'account_status' => '1',
             ],
             [

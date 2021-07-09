@@ -1,5 +1,35 @@
 @extends('users.teacher.layout')
 @section('title',"My Batch")
+@section('nav_bar')
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="dropdown-item" href="{{ route('teacher.batch_all_student') }}">Student List
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="dropdown-item" href="{{ route('teacher.my_batch_courses') }}">Courses
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="dropdown-item" href="{{ route('index') }}">Notification
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right navbar links -->
+
+        </nav>
+
+
+@endsection
 @section('content')
 <div class="container">
     <h2> </h2>

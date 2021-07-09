@@ -75,7 +75,7 @@
                     <a class="dropdown-item btn btn-grad btn-md" href="{{ route('admin.add_session') }}">Sessions
                     </a>
                 </li>
-           
+
             </ul>
 
             <!-- Right navbar links -->

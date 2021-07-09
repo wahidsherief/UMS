@@ -43,11 +43,12 @@ class ResultController extends Controller
         $partb =  $results->part_b = $request->part_b;
 
         $percentage = (($class_test + $attendance + $parta + $partb) / $course_credit);
-
+        $total=($class_test + $attendance + $parta + $partb);
         $number_grade = $this->get_number_grade($percentage);
         $letter_grade = $this->get_letter_grade($percentage);
 
         $results->percentage = $percentage;
+        $results->total = $total;
         $results->n_grade = $number_grade;
         $results->l_grade = $letter_grade;
 

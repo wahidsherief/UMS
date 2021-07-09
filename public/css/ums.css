@@ -30,3 +30,12 @@
     padding-right:10px;
     margin-right:4px;
 }
+.profile-user-img-student {
+    border: 3px solid #adb5bd;
+    margin: 0 auto;
+    padding: 3px;
+    width: 323px;
+}
+.student-info{
+    width:80%;
+}

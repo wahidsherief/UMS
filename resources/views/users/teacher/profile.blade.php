@@ -39,8 +39,7 @@
 
                   <p class="text-muted text-center">Software Engineer</p>
 
-
-<input type="file" name="upload_profile_image" id="upload_profile_image" style="opacity:0,height:1px;display:none" class="updated_picture"/>
+                  <input type="file" name="upload_profile_image" id="upload_profile_image" style="opacity:0,height:1px;display:none" class="updated_picture"/>
                   <a href="javascript:void(0)" class="btn btn-primary btn-block" id="change_picture_btn"><b>Update Picture</b></a>
                 </div>
                 <!-- /.card-body -->

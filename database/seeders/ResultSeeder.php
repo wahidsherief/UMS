@@ -213,6 +213,7 @@ class ResultSeeder extends Seeder
     'part_a'=>'80',
     'part_b'=>'70',
     'percentage'=>'65.55',
+
     'n_grade'=>'3.26',
     'l_grade'=>'B',
 ],
@@ -228,6 +229,7 @@ class ResultSeeder extends Seeder
     'part_a'=>'66',
     'part_b'=>'55',
     'percentage'=>'55.55',
+    
     'n_grade'=>'3.50',
     'l_grade'=>'B-',
 ],

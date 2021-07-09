@@ -24,6 +24,7 @@ class CreateResultsTable extends Migration
             $table->string('part_a');
             $table->string('part_b');
             $table->string('percentage')->nullable();
+            $table->string('total')->nullable();
             $table->string('n_grade')->nullable();
             $table->string('l_grade')->nullable();
             $table->string('status')->default(0);

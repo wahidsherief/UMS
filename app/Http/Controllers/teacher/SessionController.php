@@ -8,6 +8,7 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Course;
 use App\Models\Batch;
+use App\Models\Result;
 use App\Models\Semester;
 use App\Models\Session;
 use App\Models\AssignCourses;
@@ -28,7 +29,16 @@ class SessionController extends Controller
         $semester=Semester::where('id', $semester_id)->first();
         // dd($course);
         $semester_students = Student::where('semester_id', $semester_id)->orderBy('id', 'ASC')->get();
-        return view('users.teacher.semester_students_details', compact(['semester_students','course','semester','session_id']));
+        // dd($semester_students);
+        foreach ($semester_students as $semester_student) {
+            {
+                $student_id=$semester_student->id;
+               // dd($student_id);
+            $existing_result=Result::where([ ['student_id', $student_id],['course_id', $course_id], ])->first();
+           // dd($existing_result);
+        }
+            return view('users.teacher.semester_students_details', compact(['semester_students','course','semester','session_id']));
+        }
     }
 
     public function my_courses($session_id)
