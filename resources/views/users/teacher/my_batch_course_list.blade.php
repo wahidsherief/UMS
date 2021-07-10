@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('index') }}">Notification
+                    <a class="dropdown-item" href="">Notification
                     </a>
                 </li>
 

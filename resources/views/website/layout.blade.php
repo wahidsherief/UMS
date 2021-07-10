@@ -46,7 +46,7 @@
 								</ul>
 								<div class="top_bar_login ml-auto">
 
-                                    @if (Route::has('login'))
+                                    {{-- @if (Route::has('login'))
 
                                     @auth
 
@@ -59,9 +59,9 @@
                                         {{-- @if (Route::has('register'))
                                         <li class="main_nav_item">   <a href="{{ route('register') }}">Register</a></li>
                                         @endif --}}
-                                    @endauth
+                                    {{-- @endauth
 
-                            @endif
+                            @endif --}}
 
 
 
@@ -86,7 +86,7 @@
 									<div class="logo_text">U<span>MS</span></div>
 								</a>
 							</div>
-							<nav class="main_nav_contaner ml-auto">
+							{{-- <nav class="main_nav_contaner ml-auto">
 								<ul class="main_nav">
 									<li  class="{{(request()->is('/')) ? 'active' : '' }}"><a href="{{route('index')}}" >Home</a></li>
 									<li class="{{(request()->is('/about'))? 'active' : ''}}"><a href="{{route('about')}}">About</a></li>
@@ -103,7 +103,7 @@
 								<div class="hamburger menu_mm">
 									<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
 								</div>
-							</nav>
+							</nav> --}}
 
 						</div>
 					</div>

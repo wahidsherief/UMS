@@ -41,7 +41,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('assign-courses', [AssignCoursesController::class, 'assign_courses'])->name('teacher.assign_courses');
         Route::get('sessions', [SessionController::class, 'session'])->name('teacher.sessions');
 
-        Route::get('my-courses/{id}', [SessionController::class, 'my_courses'])->name('teacher.my_courses');
+        Route::get('my-courses', [SessionController::class, 'my_courses'])->name('teacher.my_courses');
 
         Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
         Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
@@ -50,7 +50,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
 
 
-        Route::get('semester/{session_id}', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
+        Route::get('semester', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
         Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
         Route::POST('accept-result/{student_id}/{course_id}', [ResultController::class, 'accept_my_batch_result'])->name('accept_my_batch_result');

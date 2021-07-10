@@ -41,14 +41,15 @@ class SessionController extends Controller
         }
     }
 
-    public function my_courses($session_id)
+    public function my_courses()
     {
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
         $teacher = Teacher::find($auth_id);
-        //dd($teacher);
+        // dd($teacher);
         $internal_courses = AssignCourses::where('teacher_internal_id', $teacher->id)->with(['semester'])->get();
-        // dd($internal_courses);
+        $session_id=($internal_courses[0]->session_id);
+
         $external_courses = AssignCourses::where('teacher_external_id', $teacher->id)->with(['semester'])->get();
 
         // dd($AssignCoursess);

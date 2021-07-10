@@ -59,10 +59,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('index') }}">Home
-                    </a>
-                </li>
+               
                 <li>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">

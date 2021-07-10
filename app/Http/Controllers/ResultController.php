@@ -65,7 +65,7 @@ class ResultController extends Controller
     }
 
 
-    public function semester_result(Request $request, $session_id)
+    public function semester_result(Request $request)
     {
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
@@ -75,7 +75,7 @@ class ResultController extends Controller
 
 
         //dd($results);
-        return view('users.teacher.available_session_result', compact(['session_id','internal_courses']));
+        return view('users.teacher.available_session_result', compact(['internal_courses']));
     }
 
     public function show_result($semester_id)

@@ -1,8 +1,9 @@
 @extends('users.teacher.layout')
 @section('title',"My Batch")
+
 @section('nav_bar')
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -18,18 +19,16 @@
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('index') }}">Notification
+                    <a class="dropdown-item" href="">Notification
                     </a>
                 </li>
 
             </ul>
 
-            <!-- Right navbar links -->
 
         </nav>
-
-
 @endsection
+
 @section('content')
 <div class="container">
     <h2> </h2>

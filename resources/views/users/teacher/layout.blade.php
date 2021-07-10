@@ -41,7 +41,75 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-@yield('nav_bar')
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box active">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+
+                            <a href="{{ route('teacher.my_batch') }}" style="color:black;">
+                                <div class="info-box-content">
+                                    <span class="info-box-text font-weight-bold">My Batch</span>
+
+                                    <span class="subtitle">Show All </span>
+                                </div>
+                            </a>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                            <a href="{{ route('teacher.my_courses') }}" style="color:black;">
+                            <div class="info-box-content">
+                                <span class="info-box-text font-weight-bold">My Courses</span>
+
+                                <span class="subtitle">Show All </span>
+                            </div>
+                        </a>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix hidden-md-up"></div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                            <a href="{{ route('teacher.semester_result') }}" style="color:black;">
+                            <div class="info-box-content">
+                                <span class="info-box-text font-weight-bold">Results</span>
+                                <span class="subtitle">Show All </span>
+                            </div>
+                        </a>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text font-weight-bold">My Notice</span>
+                            <span class="subtitle">Show All </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+
+            </nav>
+
+            @yield('nav_bar')
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -165,7 +233,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper pt-4">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
 
             @yield('content')
