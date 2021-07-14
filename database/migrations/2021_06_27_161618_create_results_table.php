@@ -27,7 +27,7 @@ class CreateResultsTable extends Migration
             $table->string('total')->nullable();
             $table->string('n_grade')->nullable();
             $table->string('l_grade')->nullable();
-            $table->string('status')->default(0);
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

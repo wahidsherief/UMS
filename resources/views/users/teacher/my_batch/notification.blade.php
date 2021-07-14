@@ -55,21 +55,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php $i=1; @endphp
-                        @foreach($my_batch_students as $student)
+                        @php $i=1; $z=0; @endphp
+                        @foreach($current_semester_results as $current_semester_result)
                         <tr data-widget="expandable-table" aria-expanded="false">
                             <td> {{$i++}} </td>
-                            <td>{{ $student->registration_number }}</td>
-                            <td>{{ $student->roll_number }}</td>
-                            <td>{{ $student->firstname }} {{  $student->lastname }}</td>
-@foreach($available_courses as $available_course)
-<td>
-    {{ $available_course->l_grade }}
-</td>
-@endforeach
-
-
-
+                            <td>{{ $current_semester_result[$z]->student->registration_number }}</td>
+                            <td>{{ $current_semester_result[$z]->student->roll_number }}</td>
+                            <td>{{ $current_semester_result[$z]->student->firstname }}</td>
+                            <td>{{ $current_semester_result[$z]->course->course_code }}</td>
+                            @php $z++; @endphp
                         </tr>
 
 

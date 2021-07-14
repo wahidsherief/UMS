@@ -37,20 +37,43 @@ class MyBatchController extends Controller
         $auth_id = Auth::user()->id;
         $teacher = Teacher::where('user_id', $auth_id)->first();
         $teacher_id = ($teacher->id);
-        $batch_advisor = Batch::where('teacher_id', $teacher_id)->first();
-        $batch_id = $batch_advisor->id;
-        $my_batch_semester_id = $batch_advisor->semester_id;
-        $courses = AssignCourses::where('semester_id', $my_batch_semester_id)->with('course')->get();
-        $my_batch_semester_result = Result::where('semester_id', $my_batch_semester_id)->with(['student', 'course'])->latest()->get();;
+        $batch = Batch::where('teacher_id', $teacher_id)->first();
+        // $batch_id = $batch->id;
+        // $batch_semester_id = $batch->semester_id;
+        // ALl availabl courss
+        $courses = AssignCourses::where('semester_id', $batch->semester_id)->with('course')->get();
+        // dd($courses);
 
-        $my_batch_students = Student::where('batch_id', $batch_id)->get();
-        // dd($my_batch_students[1]->id);
 
-        foreach ($my_batch_students as $my_batch_student) {
-            $student_id = ($my_batch_student->id);
-            $available_courses = Result::where('student_id', $student_id)->with('course')->get();
-        }
-        // dd($available_courses);
-        return view('users.teacher.my_batch.notification', compact(['my_batch_semester_result', 'courses', 'my_batch_students', 'available_courses']));
+        $current_semester_results = Result::where('semester_id', $batch->semester_id)->with(['student', 'course'])->get()->groupBy('student.id');
+
+        $batch_students = Student::where('semester_id', $batch->semester_id)->with('result')->get();
+        // dd($batch_students);
+
+
+
+
+
+
+
+        // dd($current_semester_results);
+        // $i = 0;
+        // foreach ($current_semester_results as $current_semester_result) {
+        //     echo $current_semester_result[$i]->student->roll_number . '/n';
+        //     $i++;
+        // }
+        // dd();
+        // dd($current_semester_results);
+
+
+        // foreach ($batch_students as $batch_student) {
+        //     $student_id = ($batch_student->id);
+        //     $available_courses = Result::where('student_id', $student_id)->with('course')->first();
+        // }
+        //dd($available_courses);
+
+
+
+        return view('users.teacher.my_batch.notification', compact(['current_semester_results', 'courses']));
     }
 }
