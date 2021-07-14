@@ -36,7 +36,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' =>3,
+                'user_id' => 3,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'ST',
@@ -76,7 +76,7 @@ class TeacherSeeder extends Seeder
                 'blood_group' => 'A+'
             ],
             [
-                'user_id' =>7,
+                'user_id' => 7,
                 'firstname' => 'first',
                 'lastname' => 'last',
                 'teachers_short_name' => 'ZI',
@@ -154,6 +154,25 @@ class TeacherSeeder extends Seeder
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
+            ],          [
+                'user_id' => 15,
+                'firstname' => 'RC',
+                'lastname' => 'RC',
+                'teachers_short_name' => 'RC',
+                'status' => 'teacher',
+                'phone' => '555657',
+                'address' => 'address',
+                'blood_group' => 'B+'
+            ],
+            [
+                'user_id' => 16,
+                'firstname' => 'mhs',
+                'lastname' => 'mhs',
+                'teachers_short_name' => 'MHS',
+                'status' => 'teacher',
+                'phone' => '555657',
+                'address' => 'address',
+                'blood_group' => 'AB+'
             ],
         ];
         DB::table('teachers')->insert($teacher);

@@ -30,14 +30,13 @@ class CreateStudentsTable extends Migration
             $table->string('ssc_gpa');
             $table->string('jsc_gpa');
             $table->string('psc_gpa');
-
-          //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->foreign('department_id')->references('departments.id')->on('departments')->onDelete('cascade');
             // $table->foreign('batch_id')->references('batches.id')->on('batches')->onDelete('cascade');
 
 
             $table->timestamps();
-
         });
     }
 

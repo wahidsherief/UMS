@@ -2,7 +2,7 @@
 @section('title',"My Batch")
 @section('nav_bar')
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -10,7 +10,7 @@
                 </li>
 
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('teacher.batch_all_student') }}">Student List
+                    <a class="dropdown-item" href="{{ route('MyBatchController.students') }}">Student List
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
@@ -18,32 +18,19 @@
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="">Notification
+                    <a class="dropdown-item" href="{{ route('MyBatchController.notification') }}">Notification
                     </a>
                 </li>
 
             </ul>
-
-            <!-- Right navbar links -->
-
         </nav>
-
 
 @endsection
 @section('content')
 <div class="container">
-    <h2> </h2>
 
-    <div class="container">
+
         <div class="card card-secondary">
-            <div class="card-header text-center">
-              <b>  <h4>University of Science and Technology Chittagong</h2>
-                <h5>Faculty of Science Engineering & Technology</h3></b>
-                <h6>Department of Computer Science & Engineering</h5>
-            <b>    <h5>Batch -XXIX, 8Semester Final Examination, 2020</h3></b>
-
-
-            </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="card-body table-responsive p-0">
@@ -55,7 +42,9 @@
                             Course Title: <b>{{ $course->course_name }}</b>
                         </div>
                         <div class="col">
-                            Credit Code: <b>{{ $course->course_credit }}</b> Total: 300
+                            Credit Code: <b>{{ $course->course_credit }}</b> Total: <?php $total= $course->course_credit;
+
+                            echo ($total*100); ?>
                         </div>
                     </div>
                     <table class="table table-bordered table-hover">
@@ -114,10 +103,6 @@
         </div>
     </div>
 
-
-
-
-</div>
 
 
 

@@ -2,7 +2,7 @@
 
 @section('nav_bar')
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="navbar navbar-expand navbar-white navbar-light ml-2">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -10,7 +10,7 @@
                 </li>
 
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item active" href="{{ route('teacher.batch_all_student') }}">Student List
+                    <a class="dropdown-item active" href="{{ route('MyBatchController.students') }}">Student List
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">

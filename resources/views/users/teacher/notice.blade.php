@@ -3,15 +3,15 @@
 @section('title',"notice")
 
 @section('content')
-<div class="container" style="padding-top:20px;">
-<div class="col-md-12">
-<div class="tab-content">
-  <div class="tab-pane active" id="activity">
-    <!-- Post -->
+<div class="container">
+<div class="card card-secondary">
     <div class="card-header">
-        <h3 class="card-title">Expandable Table</h3>
-      </div>
-      <div class="card-body">
+      <h3 class="card-title">All Notice</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+
+      <div class="card-body table-responsive p-0">
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
@@ -56,5 +56,5 @@
 </style>
 
 
-</div></div></div></div>
+</div></div></div>
 @endsection

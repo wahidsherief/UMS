@@ -2,25 +2,20 @@
 @section('title', 'student dashboard')
 
 @section('content')
-
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title"> Complete Your Profile</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
             <div class="col-md-10 offset-md-1">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('student.profile.submit', ['id' => Auth::user()->id]) }}" method="POST">
+                <form action="{{ route('student_full_information_submit')}}" method="POST">
                     @csrf
-                    <div class="alert alert-primary" role="alert">
-                        <div class="card-header">
-                            Complete Your Profile</div>
-                    </div>
-                    @if (Session::has('pending'))
-                        <div class="alert alert-warning" role='alert'>
 
-                            {{ Session::get('pending') }}
 
-                        </div>
-                    @endif
                     <div class="card-body">
 
                         <div class="row">
@@ -144,8 +139,12 @@
 
 
         </div>
-    </div>
+    </div></div>
 
 
-
+    @if (Session::has('pending'))
+    <script>
+        swal("Good Job", "Once your account activated, you will get a confirmation email", "Success");
+    </script>
+    @endif
 @endsection

@@ -13,6 +13,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursetypeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\teacher\MyBatchController;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 //Teacher
@@ -47,9 +48,6 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
         Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'add_result_submit'])->name('submit.result');
 
-
-
-
         Route::get('semester', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
         Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
@@ -60,8 +58,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('Student-result/{id}', [ResultController::class, 'student_full_result'])->name('student_semester_result');
         Route::get('remove/{student_id}/{course_id}}', [ResultController::class, 'delete_result'])->name('advisor.delete_result');
 
-        //my batch students
-        Route::get('my-batch-students', [TeacherController::class, 'batch_all_student'])->name('teacher.batch_all_student');
+        // My Batch details
+        Route::get('my-batch-students', [MyBatchController::class, 'students'])->name('MyBatchController.students');
+        Route::get('my-batch-notification', [MyBatchController::class, 'notification'])->name('MyBatchController.notification');
         Route::get('my-batch-students/{id}', [TeacherController::class, 'my_batch_student_profile'])->name('teacher.my_batch_student_profile');
 
         Route::get('my-batch-courses', [TeacherController::class, 'my_batch_courses'])->name('teacher.my_batch_courses');
@@ -78,5 +77,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('questions', [QuestionController::class, 'show_question'])->name('teacher.show_questions');
         Route::get('download-question/{id}', [QuestionController::class, 'download'])->name('teacher.question_download');
         Route::get('search-question', [QuestionController::class, 'search'])->name('question.search');
+
+        //result
+
+        Route::get('student-list-result/{session_id}/{semester_id}/{course_id}', [ResultController::class, 'result_student_list'])->name('result.my_course_student');
     });
 });

@@ -3,15 +3,12 @@
 
 @section('nav_bar')
 
-       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+       <nav class="navbar navbar-expand navbar-white navbar-light ml-2">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
 
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('teacher.batch_all_student') }}">Student List
+                    <a class="dropdown-item" href="{{ route('MyBatchController.students') }}">Student List
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
@@ -19,7 +16,7 @@
                     </a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="">Notification
+                    <a class="dropdown-item" href="{{ route('MyBatchController.notification') }}">Notification
                     </a>
                 </li>
 

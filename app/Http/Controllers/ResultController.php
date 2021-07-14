@@ -15,6 +15,26 @@ use Illuminate\Support\Facades\Auth;
 
 class ResultController extends Controller
 {
+
+
+    public function result_student_list($session_id, $semester_id, $course_id)
+    {
+        $course = Course::where('id', $course_id)->first();
+        $semester = Semester::where('id', $semester_id)->first();
+        // dd($course);
+        $semester_students = Student::where('semester_id', $semester_id)->orderBy('id', 'ASC')->get();
+        // dd($semester_students);
+        foreach ($semester_students as $semester_student) { {
+                $student_id = $semester_student->id;
+                // dd($student_id);
+                $existing_result = Result::where([['student_id', $student_id], ['course_id', $course_id],])->first();
+                // dd($existing_result);
+            }
+            return view('users.teacher.semester_students_details', compact(['semester_students', 'course', 'semester', 'session_id']));
+        }
+    }
+
+
     public function add_result($session_id, $student_id, $semester_id, $course_id)
     {
         $student = Student::where('id', $student_id)->first();
@@ -43,7 +63,7 @@ class ResultController extends Controller
         $partb =  $results->part_b = $request->part_b;
 
         $percentage = (($class_test + $attendance + $parta + $partb) / $course_credit);
-        $total=($class_test + $attendance + $parta + $partb);
+        $total = ($class_test + $attendance + $parta + $partb);
         $number_grade = $this->get_number_grade($percentage);
         $letter_grade = $this->get_letter_grade($percentage);
 
@@ -81,7 +101,7 @@ class ResultController extends Controller
     public function show_result($semester_id)
     {
         $results = Result::where('semester_id', $semester_id)->with(['session', 'student', 'semester', 'course'])->latest()->get();
-        $semester=Semester::where('id', $semester_id)->first();
+        $semester = Semester::where('id', $semester_id)->first();
         //dd($results);
 
         return view('users.teacher.show_result', compact('results', 'semester'));
@@ -89,10 +109,10 @@ class ResultController extends Controller
 
     public function student_full_result($id)
     {
-        $student_id= $id;
+        $student_id = $id;
         //  dd($student_id);
-        $student_info=Student::where('id', $student_id)->first();
-        $student_results=Result::where('student_id', $student_id)->with(['course', 'semester', 'student'])->latest()->get();
+        $student_info = Student::where('id', $student_id)->first();
+        $student_results = Result::where('student_id', $student_id)->with(['course', 'semester', 'student'])->latest()->get();
         //dd($student_result);
         return view('users.teacher.student_full_result', compact(['student_results', 'student_info']));
     }
@@ -101,15 +121,15 @@ class ResultController extends Controller
 
     public function accept_my_batch_result(Request $request, $student_id, $course_id)
     {
-        $result=Result::where([   ['student_id', $student_id],['course_id', $course_id], ])->first();
+        $result = Result::where([['student_id', $student_id], ['course_id', $course_id],])->first();
 
-        $result->status=1;
+        $result->status = 1;
         $result->save();
         return redirect()->back()->with('accepted', 'result has been accepted');
     }
     public function delete_result($student_id, $course_id)
     {
-        Result::where([['student_id', $student_id],['course_id', $course_id], ])->delete();
+        Result::where([['student_id', $student_id], ['course_id', $course_id],])->delete();
         return redirect()->back()->with('removed', 'Result Has Been Removed');
     }
 

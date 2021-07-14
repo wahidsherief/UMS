@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PendingAccount;
+use App\Mail\RejectAccount;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
@@ -59,38 +62,42 @@ class AdminController extends Controller
 
     public function pendingstudent()
     {
-        $students= Student::with(['user','department','batch'])->orderBy('id', 'DESC')->get();
+        $students = Student::with(['user', 'department', 'batch'])->orderBy('id', 'DESC')->get();
         // dd($students);
         return view('users.admin.pendingstudent', compact('students'));
     }
 
     public function pendingteacher()
     {
-        $teachers= Teacher::with(['user','department'])->orderBy('id', 'DESC')->get();
+        $teachers = Teacher::with(['user', 'department'])->orderBy('id', 'DESC')->get();
         return view('users.admin.pendingteacher', compact('teachers'));
     }
 
     public function studentaccountaccept(Request $request, $id)
     {
-        $student=User::find($id);
-//     ->update([
+        $student = User::find($id);
+        //     ->update([
         // $student->'account_status'=$request->1
-//     ]);
+        //     ]);
         // dd($student);
-        $student->account_status=1;
+        $student->account_status = 1;
         $student->save();
+        $email = $student->email;
+
+        $accept = [];
+        Mail::to($email)->send(new PendingAccount($accept));
         return redirect()->back()->with('account_approved', 'Account Has Been Approved');
     }
 
     public function teacheraccountaccept(Request $request, $id)
     {
-        $teacher=User::find($id);
-//     ->update([
+        $teacher = User::find($id);
+        //     ->update([
         // $student->'account_status'=$request->1
-//     ]);
+        //     ]);
         // dd($student);
-        
-        $teacher->account_status=1;
+
+        $teacher->account_status = 1;
         $teacher->save();
         return redirect()->back()->with('account_approved', 'Account Has Been Approved');
     }
@@ -98,11 +105,20 @@ class AdminController extends Controller
     public function teacheraccountdelete($id)
     {
         Teacher::where('id', $id)->delete();
+
+
         return redirect()->back()->with('request_removed', 'Request Has Been Removed');
     }
     public function studentaccountdelete($id)
     {
-        Student::where('id', $id)->delete();
+        $student = Student::where('id', $id)->first();
+        $user_id = $student->user_id;
+        $student_userid = User::find($user_id);
+        $email = $student_userid->email;
+        // dd($email);
+        $reject = [];
+        Mail::to($email)->send(new RejectAccount($reject));
+        $student->delete();
         return redirect()->back()->with('request_removed', 'Request Has Been Removed');
     }
 }

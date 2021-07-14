@@ -2,7 +2,7 @@
 @section('title',"My Batch")
 @section('nav_bar')
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -10,7 +10,7 @@
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item" href="{{ route('teacher.batch_all_student') }}">Student List
+            <a class="dropdown-item" href="{{ route('MyBatchController.students') }}">Student List
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
@@ -18,57 +18,32 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item" href="{{ route('index') }}">Notification
+            <a class="dropdown-item" href="">Notification
             </a>
         </li>
 
     </ul>
-
-    <!-- Right navbar links -->
-
 </nav>
 
 
 @endsection
 @section('content')
 <div class="container">
-    <h2> </h2>
 
     <div class="container">
         <div class="card card-secondary">
-            <div class="card-header text-center">
-                <b>
-                    <h4>University of Science and Technology Chittagong</h2>
-                        <h5>Faculty of Science Engineering & Technology</h3>
-                </b>
-                <h6>Department of Computer Science & Engineering</h5>
-                    <b>
-                        <h5>Batch -XXIX, 8Semester Final Examination, 2020</h3>
-                    </b>
 
-
-            </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="card-body table-responsive p-0">
-                    <div class="row">
-                        <div class="col">
-                            Course Code: <b>{{ $course->course_code }}</b>
-                        </div>
-                        <div class="col">
-                            Course Title: <b>{{ $course->course_name }}</b>
-                        </div>
-                        <div class="col">
-                            Credit Code: <b>{{ $course->course_credit }}</b> Total: 300
-                        </div>
-                    </div>
+
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th class="sl">SL</th>
-                                <th>Reg.No</th>
+                                <th class="sl">Reg.No</th>
                                 <th>Roll.No</th>
-                                <th>Attendance(30)</th>
+                                <th class="sl">Attendance(30)</th>
                                 <th>Class Test(60)</th>
                                 <th>Part A(105)</th>
                                 <th>Part B(105)</th>
@@ -80,7 +55,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php $i=1; @endphp
+                            @php $i=1;
+
+                            @endphp
                             @foreach($results as $result)
 
 
@@ -112,7 +89,10 @@
                 </div>
             </div>
             <div class="card-footer text-right">
-                <a href="{{ route('teacher.my_course_result_export',$course->id) }}" class="btn btn-warning">Export as
+
+                <a href="{{route('result.my_course_student',[$session_id,$semester_id,$course->id])}}"
+                    class='btn btn-info btn-sm'><i class="fas fa-plus-circle"></i> Add Result</a>
+                <a href="{{ route('teacher.my_course_result_export',$course->id) }}" class="btn btn-warning btn-sm">Export as
                     PDF </a>
             </div>
         </div>

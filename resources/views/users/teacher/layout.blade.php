@@ -32,84 +32,23 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/5b63wl8ybhi7rxkv3pz7vt60x9e2rdxx5drkqo3ou4c7mkuf/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
-
-
     <link rel="stylesheet" href="{{ asset('css/ums.css') }}">
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
 
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-                <div class="row">
+    {{-- For Mobile Menu --}}
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light d-md-none">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
 
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box active">
-                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+        </ul>
+    </nav>
 
-                            <a href="{{ route('teacher.my_batch') }}" style="color:black;">
-                                <div class="info-box-content">
-                                    <span class="info-box-text font-weight-bold">My Batch</span>
 
-                                    <span class="subtitle">Show All </span>
-                                </div>
-                            </a>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-                            <a href="{{ route('teacher.my_courses') }}" style="color:black;">
-                            <div class="info-box-content">
-                                <span class="info-box-text font-weight-bold">My Courses</span>
-
-                                <span class="subtitle">Show All </span>
-                            </div>
-                        </a>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-                    <!-- fix for small devices only -->
-                    <div class="clearfix hidden-md-up"></div>
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-                            <a href="{{ route('teacher.semester_result') }}" style="color:black;">
-                            <div class="info-box-content">
-                                <span class="info-box-text font-weight-bold">Results</span>
-                                <span class="subtitle">Show All </span>
-                            </div>
-                        </a>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text font-weight-bold">My Notice</span>
-                            <span class="subtitle">Show All </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-
-            </nav>
-
-            @yield('nav_bar')
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -231,25 +170,151 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
 
-            @yield('content')
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
 
+                    <div class="row" style="margin-left:-15px">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h4>My Batch</h4>
 
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <a href="{{ route('teacher.my_batch') }}" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h4>My Courses</h4>
 
-            <!-- /.content -->
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <a href="{{ route('teacher.my_courses') }}" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-primary">
+                                <div class="inner">
+                              <h4>Notices</h4>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <a href="{{route('teacher.notice')}}" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                  <h4>Questions</h4>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
+            </section>
+
+        {{--
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <div class="row">
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box active">
+                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+
+                        <a href="{{ route('teacher.my_batch') }}" style="color:black;">
+        <div class="info-box-content">
+            <span class="info-box-text font-weight-bold">My Batch</span>
+
+            <span class="subtitle">Show All </span>
         </div>
+        </a>
+        <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+            <a href="{{ route('teacher.my_courses') }}" style="color:black;">
+                <div class="info-box-content">
+                    <span class="info-box-text font-weight-bold">My Courses</span>
 
-        <aside class="control-sidebar control-sidebar-dark">
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sizebar Content</p>
+                    <span class="subtitle">Show All </span>
+                </div>
+            </a>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix hidden-md-up"></div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+            <a href="{{ route('teacher.semester_result') }}" style="color:black;">
+                <div class="info-box-content">
+                    <span class="info-box-text font-weight-bold">Results</span>
+                    <span class="subtitle">Show All </span>
+                </div>
+            </a>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text font-weight-bold">My Notice</span>
+                <span class="subtitle">Show All </span>
             </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    </div>
 
-        </aside>
+    </nav> --}}
+
+    @yield('nav_bar')
+
+     @yield('content')
+
+    </div>
+
+
     </div>
 </body>
 
@@ -264,6 +329,7 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     // $.widget.bridge('uibutton', $.ui.button)
+
 </script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -293,43 +359,42 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
 </script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
 
 
-$(document).on('click','#change_picture_btn',function(){
-        $('#upload_profile_image').click();
+        $(document).on('click', '#change_picture_btn', function() {
+            $('#upload_profile_image').click();
+        });
+
+
+        $('#upload_profile_image').ijaboCropTool({
+            preview: '.updated_picture'
+            , setRatio: 1
+            , allowedExtensions: ['jpg', 'jpeg', 'png']
+            , buttonsText: ['CROP', 'QUIT']
+            , buttonsColor: ['#30bf7d', '#ee5155', -13]
+            , processUrl: '{{ route("teacherPictureUpdate") }}'
+            , withCSRF: ['_token', '{{ csrf_token() }}']
+            , onSuccess: function(message, element, status) {
+                alert(message);
+            }
+            , onError: function(message, element, status) {
+                alert(message);
+            }
+        });
+
+
     });
-
-
-       $('#upload_profile_image').ijaboCropTool({
-          preview : '.updated_picture',
-          setRatio:1,
-          allowedExtensions: ['jpg', 'jpeg','png'],
-          buttonsText:['CROP','QUIT'],
-          buttonsColor:['#30bf7d','#ee5155', -13],
-          processUrl:'{{ route("teacherPictureUpdate") }}',
-           withCSRF:['_token','{{ csrf_token() }}'],
-          onSuccess:function(message, element, status){
-             alert(message);
-          },
-          onError:function(message, element, status){
-            alert(message);
-          }
-       });
-
-
-});
-
-
-
 
 </script>
 <script>
     tinymce.init({
-             selector: '#post_body',
+        selector: '#post_body',
 
-            })
+    })
+
 </script>

@@ -112,7 +112,6 @@ class UserSeeder extends Seeder
                 'account_status' => '1',
             ],
 
-
             [
                 'name' => 'sc',
                 'email' => 'sc@gmail.com',
@@ -121,7 +120,22 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('sc@gmail.com'),
                 'account_status' => '1',
             ],
-
+            [
+                'name' => 'dhk',
+                'email' => 'dhk@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('dhk@gmail.com'),
+                'account_status' => '1',
+            ],
+            [
+                'name' => 'iac',
+                'email' => 'iac@gmail.com',
+                'role' => '3',
+                'picture' => '16531623773774_avatar',
+                'password' => Hash::make('iac@gmail.com'),
+                'account_status' => '1',
+            ],
             [
                 'name' => 'rc',
                 'email' => 'rc@gmail.com',
@@ -141,23 +155,7 @@ class UserSeeder extends Seeder
                 'account_status' => '1',
             ],
 
-            [
-                'name' => 'dhk',
-                'email' => 'dhk@gmail.com',
-                'role' => '3',
-                'picture' => '16531623773774_avatar',
-                'password' => Hash::make('dhk@gmail.com'),
-                'account_status' => '1',
-            ],
-            [
-                'name' => 'iac',
-                'email' => 'iac@gmail.com',
-                'role' => '3',
-                'picture' => '16531623773774_avatar',
-                'password' => Hash::make('iac@gmail.com'),
-                'account_status' => '1',
-            ],
-//Students
+
             [
                 'name' => 'Joy Dhar',
                 'email' => 'joyustcian@gmail.com',
@@ -252,7 +250,7 @@ class UserSeeder extends Seeder
                 'role' => '2',
                 'picture' => '16531623773774_avatar',
                 'password' => Hash::make('admin@gmail.com'),
-                'account_status' => '0',
+                'account_status' => '1',
             ],
 
         ];

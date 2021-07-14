@@ -4,27 +4,16 @@
 
 
 @section('content')
-<div class="" style="padding-top:20px;">
-<div class="col-md-12">
-<div class="tab-content">
-  <div class="tab-pane active" id="activity">
-
-    <div class="card-header">
-        @if(Session::has('account_approved'))
-        <div class="alert alert-success" role='alert'>
-
-        {{Session::get('account_approved')}}
-
-        </div>
-        @elseif(Session::has('request_removed'))
-        <div class="alert alert-danger" role='alert'>
-            {{Session::get('request_removed')}}
-            </div>
-                @endif
-        <h3 class="card-title">Expandable Table</h3>
+<div class="container">
+    <div class="card card-secondary  table-responsive p-0">
+      <div class="card-header">
+        <h3 class="card-title">Student Pending Account</h3>
       </div>
+      <!-- /.card-header -->
       <div class="card-body">
-        <table class="table table-bordered table-hover">
+        <div class="card-body table-responsive p-0">
+          <table class="table table-bordered table-hover">
+
           <thead>
             <tr>
               <th>Department</th>
@@ -88,5 +77,14 @@
 
 
 </div></div></div></div>
+@if(Session::has('account_approved'))
+<script>
+swal("Approved", "Student account has been activated successfully", "success");
+</script>
+@elseif(Session::has('request_removed'))
+<script>
+    swal("Rejected", "Student information has been removed", "error");
+    </script>
+        @endif
 @endsection
 
