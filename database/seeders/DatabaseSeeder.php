@@ -15,18 +15,20 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-StudentProfileSeeder::class,
-DepartmentSeeder::class,
+            StudentProfileSeeder::class,
+            DepartmentSeeder::class,
 
- SemesterSeeder::class,
- CourseSeeder::class,
-UserSeeder::class,
-CoursetypeSeeder::class,
-AssignCoursesSeeder::class,
- SessionSeeder::class,
-  TeacherSeeder::class,
-BatchSeeder::class,
-ResultSeeder::class
+            SemesterSeeder::class,
+            CourseSeeder::class,
+            UserSeeder::class,
+            CoursetypeSeeder::class,
+            AssignCoursesSeeder::class,
+            SessionSeeder::class,
+            TeacherSeeder::class,
+            BatchSeeder::class,
+            ResultSeeder::class,
+            Batch_semester_seeder::class,
+            Batch_student_seeder::class,
         ]);
     }
 }

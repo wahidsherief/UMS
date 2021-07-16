@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class Batch extends Model
 {
     use HasFactory, Notifiable;
-    protected $table="batches";
+    protected $table = "batches";
     public function student()
     {
         return $this->hasMany(Student::class);
@@ -31,5 +31,9 @@ class Batch extends Model
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
+    }
+    public function batch_student()
+    {
+        return $this->hasMany(Batch_student::class);
     }
 }

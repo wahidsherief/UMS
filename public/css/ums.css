@@ -45,3 +45,6 @@
     right: 15px;
     top: 5px !important;
 }
+td {
+    text-align: center;
+  }

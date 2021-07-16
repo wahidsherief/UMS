@@ -16,8 +16,6 @@
 
     @foreach($students as $student)
 
-
-
     <div class="card-body">
 
 

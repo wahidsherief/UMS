@@ -44,12 +44,22 @@ class ResultController extends Controller
     }
     public function add_result_submit(Request $request, $session_id, $student_id, $semester_id, $course_id, $course_credit)
     {
+
+        $request->validate(
+            [
+
+                'class_test' => 'required|numeric|min:1|max:60',
+                'attendance' => 'required|numeric|min:1|max:30',
+                'part_a' => 'required|numeric|min:1|max:105',
+                'part_b' => 'required|numeric|min:1|max:105',
+
+            ]
+        );
+
+
+
         $courses_data =  Course::where('id', $course_id)->first();
-        //dd($courses_data);
         $course_credit = $courses_data->course_credit;
-        //dd($course_credit);
-
-
         $results = new Result();
         $results->session_id = $session_id;
         $results->student_id = $student_id;

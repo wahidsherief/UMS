@@ -45,18 +45,29 @@ class StudentController extends Controller
     //Student Full Profile
     public function student_full_information(Request $request)
     {
+
+        $request->validate([
+            'batch_id' => 'required',
+            'firstname' => 'required | min:2|max:30',
+            'lastname' => 'required| min:2|max:30',
+            'roll_number' => 'required|numeric',
+            'registration_number' => 'required|numeric',
+            'phone' => 'required|numeric',
+            'address' => 'required',
+            'blood_group' => 'required',
+            'hsc_gpa' => 'required|numeric|min:1|max:5',
+            'ssc_gpa' => 'required|numeric|min:1|max:5',
+            'jsc_gpa' => 'required|min:1|max:5',
+            'psc_gpa' => 'required|min:1|max:5',
+        ]);
+
         $user = User::find(Auth::user()->id);
-
         $students = new Student;
-
         $students->department_id = $request->department_id;
         $students->batch_id = $request->batch_id;
         $students->semester_id = 8;
-
         $students->firstname = $request->firstname;
         $students->lastname = $request->lastname;
-
-
         $students->roll_number = $request->roll_number;
         $students->registration_number = $request->registration_number;
         $students->phone = $request->phone;

@@ -6,7 +6,16 @@
     <div class="card card-secondary">
       <div class="card-header">
         <h3 class="card-title"> Complete Your Profile</h3>
-      </div>
+    </div>
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <!-- /.card-header -->
       <div class="card-body">
             <div class="col-md-10 offset-md-1">
@@ -14,8 +23,6 @@
                 <!-- form start -->
                 <form action="{{ route('student_full_information_submit')}}" method="POST">
                     @csrf
-
-
                     <div class="card-body">
 
                         <div class="row">

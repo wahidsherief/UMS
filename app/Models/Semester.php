@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Semester extends Model
 {
     use HasFactory;
-    protected $table="semesters";
+    protected $table = "semesters";
 
     public function course()
     {
@@ -30,5 +30,9 @@ class Semester extends Model
     public function result()
     {
         return $this->hasMany(Result::class);
+    }
+    public function batch_semester()
+    {
+        return $this->hasMany(Batch_semester::class);
     }
 }

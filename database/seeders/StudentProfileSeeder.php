@@ -179,7 +179,7 @@ class StudentProfileSeeder extends Seeder
             [
                 'user_id' => '26',
                 'department_id' => '1',
-                'semester_id' => '8',
+                'semester_id' => '2',
                 'batch_id' => '2',
                 'firstname' => 'student8',
                 'lastname' => 'semester 8',

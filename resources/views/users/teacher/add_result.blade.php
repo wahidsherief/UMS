@@ -12,7 +12,9 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form action="{{route('submit.result',[$session_id,$student->id,$semester->id,$course->id,$course->course_credit]) }}" method="POST">
+                    <form
+                        action="{{route('submit.result',[$session_id,$student->id,$semester->id,$course->id,$course->course_credit]) }}"
+                        method="POST">
                         @csrf
                         <div class="row">
 
@@ -20,9 +22,13 @@
 
                                 <label for="exampleInputEmail1">Class Test (Marks)</label>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="Marks Range:0-60" name="class_test">
-                                </div>
-                            </div>
+                                    <input type="text" class="form-control" id="" placeholder="Marks Range:0-60"
+                                        name="class_test">
+
+                                @error('class_test')
+                                <span class="text-danger">{{ $message }}</span>
+                                                               @enderror
+                            </div></div>
 
 
 
@@ -32,27 +38,38 @@
                                 <label for="exampleInputEmail1">Attendance (Marks)</label>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="Marks Range: 0-30" name="attendance">
-                                </div>
-                            </div>
-                        </div>
+                                    <input type="text" class="form-control" id="" placeholder="Marks Range: 0-30"
+                                        name="attendance">
 
+                                @error('attendance')
+                                <span class="text-danger">{{ $message }}</span>
+                                                               @enderror
+                            </div> </div>
+
+                        </div>
                         <label for="exampleInputEmail1">Final Exam (Marks)</label>
                         <div class="row">
 
                             <div class="col">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="" placeholder="Part A" name="part_a">
-                                </div>
-                            </div>
+
+                                @error('part_a')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div> </div>
                             <div class="col">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="" placeholder="Part B" name="part_b">
-                                </div>
-                            </div>
+
+                                @error('part_b')
+                                <span class="text-danger">{{ $message }}</span>
+                                                               @enderror
+                            </div>   </div>
                         </div>
                         <div align="right">
-                            <button type="submit" class="btn btn-success"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"
+                                    aria-hidden="true"></i>
                                 Save</button>
                         </div>
                 </div>

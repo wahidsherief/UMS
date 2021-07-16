@@ -38,19 +38,29 @@ class MyBatchController extends Controller
         $teacher = Teacher::where('user_id', $auth_id)->first();
         $teacher_id = ($teacher->id);
         $batch = Batch::where('teacher_id', $teacher_id)->first();
-        // $batch_id = $batch->id;
-        // $batch_semester_id = $batch->semester_id;
-        // ALl availabl courss
-        $courses = AssignCourses::where('semester_id', $batch->semester_id)->with('course')->get();
-        // dd($courses);
 
+        $courses = AssignCourses::where('semester_id', $batch->semester_id)->with('course')->get();
+        $course_count = $courses->count();
 
         $current_semester_results = Result::where('semester_id', $batch->semester_id)->with(['student', 'course'])->get()->groupBy('student.id');
+        // dd($current_semester_results);
+        // $batch_students = Student::where('semester_id', $batch->semester_id)->with('result')->get();
 
-        $batch_students = Student::where('semester_id', $batch->semester_id)->with('result')->get();
+        $batch_students = Student::with('result')
+            ->where('semester_id', $batch->semester_id)
+            ->get();
+
+
+        $batch_totoal_student = $batch_students->count();
+        // dd($batch_totoal_student);
+        // $count = $batch_students[1]->result->count();
+        // dd($count);
         // dd($batch_students);
+        $batch_students_grouped = $batch_students->groupBy('result.student_id');
+        // dd($batch_students_grouped);
+        // dd($batch_students_grouped->all());
 
-
+        return view('users.teacher.my_batch.notification', compact(['batch_students', 'courses', 'batch_students', 'course_count']));
 
 
 
@@ -67,13 +77,11 @@ class MyBatchController extends Controller
 
 
         // foreach ($batch_students as $batch_student) {
-        //     $student_id = ($batch_student->id);
+        //     $student_id = ($batch_student->);
         //     $available_courses = Result::where('student_id', $student_id)->with('course')->first();
         // }
         //dd($available_courses);
 
 
-
-        return view('users.teacher.my_batch.notification', compact(['current_semester_results', 'courses']));
     }
 }
