@@ -8,7 +8,6 @@ use App\Models\Student;
 use App\Models\Session;
 use App\Models\Semester;
 use App\Models\Course;
-
 use App\Models\Teacher;
 use App\Models\AssignCourses;
 use Illuminate\Support\Facades\Auth;
@@ -17,23 +16,28 @@ class ResultController extends Controller
 {
 
 
-    public function result_student_list($session_id, $semester_id, $course_id)
+    public function semester_students($session_id, $semester_id, $course_id)
     {
-        $course = Course::where('id', $course_id)->first();
-        $semester = Semester::where('id', $semester_id)->first();
-        // dd($course);
-        $semester_students = Student::where('semester_id', $semester_id)->orderBy('id', 'ASC')->get();
-        // dd($semester_students);
-        foreach ($semester_students as $semester_student) { {
-                $student_id = $semester_student->id;
-                // dd($student_id);
-                $existing_result = Result::where([['student_id', $student_id], ['course_id', $course_id],])->first();
-                // dd($existing_result);
-            }
-            return view('users.teacher.semester_students_details', compact(['semester_students', 'course', 'semester', 'session_id']));
-        }
+        $semester_students = Student::where('semester_id', $semester_id)->with('user')->orderBy('roll_number', 'ASC')->get();
+        //dd($semester_students);
+        $total_students =  $semester_students->count();
+        return view('users.teacher.courses.students', compact(['course_id', 'semester_id', 'session_id', 'semester_students']));
     }
 
+
+    public function student_profile_details($session_id, $student_id, $course_id)
+    {
+        $student_details = Student::where('id', $student_id)->with(['user', 'result'])->first();
+
+        $result = Result::where([['student_id', $student_details->id], ['course_id', $course_id]])->first();
+
+        $add_result = 0;
+        if ($result === null) {
+            $add_result = 1;
+        }
+
+        return view('users.teacher.courses.student_profile', compact(['session_id', 'student_id', 'course_id', 'student_details', 'add_result']));
+    }
 
     public function add_result($session_id, $student_id, $semester_id, $course_id)
     {
@@ -98,13 +102,11 @@ class ResultController extends Controller
     public function semester_result(Request $request)
     {
         $auth_id = Auth::user()->id;
-        // dd($teacher_id);
+
         $teacher = Teacher::find($auth_id);
-        //dd($teacher);
+
         $internal_courses = AssignCourses::where('teacher_internal_id', $teacher->id)->with(['semester'])->get();
 
-
-        //dd($results);
         return view('users.teacher.available_session_result', compact(['internal_courses']));
     }
 
@@ -112,7 +114,6 @@ class ResultController extends Controller
     {
         $results = Result::where('semester_id', $semester_id)->with(['session', 'student', 'semester', 'course'])->latest()->get();
         $semester = Semester::where('id', $semester_id)->first();
-        //dd($results);
 
         return view('users.teacher.show_result', compact('results', 'semester'));
     }
@@ -120,13 +121,12 @@ class ResultController extends Controller
     public function student_full_result($id)
     {
         $student_id = $id;
-        //  dd($student_id);
+
         $student_info = Student::where('id', $student_id)->first();
         $student_results = Result::where('student_id', $student_id)->with(['course', 'semester', 'student'])->latest()->get();
-        //dd($student_result);
+
         return view('users.teacher.student_full_result', compact(['student_results', 'student_info']));
     }
-
 
 
     public function accept_my_batch_result(Request $request, $student_id, $course_id)

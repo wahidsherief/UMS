@@ -34,7 +34,7 @@
     border: 3px solid #adb5bd;
     margin: 0 auto;
     padding: 3px;
-    width: 323px;
+    width: 343px;
 }
 .student-info{
     width:80%;
@@ -45,6 +45,6 @@
     right: 15px;
     top: 5px !important;
 }
-td {
+td,th {
     text-align: center;
   }

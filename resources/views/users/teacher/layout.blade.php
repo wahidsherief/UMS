@@ -96,7 +96,7 @@
 
                                 @endif
                                 @if($account_status==1)
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{route('teacher.dashboard')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>After Completing Profile</p>
@@ -107,7 +107,7 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>After Completing Profile</p>
                                     </a>
-                                </li>
+                                </li> --}}
 
                             </ul>
                         </li>
@@ -128,7 +128,7 @@
 
 
 
-
+{{--
                         <li class="nav-item">
                             <a href="{{route('teacher.session_result')}}" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
@@ -144,19 +144,20 @@
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Add Notice</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a href="{{route('teacher.notice')}}"
                                 class="nav-link {{ (request()->is('teacher/notice'))?'active': ''}}">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>All Notice</p>
                             </a>
-                        </li>
+                        </li> --}}
                         @endif
-                        <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                              <p>LogOut</p>
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -164,6 +165,7 @@
                             </form>
 
                         </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -179,7 +181,7 @@
                     <div class="row" style="margin-left:-15px">
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-info">
+                            <a  class="small-box bg-info" href="{{ route('teacher.my_batch') }}">
                                 <div class="inner">
                                     <h4>My Batch</h4>
 
@@ -187,14 +189,14 @@
                                 <div class="icon">
                                     <i class="fas fa-users"></i>
                                 </div>
-                                <a href="{{ route('teacher.my_batch') }}" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <div class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></div></a>
                             </div>
-                        </div>
+
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-success">
+                            <a  class="small-box bg-success" href="{{ route('teacher.my_courses') }}" >
                                 <div class="inner">
                                     <h4>My Courses</h4>
 
@@ -202,41 +204,41 @@
                                 <div class="icon">
                                     <i class="fas fa-book"></i>
                                 </div>
-                                <a href="{{ route('teacher.my_courses') }}" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <div class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></div></a>
                             </div>
-                        </div>
+
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-primary">
+                            <a class="small-box bg-primary" href="{{route('teacher.notice')}}" >
                                 <div class="inner">
                               <h4>Notices</h4>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-bell"></i>
                                 </div>
-                                <a href="{{route('teacher.notice')}}" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <div class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></div></a>
                             </div>
-                        </div>
+
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-warning">
+                            <a class="small-box bg-warning" href="{{ route('courses.all_students',1) }}">
                                 <div class="inner">
-                                  <h4>Questions</h4>
+                                  <h4>Students</h4>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-book-open"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <div class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i> </div></a>
                             </div>
                         </div>
                         <!-- ./col -->
                     </div>
-                </div>
+
             </section>
 
         {{--

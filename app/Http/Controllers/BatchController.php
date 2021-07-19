@@ -12,26 +12,26 @@ class BatchController extends Controller
 {
     public function add_batch()
     {
-        $semesters=Semester::latest()->get();
-        $teachers=Teacher::latest()->get();
+        $semesters = Semester::latest()->get();
+        $teachers = Teacher::latest()->get();
         $batches = Batch::latest()->with('semester', 'teacher')->get();
-        return view('users.admin.add_batch', compact(['batches','semesters','teachers']));
+        return view('users.admin.add_batch', compact(['batches', 'semesters', 'teachers']));
     }
 
     public function update_batch($id)
     {
         $batches = Batch::where('id', $id)->with('semester', 'teacher')->first();
-        $semesters=Semester::latest()->get();
-        $teachers=Teacher::latest()->get();
+        $semesters = Semester::latest()->get();
+        $teachers = Teacher::latest()->get();
 
-        return view('users.admin.update_batch', compact(['batches','semesters','teachers']));
+        return view('users.admin.update_batch', compact(['batches', 'semesters', 'teachers']));
     }
 
     public function add_batch_submit(Request $request)
     {
         $batches = new Batch();
         $batches->semester_id = $request->semester_id;
-        $batches->teacher_id= $request->batch_advisor;
+        $batches->teacher_id = $request->batch_advisor;
         $batches->batch_name = $request->batch_name;
         $batches->save();
         return redirect()->back()->with('batch_created', 'Batch Has Been Created Successfully');
@@ -39,9 +39,10 @@ class BatchController extends Controller
 
     public function update_batch_submit(Request $request, $id)
     {
-        $batches=Batch::find($id);
+        $batches = Batch::find($id);
+        // dd($batches);
         $batches->semester_id = $request->semester_id;
-        $batches->teacher_id= $request->batch_advisor;
+        $batches->teacher_id = $request->batch_advisor;
         $batches->batch_name = $request->batch_name;
         $batches->save();
         return redirect()->route('add.batch')->with('batch_updated', 'Account Has Been Approved');

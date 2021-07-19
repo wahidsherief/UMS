@@ -5,12 +5,12 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\teacher\SessionController;
-use App\Http\Controllers\teacher\activities;
+use App\Http\Controllers\teacher\StudentController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\teacher\CoursesControlller;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\teacher\MyBatchController;
@@ -44,9 +44,6 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
         Route::get('my-courses', [SessionController::class, 'my_courses'])->name('teacher.my_courses');
 
-        Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
-        Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
-        Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'add_result_submit'])->name('submit.result');
 
         Route::get('semester', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
@@ -79,7 +76,20 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('search-question', [QuestionController::class, 'search'])->name('question.search');
 
         //result
+        Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
+        Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
+        Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'add_result_submit'])->name('submit.result');
 
-        Route::get('student-list-result/{session_id}/{semester_id}/{course_id}', [ResultController::class, 'result_student_list'])->name('result.my_course_student');
+        Route::get('course/student-profile/{session_id}/{semester_id}/{course_id}', [ResultController::class, 'semester_students'])->name('result.my_course_student');
+        //Courses
+        Route::get('course/student-profile-view/{session_id}/{student_id}/{course_id}', [ResultController::class, 'student_profile_details'])->name('course.student_profile_view');
+        Route::get('course/show_result/{session_id}/{student_id}/{course_id}', [CoursesControlller::class, 'single_student_result'])->name('courses.show_result');
+        Route::get('course/update_result/{session_id}/{student_id}/{course_id}', [CoursesControlller::class, 'single_student_update_result'])->name('courses.update_result');
+        Route::POST('course/update_result_submit/{session_id}/{student_id}/{course_id}', [CoursesControlller::class, 'single_student_update_result_submit'])->name('courses.update_result_submit');
+
+        //students
+
+        Route::get('semester/{id}', [StudentController::class, 'all_students'])->name('courses.all_students');
+        Route::get('student-details/{id}', [StudentController::class, 'my_batch_student_profile'])->name('teacher.student_profile');
     });
 });

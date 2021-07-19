@@ -1,33 +1,6 @@
 @extends('users.teacher.layout')
 @section('title',"Students Details")
-@section('nav_bar')
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand navbar-white navbar-light ml-2">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
 
-
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item active" href="{{ route('MyBatchController.students') }}">Student List
-                    </a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('teacher.my_batch_courses') }}">Courses
-                    </a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a class="dropdown-item" href="{{ route('MyBatchController.notification') }}">Notification
-                    </a>
-                </li>
-
-            </ul>
-
-            <!-- Right navbar links -->
-
-        </nav>
-
-
-@endsection
 
 @section('content')
 
@@ -63,14 +36,7 @@
             <!-- /.col -->
             <div class="col-md-7">
                 <div class="card">
-                    <div class="card-header p-2">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#personal_info"
-                                    data-toggle="tab">Student Information</a></li>
-
-
-                        </ul>
-                    </div>
+                   
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="personal_info">
