@@ -15,44 +15,84 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    .card-header{
+        background:transparent;
+
+    }
+    table th {
+        border: 1px solid #555;
+        background-color: transparent;
+        padding:5px;
+        font-weight:bold;
+        text-align:center;
+    }
+    table td {
+        border: 1px solid #555;
+        background-color: transparent;
+        padding:5px;
+        text-align:center;
+    }
+    .rowspan {
+        border-left-width: 10px;
+    }
+    .lg-col{
+        width:270px;
+    }
+    .course-info-bar{
+        flex:1;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+</style>
+
+
+
 </head>
 <body>
 
         <div style="width:100%">
 
                 <div class="card-header text-center">
-                  <b>  <h4>University of Science and Technology Chittagong</h2>
-                    <h5>Faculty of Science Engineering & Technology</h3></b>
-                    <h6>Department of Computer Science & Engineering</h5>
-                <b>    <h5>Batch -XXIX, 8Semester Final Examination, 2020</h3></b>
-
+                  <b>  <h2>University of Science and Technology Chittagong</h2>
+                    <h3>Faculty of Science Engineering & Technology</h3></b>
+                    <h3>Department of Computer Science & Engineering</h3>
+                <b>    <h3>Final Examination, 2021</h3></b>
+                <b>    <h3>Batch - XXIX, Semester - 8th</h3></b>
 
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                        <div class="row">
-                            <div class="col text-left">
+                        <div class="d-flex justify-content-between" >
+                            <div class="">
                                 Course Code: <b>{{ $course->course_code }}</b>
                             </div>
-                            <div class="col text-center">
+                            <div class="">
                                 Course Title: <b>{{ $course->course_name }}</b>
                             </div>
-                            <div class="col text-right">
-                                Credit Code: <b>{{ $course->course_credit }}</b> Total: 300
+                            <div class="">
+                                Course Credit: <b>{{ $course->course_credit }}</b>
+                            </div>
+                            <div class="">
+                                Total: <b>{{ $course->course_credit*100 }}</b>
                             </div>
                         </div>
                         <table>
                             <thead>
                                 <tr>
                                     <th class="sl">SL</th>
-                                    <th>Reg.No</th>
-                                    <th>Roll.No</th>
-                                    <th>Attendance(30)</th>
-                                    <th>Class Test(60)</th>
-                                    <th>Part A(105)</th>
-                                    <th>Part B(105)</th>
-                                    <th>Total(300)</th>
-                                    <th>Percentage</th>
+                                    <th>Reg. No</th>
+                                    <th>ID No</th>
+                                    <th class="lg-col">Student Name</th>
+                                    <th>Attd. (30)</th>
+                                    <th>Class Test (60)</th>
+                                    <th>Part A (105)</th>
+                                    <th>Part B (105)</th>
+                                    <th>Total (300)</th>
+                                    <th>%</th>
                                     <th>N Grade</th>
                                     <th>L Grade</th>
 
@@ -71,6 +111,7 @@
 
                                     <td>{{$result->student->registration_number}}</td>
                                     <td>{{$result->student->roll_number}}</td>
+                                    <td class="text-left">{{$result->student->firstname .' '. $result->student->lastname}} {{$result->student->firstname .' '. $result->student->lastname}}</td>
                                     <td>{{$result->attendance}}</td>
                                     <td>{{$result->class_test}}</td>
                                     <td>{{$result->part_a}}</td>

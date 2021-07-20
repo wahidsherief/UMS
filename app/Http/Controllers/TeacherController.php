@@ -149,7 +149,7 @@ class TeacherController extends Controller
         $course = Course::where('id', $course_id)->first();
         $results = Result::where([['course_id', $course_id]])->with('session', 'semester', 'course', 'student')->latest()->get();
         // dd($results[0]);
-        $pdf = PDF::loadView('users.teacher.my_course_result_sheet_export', compact(['results', 'course']));
+        $pdf = PDF::loadView('users.teacher.my_course_result_sheet_export', compact(['results', 'course']))->setPaper('a4', 'landscape');
         return $pdf->download('Course_result.pdf');
         // return view('users.teacher.my_course_result_sheet_export', compact(['results','course']));
     }
