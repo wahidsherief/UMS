@@ -36,7 +36,9 @@ class TeacherController extends Controller
     public function notice()
     {
         $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(10);
-        return view('users.teacher.notice', compact('notice'));
+        $count = Notice::all()->count();
+        //dd($count);
+        return view('users.teacher.notice', compact(['notice', 'count']));
     }
 
     public function single_notice($id)

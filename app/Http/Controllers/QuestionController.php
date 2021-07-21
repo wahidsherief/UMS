@@ -15,11 +15,11 @@ class QuestionController extends Controller
     public function upload_question($session_id, $course_id)
     {
         //  dd($teacher);
-        $session_id=$session_id;
+        $session_id = $session_id;
         //dd($session_id);
-        $course_id=$course_id;
+        $course_id = $course_id;
         //dd($course_id);
-        return view('users.teacher.add_question', compact(['session_id','course_id']));
+        return view('users.teacher.add_question', compact(['session_id', 'course_id']));
     }
     public function upload_question_submit(Request $request, $session_id, $course_id)
     {
@@ -31,10 +31,10 @@ class QuestionController extends Controller
 
         $question->session_id = $session_id;
         $question->user_id = $auth_id;
-        $question->teacher_id =$teacher->id;
-        $question->course_id =$course_id;
-        $question->question_type =$request->question_type;
-        $question->question_category =$request->question_category;
+        $question->teacher_id = $teacher->id;
+        $question->course_id = $course_id;
+        $question->question_type = $request->question_type;
+        $question->question_category = $request->question_category;
 
 
 
@@ -51,15 +51,15 @@ class QuestionController extends Controller
 
     public function show_question()
     {
-        $questions = Question::with(['session','user','teacher','course'])->orderBy('id', 'DESC')->get();
-        //   dd($questions);
-        $courses=Course::get();
-        return view('users.teacher.show_question', compact(['questions','courses']));
+        $questions = Question::with(['session', 'user', 'teacher', 'course'])->orderBy('id', 'DESC')->get();
+
+        $courses = Course::get();
+        return view('users.teacher.show_question', compact(['questions', 'courses']));
     }
-    
+
     public function download($id)
     {
-        $data=Question::where('id', $id)->with(['user','teacher','course','session'])->first();
+        $data = Question::where('id', $id)->with(['user', 'teacher', 'course', 'session'])->first();
 
         //  dd($data);
         return view('users.teacher.show_single_question', compact('data'));
@@ -67,10 +67,10 @@ class QuestionController extends Controller
     public function search()
     {
         $search_text = $_GET['query'];
-        $courses=Course::get();
+        $courses = Course::get();
         // dd($search_text);
-        $questions = Question::where('course_id', 'LIKE', '%'.$search_text.'%')->with(['session','user','teacher','course'])->get();
+        $questions = Question::where('course_id', 'LIKE', '%' . $search_text . '%')->with(['session', 'user', 'teacher', 'course'])->get();
 
-        return view('users.teacher.search_data', compact(['questions','courses']));
+        return view('users.teacher.search_data', compact(['questions', 'courses']));
     }
 }

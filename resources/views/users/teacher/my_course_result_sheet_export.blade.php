@@ -66,19 +66,17 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                        <div class="d-flex justify-content-between" >
-                            <div class="">
+                        <div class="row" >
+                            <div class="col">
                                 Course Code: <b>{{ $course->course_code }}</b>
                             </div>
-                            <div class="">
+                            <div class="col text-center">
                                 Course Title: <b>{{ $course->course_name }}</b>
                             </div>
-                            <div class="">
-                                Course Credit: <b>{{ $course->course_credit }}</b>
+                            <div class="col text-right">
+                                Course Credit: <b class='mr-2'>{{ $course->course_credit }}</b>  Total: <b>{{ $course->course_credit*100 }}</b>
                             </div>
-                            <div class="">
-                                Total: <b>{{ $course->course_credit*100 }}</b>
-                            </div>
+
                         </div>
                         <table>
                             <thead>
@@ -111,7 +109,7 @@
 
                                     <td>{{$result->student->registration_number}}</td>
                                     <td>{{$result->student->roll_number}}</td>
-                                    <td class="text-left">{{$result->student->firstname .' '. $result->student->lastname}} {{$result->student->firstname .' '. $result->student->lastname}}</td>
+                                    <td class="text-left">{{$result->student->firstname .' '. $result->student->lastname}} </td>
                                     <td>{{$result->attendance}}</td>
                                     <td>{{$result->class_test}}</td>
                                     <td>{{$result->part_a}}</td>

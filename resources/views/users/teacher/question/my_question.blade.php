@@ -5,11 +5,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
-        <ul class="navbar-nav pl-2">
+        <ul class="navbar-nav">
 
 
             <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item active" href="{{ route('teacher.show_questions') }}">All Questions
+                <a class="dropdown-item" href="{{ route('teacher.show_questions') }}">All Questions
                 </a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item " href="{{ route('teacher.my_notice',Auth::user()->id) }}">My Questions
+                <a class="dropdown-item active" href="{{ route('teacher.my_question',Auth::user()->id) }}">My Questions
                 </a>
             </li>
 
@@ -79,8 +79,8 @@
                                 <td>{{$question->course->course_name}}</td>
                                 <td>{{$question->question_type}}</td>
                                 <td>
-                                    <a href="{{route('teacher.question_download',$question->id)}}" class="btn"
-                                        style="background:#A4066A;color:white"> <i class="fas fa-eye"></i></a>
+                                    <a href="{{route('teacher.question_download',$question->id)}}" class="btn btn-info"
+                                        style="color:white"> <i class="fas fa-eye"></i></a>
 
                                 </td>
                             </tr>
@@ -95,5 +95,6 @@
             </div>
         </div>
     </div>
-</div></div></div>
+</div>
+</div></div>
 @endsection

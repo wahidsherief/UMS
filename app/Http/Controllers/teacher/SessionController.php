@@ -35,6 +35,7 @@ class SessionController extends Controller
         // dd($AssignCoursess);
         return view('users.teacher.teacher_internal', compact(['internal_courses', 'external_courses', 'session_id']));
     }
+
     public function external_activities()
     {
         $id = Auth::user()->id;

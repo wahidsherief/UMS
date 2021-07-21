@@ -73,12 +73,10 @@
 
                 @php $account_status=Auth::user()->account_status;
                 @endphp
-                <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -96,18 +94,7 @@
 
                                 @endif
                                 @if($account_status==1)
-                                {{-- <li class="nav-item">
-                                    <a href="{{route('teacher.dashboard')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>After Completing Profile</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('teacher.data')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>After Completing Profile</p>
-                                    </a>
-                                </li> --}}
+
 
                             </ul>
                         </li>
@@ -119,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('teacher.students')}}"
+                            <a href="{{ route('courses.all_students',1) }}"
                                 class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Students</p>
@@ -128,30 +115,6 @@
 
 
 
-{{--
-                        <li class="nav-item">
-                            <a href="{{route('teacher.session_result')}}" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Results
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('teacher.addnotice')}}"
-                                class="nav-link {{ (request()->is('teacher/addnotice'))?'active': ''}}">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>Add Notice</p>
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a href="{{route('teacher.notice')}}"
-                                class="nav-link {{ (request()->is('teacher/notice'))?'active': ''}}">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>All Notice</p>
-                            </a>
-                        </li> --}}
                         @endif
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -225,9 +188,9 @@
                         <!-- ./col -->
                          <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <a class="small-box bg-warning" href="{{ route('courses.all_students',1) }}">
+                            <a class="small-box bg-warning" href="{{ route('teacher.show_questions') }}">
                                 <div class="inner">
-                                  <h4>Students</h4>
+                                  <h4>Question Bank</h4>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-book-open"></i>

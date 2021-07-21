@@ -48,3 +48,36 @@
 td,th {
     text-align: center;
   }
+
+  table {
+    border-collapse: collapse;
+}
+.card-header{
+    background:transparent;
+
+}
+table th {
+    border: 1px solid #555;
+    background-color: transparent;
+    padding:5px;
+    font-weight:bold;
+    text-align:center;
+    
+}
+table td {
+    border: 1px solid #555;
+    background-color: transparent;
+    padding:5px;
+    text-align:center;
+}
+.rowspan {
+    border-left-width: 10px;
+}
+.lg-col{
+    width:270px;
+}
+.course-info-bar{
+    flex:1;
+    flex-direction:row;
+    justify-content: space-between;
+}

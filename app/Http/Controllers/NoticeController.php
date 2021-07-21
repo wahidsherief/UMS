@@ -15,7 +15,8 @@ class NoticeController extends Controller
             [
                 'notice_title' => 'required|min:1|max:200',
                 'notice_body' => 'required',
-                'notice_file' => 'mimes:jpeg,jpg,png | max:5000',
+                'notice_file' => 'required|mimes:jpeg,jpg,png',
+
             ]
         );
 

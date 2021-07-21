@@ -37,20 +37,21 @@
             <div class="card-body">
                 <div class="card-body table-responsive p-0">
 
-                    <table class="table table-bordered table-hover">
-                        <thead>
+                    <table class="table table-bordered table-hover align-top">
+                        <thead class="align-top">
                             <tr>
-                                <th class="sl">SL</th>
-                                <th class="sl">Reg.No</th>
-                                <th>Roll.No</th>
-                                <th class="sl">Attendance(30)</th>
-                                <th>Class Test(60)</th>
-                                <th>Part A(105)</th>
-                                <th>Part B(105)</th>
-                                <th>Total(300)</th>
-                                <th>Percentage</th>
-                                <th>N Grade</th>
-                                <th>L Grade</th>
+                                <th class="sl align-middle">SL</th>
+                                <th  class="align-middle">Reg. No</th>
+                                <th class="align-middle">ID No</th>
+                                <th class="lg-col align-middle">Student Name</th>
+                                <th  class="align-middle">Attd. (30)</th>
+                                <th  class="align-middle">Class Test (60)</th>
+                                <th  class="align-middle">Part A (105)</th>
+                                <th  class="align-middle">Part B (105)</th>
+                                <th  class="align-middle">Total (300)</th>
+                                <th class="align-middle">%</th>
+                                <th class="align-middle">N Grade</th>
+                                <th class="align-middle">L Grade</th>
 
                             </tr>
                         </thead>
@@ -63,12 +64,12 @@
 
                             <!-- ./card-header -->
 
-
                             <tr data-widget="expandable-table" aria-expanded="false">
                                 <td> {{$i++}} </td>
 
                                 <td>{{$result->student->registration_number}}</td>
                                 <td>{{$result->student->roll_number}}</td>
+                                <td class="text-left">{{$result->student->firstname .' '. $result->student->lastname}} </td>
                                 <td>{{$result->attendance}}</td>
                                 <td>{{$result->class_test}}</td>
                                 <td>{{$result->part_a}}</td>
@@ -88,6 +89,9 @@
                     </table>
                 </div>
             </div>
+
+
+
             <div class="card-footer text-right">
 
                 <a href="{{route('result.my_course_student',[$session_id,$semester_id,$course->id])}}"

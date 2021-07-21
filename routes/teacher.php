@@ -6,9 +6,8 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\teacher\SessionController;
 use App\Http\Controllers\teacher\StudentController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\BatchController;
+use App\Http\Controllers\teacher\TeacherNoticeController;
+use App\Http\Controllers\teacher\TeacherQuestionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\teacher\CoursesControlller;
 use App\Http\Controllers\QuestionController;
@@ -24,13 +23,15 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('complete-profile', [TeacherController::class, 'pending'])->name('teacher.pending');
         Route::get('profile', [TeacherController::class, 'profile'])->name('teacher.profile');
         Route::get('setting', [TeacherController::class, 'setting'])->name('teacher.setting');
+        //Notice
         Route::get('addnotice', [TeacherController::class, 'addnotice'])->name('teacher.addnotice');
         Route::get('notice', [TeacherController::class, 'notice'])->name('teacher.notice');
-        Route::get('notice/{id}', [TeacherController::class, 'single_notice'])->name('teacher.single_notice');
-        Route::get('teacher_profile', [TeacherController::class, 'show_teacher_data'])->name('teacher.data');
-
         Route::POST('submitnotice/{id}', [NoticeController::class, 'insertNotice'])->name('insertNotice');
+        Route::get('notice/{id}', [TeacherController::class, 'single_notice'])->name('teacher.single_notice');
+        Route::get('my-notice/{id}', [TeacherNoticeController::class, 'my_notice'])->name('teacher.my_notice');
+        Route::get('notice-delete/{id}', [TeacherNoticeController::class, 'notice_delete'])->name('teacher.notice_delete');
 
+        Route::get('teacher_profile', [TeacherController::class, 'show_teacher_data'])->name('teacher.data');
         Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('teacher.UpdateInfo');
         Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('teacherPictureUpdate');
         Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('teacherChangePassword');
@@ -74,6 +75,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('questions', [QuestionController::class, 'show_question'])->name('teacher.show_questions');
         Route::get('download-question/{id}', [QuestionController::class, 'download'])->name('teacher.question_download');
         Route::get('search-question', [QuestionController::class, 'search'])->name('question.search');
+
+        Route::get('select-courses', [TeacherQuestionController::class, 'add_course_question'])->name('teacher.add_course_question');
+        Route::get('my-question/{id}', [TeacherQuestionController::class, 'my_question'])->name('teacher.my_question');
 
         //result
         Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');

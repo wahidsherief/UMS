@@ -18,14 +18,15 @@
                 </a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('MyBatchController.notification') }}">Notification
+                <a class="dropdown-item active" href="{{ route('MyBatchController.notification') }}">Notification
                 </a>
             </li>
 
         </ul>
     </nav>
+@endsection
 
-
+@section('content')
     <div class="container">
 
 
