@@ -21,9 +21,9 @@ class CreateTeachersTable extends Migration
             $table->string('teachers_short_name');
             $table->string('status');
             $table->string('phone');
-            $table->text('address');
             $table->string('blood_group');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->text('address');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

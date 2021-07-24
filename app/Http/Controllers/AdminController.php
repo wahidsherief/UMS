@@ -72,6 +72,14 @@ class AdminController extends Controller
         $teachers = Teacher::with(['user', 'department'])->orderBy('id', 'DESC')->get();
         return view('users.admin.pendingteacher', compact('teachers'));
     }
+    public function teacher_pending_account_details($id)
+    {
+        $teacher = Teacher::where('user_id', $id)->with(['user'])->first();
+        // dd($teacher);
+        return view('users.admin.pending_teacher_details', compact('teacher'));
+    }
+
+
 
     public function studentaccountaccept(Request $request, $id)
     {
@@ -99,7 +107,7 @@ class AdminController extends Controller
 
         $teacher->account_status = 1;
         $teacher->save();
-        return redirect()->back()->with('account_approved', 'Account Has Been Approved');
+        return redirect()->route('admin.pending.teacher')->with('account_approved', 'Account Has Been Approved');
     }
 
     public function teacheraccountdelete($id)

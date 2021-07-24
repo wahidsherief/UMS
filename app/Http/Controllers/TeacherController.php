@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Teacher;
 use App\Models\Session;
 use App\Models\Department;
+use App\Models\Publication;
 use App\Models\Notice;
 use App\Models\Student;
 use App\Models\Batch;
@@ -20,7 +21,12 @@ class TeacherController extends Controller
 {
     public function profile()
     {
-        return view('users.teacher.profile');
+        $user_id = Auth::user()->id;
+        $publication = Publication::where('user_id', $user_id)->first();
+        $publication_count = Publication::where('user_id', $user_id)->count();
+        // dd($publication);
+        $teacher = Teacher::where('user_id', $user_id)->with('user')->first();
+        return view('users.teacher.profile', compact(['teacher', 'publication', 'publication_count']));
     }
 
     public function setting()
@@ -32,6 +38,37 @@ class TeacherController extends Controller
     {
         return view('users.teacher.addnotice');
     }
+    public function publication(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $teacher_id = Teacher::where('user_id', $user_id)->with('user')->first();
+
+        $publication = new Publication;
+        $publication->user_id = $user_id;
+        $publication->teacher_id = $teacher_id->id;
+        // dd($publication);
+        $publication->title = $request->title;
+        $publication->link = $request->link;
+        $image = $request->file('publication_file');
+        // dd($image);
+        if ($image) {
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('users/publication'), $imageName);
+            $publication->file = $imageName;
+        }
+
+        $publication->save();
+
+        return redirect()->back()->with('publication', 'success');
+    }
+    public function publication_file($id)
+    {
+        $data = Publication::where('id', $id)->with(['user', 'teacher'])->first();
+
+        //  dd($data);
+        return view('users.teacher.publication_file', compact('data'));
+    }
+
 
     public function notice()
     {
@@ -58,22 +95,22 @@ class TeacherController extends Controller
         return view('users.teacher.students', compact('users'));
     }
 
-    public function full_profile(Request $request, $id)
+    public function teacher_profile_submit(Request $request, $id)
     {
+
+        // dd($id);
         $user = User::find(Auth::user()->id);
-
+        // dd($user->id);
         $teachers = new Teacher;
-
-        $teachers->department_id = $request->department_id;
-
+        $teachers->user_id = $user->id;
         $teachers->firstname = $request->firstname;
         $teachers->lastname = $request->lastname;
-
+        $teachers->teachers_short_name = $request->teachers_short_name;
         $teachers->status = $request->status;
         $teachers->phone = $request->phone;
-        $teachers->address = $request->address;
         $teachers->blood_group = $request->blood_group;
-        $user->teacher()->save($teachers);
+        $teachers->address = $request->address;
+        $teachers->save();
         return redirect()->route('teacher.data')->with('pending', 'Your Profile is pending');
     }
 

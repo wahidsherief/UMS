@@ -30,7 +30,7 @@
     padding-right:10px;
     margin-right:4px;
 }
-.profile-user-img-student {
+.profile-user-img-student,.profile-user-img {
     border: 3px solid #adb5bd;
     margin: 0 auto;
     padding: 3px;
@@ -62,7 +62,7 @@ table th {
     padding:5px;
     font-weight:bold;
     text-align:center;
-    
+
 }
 table td {
     border: 1px solid #555;

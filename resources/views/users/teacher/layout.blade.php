@@ -78,26 +78,22 @@
                         data-accordion="false">
 
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Dashboard
-
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
 
                                 @if($account_status==0)
 
+                                <li class="nav-item">
+                                    <div class="nav-link active">
+                                        <i class="nav-icon fas "></i>
+                                        <p>
+                                            Dashboard
 
+                                        </p>
+                                    </div>
+                                </li>
                                 @endif
                                 @if($account_status==1)
 
 
-                            </ul>
-                        </li>
                         <li class="nav-item">
                             <a href="{{route('teacher.profile')}}"
                                 class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     use HasFactory;
-    protected $table="teachers";
+    protected $table = "teachers";
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -25,5 +25,9 @@ class Teacher extends Model
     public function question()
     {
         return $this->hasMany(Question::class);
+    }
+    public function publication()
+    {
+        return $this->hasMany(Publication::class);
     }
 }

@@ -19,6 +19,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
+    Route::POST('teacher_profile_submit/{id}', [TeacherController::class, 'teacher_profile_submit'])->name('teacher.profile_submit');
+
     Route::group(['middleware' => 'isAccountStatus'], function () {
         Route::get('complete-profile', [TeacherController::class, 'pending'])->name('teacher.pending');
         Route::get('profile', [TeacherController::class, 'profile'])->name('teacher.profile');
@@ -31,12 +33,13 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('my-notice/{id}', [TeacherNoticeController::class, 'my_notice'])->name('teacher.my_notice');
         Route::get('notice-delete/{id}', [TeacherNoticeController::class, 'notice_delete'])->name('teacher.notice_delete');
 
+        Route::post('publication', [TeacherController::class, 'publication'])->name('teacher.publication.submit');
+        Route::get('publication-file/{id}', [TeacherController::class, 'publication_file'])->name('teacher.publication_file');
         Route::get('teacher_profile', [TeacherController::class, 'show_teacher_data'])->name('teacher.data');
         Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('teacher.UpdateInfo');
         Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('teacherPictureUpdate');
         Route::post('change-password', [ProfileController::class, 'ChangePassword'])->name('teacherChangePassword');
 
-        Route::post('student_profile/{id}', [TeacherController::class, 'full_profile'])->name('teacher.profile.submit');
 
         Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
 
@@ -60,6 +63,7 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('my-batch-students', [MyBatchController::class, 'students'])->name('MyBatchController.students');
         Route::get('my-batch-notification', [MyBatchController::class, 'notification'])->name('MyBatchController.notification');
         Route::get('my-batch-students/{id}', [TeacherController::class, 'my_batch_student_profile'])->name('teacher.my_batch_student_profile');
+        Route::get('export-notification', [MyBatchController::class, 'export_notification'])->name('teacher.export_notification');
 
         Route::get('my-batch-courses', [TeacherController::class, 'my_batch_courses'])->name('teacher.my_batch_courses');
         Route::get('my-result-list/{semester_id}/{course_id}', [TeacherController::class, 'my_batch_result_list'])->name('teacher.my_batch_result_list');

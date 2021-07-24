@@ -90,4 +90,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('Assign-courses', [AssignCoursesController::class, 'assign_courses'])->name('admin.assign_courses');
     Route::get('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses'])->name('admin.assign_courses_update');
     Route::POST('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses_submit'])->name('admin.assign_courses_update.submit');
+
+    Route::get('teacher-account-details/{id}', [AdminController::class, 'teacher_pending_account_details'])->name('teacher_pending_account_details');
 });

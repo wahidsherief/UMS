@@ -1,60 +1,98 @@
-@extends('users.teacher.layout')
-@section('title', 'Notification')
-@section('nav_bar')
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('MyBatchController.students') }}">Student List
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('teacher.my_batch_courses') }}">Courses
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item active" href="{{ route('MyBatchController.notification') }}">Notification
-                </a>
-            </li>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        </ul>
-    </nav>
-@endsection
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-@section('content')
-    <div class="container">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <style>
+    table {
+        border-collapse: collapse;
+    }
+    .card-header{
+        background:transparent;
+
+    }
+    table th {
+        border: 1px solid #555;
+        background-color: transparent;
+        padding:5px;
+        font-weight:bold;
+        text-align:center;
+    }
+    table td {
+        border: 1px solid #555;
+        background-color: transparent;
+        padding:5px;
+        text-align:center;
+    }
+    .rowspan {
+        border-left-width: 10px;
+    }
+    .lg-col{
+        width:230px;
+    }
+    .md-col{
+        width:100px;
+    }
+    .course-info-bar{
+        flex:1;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+</style>
+
+
+
+</head>
+<body>
+    <div style="width:100%">
+
+
+                <div class="card-header text-center">
+                  <b>  <h2>University of Science and Technology Chittagong</h2>
+                    <h3>Faculty of Science Engineering & Technology</h3></b>
+                    <h3>Department of Computer Science & Engineering</h3>
+                <b>    <h3>Final Examination, 2021</h3></b>
+                <b>    <h3>Batch - XXIX, Semester - 8th</h3></b>
+
+                </div>
+
 
 
         <div class="card card-secondary">
-            <!-- /.card-header -->
-            <div class="card-header">Result</div>
             <div class="card-body">
                 <div class="card-body table-responsive p-0">
 
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th class="sl">SL</th>
-                                <th>Reg.No</th>
-                                <th>Roll.No</th>
-                                <th>Name of the Students</th>
+                                <th class="sl align-middle">SL</th>
+                                <th class="align-middle">Reg. No</th>
+                                <th class="align-middle md-col">ID. No</th>
+                                <th class="lg-col align-middle">Student Name</th>
 
                                 @php $total_credit_hour=0; @endphp
                                 @foreach ($courses as $course)
-                                    <th>
+                                    <th class="align-middle">
                                         {{ $course->course->course_code }}
                                         @php $total_credit_hour +=$course->course->course_credit; @endphp
 
                                     </th>
                                 @endforeach
 
-                                <th>Earned GPA</th>
-                                <th>Results</th>
+                                <th class="align-middle">GPA</th>
+                                <th class="align-middle md-col">Result</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,8 +112,7 @@
                                     <td> {{ $i++ }} </td>
                                     <td>{{ $batch_student->registration_number }}</td>
                                     <td>{{ $batch_student->roll_number }}</td>
-                                    <td>{{ $batch_student->firstname }} {{ $batch_student->lastname }}</td>
-
+                                    <td class="text-left">{{$batch_student->firstname .' '. $batch_student->lastname}} </td>
                                     @for ($k = 0; $k < $count; $k++) @if ($batch_student->result[$k]->n_grade == '0.00') @php
                                         $result = 0;
                                     @endphp @endif
@@ -107,15 +144,10 @@
                         </tbody>
 
                     </table>
-                    <div class="mt-3 text-right">
-
-                        <a href="{{ route('teacher.export_notification') }}" class="btn btn-warning btn-sm">Export as
-                           PDF </a>
-                   </div>
                 </div>
             </div>
 
         </div>
     </div>
 
-@endsection
+</body></html>
