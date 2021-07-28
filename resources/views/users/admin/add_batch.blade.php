@@ -6,9 +6,7 @@
     <div class="card card-secondary">
         <div class="card-header">
             <h3 class="card-title"> Add Batch</h3>
-            <div align="right">
-                <a href="" class="btn btn-info btn-md"> Advisor </a>
-            </div>
+
         </div>
         <!-- /.card-header -->
         <div class="card-body">

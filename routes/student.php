@@ -7,7 +7,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CoursetypeController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ProfileController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'PreventBackHistory']], function () {
@@ -28,5 +28,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
 
         //result
         Route::get('result', [StudentController::class, 'result'])->name('result');
+
+        Route::get('questions', [StudentController::class, 'show_question'])->name('student.show_questions');
+        Route::get('download-question/{id}', [StudentController::class, 'download'])->name('student.question_download');
+        Route::get('search-question', [StudentController::class, 'search'])->name('question.student.search');
     });
 });

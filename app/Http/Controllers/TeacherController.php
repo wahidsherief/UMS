@@ -122,8 +122,17 @@ class TeacherController extends Controller
         $teachers = Teacher::all();
         $id = Auth::user()->id;
         $teachers = Teacher::where('user_id', $id)->with(['user', 'department'])->get();
+
+        $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(5);
+        $count_notice = Notice::all()->count();
+        $count_user = User::all()->count();
+        $count_teacher = Teacher::all()->count();
+        $count_student = Student::all()->count();
+        $count_course = Course::all()->count();
+        //dd($count);
+
         //dd($teachers);
-        return view('users.teacher.index', compact(['departments', 'teachers', 'sessions']));
+        return view('users.teacher.index', compact(['departments', 'teachers', 'sessions', 'notice', 'count_notice', 'count_user', 'count_teacher', 'count_student', 'count_course',]));
     }
 
     public function show_teacher_data()

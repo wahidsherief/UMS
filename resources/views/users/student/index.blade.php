@@ -1,157 +1,120 @@
 @extends('users.student.layout')
-@section('title', 'student dashboard')
+@section('title', 'Dashboard Page')
 
 @section('content')
-<div class="container">
-    <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title"> Complete Your Profile</h3>
-    </div>
-        @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-      <!-- /.card-header -->
-      <div class="card-body">
-            <div class="col-md-10 offset-md-1">
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form action="{{ route('student_full_information_submit')}}" method="POST">
-                    @csrf
-                    <div class="card-body">
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Department</label>
-
-                                    <select class="form-control" name="department_id">
-                                        @foreach ($departments as $department)
-                                            <option value="{{ $department->id }}">{{ $department->department_name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Batch</label>
+    {{-- Account Verification Check --}}
+@php $account_status=Auth::user()->account_status;
+@endphp
+@if (!$account_status == 1)
+@include('users.student.pending')
+@else
 
 
-                                    <select class="form-control" name="batch_id">
-                                        @foreach ($batches as $batch)
-                                            <option value="{{ $batch->id }}">{{ $batch->batch_name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">First Name</label>
-                                    <input type="text" class="form-control" id="text" placeholder="Enter First Name"
-                                        name="firstname">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Last Name</label>
-                                    <input type="text" class="form-control" id="text" placeholder="Enter Last Name"
-                                        name="lastname">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Roll Number</label>
-                                    <input type="text" class="form-control" id="text" placeholder="Enter Id Number"
-                                        name="roll_number">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Registration Number</label>
-                                    <input type="text" class="form-control" id="text"
-                                        placeholder="Enter Registration Number" name="registration_number">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Phone Number</label>
-                            <input type="text" class="form-control" id="text" placeholder="Enter Phone Number" name="phone">
-                        </div>
+<!--After verifying account !-->
 
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" id="text" placeholder="Enter Present Address"
-                                name="address">
-                        </div>
+<div class="row">
 
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Blood Group</label>
-                            <input type="text" class="form-control" id="text" placeholder="Ex: A+" name="blood_group">
-                        </div>
+<div class="col-md-6 offset-md-1">
+    <div class="card-header">
+    <div class="card-title">Latest Notice</div></div>
+    @foreach($notice as $notify)
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">HSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex:4.50" name="hsc_gpa">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">SSC Gpa</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="ssc_gpa">
-                                </div>
-                            </div>
+    <div class="card" >
 
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">JSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 4.86" name="jsc_gpa">
-                                </div>
-                            </div>
+        <!-- /.card-header -->
 
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="psc_gpa">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-
-
-
-
-            </div>
-
+        <div class="card-body" style="padding:0;min-height:0">
+          <div class="alert alert-primary alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <a href="{{route('teacher.single_notice',$notify->id)}}" style="text-decoration:none">     <h5><i class="icon fas fa-bell"></i> {{ $notify->notice_title }}</h5>
+            </a>
+          </div>
 
         </div>
-    </div></div>
+        <!-- /.card-body -->
+      </div>
+
+      @endforeach
+</div>
 
 
-    @if (Session::has('pending'))
-    <script>
-        swal("Good Job", "Once your account activated, you will get a confirmation email", "Success");
-    </script>
-    @endif
+    <div class="col-md-5 ">
+ <div class="card">
+    <div class="card-header border-0">
+      <h3 class="card-title">UMS Overview</h3>
+      <div class="card-tools">
+        <a href="#" class="btn btn-sm btn-tool">
+          <i class="fas fa-download"></i>
+        </a>
+
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+        <p class="text-success text-xl">
+          <i class="fas fa-users"></i>
+        </p>
+        <p class="d-flex flex-column text-right">
+          <span class="font-weight-bold">
+            <i class="ion ion-android-arrow-up text-success"></i> {{ $count_user }}
+          </span>
+          <span class="text-muted">Total Users</span>
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+        <p class="text-success text-xl">
+          <i class="fas fa-users"></i>
+        </p>
+        <p class="d-flex flex-column text-right">
+          <span class="font-weight-bold">
+            <i class="ion ion-android-arrow-up text-success"></i> {{ $count_student }}
+          </span>
+          <span class="text-muted">Total Students</span>
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+        <p class="text-success text-xl">
+          <i class="fas fa-users"></i>
+        </p>
+        <p class="d-flex flex-column text-right">
+          <span class="font-weight-bold">
+            <i class="ion ion-android-arrow-up text-success"></i> {{ $count_teacher }}
+          </span>
+          <span class="text-muted">Total Teachers</span>
+        </p>
+      </div>
+      <!-- /.d-flex -->
+      <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+        <p class="text-warning text-xl">
+          <i class="fas fa-book"></i>
+        </p>
+        <p class="d-flex flex-column text-right">
+          <span class="font-weight-bold">
+            <i class="ion ion-android-arrow-up text-warning"></i> {{ $count_course }}
+          </span>
+          <span class="text-muted">Total Course</span>
+        </p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+        <p class="text-warning text-xl">
+          <i class="fas fa-bell"></i>
+        </p>
+        <p class="d-flex flex-column text-right">
+          <span class="font-weight-bold">
+            <i class="ion ion-android-arrow-up text-warning"></i> {{ $count_notice }}
+          </span>
+          <span class="text-muted">Total Notice</span>
+        </p>
+      </div>
+      <!-- /.d-flex -->
+
+      <!-- /.d-flex -->
+    </div></div></div>
+  </div>
+@endif
 @endsection

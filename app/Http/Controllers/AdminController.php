@@ -62,7 +62,8 @@ class AdminController extends Controller
 
     public function pendingstudent()
     {
-        $students = Student::with(['user', 'department', 'batch'])->orderBy('id', 'DESC')->get();
+
+        $students = Student::with(['user', 'semester', 'batch'])->orderBy('id', 'DESC')->get();
         // dd($students);
         return view('users.admin.pendingstudent', compact('students'));
     }
@@ -70,7 +71,9 @@ class AdminController extends Controller
     public function pendingteacher()
     {
         $teachers = Teacher::with(['user', 'department'])->orderBy('id', 'DESC')->get();
-        return view('users.admin.pendingteacher', compact('teachers'));
+        $count_account = User::where([['role', 3], ['account_status', 0]])->count();
+        // dd($count_account);
+        return view('users.admin.pendingteacher', compact(['teachers', 'count_account']));
     }
     public function teacher_pending_account_details($id)
     {

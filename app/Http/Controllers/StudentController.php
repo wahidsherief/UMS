@@ -6,10 +6,14 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Notice;
+use App\Models\Session;
+use App\Models\Teacher;
 use App\Models\Student;
 use App\Models\Department;
 use App\Models\Result;
 use App\Models\Batch;
+use App\Models\question;
+use App\Models\Course;
 use Illuminate\Auth\Events\Validated;
 
 use Illuminate\Support\Facades\Hash;
@@ -30,13 +34,15 @@ class StudentController extends Controller
 
     public function notice()
     {
-        $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(10);
+        $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(5);
+        // dd($notice);
         return view('users.student.notice', compact('notice'));
     }
 
     public function single_notice($id)
     {
-        $notice = Notice::with('user')->where('id', $id)->get();
+        $notice = Notice::with('user')->where('id', $id)->first();
+        // dd($notice);
         return view('users.student.single_notice', compact('notice'));
     }
 
@@ -60,12 +66,14 @@ class StudentController extends Controller
             'jsc_gpa' => 'required|min:1|max:5',
             'psc_gpa' => 'required|min:1|max:5',
         ]);
-
-        $user = User::find(Auth::user()->id);
+        $batch_id = $request->batch_id;
+        $semester_id = Batch::where('id', $batch_id)->first();
+        $user = Auth::user()->id;
         $students = new Student;
-        $students->department_id = $request->department_id;
+
+        $students->user_id = $user;
         $students->batch_id = $request->batch_id;
-        $students->semester_id = 8;
+        $students->semester_id = $semester_id->id;
         $students->firstname = $request->firstname;
         $students->lastname = $request->lastname;
         $students->roll_number = $request->roll_number;
@@ -77,7 +85,8 @@ class StudentController extends Controller
         $students->ssc_gpa = $request->ssc_gpa;
         $students->jsc_gpa = $request->jsc_gpa;
         $students->psc_gpa = $request->ssc_gpa;
-        $user->student()->save($students);
+        // dd($students);
+        $students->save();
         return redirect()->back()->with('pending', 'Your Profile is pending');
     }
 
@@ -95,8 +104,23 @@ class StudentController extends Controller
         $student = Student::where('user_id', $id)->first();
         $departments = Department::all();
         $batches = Batch::all();
+        $sessions = Session::latest()->first();
+        //dd($sessions);
+        $departments = Department::all();
+        $teachers = Teacher::all();
+        $id = Auth::user()->id;
+        $teachers = Teacher::where('user_id', $id)->with(['user', 'department'])->get();
 
-        return view('users.student.index', compact('departments', 'batches'));
+        $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(5);
+        $count_notice = Notice::all()->count();
+        $count_user = User::all()->count();
+        $count_teacher = Teacher::all()->count();
+        $count_student = Student::all()->count();
+        $count_course = Course::all()->count();
+        //dd($count);
+
+        //dd($teachers);
+        return view('users.student.index', compact(['departments', 'batches', 'teachers', 'sessions', 'notice', 'count_notice', 'count_user', 'count_teacher', 'count_student', 'count_course',]));
     }
     //Check
     public function result()
@@ -109,5 +133,28 @@ class StudentController extends Controller
         $results = Result::where('student_id', $main->id)->with('course')->get();
         return view('users.student.result', compact('results'));
         // dd($result);
+    }
+    public function show_question()
+    {
+        $questions = Question::with(['session', 'user', 'teacher', 'course'])->orderBy('id', 'DESC')->get();
+
+        $courses = Course::get();
+        return view('users.student.show_question', compact(['questions', 'courses']));
+    }
+    public function download($id)
+    {
+        $data = Question::where('id', $id)->with(['user', 'teacher', 'course', 'session'])->first();
+
+        //  dd($data);
+        return view('users.student.show_single_question', compact('data'));
+    }
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $courses = Course::get();
+        // dd($search_text);
+        $questions = Question::where('course_id', 'LIKE', '%' . $search_text . '%')->with(['session', 'user', 'teacher', 'course'])->get();
+
+        return view('users.teacher.search_data', compact(['questions', 'courses']));
     }
 }

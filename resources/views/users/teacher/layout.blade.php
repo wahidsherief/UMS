@@ -48,8 +48,6 @@
         </ul>
     </nav>
 
-
-    <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ \URL::to('/teacher/dashboard')}}" class="brand-link">
@@ -105,7 +103,7 @@
                         <a href="{{ route('courses.all_students',1) }}"
                             class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
                             <i class="nav-icon fas fa-user"></i>
-                            <p>Students</p>
+                            <p>All Students</p>
                         </a>
                     </li>
 
@@ -140,7 +138,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <a class="small-box bg-info" href="{{ route('teacher.my_batch') }}">
+                        <a class="small-box bg-info" href="{{ route('MyBatchController.students') }}">
                             <div class="inner">
                                 <h4>My Batch</h4>
 

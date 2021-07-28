@@ -32,7 +32,7 @@
 
             <div class="card">
                 <div class="card-header bg-info text-warning">
-                  <div class="">  Add Notification</div>
+                  <div class="card-title">  Add Notification</div>
                 </div>
                 @error('notice_file')
                 <span class="text-danger">{{ $message }} </span>

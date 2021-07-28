@@ -5,7 +5,11 @@
 @section('content')
 <div class="card card-secondary">
 
-    <div class="card-header">Result</div>
+    <div class="card-header">
+
+    <div class="card-title">    Pending Account</div>
+    </div>
+@if(!$count_account==0)
     <div class="card-body">
         <div class="card-body table-responsive p-0">
 
@@ -53,12 +57,23 @@
                     </table>
 
                 </div>
-
-
-
             </div>
+@else
+<div class="text-danger text-center h5 p-4">No Request Found</div>
+
+@endif
+
         </div>
     </div>
 
 
+    @if(Session::has('account_approved'))
+    <script>
+         swal("Success", "Account has been approved successfully", "success");
+        </script>
+    @elseif(Session::has('request_removed'))
+    <div class="alert alert-danger" role='alert'>
+        {{Session::get('request_removed')}}
+    </div>
+    @endif
 @endsection

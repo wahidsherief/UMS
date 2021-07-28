@@ -16,9 +16,8 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('department_id')->unsigned();
-            $table->bigInteger('semester_id')->unsigned();
             $table->bigInteger('batch_id')->unsigned();
+            $table->bigInteger('semester_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('roll_number');
@@ -30,11 +29,6 @@ class CreateStudentsTable extends Migration
             $table->string('ssc_gpa');
             $table->string('jsc_gpa');
             $table->string('psc_gpa');
-            //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreign('department_id')->references('departments.id')->on('departments')->onDelete('cascade');
-            // $table->foreign('batch_id')->references('batches.id')->on('batches')->onDelete('cascade');
-
 
             $table->timestamps();
         });

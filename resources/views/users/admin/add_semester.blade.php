@@ -86,8 +86,7 @@
               <tr data-widget="expandable-table" aria-expanded="false">
                 <td> {{$i++}} </td>
                 <td>{{$semester->semester_name}}</td>
-                <td> {{--  <span class="description">{{$semester->created_at->diffForHumans()}}</span> --}}
-                </td>
+               
                 <td>
 
                   <a href="{{route('update.semester',$semester->id)}}" class="btn btn-warning"> Update</a>

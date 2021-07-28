@@ -55,11 +55,12 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::POST('accept-result/{student_id}/{course_id}', [ResultController::class, 'accept_my_batch_result'])->name('accept_my_batch_result');
 
 
-        Route::get('My-batch', [SessionController::class, 'my_batch'])->name('teacher.my_batch');
+        // Route::get('My-batch', [SessionController::class, 'my_batch'])->name('teacher.my_batch');
         Route::get('Student-result/{id}', [ResultController::class, 'student_full_result'])->name('student_semester_result');
         Route::get('remove/{student_id}/{course_id}}', [ResultController::class, 'delete_result'])->name('advisor.delete_result');
 
         // My Batch details
+
         Route::get('my-batch-students', [MyBatchController::class, 'students'])->name('MyBatchController.students');
         Route::get('my-batch-notification', [MyBatchController::class, 'notification'])->name('MyBatchController.notification');
         Route::get('my-batch-students/{id}', [TeacherController::class, 'my_batch_student_profile'])->name('teacher.my_batch_student_profile');

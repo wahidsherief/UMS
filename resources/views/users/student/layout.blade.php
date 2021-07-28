@@ -50,53 +50,12 @@
     <div class="wrapper">
 
 
-
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-
-               
-                <li>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-
-                </li>
-
-                <li class="nav-item d-none d-sm-inline-block ">
-                    <a class="dropdown-item btn btn-grad btn-md" href="{{ route('result') }}">Result
-                    </a>
-                </li>
-
-
-
-
-
-
-
-            </ul>
-
-            <!-- Right navbar links -->
-
-        </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ \URL::to('/student/dashboard')}}" class="brand-link">
                 <img src="{{('users/images/20171621953200_avatar.png')}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">UMS</span>
+                <span class="brand-text font-weight-light">Student Account</span>
             </a>
 
             <!-- Sidebar -->
@@ -113,44 +72,31 @@
 
                 @php $account_status=Auth::user()->account_status; @endphp
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
+                        @if($account_status==0)
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                            <div class="nav-link active">
+                                <i class="nav-icon fas "></i>
                                 <p>
                                     Dashboard
 
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-
-
-                                @if($account_status==1)
-                                <li class="nav-item">
-                                    <a href="{{route('student.dashboard')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>After Completing Profile</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('student.data')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>After Completing Profile</p>
-                                    </a>
-                                </li>
-                                @endif
-                            </ul>
+                            </div>
                         </li>
-
+                        @endif
                         @if($account_status==1)
 
-
+                        <li class="nav-item">
+                            <a href="{{route('student.profile')}}"
+                                class="nav-link {{ (request()->is('student/dashboard'))?'active': ''}}">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{route('student.profile')}}"
                                 class="nav-link {{ (request()->is('student/profile'))?'active': ''}}">
@@ -165,7 +111,20 @@
                                 <p>Notice <span class="right badge badge-danger">New</span></p>
                             </a>
                         </li>
+
                         @endif
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>LogOut</p>
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -174,8 +133,63 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper pt-4">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
+     <!-- Main content -->
+     <div class="container">
+        <section class="content">
+
+            <div class="row">
+
+                <!-- ./col -->
+
+
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <a class="small-box bg-primary" href="{{route('student.notice')}}">
+                        <div class="inner">
+                            <h4>Notices</h4>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <a class="small-box bg-warning" href="{{ route('student.show_questions') }}">
+                        <div class="inner">
+                            <h4>Question Bank</h4>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <a class="small-box bg-success" href="{{ route('result') }}">
+                        <div class="inner">
+                            <h4>Result</h4>
+
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="pt-4 pb-4">
+            @yield('nav_bar')
+        </div>
+    </div>
 
             @yield('content')
 

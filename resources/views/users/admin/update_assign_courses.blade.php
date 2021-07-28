@@ -10,11 +10,11 @@
         <form action="" method="POST">
             @csrf
 
-          <div class="alert alert-primary" role="alert">
+
               <div class="card-header">
-               Activities</div>
+             <div class="card-title"> Update Activities</div></div>
               </div>
-            </div>
+           
             <div class="card-body">
             <div class="row">
 

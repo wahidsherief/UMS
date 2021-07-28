@@ -2,10 +2,10 @@
 
 @section('nav_bar')
         <!-- Navbar -->
-        <nav class="navbar navbar-expand navbar-white navbar-light ml-2">
+        <nav class="navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item d-md-none">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
@@ -34,10 +34,9 @@
 
 @section('title',"Students Details")
 @section('content')
-<div class="container">
     <div class="card card-secondary">
         <div class="card-header">
-            <h3 class="card-title">All Student List</h3>
+            <h3 class="card-title">Student List</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -76,9 +75,6 @@
 
     </tbody>
     </table>
-
-    </div>
-
 
 
     </div></div></div></div>

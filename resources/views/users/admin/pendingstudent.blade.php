@@ -16,8 +16,8 @@
 
           <thead>
             <tr>
-              <th>Department</th>
               <th>Batch</th>
+              <th>Semester</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Roll Number</th>
@@ -40,8 +40,8 @@
     @if($account_status==0)
             <tr data-widget="expandable-table" aria-expanded="false">
 
-              <td>{{$student->department->department_name}}</td>
               <td>{{$student->batch->batch_name}}</td>
+              <td>{{$student->semester->semester_name}}</td>
               <td>{{$student->firstname}}</td>
               <td>{{$student->lastname}}</td>
               <td>{{$student->roll_number}}</td>

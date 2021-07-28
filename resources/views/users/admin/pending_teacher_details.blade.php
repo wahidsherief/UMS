@@ -77,14 +77,4 @@
 </div>
 
 
-@if(Session::has('account_approved'))
-
-<script>
-     swal("Success", "Account approved successfully", "success");
-    </script>
-@elseif(Session::has('request_removed'))
-<div class="alert alert-danger" role='alert'>
-    {{Session::get('request_removed')}}
-</div>
-@endif
     @endsection

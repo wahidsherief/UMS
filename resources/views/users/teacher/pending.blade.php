@@ -13,77 +13,76 @@
             <form action="{{route('teacher.profile_submit',['id' =>(Auth::user()->id)])}}" method="POST">
                 @csrf
                 <div class="card card-secondary">
-                <div class="alert alert-primary" role="alert">
 
                     <div class="card-header">
-                        Please Complete Your Profile
+                        <div class="card-title font-weight-bold"> Please Complete Your Profile</div>
+
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">First Name</label>
-                                <input type="text" class="form-control" id="text" placeholder="Enter First Name"
-                                    name="firstname">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">First Name</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter First Name"
+                                        name="firstname">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Last Name</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Last Name"
+                                        name="lastname">
+                                </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Last Name</label>
-                                <input type="text" class="form-control" id="text" placeholder="Enter Last Name"
-                                    name="lastname">
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Short Name</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter First Name"
+                                        name="teachers_short_name">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Status</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Last Name"
+                                        name="status">
+                                </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Phone Number</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Phone Number"
+                                        name="phone">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Blood Group</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Ex: A+"
+                                        name="blood_group">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <textarea placeholder="Enter Full Address" name="address" class="form-control"></textarea>
+                        </div>
+
+
                     </div>
+                    <!-- /.card-body -->
 
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Short Name</label>
-                                <input type="text" class="form-control" id="text" placeholder="Enter First Name"
-                                    name="teachers_short_name">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Status</label>
-                                <input type="text" class="form-control" id="text" placeholder="Enter Last Name"
-                                    name="status">
-                            </div>
-                        </div>
+                    <div class="card-footer bg-transparent">
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Phone Number</label>
-                                <input type="text" class="form-control" id="text" placeholder="Enter Phone Number"
-                                    name="phone">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Blood Group</label>
-                                <input type="text" class="form-control" id="text" placeholder="Ex: A+"
-                                    name="blood_group">
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Address</label>
-                      <textarea placeholder="Enter Full Address" name="address" class="form-control"></textarea>
-                    </div>
-
-
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer bg-transparent">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
             </form>
             @else
 
@@ -139,27 +138,28 @@
                 </div>
             </div>
             <div class="row">
-<div class="col">    <div class="form-group">
-    <label for="exampleInputEmail1">Phone Number</label>
-    <input type="text" class="form-control" id="text" placeholder="Enter Phone Number" name="phone"
-        value="{{$teacher->phone}}" readonly>
-</div>
-</div>
-<div class="col">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="text" class="form-control" id="text" placeholder="Enter Phone Number" name="phone"
+                            value="{{$teacher->phone}}" readonly>
+                    </div>
+                </div>
+                <div class="col">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Blood Group</label>
+                        <input type="text" class="form-control" id="text" placeholder="Ex: A+" name="blood_group"
+                            value="{{$teacher->blood_group}}" readonly>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Blood Group</label>
-                <input type="text" class="form-control" id="text" placeholder="Ex: A+" name="blood_group"
-                    value="{{$teacher->blood_group}}" readonly>
+                <label for="exampleInputEmail1">Address</label>
+                <textarea class="form-control" id="text" name="address" readonly>    {{$teacher->address}}</textarea>
             </div>
-        </div></div>
-
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Address</label>
-           <textarea class="form-control" id="text"  name="address"
-             readonly>    {{$teacher->address}}</textarea>
-        </div>
             @endforeach
             @endif
         </div>

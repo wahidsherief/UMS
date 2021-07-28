@@ -36,18 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">Department</label>
-                            <div class="col-md-6">
-                                <select id="department" name="department" class="form-control">
-                                    <option value=1 selected>CSE</option>
-                                    <option value=2>EEE</option>
-                                    <option value=3>ETE</option>
-                                  </select>
-
-                           <div>
-                        </div>
-                    </div></div>
+                        
 
 
                         <div class="form-group row">

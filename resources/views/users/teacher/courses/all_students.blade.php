@@ -85,9 +85,9 @@
 
                     @endphp
                     @forelse($students as $student)
-                    {{-- src="{{$my_batch_student->user->picture}}" --}}
+                    {{--  --}}
                     <tr data-widget="expandable-table" aria-expanded="false">
-                        <td><img class="img-circle img-bordered-sm" alt="S" width="50"></td>
+                        <td><img class="img-circle img-bordered-sm" src="{{$student->user->picture}}" alt="S" width="40"></td>
                         <td>{{$student->registration_number}}</td>
                         <td>{{$student->roll_number}}</td>
 

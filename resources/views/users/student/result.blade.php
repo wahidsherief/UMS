@@ -15,10 +15,8 @@
                 <th>Course Code</th>
                 <th>Course Name</th>
                 <th>Attendance</th>
-                <th>CT1</th>
-                <th>CT2</th>
-                <th>CT3</th>
-                <th>CT4</th>
+                <th>Class Test</th>
+
                 <th>PartA</th>
                 <th>PartB</th>
                 <th>Percentage</th>

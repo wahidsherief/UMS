@@ -55,7 +55,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
-              
+
                 <li>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -197,6 +197,12 @@
                                         <p>All Course Type</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.assign_courses') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Assign Courses</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -207,7 +213,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    Pending Requests
+                                    New Accounts
 
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
