@@ -37,31 +37,31 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5">
-
-                <!-- Profile Image -->
-                <div class="card card-primary card-outline">
-                    <div class="card-body box-profile">
-                        <div class="text-center">
-                            <img class="profile-user-img-student img-fluid img-squre"
+<div class="col-md-12">               <!-- Profile Image -->
+                <div class="card card-primary card-outline ">
+                    <div class="card-body box-profile ">
+                        <div class="row">
+<div class="col-md-3">
+                        <div class="text-left">
+                            <img class="profile-user-img-student img-fluid img-circle"
                                 src="{{$student_details->user->picture}}" alt="User profile picture"
-                                class="updated_picture" width="200">
-                        </div>
+                                class="updated_picture">
+                            </div>
+                            </div>
 
-                        <h3 class="profile-username text-center">{{$student_details->firstname}}
-                            {{$student_details->lastname}}</h3>
-
-                        {{-- <p class="text-muted text-center">Software Engineer</p>
-                        <div class="text-center">
-<a href="mailto:webmaster@example.com"  class="btn btn-success btn-lg"><i class="fas fa-envelope"></i> Contact</a>
-                        </div> --}}
+                            <div class="col-md-8">
+                            <h3 class="profile-username"> <span style="color:#565656; font-weight:bold">{{$student_details->firstname}}
+                                </span> <span style="color:#666666">{{$student_details->lastname}} </span></h3>
+<hr />
+                            </div>
+                            </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
-
             </div>
+
             <!-- /.col -->
-            <div class="col-md-7">
+            {{-- <div class="col-md-7">
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
@@ -210,7 +210,7 @@
                     </div><!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-            </div>
+            </div> --}}
             <!-- /.col -->
         </div>
         <!-- /.row -->

@@ -31,10 +31,10 @@
     margin-right:4px;
 }
 .profile-user-img-student,.profile-user-img {
-    border: 3px solid #adb5bd;
+
     margin: 0 auto;
     padding: 3px;
-    width: 343px;
+    width: 200px;
 }
 .student-info{
     width:80%;
@@ -125,3 +125,11 @@ div.content-wrapper nav.navbar ul li a:hover, div.content-wrapper nav.navbar ul 
     color: #000;
 }
 
+hr{
+    position: relative;
+
+    border: none;
+    height: 2px;
+    background: #979797;
+    margin-bottom: 50px;
+}
