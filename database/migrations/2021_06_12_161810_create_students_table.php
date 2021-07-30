@@ -24,11 +24,16 @@ class CreateStudentsTable extends Migration
             $table->string('registration_number');
             $table->string('phone');
             $table->text('address');
+            $table->longtext('about');
+            $table->text('birthday');
+            $table->string('gender');
+            $table->string('skill');
             $table->string('blood_group');
             $table->string('hsc_gpa');
             $table->string('ssc_gpa');
             $table->string('jsc_gpa');
             $table->string('psc_gpa');
+            $table->string('resume')->nullable();
 
             $table->timestamps();
         });

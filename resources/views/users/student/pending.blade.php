@@ -4,20 +4,20 @@
 @section('content')
 <div class="container">
     <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title"> Complete Your Profile</h3>
-    </div>
+        <div class="card-header">
+            <h3 class="card-title"> Complete Your Profile</h3>
+        </div>
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-      <!-- /.card-header -->
-      <div class="card-body">
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <!-- /.card-header -->
+        <div class="card-body">
             <div class="col-md-10 offset-md-1">
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -46,80 +46,110 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Roll Number</label>
+                                    <label for="exampleInputEmail1">ID No</label>
                                     <input type="text" class="form-control" id="text" placeholder="Enter Id Number"
                                         name="roll_number">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Registration Number</label>
+                                    <label for="exampleInputEmail1">Reg. No</label>
                                     <input type="text" class="form-control" id="text"
                                         placeholder="Enter Registration Number" name="registration_number">
                                 </div>
                             </div>
                         </div>
-<div class="row">
-                        <div class="col">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Phone Number</label>
-                            <input type="text" class="form-control" id="text" placeholder="Enter Phone Number" name="phone">
-                        </div>
-                    </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Batch</label>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Phone Number</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Phone Number"
+                                        name="phone">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Batch</label>
 
 
-                                <select class="form-control" name="batch_id">
-                                    @foreach ($batches as $batch)
+                                    <select class="form-control" name="batch_id">
+                                        @foreach ($batches as $batch)
                                         <option value="{{ $batch->id }}">{{ $batch->batch_name }}</option>
-                                    @endforeach
-                                </select>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-<div class="row">
-    <div class="col">
-    <div class="form-group">
-                            <label for="exampleInputEmail1">Blood Group</label>
-                            <input type="text" class="form-control" id="text" placeholder="Ex: A+" name="blood_group">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Gender</label>
+                                    <select name="gender" class="form-control">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Blood Group</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Ex: A+"
+                                        name="blood_group">
+                                </div>
+                            </div>
+
+
                         </div>
-                    </div>
-                    <div class="col">                        <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                           <textarea class="form-control" id="text"
-                                name="address" placeholder="address"> </textarea>
-                        </div></div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">ABout Yourself</label>
 
-                    </div>
+        <textarea class="form-control" id="text" name="about"  placeholder="About yourself 50-150 words"></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Address</label>
+                                    <textarea class="form-control" id="text" name="address"
+                                        placeholder="Your Full Address"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
 
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">HSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex:4.50" name="hsc_gpa">
+                                    <input type="text" class="form-control" id="text" placeholder="ex:4.50"
+                                        name="hsc_gpa">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SSC Gpa</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="ssc_gpa">
+                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00"
+                                        name="ssc_gpa">
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">JSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 4.86" name="jsc_gpa">
+                                    <input type="text" class="form-control" id="text" placeholder="ex: 4.86"
+                                        name="jsc_gpa">
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">PSC GPA</label>
-                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00" name="psc_gpa">
+                                    <input type="text" class="form-control" id="text" placeholder="ex: 5.00"
+                                        name="psc_gpa">
                                 </div>
                             </div>
                         </div>
@@ -141,12 +171,13 @@
 
 
         </div>
-    </div></div>
+    </div>
+</div>
 
 
-    @if (Session::has('pending'))
-    <script>
-        swal("Good Job", "Once your account activated, you will get a confirmation email", "Success");
-    </script>
-    @endif
+@if (Session::has('pending'))
+<script>
+    swal("Good Job", "Once your account activated, you will get a confirmation email", "Success");
+</script>
+@endif
 @endsection
