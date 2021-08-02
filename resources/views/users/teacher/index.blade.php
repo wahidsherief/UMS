@@ -17,7 +17,7 @@
 <div class="row">
 
 
-<div class="col-md-6 offset-md-1">
+<div class="col-md-6 ">
     <div class="card-header">
     <div class="card-title">Latest Notice</div></div>
     @foreach($notice as $notify)
@@ -41,7 +41,7 @@
 </div>
 
 
-    <div class="col-md-5 ">
+    <div class="col-md-5">
  <div class="card">
     <div class="card-header border-0">
       <h3 class="card-title">UMS Overview</h3>

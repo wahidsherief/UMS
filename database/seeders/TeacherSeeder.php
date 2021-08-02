@@ -21,6 +21,7 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'Zohora',
                 'teachers_short_name' => 'FTJ',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -31,6 +32,7 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'WDA',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -41,6 +43,7 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'ST',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -51,6 +54,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'DMR',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -61,6 +66,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'KNAS',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -71,6 +78,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'MTK',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -81,6 +90,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'ZI',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -91,6 +102,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'ABJ',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -101,6 +114,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'SBS',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -111,6 +126,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'IJC',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -121,6 +138,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'DZK',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -131,6 +150,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'SC',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -141,6 +162,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'IAC',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -151,6 +174,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'last',
                 'teachers_short_name' => 'DHK',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'A+'
@@ -160,6 +185,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'RC',
                 'teachers_short_name' => 'RC',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'B+'
@@ -170,6 +197,8 @@ class TeacherSeeder extends Seeder
                 'lastname' => 'mhs',
                 'teachers_short_name' => 'MHS',
                 'status' => 'teacher',
+                'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
+
                 'phone' => '555657',
                 'address' => 'address',
                 'blood_group' => 'AB+'

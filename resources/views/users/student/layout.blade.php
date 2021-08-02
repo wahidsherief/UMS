@@ -111,6 +111,13 @@
                                 <p>Notice <span class="right badge badge-danger">New</span></p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('student_password')}}"
+                                class="nav-link {{ (request()->is('student/password'))?'active': ''}}">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>Password </p>
+                            </a>
+                        </li>
 
                         @endif
                         <li class="nav-item">

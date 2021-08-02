@@ -5,24 +5,24 @@
 <div class="container">
   <div class="card card-secondary">
     <div class="card-header">
-      <h3 class="card-title"> Add Semester</h3>
+      <h3 class="card-title">Add Semester</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <!-- /.card-header -->
-          <!-- form start -->
           <form action="{{route('add.semester.submit')}}" method="POST">
             @csrf
             <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Semester Name </label>
-                <input type="text" class="form-control" id="text" placeholder="Enter Semester Name"
-                  name="semester_name">
+                <input type="text" class="form-control" id="text" placeholder="Enter Semester Name" name="semester_name">
               </div>
-              <div class="row">
-                <div class="col-sm-12" align="right">
+              @error('semester_name')
+              <div class="text-danger">{{ $message }}</div>
+          @enderror
+              <div class="row float-right">
+                <div class="col-sm-12 ">
                   <button type="submit" class="btn btn-success"><i class="fa fa-check-circle" aria-hidden="true"></i>
                     Save</button>
                 </div>
@@ -86,7 +86,7 @@
               <tr data-widget="expandable-table" aria-expanded="false">
                 <td> {{$i++}} </td>
                 <td>{{$semester->semester_name}}</td>
-               
+
                 <td>
 
                   <a href="{{route('update.semester',$semester->id)}}" class="btn btn-warning"> Update</a>

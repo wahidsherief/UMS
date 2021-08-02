@@ -20,6 +20,8 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
         Route::get('setting', [StudentController::class, 'setting'])->name('student.setting');
         Route::get('notice', [StudentController::class, 'notice'])->name('student.notice');
         Route::get('notice/{id}', [StudentController::class, 'single_notice'])->name('student.single_notice');
+        Route::view('/student-password', 'users.student.password')->name('student_password');
+
 
         Route::post('update-profile-info', [ProfileController::class, 'updateInfo'])->name('student.UpdateInfo');
         Route::post('change-profile-picture', [ProfileController::class, 'updatePicture'])->name('studentPictureUpdate');

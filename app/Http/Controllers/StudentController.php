@@ -24,7 +24,9 @@ class StudentController extends Controller
 {
     public function profile()
     {
-        return view('users.student.profile');
+        $user_id = Auth::user()->id;
+        $student = Student::where('user_id', $user_id)->with('user')->first();
+        return view('users.student.profile', compact(['student']));
     }
     public function setting()
     {
@@ -59,12 +61,16 @@ class StudentController extends Controller
             'roll_number' => 'required|numeric',
             'registration_number' => 'required|numeric',
             'phone' => 'required|numeric',
+            'birthday' => 'required',
+            'gender' => 'required',
+            'skill' => 'required',
             'address' => 'required',
+            'about' => 'required|min:50|max:200',
             'blood_group' => 'required',
             'hsc_gpa' => 'required|numeric|min:1|max:5',
             'ssc_gpa' => 'required|numeric|min:1|max:5',
-            'jsc_gpa' => 'required|min:1|max:5',
-            'psc_gpa' => 'required|min:1|max:5',
+            'jsc_gpa' => 'required|numeric|min:1|max:5',
+            'psc_gpa' => 'required|numeric|min:1|max:5',
         ]);
         $batch_id = $request->batch_id;
         $semester_id = Batch::where('id', $batch_id)->first();
@@ -78,7 +84,11 @@ class StudentController extends Controller
         $students->lastname = $request->lastname;
         $students->roll_number = $request->roll_number;
         $students->registration_number = $request->registration_number;
+        $students->gender = $request->gender;
         $students->phone = $request->phone;
+        $students->birthday = $request->birthday;
+        $students->skill = $request->skill;
+        $students->about = $request->about;
         $students->address = $request->address;
         $students->blood_group = $request->blood_group;
         $students->hsc_gpa = $request->hsc_gpa;
@@ -109,7 +119,11 @@ class StudentController extends Controller
         $departments = Department::all();
         $teachers = Teacher::all();
         $id = Auth::user()->id;
-        $teachers = Teacher::where('user_id', $id)->with(['user', 'department'])->get();
+        $student = Student::where('user_id', $id)->with(['user'])->first();
+        $no_student = 0;
+        if ($student == null) {
+            $no_student = 1;
+        }
 
         $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(5);
         $count_notice = Notice::all()->count();
@@ -120,7 +134,7 @@ class StudentController extends Controller
         //dd($count);
 
         //dd($teachers);
-        return view('users.student.index', compact(['departments', 'batches', 'teachers', 'sessions', 'notice', 'count_notice', 'count_user', 'count_teacher', 'count_student', 'count_course',]));
+        return view('users.student.index', compact(['student', 'no_student', 'batches', 'teachers', 'sessions', 'notice', 'count_notice', 'count_user', 'count_teacher', 'count_student', 'count_course',]));
     }
     //Check
     public function result()

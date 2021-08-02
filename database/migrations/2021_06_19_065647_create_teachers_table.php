@@ -20,6 +20,7 @@ class CreateTeachersTable extends Migration
             $table->string('lastname');
             $table->string('teachers_short_name');
             $table->string('status');
+            $table->longtext('about');
             $table->string('phone');
             $table->string('blood_group');
             $table->text('address');

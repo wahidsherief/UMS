@@ -57,14 +57,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('course', [CourseController::class, 'add_course'])->name('add.course');
     Route::get('courses', [CourseController::class, 'course_data'])->name('course_data');
 
-    Route::POST('course', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
+    Route::POST('course-submit', [CourseController::class, 'add_course_submit'])->name('add.course.submit');
 
     //Coursetype parts
 
 
     Route::get('coursetype', [CoursetypeController::class, 'add_coursetype'])->name('add.coursetype');
     Route::get('coursetypes', [CoursetypeController::class, 'coursetype_data'])->name('coursetype_data');
-    //Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.course.submit');
+    Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.coursetype.submit');
     //pending account
 
     Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');

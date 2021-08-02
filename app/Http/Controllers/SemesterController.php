@@ -11,6 +11,17 @@ class SemesterController extends Controller
 
     public function add_semester_submit(Request $request)
     {
+
+
+
+        $request->validate(
+            [
+
+
+                'semester_name' => 'required|max:12'
+
+            ]
+        );
         $semesters = new Semester();
         $semesters->semester_name = $request->semester_name;
         $semesters->save();

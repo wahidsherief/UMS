@@ -127,13 +127,6 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.addnotice') }}"
-                                class="nav-link {{ request()->is('admin/addnotice') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>Add Notice</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ route('admin.notice') }}"
                                 class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-user"></i>
@@ -142,25 +135,6 @@
                         </li>
 
 
-                        <li class="nav-item">
-                            <a href="{{ route('add.batch') }}" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Batch
-
-                                </p>
-                            </a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('add.semester') }}" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Semesters
-                                </p>
-                            </a>
-
-                        </li>
 
 
                         <li class="nav-item">
@@ -242,16 +216,80 @@
             </div>
             <!-- /.sidebar -->
         </aside>
+        <div class="content-wrapper">
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper pt-4">
-            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <div class="container">
+                <section class="content">
 
-            @yield('content')
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <a class="small-box bg-info" href="{{ route('add.batch') }}">
+                                <div class="inner">
+                                    <h4>Batch</h4>
+
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <a class="small-box bg-success" href="{{ route('add.semester') }}">
+                                <div class="inner">
+                                    <h4>Semester</h4>
+
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <a class="small-box bg-warning" href="{{ route('add.course') }}">
+                                <div class="inner">
+                                    <h4>Courses</h4>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                            </a>
+                        </div>
 
 
 
-            <!-- /.content -->
+                             <!-- ./col -->
+                             <div class="col-lg-3 col-6">
+                                <!-- small box -->
+                                <a class="small-box bg-primary" href="{{route('admin.addnotice')}}">
+                                    <div class="inner">
+                                        <h4>Notices</h4>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                    </div>
+
+                </section>
+
+                <div class="pt-4 pb-4">
+                    @yield('nav_bar')
+                </div>
+
+                @yield('content')
+            </div>
+
         </div>
 
         <aside class="control-sidebar control-sidebar-dark">
