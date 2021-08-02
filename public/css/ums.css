@@ -133,3 +133,16 @@ hr{
     background: #979797;
     margin-bottom: 5px;
 }
+
+.user-info span {
+    text-transform: capitalize;
+}
+
+.user-info p {
+    margin-bottom: 0px;
+}
+
+.small-nav li {
+    margin-left: 5px;
+    margin-right: 5px;
+}

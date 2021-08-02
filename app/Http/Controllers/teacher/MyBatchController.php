@@ -31,7 +31,6 @@ class MyBatchController extends Controller
     }
     public function notification()
     {
-
         $auth_id = Auth::user()->id;
         $teacher = Teacher::where('user_id', $auth_id)->first();
         $teacher_id = ($teacher->id);
@@ -52,7 +51,6 @@ class MyBatchController extends Controller
     }
     public function export_notification()
     {
-
         $auth_id = Auth::user()->id;
         $teacher = Teacher::where('user_id', $auth_id)->first();
         $teacher_id = ($teacher->id);

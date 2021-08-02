@@ -1,23 +1,7 @@
 @extends('users.teacher.layout')
 @section('title',"Students Details")
 @section('nav_bar')
-
-<nav class="navbar navbar-expand navbar-white navbar-light ml-2">
-    <ul class="navbar-nav">
-        <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item active" href="{{ route('MyBatchController.students') }}">Student List
-            </a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item" href="{{ route('teacher.my_batch_courses') }}">Courses
-            </a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item" href="{{ route('MyBatchController.notification') }}">Notification
-            </a>
-        </li>
-    </ul>
-</nav>
+@include('users.teacher.small_nav')
 @endsection
 
 @section('content')
@@ -26,8 +10,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary card-outline ">
-                    <div class="card-body box-profile ">
-                        <div class="row">
+                    <div class="card-body box-profile user-info">
+                        <div class="row pb-4" style='border-bottom: 1px solid #ccc'>
                             <div class="col-md-3">
                                 <div class="text-left">
                                     <img class="profile-user-img-student img-fluid img-circle"
@@ -40,85 +24,101 @@
                                 <h3 class="profile-username"> <span
                                         style="color:#565656; font-weight:bold">{{$student_details->firstname}}
                                     </span> <span style="color:#666666">{{$student_details->lastname}} </span></h3>
-                                <p>{{ $student_details->about }}</p>
+
+                                <div>
+                                    <div class="mt-2">
+                                        <span>
+                                            Email:
+                                            <span
+                                                class="text-muted text-lowercase">{{ $student_details->user->email }}</span>
+                                        </span>
+                                        <span> | </span>
+                                        <span>
+                                            Mobile:
+                                            <span class="text-muted">{{ $student_details->phone }}</span>
+                                        </span>
+                                        <span> | </span>
+                                        <span>
+                                            Gender:
+                                            <span class="text-muted">{{ $student_details->gender }}</span>
+                                        </span>
+                                        <span> | </span>
+                                        <span>
+                                            Blood Group:
+                                            <span class="text-muted">{{ $student_details->blood_group }}</span>
+                                        </span>
+                                    </div>
+
+                                    <p>
+                                        Address:
+                                        <span class="text-muted">{{ $student_details->address }}</span>
+                                    </p>
+                                </div>
+                                {{-- <p>{{ $student_details->about }}</p> --}}
+                                <p class='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                                    necessitatibus
+                                    veniam dignissimos, doloremque dolores a, repellat sapiente expedita asperiores
+                                    illum debitis provident omnis nesciunt nam eaque minima magnam quos. Impedit?</p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <strong>Education:</strong>
+                                <div class='mt-2'>
+                                    <p>Higher Secondary School Certficate</p>
+                                    <p class="text-muted">Sample School and College</p>
+                                    <p class="text-muted">
+                                        <span>Result:</span>
+                                        <span class="text-muted">{{ $student_details->hsc_gpa }}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class='mt-2'>
+                                    <p>Higher Secondary School Certficate</p>
+                                    <p class="text-muted">Sample School and College</p>
+                                    <p class="text-muted">
+                                        <span>Result:</span>
+                                        <span class="text-muted">{{ $student_details->hsc_gpa }}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class='mt-2'>
+                                    <p>Higher Secondary School Certficate</p>
+                                    <p class="text-muted">Sample School and College</p>
+                                    <p class="text-muted">
+                                        <span>Result:</span>
+                                        <span class="text-muted">{{ $student_details->hsc_gpa }}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class='mt-2'>
+                                    <p>Higher Secondary School Certficate</p>
+                                    <p class="text-muted">Sample School and College</p>
+                                    <p class="text-muted">
+                                        <span>Result:</span>
+                                        <span class="text-muted">{{ $student_details->hsc_gpa }}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <strong>Skills:</strong>
+                                <div class='mt-2'>
+                                    <p class="text-muted">
+                                        <span class="text-muted">{{ $student_details->skill }}
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="container">
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Information</h3>
-                    </div>
-                    <div class="card-body">
-
-                        <strong><i class="fas fa-envelope mr-1"></i> Email Address</strong>
-                        <p class="text-muted">
-                            {{ $student_details->user->email }}
-                        </p>
-                        <hr>
-                        <strong><i class="fas fa-phone mr-1"></i> Mobile Number</strong>
-                        <p class="text-muted">
-                            {{ $student_details->phone }}
-                        </p>
-                        <hr>
-                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
-                        <p class="text-muted">
-                            B.S. in Computer Science from University of Science and Technology Chirttagong
-                        </p>
-                        <hr>
-
-                        <strong><i class="far fa-file-alt mr-1"></i> Gender</strong>
-                        <p class="text-muted">{{ $student_details->gender }}</p>
-                        <hr>
-
-                        <strong><i class="far fa-file-alt mr-1"></i> Blood Group</strong>
-                        <p class="text-muted">{{ $student_details->blood_group }}</p>
-                        <hr>
-
-                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                        <p class="text-muted">{{ $student_details->address }}</p>
-                        <hr>
-                        <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-                        <p class="text-muted">
-                            {{ $student_details->skill }}
-                        </p>
-                        <hr>
-
-                        <strong><i class="far fa-calendar-alt mr-1"></i> Birthday</strong>
-                        <p class="text-muted">{{ $student_details->birthday }}</p>
-                        <hr>
-
-                        <div class="row">
-                            <div class="col">
-                                <strong><i class="fas fa-book mr-1"></i> HSC GPA</strong>
-                                <p class="text-muted">{{ $student_details->hsc_gpa }}</p>
-                            </div>
-                            <div class="col">
-                                <strong><i class="fas fa-book mr-1"></i> SSC GPA</strong>
-                                <p class="text-muted">{{ $student_details->ssc_gpa }}</p>
-                            </div>
-                            <div class="col">
-                                <strong><i class="fas fa-book mr-1"></i> JSC GPA</strong>
-                                <p class="text-muted">{{ $student_details->jsc_gpa }}</p>
-                            </div>
-                            <div class="col">
-                                <strong><i class="fas fa-book mr-1"></i> PSC GPA</strong>
-                                <p class="text-muted">{{ $student_details->psc_gpa }}</p>
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
 </section>
 @endsection
