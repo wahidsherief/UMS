@@ -23,7 +23,7 @@ class SessionController extends Controller
         return view('users.teacher.sessions', compact('sessions'));
     }
 
-    public function my_courses()
+    public function my_courses_internal()
     {
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
@@ -35,15 +35,19 @@ class SessionController extends Controller
         // dd($AssignCoursess);
         return view('users.teacher.teacher_internal', compact(['internal_courses', 'external_courses', 'session_id']));
     }
-
-    public function external_activities()
+    public function my_courses_external()
     {
-        $id = Auth::user()->id;
-        $assign_courses = AssignCourses::where('teacher_external_id', $id)->with(['user', 'department', 'semester'])->get();
-        $AssignCoursess = AssignCourses::with(['department', 'semester', 'course'])->get();
+        $auth_id = Auth::user()->id;
+        // dd($teacher_id);
+        $teacher = Teacher::find($auth_id);
+        // dd($teacher);
+        $internal_courses = AssignCourses::where('teacher_internal_id', $teacher->id)->with(['semester'])->get();
+        $session_id = ($internal_courses[0]->session_id);
+        $external_courses = AssignCourses::where('teacher_external_id', $teacher->id)->with(['semester'])->get();
         // dd($AssignCoursess);
-        return view('users.teacher.teacher_external', compact('assign_courses'));
+        return view('users.teacher.courses.external', compact(['external_courses', 'session_id']));
     }
+
 
     public function my_batch()
     {

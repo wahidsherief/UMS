@@ -1,39 +1,9 @@
 @extends('users.admin.layout')
 @section('title',"Course Type")
 @section('nav_bar')
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item " href="{{ route('add.course') }}">Add Course
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item " href="{{ route('course_data') }}">View Course
-                </a>
-            </li>
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('add.coursetype') }}">Add CourseType
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item active" href="{{ route('coursetype_data') }}">View CourseType
-                </a>
-            </li>
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('admin.assign_courses') }}">Assign Courses
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
+@include('users.admin.top_nav.courses')
 @endsection
+
 
 @section('content')
 <div class="container">

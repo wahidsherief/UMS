@@ -6,21 +6,27 @@ use Illuminate\Http\Request;
 use App\Models\AssignCourses;
 use App\Models\Teacher;
 use App\Models\Course;
+use App\Models\Session;
 
 class AssignCoursesController extends Controller
 {
-    public function assign_courses()
+    public function assign_courses($id)
     {
         $assign_courses = AssignCourses::with(['department', 'semester', 'course'])->get();
         // dd($assign_courses[0]->semester);
+        $latest_session = Session::orderBy('id', 'DESC')->first()->id;
+        // dd($latest_session);
         foreach ($assign_courses as $assign_course) {
             $teacher_internal = Teacher::where('id', $assign_course->teacher_internal_id)->first()->teachers_short_name;
             $teacher_external = Teacher::where('id', $assign_course->teacher_external_id)->first()->teachers_short_name;
             $assign_course->teacher_internal = $teacher_internal;
             $assign_course->teacher_external = $teacher_external;
         }
+        $session_id = $id;
+        $latest = Session::latest()->first()->id;
+        // dd($latest);
         //  dd($assign_courses[0]->semester);
-        return view('users.admin.assign_courses', compact('assign_courses'));
+        return view('users.admin.assign_courses', compact(['assign_courses', 'latest_session', 'session_id']));
     }
 
 

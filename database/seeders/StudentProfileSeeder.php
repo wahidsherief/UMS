@@ -64,8 +64,8 @@ class StudentProfileSeeder extends Seeder
             [
                 'user_id' => '19',
 
-                'semester_id' => '8',
-                'batch_id' => '8',
+                'semester_id' => '6',
+                'batch_id' => '6',
                 'firstname' => 'Dipon',
                 'lastname' => 'Das',
                 'roll_number' => '17010122',

@@ -30,6 +30,7 @@ class BatchController extends Controller
     public function add_batch_submit(Request $request)
     {
         $batches = new Batch();
+        $request->validate(['batch_name' => 'required']);
         $batches->semester_id = $request->semester_id;
         $batches->teacher_id = $request->batch_advisor;
         $batches->batch_name = $request->batch_name;

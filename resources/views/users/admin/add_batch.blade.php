@@ -19,7 +19,11 @@
                                 <label for="exampleInputEmail1">Batch Name</label>
                                 <input type="text" class="form-control" id="text" placeholder="Enter Batch Name"
                                     name="batch_name">
-                            </div>
+                                    @error('batch_name')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
                             <div class="form-group">
                             <select class="form-control" name="semester_id">
 
@@ -41,7 +45,9 @@
                             </select>
                         </div>
 
-
+@error('batch_advisor')
+<span class="text-danger">{{ $message }}</span>
+@enderror
                             <div align="right">
                                 <button type="submit" class="btn btn-success mt-1"><i class="fa fa-check-circle"
                                         aria-hidden="true"></i>

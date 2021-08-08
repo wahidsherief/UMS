@@ -3,6 +3,35 @@
 @section('title',"Sessions")
 @section('content')
 
+<div class="container">
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title"> Add Session</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <form action="" method="POST">
+                  @csrf
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Session Name </label>
+                    <input type="text" class="form-control input-sm" id="text" placeholder="Spring Semester" name="session_name">
+                    @error('session_name')
+                    <span class='text-danger'>{{ $message }}</span>
+                                      @enderror
+                </div>
+
+                <!-- /.card-body -->
+
+                <div class="float-right">
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                      Save</button>
+                  </div>
+                </div>
+              </form>
+          </div></div></div></div></div>
 
 <div class="container">
     <div class="card card-secondary">
@@ -27,11 +56,15 @@
                 <tr data-widget="expandable-table" aria-expanded="false">
                   <td> {{$i++}} </td>
 
-                  <td>   <a href="{{route('admin.assign_courses')}}"> {{$session->session_name}}</a></td>
+                  <td>   <a href="{{route('admin.assign_courses',$session->id)}}"> {{$session->session_name}}</a></td>
 
     <td>
-        <a href="{{route('admin.update_session',$session->id)}}" class="btn btn-warning"> Update</a>
-        <a href="{{route('admin.delete_session',$session->id)}}" class="btn btn-danger"> Delete</a>
+        @if($session->id==$latest)
+        <a href="{{route('admin.update_session',$session->id)}}" class="btn btn-warning btn-sm"> Update</a>
+        <a href="{{route('admin.delete_session',$session->id)}}" class="btn btn-danger btn-sm"> Delete</a>
+        @else
+
+        @endif
     </td>
 
                 </tr>
@@ -42,30 +75,7 @@
     </table>
 </div></div></div></div>
 
-<div class="container">
-    <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title"> Add Session</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
-              <form action="" method="POST">
-                  @csrf
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Session Name </label>
-                    <input type="text" class="form-control" id="text" placeholder="Spring Semester" name="session_name">
-                  </div>
-                </div>
-                <!-- /.card-body -->
 
-                <div align="right">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                      Save</button>
-                  </div>
-              </form>
               @if(Session::has('session_created'))
 <script>
                 swal("Created", "Session has been Created successfully", "success");

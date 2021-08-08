@@ -31,9 +31,6 @@
                     @foreach ($my_batch_students as $my_batch_student)
 
 
-                    <!-- ./card-header -->
-
-
                     <tr data-widget="expandable-table" aria-expanded="false">
                         <td> {{ $i++ }} </td>
 

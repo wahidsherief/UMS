@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Result;
 use App\Models\Student;
 use App\Models\Session;
@@ -15,13 +16,99 @@ use Illuminate\Support\Facades\Auth;
 class ResultController extends Controller
 {
 
+    public function all_result_submit(Request $request, $session_id, $semester_id, $course_id, $course_credit)
+    {
+        $student_id = $request->student_id;
+
+        $attendance = $request->attendance;
+
+        $class_test = $request->class_test;
+        $part_a = $request->part_a;
+        $part_b = $request->part_b;
+        for ($i = 0; $i < count($part_a); $i++) {
+            $percentage = (($class_test[$i] + $attendance[$i] + $part_a[$i] + $part_b[$i]) / $course_credit);
+            $number_grade = $this->get_number_grade($percentage);
+            $letter_grade = $this->get_letter_grade($percentage);
+
+            $total = ($class_test[$i] + $attendance[$i] + $part_a[$i] + $part_b[$i]);
+            $result = [
+
+                'session_id' => $session_id,
+                'semester_id' => $semester_id,
+                'course_id' => $course_id,
+                'attendance' => $attendance[$i],
+                'class_test' => $class_test[$i],
+                'part_a' => $part_a[$i],
+                'student_id' => $student_id[$i],
+                'part_b' => $part_b[$i],
+                'percentage' => $percentage,
+                'total' => $total,
+                'n_grade' => $number_grade,
+                'l_grade' => $letter_grade,
+            ];
+            DB::table('results')->insert($result);
+        }
+        return redirect()->route('teacher.my_courses_result', [$session_id, $semester_id, $course_id])->with('result_added', "Result has been added");
+    }
+
+
+    public function update_result($session_id, $semester_id, $course_id)
+    {
+        $semester_students = Student::where('semester_id', $semester_id)->with('user')->orderBy('roll_number', 'ASC')->get();
+        //dd($semester_students);
+        $course_credit = Course::where('id', $course_id)->first()->course_credit;
+        // dd($course_credit);
+        $results = Result::where([['session_id', $session_id], ['semester_id', $semester_id], ['course_id', $course_id]])->with('student')->get();
+        // dd($result[1]);
+
+        $total_students =  $semester_students->count();
+        return view('users.teacher.examination.update_result', compact(['results', 'course_id', 'course_credit', 'semester_id', 'session_id', 'semester_students']));
+    }
+
+    public function update_result_submit(Request $request, $session_id, $semester_id, $course_id, $course_credit)
+    {
+        $student_id = $request->student_id;
+
+        $attendance = $request->attendance;
+        $id = $request->id;
+        // dd($id);
+        $class_test = $request->class_test;
+        $part_a = $request->part_a;
+        $part_b = $request->part_b;
+
+        for ($i = 0; $i < count($part_a); $i++) {
+
+            $percentage = (($class_test[$i] + $attendance[$i] + $part_a[$i] + $part_b[$i]) / $course_credit);
+            $number_grade = $this->get_number_grade($percentage);
+            $letter_grade = $this->get_letter_grade($percentage);
+
+            $total = ($class_test[$i] + $attendance[$i] + $part_a[$i] + $part_b[$i]);
+
+            $result = Result::find($id[$i]);
+
+            $result->attendance = $attendance[$i];
+            $result->class_test = $class_test[$i];
+            $result->part_a = $part_a[$i];
+            $result->part_b = $part_b[$i];
+            $result->percentage = $percentage;
+            $result->total = $total;
+            $result->n_grade = $number_grade;
+            $result->l_grade = $letter_grade;
+            $result->save();
+        }
+        return redirect()->route('teacher.my_courses_result', [$session_id, $semester_id, $course_id])->with('result_updated', "Result has been Updated");
+    }
+
+
 
     public function semester_students($session_id, $semester_id, $course_id)
     {
         $semester_students = Student::where('semester_id', $semester_id)->with('user')->orderBy('roll_number', 'ASC')->get();
         //dd($semester_students);
+        $course_credit = Course::where('id', $course_id)->first()->course_credit;
+        // dd($course_credit);
         $total_students =  $semester_students->count();
-        return view('users.teacher.courses.students', compact(['course_id', 'semester_id', 'session_id', 'semester_students']));
+        return view('users.teacher.courses.student_result', compact(['course_id', 'course_credit', 'semester_id', 'session_id', 'semester_students']));
     }
 
 

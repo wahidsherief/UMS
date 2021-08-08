@@ -2,7 +2,7 @@
 
 
 @section('nav_bar')
-@include('users.teacher.small_nav')
+@include('users.teacher.top_nav.small_nav')
 @endsection
 
 

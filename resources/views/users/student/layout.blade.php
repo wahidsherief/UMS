@@ -104,13 +104,7 @@
                                 <p>Profile</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{route('student.notice')}}"
-                                class="nav-link {{ (request()->is('student/notice'))?'active': ''}}">
-                                <i class="nav-icon fas fa-cog"></i>
-                                <p>Notice <span class="right badge badge-danger">New</span></p>
-                            </a>
-                        </li>
+                 
                         <li class="nav-item">
                             <a href="{{route('student_password')}}"
                                 class="nav-link {{ (request()->is('student/password'))?'active': ''}}">

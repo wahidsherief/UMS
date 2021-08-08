@@ -1,7 +1,7 @@
 @extends('users.teacher.layout')
 @section('title',"Students Details")
 @section('nav_bar')
-@include('users.teacher.small_nav')
+@include('users.teacher.top_nav.small_nav')
 @endsection
 
 @section('content')
@@ -55,10 +55,7 @@
                                     </p>
                                 </div>
                                 {{-- <p>{{ $student_details->about }}</p> --}}
-                                <p class='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                    necessitatibus
-                                    veniam dignissimos, doloremque dolores a, repellat sapiente expedita asperiores
-                                    illum debitis provident omnis nesciunt nam eaque minima magnam quos. Impedit?</p>
+                                <p class='mt-2'>{{ $student_details->about }}</p>
                             </div>
                         </div>
 

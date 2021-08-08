@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             SessionSeeder::class,
             TeacherSeeder::class,
             BatchSeeder::class,
-            ResultSeeder::class,
+            // ResultSeeder::class,
             Batch_semester_seeder::class,
             Batch_student_seeder::class,
         ]);

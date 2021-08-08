@@ -43,13 +43,12 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
 
         Route::get('all-student', [TeacherController::class, 'students'])->name('teacher.students');
-
         Route::get('assign-courses', [AssignCoursesController::class, 'assign_courses'])->name('teacher.assign_courses');
         Route::get('sessions', [SessionController::class, 'session'])->name('teacher.sessions');
+        Route::get('internal', [SessionController::class, 'my_courses_internal'])->name('teacher.my_courses_internal');
+        Route::get('external', [SessionController::class, 'my_courses_external'])->name('teacher.my_courses_external');
 
-        Route::get('my-courses', [SessionController::class, 'my_courses'])->name('teacher.my_courses');
-
-
+        //
         Route::get('semester', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
         Route::get('session_result/{semester_id}', [ResultController::class, 'show_result'])->name('show_result');
         Route::get('show-result', [ResultController::class, 'show_result_session'])->name('teacher.session_result');
@@ -72,10 +71,12 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('export-results/{course_id}', [TeacherController::class, 'my_batch_result_export'])->name('teacher.my_batch_result_export');
 
         //As Internal Semester Result
+
         Route::get('my-course-result/{session_id}/{semester_id}/{course_id}', [TeacherController::class, 'my_courses_result'])->name('teacher.my_courses_result');
         Route::get('export-result/{course_id}', [TeacherController::class, 'my_courses_result_export'])->name('teacher.my_course_result_export');
 
         //Question
+
         Route::get('upload-question/{session_id}/{course_id}', [QuestionController::class, 'upload_question'])->name('teacher.upload_question');
         Route::POST('upload-question-submit/{session_id}/{course_id}', [QuestionController::class, 'upload_question_submit'])->name('upload_question_submit');
         Route::get('questions', [QuestionController::class, 'show_question'])->name('teacher.show_questions');
@@ -86,11 +87,19 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('my-question/{id}', [TeacherQuestionController::class, 'my_question'])->name('teacher.my_question');
 
         //result
+
         Route::get('student-details/{session_id}{semester_id}/{course_id}', [SessionController::class, 'student_details'])->name('teacher.student_details');
         Route::get('results/{session_id}/{student_id}/{semester_id}/{course_id}', [ResultController::class, 'add_result'])->name('add.result');
         Route::POST('results/{session_id}/{student_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'add_result_submit'])->name('submit.result');
-
+        Route::POST('all-result/{session_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'all_result_submit'])->name('teacher.add_all_student_results');
         Route::get('course/student-profile/{session_id}/{semester_id}/{course_id}', [ResultController::class, 'semester_students'])->name('result.my_course_student');
+
+
+        Route::get('course-update/{session_id}/{semester_id}/{course_id}', [ResultController::class, 'update_result'])->name('result.update_result');
+        Route::POST('update-result/{session_id}/{semester_id}/{course_id}/{course_credit}', [ResultController::class, 'update_result_submit'])->name('teacher.update_result');
+
+
+
         //Courses
         Route::get('course/student-profile-view/{session_id}/{student_id}/{course_id}', [ResultController::class, 'student_profile_details'])->name('course.student_profile_view');
         Route::get('course/show_result/{session_id}/{student_id}/{course_id}', [CoursesControlller::class, 'single_student_result'])->name('courses.show_result');

@@ -159,9 +159,9 @@
                     <!-- ./col -->
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <a class="small-box bg-success" href="{{ route('teacher.my_courses') }}">
+                        <a class="small-box bg-success" href="{{ route('teacher.my_courses_internal') }}">
                             <div class="inner">
-                                <h4>My Courses</h4>
+                                <h4>Examination</h4>
 
                             </div>
                             <div class="icon">

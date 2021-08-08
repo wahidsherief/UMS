@@ -1,41 +1,10 @@
 @extends('users.admin.layout')
 @section('title',"Assign Courses")
 
-
 @section('nav_bar')
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item " href="{{ route('add.course') }}">Add Course
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('course_data') }}">View Course
-                </a>
-            </li>
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('add.coursetype') }}">Add CourseType
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('coursetype_data') }}">View CourseType
-                </a>
-            </li>
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item active" href="{{ route('admin.assign_courses') }}">Assign Courses
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
+@include('users.admin.top_nav.courses')
 @endsection
+
 
 
 
@@ -61,7 +30,7 @@
 
                   <div class="card-body">
                     <div class="card-body table-responsive p-0">
-                      <table class="table table-bordered table-hover">
+                      <table class="table table-bordered table-hover table-sm">
               <thead>
                 <tr>
                   <th>Serial</th>
@@ -88,8 +57,10 @@
                   <td>{{$assign_course->teacher_internal}}</td>
                   <td>{{$assign_course->teacher_external}}</td>
                   <td>
-                  <a href="{{route('admin.assign_courses_update',$assign_course->id)}}" class="btn btn-info"> Update</a>
-              </td>
+                      @if($session_id==$latest_session)
+                  <a href="{{route('admin.assign_courses_update',$assign_course->id)}}" class="btn btn-warning btn-sm"> Update</a>
+              @endif
+                </td>
             </tr>
 
 @endforeach

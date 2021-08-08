@@ -22,8 +22,13 @@ class CreateTeachersTable extends Migration
             $table->string('status');
             $table->longtext('about');
             $table->string('phone');
+            $table->string('gender');
             $table->string('blood_group');
             $table->text('address');
+            $table->text('masters')->nullable();
+            $table->text('bachelor')->nullable();
+            $table->text('college')->nullable();
+            $table->text('school')->nullable();
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

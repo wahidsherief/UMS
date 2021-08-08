@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
 class SessionSeeder extends Seeder
 {
     /**
@@ -13,16 +14,11 @@ class SessionSeeder extends Seeder
      */
     public function run()
     {
-        $sessions=[
+        $sessions = [
             [
-                'session_name'=> 'Spring 2021',
-            ],[
-                'session_name'=> 'Fall 2020',
-            ],[
-                'session_name'=> 'Spring 2020',
+                'session_name' => 'Spring 2021',
             ],
-                    ];
-                    DB::table('sessions')->insert($sessions);
-
+        ];
+        DB::table('sessions')->insert($sessions);
     }
 }

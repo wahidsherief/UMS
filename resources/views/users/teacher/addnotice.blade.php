@@ -1,29 +1,8 @@
 
 @extends('users.teacher.layout')
 @section('title',"Add Notice")
-@section('nav_bar')
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
+@include('users.teacher.top_nav.notice')
 
-
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item " href="{{ route('teacher.notice') }}">Notices
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item active" href="{{ route('teacher.addnotice') }}">Add Notice
-                </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="dropdown-item" href="{{ route('teacher.my_notice',Auth::user()->id) }}">My Notice
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-@endsection
 @section('content')
         <div class="container">
             <div class="row">

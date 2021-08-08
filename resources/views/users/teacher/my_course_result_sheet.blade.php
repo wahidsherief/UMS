@@ -72,9 +72,13 @@
 
 
             <div class="card-footer text-right">
-
+@if($result_added==0)
                 <a href="{{route('result.my_course_student',[$session_id,$semester_id,$course->id])}}"
                     class='btn btn-info btn-sm'><i class="fas fa-plus-circle"></i> Add Result</a>
+@else
+<a href="{{route('result.update_result',[$session_id,$semester_id,$course->id])}}"
+    class='btn btn-warning btn-sm'><i class="fas fa-plus-circle"></i> Update Result</a>
+@endif
                 <a href="{{ route('teacher.my_course_result_export',$course->id) }}" class="btn btn-warning btn-sm">Export as
                     PDF </a>
             </div>
@@ -86,6 +90,14 @@
 
 </div>
 
-
-
+@if(Session::has('result_added'))
+<script>
+    swal("Result Added", "Result has been added successfully", "success");
+</script>
+@endif
+@if(Session::has('result_updated'))
+<script>
+    swal("Result Updated", "Result has been Updated successfully", "success");
+</script>
+@endif
 @endsection

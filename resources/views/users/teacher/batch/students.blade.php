@@ -1,10 +1,8 @@
 @extends('users.teacher.layout')
 
 @section('nav_bar')
-@include('users.teacher.small_nav')
+@include('users.teacher.top_nav.small_nav')
 @endsection
-
-
 
 @section('title',"Students Details")
 @section('content')
@@ -15,7 +13,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="card-body table-responsive p-0">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover table-sm">
                 <thead>
                     <tr>
                         <th>IMG</th>
@@ -35,7 +33,7 @@
 
                     <tr data-widget="expandable-table" aria-expanded="false">
                         <td><img class="img-circle img-bordered-sm" src="{{$my_batch_student->user->picture}}" alt="U"
-                                width="50"></td>
+                                ></td>
                         <td>{{$my_batch_student->registration_number}}</td>
                         <td>{{$my_batch_student->roll_number}}</td>
 

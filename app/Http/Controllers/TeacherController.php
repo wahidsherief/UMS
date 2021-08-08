@@ -101,6 +101,21 @@ class TeacherController extends Controller
         // dd($id);
         $user = User::find(Auth::user()->id);
         // dd($user->id);
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'teachers_short_name' => 'required|max:3',
+            'status' => 'required',
+            'gender' => 'required',
+            'phone' => 'required|numeric|unique:teachers',
+            'blood_group' => 'required|max:3',
+            'masters' => 'required',
+            'bachelor' => 'required',
+            'college' => 'required',
+            'school' => 'required',
+            'address' => 'required',
+            'about' => 'required',
+        ]);
         $teachers = new Teacher;
         $teachers->user_id = $user->id;
         $teachers->firstname = $request->firstname;
@@ -108,8 +123,14 @@ class TeacherController extends Controller
         $teachers->teachers_short_name = $request->teachers_short_name;
         $teachers->status = $request->status;
         $teachers->phone = $request->phone;
+        $teachers->gender = $request->gender;
         $teachers->blood_group = $request->blood_group;
         $teachers->address = $request->address;
+        $teachers->about = $request->about;
+        $teachers->masters = $request->masters;
+        $teachers->bachelor = $request->bachelor;
+        $teachers->college = $request->college;
+        $teachers->school = $request->school;
         $teachers->save();
         return redirect()->route('teacher.data')->with('pending', 'Your Profile is pending');
     }
@@ -181,7 +202,10 @@ class TeacherController extends Controller
         $course = Course::where('id', $course_id)->first();
         $results = Result::where([['session_id', $session_id], ['semester_id', $semester_id], ['course_id', $course_id]])->with('session', 'semester', 'course', 'student')->latest()->get();
         // dd($results[0]);
-        return view('users.teacher.my_course_result_sheet', compact(['results', 'course', 'session_id', 'semester_id']));
+        $result_added = Result::where([['session_id', $session_id], ['semester_id', $semester_id], ['course_id', $course_id]])->count();
+
+        // dd(count($result_added));
+        return view('users.teacher.my_course_result_sheet', compact(['results', 'result_added', 'course', 'session_id', 'semester_id']));
     }
 
     public function my_batch_result_list($semester_id, $course_id)

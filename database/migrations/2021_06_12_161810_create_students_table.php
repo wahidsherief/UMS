@@ -29,10 +29,14 @@ class CreateStudentsTable extends Migration
             $table->string('gender');
             $table->string('skill');
             $table->string('blood_group');
-            $table->string('hsc_gpa');
-            $table->string('ssc_gpa');
-            $table->string('jsc_gpa');
-            $table->string('psc_gpa');
+            $table->string('hsc_institution')->nullable();
+            $table->string('hsc_gpa')->nullable();
+            $table->string('ssc_institution')->nullable();
+            $table->string('ssc_gpa')->nullable();
+            $table->string('ssc_institution')->nullable();
+            $table->string('jsc_gpa')->nullable();
+            $table->string('psc_institution')->nullable();
+            $table->string('psc_gpa')->nullable();
             $table->string('resume')->nullable();
 
             $table->timestamps();

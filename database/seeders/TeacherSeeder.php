@@ -23,7 +23,12 @@ class TeacherSeeder extends Seeder
                 'status' => 'teacher',
                 'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
-                'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
                 'blood_group' => 'A+'
             ],
             [
@@ -35,6 +40,13 @@ class TeacherSeeder extends Seeder
                 'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -46,6 +58,13 @@ class TeacherSeeder extends Seeder
                 'about' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita veritatis vel tenetur animi. Sit aut optio velit nostrum ipsa sapiente eos amet consectetur asperiores cumque iusto sint consequatur, quisquam consequuntur, repellendus a qui blanditiis odio dolor, ratione dignissimos laboriosam quae accusantium? Obcaecati earum eius qui deleniti. Accusantium molestiae sequi consectetur mollitia quae placeat culpa voluptates laudantium recusandae totam, nam ipsum quidem corrupti quam reiciendis repellat excepturi officia error quia quis! Laboriosam corporis, omnis aliquid dolorum voluptatem nisi similique autem inventore quos eius quam necessitatibus iste, officiis unde eaque provident aut facere reprehenderit neque quaerat laborum quis rerum. Sapiente, magni!',
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -58,6 +77,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -70,6 +96,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -82,6 +115,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -94,6 +134,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -106,6 +153,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -118,6 +172,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -130,6 +191,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -142,6 +210,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -154,6 +229,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -166,6 +248,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],
             [
@@ -178,6 +267,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'A+'
             ],          [
                 'user_id' => 15,
@@ -189,6 +285,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'B+'
             ],
             [
@@ -201,6 +304,13 @@ class TeacherSeeder extends Seeder
 
                 'phone' => '555657',
                 'address' => 'address',
+                'gender' => 'male',
+                'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
+                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
                 'blood_group' => 'AB+'
             ],
         ];

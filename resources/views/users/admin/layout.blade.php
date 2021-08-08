@@ -47,37 +47,7 @@
     <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div> --}}
 
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
 
-
-                <li>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-
-                </li>
-
-                <li class="nav-item d-none d-sm-inline-block ">
-                    <a class="dropdown-item btn btn-grad btn-md" href="{{ route('admin.add_session') }}">Sessions
-                    </a>
-                </li>
-
-            </ul>
-
-            <!-- Right navbar links -->
-
-        </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -127,10 +97,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.notice') }}"
+                            <a href="{{ route('admin.add_session') }}"
                                 class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-user"></i>
-                                <p>All Notice</p>
+                                <p>Sessions</p>
                             </a>
                         </li>
 
@@ -171,12 +141,12 @@
                                         <p>All Course Type</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('admin.assign_courses') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Assign Courses</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
 
@@ -208,8 +178,19 @@
                                     </a>
                                 </li>
                         </li>
+                    </ul>
+                    <li class="nav-item">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <p>LogOut</p>
+                        </a>
 
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
+                    </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

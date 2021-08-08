@@ -15,10 +15,9 @@ class CreateAssignCoursesTable extends Migration
     {
         Schema::create('assign_courses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('department_id')->unsigned()->nullable();
+            $table->bigInteger('session_id')->unsigned()->nullable();
             $table->bigInteger('semester_id')->unsigned()->nullable();
             $table->bigInteger('course_id')->unsigned()->nullable();
-            $table->bigInteger('session_id')->unsigned()->nullable();
             $table->bigInteger('teacher_internal_id')->unsigned()->nullable();
             $table->bigInteger('teacher_external_id')->unsigned()->nullable();
 
