@@ -31,7 +31,7 @@ class CreateStudentsTable extends Migration
             $table->string('blood_group');
             $table->string('hsc_institution')->nullable();
             $table->string('hsc_gpa')->nullable();
-            $table->string('ssc_institution')->nullable();
+            $table->string('hsc_institution')->nullable();
             $table->string('ssc_gpa')->nullable();
             $table->string('ssc_institution')->nullable();
             $table->string('jsc_gpa')->nullable();
