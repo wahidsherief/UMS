@@ -117,14 +117,9 @@ div.content-wrapper nav.navbar ul li a:hover, div.content-wrapper nav.navbar ul 
     color: black;
 }
 
-.small-box {
-    padding: 5px;
-    margin-bottom: 0px;
-}
 
-.small-box .icon > i{
-    font-size: 15px !important;
-}
+
+
 
 .card-header {
     background: whitesmoke !important;
@@ -167,9 +162,7 @@ hr{
     margin-bottom: 3%;
 }
 
-.small-box { 
-    background-color: #fff;
- }
+
 
 .ums-small-nav {
     padding: 1.5rem;
@@ -179,11 +172,6 @@ hr{
 .ums-small-nav .small-nav {
     border-radius: .25rem;
     display: block;
-}
-
-.small-box {
-    box-shadow: none;
-    border: none;
 }
 
 
@@ -214,7 +202,7 @@ hr{
     text-decoration: none;
 }
 
-.dropdown-item, .small-box{
+.dropdown-item {
     -webkit-border-radius: 5;
     -moz-border-radius: 5;
     border-radius: 5px;
@@ -229,7 +217,7 @@ hr{
     text-decoration: none;
 }
 
-.dropdown-item:hover, .small-box:hover {
+.dropdown-item:hover {
     background: #f0f0f0;
     text-decoration: none;
 }
@@ -246,6 +234,7 @@ hr{
 
 .ums-fixed-sidebar { 
     height: calc(70vh - 50px);
+
  }
 
  .avatar {
@@ -268,3 +257,66 @@ hr{
 .ums-profile-img-top {
     height: 250px;
  }
+
+ .profile-content .row {
+     border-top: 1px solid #eee;
+     padding-top: 20px;
+ }
+
+ .cyan-light-bg {
+     background-color: 
+     #B2EBF2; 
+}
+
+.red-light-bg { 
+    background-color: #FFCDD2;
+}
+
+.blue-light-bg { 
+    background-color: #BBDEFB;
+}
+
+.green-light-bg { 
+    background-color: #C8E6C9;
+}
+
+.purple-light-bg { 
+    background-color: #D1C4E9;
+}
+
+.small-box .inner {
+    padding: 0px;
+}
+
+.inner p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.small-box:hover {
+    background-color: #fff;
+}
+
+.small-box{
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 1px 5px #e3e3e3;
+    -moz-box-shadow: 2px 1px 5px #e3e3e3;
+    box-shadow: 2px 1px 5px #e3e3e3;
+    font-family: Arial;
+    color: #000000;
+    font-size: 12px;
+    padding: 12px;
+    text-decoration: none;
+    margin-bottom: 0px;
+    vertical-align: middle;
+}
+
+.small-box .icon i {
+    font-size: 30px !important;
+    top: 20% !important;
+    bottom: 20% !important;
+    position: absolute;
+}
+

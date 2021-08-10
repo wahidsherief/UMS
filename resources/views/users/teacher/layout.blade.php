@@ -140,7 +140,7 @@
             <div class="col-md-11 col-sm-12">
                 <div class="container">
                     <div class="row">
-                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12'>
+                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12 sticky-top'>
                             <div class="container">
                                 <div class="card">
                                     <img class="card-img-top"
@@ -176,7 +176,8 @@
                                 <div class="row">
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('MyBatchController.students') }}">
+                                        <a class="small-box cyan-light-bg"
+                                            href="{{ route('MyBatchController.students') }}">
                                             <div class="inner">
                                                 <p>My Batch</p>
 
@@ -190,7 +191,8 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('teacher.my_courses_internal') }}">
+                                        <a class="small-box blue-light-bg"
+                                            href="{{ route('teacher.my_courses_internal') }}">
                                             <div class="inner">
                                                 <p>Examination</p>
 
@@ -204,7 +206,7 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{route('teacher.notice')}}">
+                                        <a class="small-box red-light-bg" href="{{route('teacher.notice')}}">
                                             <div class="inner">
                                                 <p>Notices</p>
                                             </div>
@@ -217,9 +219,10 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('teacher.show_questions') }}">
+                                        <a class="small-box purple-light-bg"
+                                            href="{{ route('teacher.show_questions') }}">
                                             <div class="inner">
-                                                <p>Question Bank</p>
+                                                <p>Questions</p>
                                             </div>
                                             <div class="icon">
                                                 <i class="fas fa-book-open"></i>

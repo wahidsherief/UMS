@@ -57,56 +57,68 @@
         </div>
     </div>
 
-    <div class="row mt-3 p-4">
-        <div class="col-6">
-            <strong>Education:</strong>
-            <div class='mt-2'>
-                <p>Higher Secondary School Certficate</p>
-                <p class="text-muted">Sample School and College</p>
-                <p class="text-muted">
-                    <span>Result:</span>
-                    <span class="text-muted">{{ $student_details->hsc_gpa }}
-                    </span>
-                </p>
+    <div class='profile-content m-4'>
+        <div class="row mt-2">
+            <div class="col-12">
+                <strong>About:</strong>
+                <p class='mt-2'>{{ $student_details->about }}</p>
             </div>
-            <div class='mt-2'>
-                <p>Higher Secondary School Certficate</p>
-                <p class="text-muted">Sample School and College</p>
-                <p class="text-muted">
-                    <span>Result:</span>
-                    <span class="text-muted">{{ $student_details->hsc_gpa }}
-                    </span>
-                </p>
-            </div>
-            <div class='mt-2'>
-                <p>Higher Secondary School Certficate</p>
-                <p class="text-muted">Sample School and College</p>
-                <p class="text-muted">
-                    <span>Result:</span>
-                    <span class="text-muted">{{ $student_details->hsc_gpa }}
-                    </span>
-                </p>
-            </div>
-            <div class='mt-2'>
-                <p>Higher Secondary School Certficate</p>
-                <p class="text-muted">Sample School and College</p>
-                <p class="text-muted">
-                    <span>Result:</span>
-                    <span class="text-muted">{{ $student_details->hsc_gpa }}
-                    </span>
-                </p>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <strong>Education:</strong>
+                <div class='mt-2'>
+                    <table class='table table-borderless table-hover table-sm'>
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>Instuition</th>
+                                <th class='text-center'>Passing Year</th>
+                                <th class='text-center'>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Higher Secondary School Certficate</td>
+                                <td>Sample School and College</td>
+                                <td class='text-center'>2018</td>
+                                <td class='text-center text-bold'>{{ $student_details->hsc_gpa }}</td>
+                            </tr>
+                            <tr>
+                                <td>Higher Secondary School Certficate</td>
+                                <td>Sample School and College</td>
+                                <td class='text-center'>2018</td>
+                                <td class='text-center text-bold'>{{ $student_details->ssc_gpa }}</td>
+                            </tr>
+                            <tr>
+                                <td>Higher Secondary School Certficate</td>
+                                <td>Sample School and College</td>
+                                <td class='text-center'>2018</td>
+                                <td class='text-center text-bold'>{{ $student_details->jsc_gpa }}</td>
+                            </tr>
+                            <tr>
+                                <td>Higher Secondary School Certficate</td>
+                                <td>Sample School and College</td>
+                                <td class='text-center'>2018</td>
+                                <td class='text-center text-bold'>{{ $student_details->psc_gpa }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <div class="col-6">
-            <strong>Skills:</strong>
-            <div class='mt-2'>
-                <p class="text-muted">
-                    <span class="text-muted">{{ $student_details->skill }}
-                    </span>
-                </p>
+        <div class="row mt-2">
+            <div class="col-6">
+                <strong>Skills:</strong>
+                <div class='mt-2'>
+                    <p class="text-muted">
+                        <span class="text-muted">{{ $student_details->skill }}
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+
 </section>
 @endsection
