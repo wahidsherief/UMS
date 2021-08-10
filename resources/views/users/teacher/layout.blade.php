@@ -48,167 +48,185 @@
         </ul>
     </nav>
 
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    {{-- <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ \URL::to('/teacher/dashboard')}}" class="brand-link">
-            <img src="{{('users/images/4271621914328_avatar.png')}}" alt="Logo"
-                class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Teacher Dashboard</span>
-        </a>
+    <img src="{{('users/images/4271621914328_avatar.png')}}" alt="Logo" class="brand-image img-circle elevation-3"
+        style="opacity: .8">
+    <span class="brand-text font-weight-light">Teacher Dashboard</span>
+    </a>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ Auth::user()->picture}}" class="img-circle elevation-2" alt="T">
-                </div>
-                <div class="info">
-                    <div class="d-block" style="color:white;font-weight:bold">{{Auth::user()->name}}</div>
-                </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ Auth::user()->picture}}" class="img-circle elevation-2" alt="T">
             </div>
+            <div class="info">
+                <div class="d-block" style="color:white;font-weight:bold">{{Auth::user()->name}}</div>
+            </div>
+        </div>
 
 
-            @php $account_status=Auth::user()->account_status;
-            @endphp
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
-
-
-
-                    @if($account_status==0)
-
-                    <li class="nav-item">
-                        <div class="nav-link active">
-                            <i class="nav-icon fas "></i>
-                            <p>
-                                Dashboard
-
-                            </p>
-                        </div>
-                    </li>
-                    @endif
-                    @if($account_status==1)
-
-
-                    <li class="nav-item">
-                        <a href="{{route('teacher.profile')}}"
-                            class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>Profile</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('courses.all_students',1) }}"
-                            class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>All Students</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('password') }}"
-                            class="nav-link {{ (request()->is('teacher/password'))?'active': ''}}">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>Password</p>
-                        </a>
-                    </li>
+        @php $account_status=Auth::user()->account_status;
+        @endphp
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 
 
-                    @endif
-                    <li class="nav-item">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                @if($account_status==0)
+
+                <li class="nav-item">
+                    <div class="nav-link active">
+                        <i class="nav-icon fas "></i>
+                        <p>
+                            Dashboard
+
+                        </p>
+                    </div>
+                </li>
+                @endif
+                @if($account_status==1)
+
+
+                <li class="nav-item">
+                    <a href="{{route('teacher.profile')}}"
+                        class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Profile</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('courses.all_students',1) }}"
+                        class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>All Students</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('password') }}"
+                        class="nav-link {{ (request()->is('teacher/password'))?'active': ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Password</p>
+                    </a>
+                </li>
+
+
+
+                @endif
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();" class="nav-link">
-                            <i class="nav-icon fas fa-sign-out-alt"></i>
-                            <p>LogOut</p>
-                        </a>
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>LogOut</p>
+                    </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
 
-                    </li>
+                </li>
 
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
-    </aside>
-    <div class="content-wrapper">
-
-        <!-- Main content -->
-        <div class="container">
-            <section class="content">
-
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <a class="small-box bg-info" href="{{ route('MyBatchController.students') }}">
-                            <div class="inner">
-                                <h4>My Batch</h4>
-
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+    </aside> --}}
+    <div class="ums-content-wrapper container">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="container">
+                    <div class="row">
+                        <aside class='small-box col-3'>
+                            <div class="col-12">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione commodi ipsa sit.
+                                Nulla
+                                obcaecati in ex atque tempore suscipit blanditiis iusto facilis itaque sint, quia,
+                                provident
+                                optio dolores modi velit!
                             </div>
-                            <div class="icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </a>
-                    </div>
+                        </aside>
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <a class="small-box bg-success" href="{{ route('teacher.my_courses_internal') }}">
-                            <div class="inner">
-                                <h4>Examination</h4>
+                        <section class="col-9">
+                            <section class="col-12 fixed-uppper-content">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <!-- small box -->
+                                        <a class="small-box" href="{{ route('MyBatchController.students') }}">
+                                            <div class="inner">
+                                                <p>My Batch</p>
 
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-book"></i>
-                            </div>
-                        </a>
-                    </div>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </a>
+                                    </div>
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <a class="small-box bg-primary" href="{{route('teacher.notice')}}">
-                            <div class="inner">
-                                <h4>Notices</h4>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-bell"></i>
-                            </div>
-                        </a>
-                    </div>
+                                    <!-- ./col -->
+                                    <div class="col-3">
+                                        <!-- small box -->
+                                        <a class="small-box" href="{{ route('teacher.my_courses_internal') }}">
+                                            <div class="inner">
+                                                <p>Examination</p>
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <a class="small-box bg-warning" href="{{ route('teacher.show_questions') }}">
-                            <div class="inner">
-                                <h4>Question Bank</h4>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                        </a>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- ./col -->
+                                    <div class="col-3">
+                                        <!-- small box -->
+                                        <a class="small-box" href="{{route('teacher.notice')}}">
+                                            <div class="inner">
+                                                <p>Notices</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-bell"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- ./col -->
+                                    <div class="col-3">
+                                        <!-- small box -->
+                                        <a class="small-box" href="{{ route('teacher.show_questions') }}">
+                                            <div class="inner">
+                                                <p>Question Bank</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-book-open"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </section>
+
+
+                            <section class="col-12 mt-4">
+                                <div class="card p-4">
+                                    <div class="card-body">
+                                        <div class="mb-4 ums-small-nav">
+                                            @yield('nav_bar')
+                                        </div>
+
+                                        @yield('content')
+                                    </div>
+                                </div>
+
+                            </section>
+                        </section>
                     </div>
                 </div>
-
-            </section>
-
-            <div class="pt-4 pb-4">
-                @yield('nav_bar')
             </div>
-
-            @yield('content')
         </div>
-
-    </div>
-
-
     </div>
 </body>
 
