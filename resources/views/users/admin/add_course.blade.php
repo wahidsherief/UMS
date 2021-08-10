@@ -75,6 +75,13 @@
                                             <option value="EEE">EEE</option>
                                             <option value="HSC">HSC</option>
                                             <option value="ENG">ENG</option>
+                                            <option value="EEE">MATH</option>
+                                            <option value="HSC">ME</option>
+                                            <option value="ENG">ACT</option>
+                                            <option value="ENG">PHY</option>
+                                            <option value="EEE">CHEM</option>
+                                            <option value="HSC">BUS</option>
+                                            <option value="ENG">HUM</option>
                                         </select>
                                         -
                                         <input type="text" name="course_text"

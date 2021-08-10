@@ -1,6 +1,14 @@
 @extends('users.teacher.layout')
 
 @section('title',"Update Result")
+<style>
+    td>input,td>input:hover{
+        border:none !important;
+        outline: none;
+        background:transparent
+    }
+
+</style>
 @section('content')
 <div class="container">
     <div class="card card-secondary">
@@ -46,7 +54,7 @@
                                 <td>{{$result->student->firstname}} {{$result->student->lastname}}</td>
 
                                 <td>
-                                    <input type="text" name="attendance[]" placeholder="add marks" class="form-control" value={{ $result->attendance }} required>
+                                    <input type="text" name="attendance[]" placeholder="add marks" class="form-control no-outline" value={{ $result->attendance }} required>
                                 </td>
                                 <td>
                                     <input type="text" name="class_test[]" placeholder="add marks" class="form-control" required value={{ $result->class_test }}>
