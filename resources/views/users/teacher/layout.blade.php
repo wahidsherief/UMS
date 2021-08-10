@@ -137,20 +137,41 @@
     </aside> --}}
     <div class="ums-content-wrapper container">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-md-11 col-sm-12">
                 <div class="container">
                     <div class="row">
-                        <aside class='small-box col-3'>
-                            <div class="col-12">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione commodi ipsa sit.
-                                Nulla
-                                obcaecati in ex atque tempore suscipit blanditiis iusto facilis itaque sint, quia,
-                                provident
-                                optio dolores modi velit!
+                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12'>
+                            <div class="container">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/oslo.jpg"
+                                        alt="Bologna">
+                                    <div class="card-body text-center p-4">
+                                        <img class="avatar rounded-circle"
+                                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg"
+                                            alt="Bologna">
+                                        <h4 class="card-title">Robert Downey Jr.</h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
+                                        <p class="card-text">Robert John Downey Jr.'career has included critical and
+                                            popular success in his youth.
+                                        </p>
+                                        <div class="profile-social-icon">
+                                            <a href="#"><i class="fab fa-facebook"></i></a>
+                                            <a href="#"><i class="fab fa-researchgate"></i></a>
+                                            <a href="#"><i class="fab fa-github"></i></a>
+                                            <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                                            <a href="#"><i class="fas fa-globe"></i></i></a>
+                                        </div>
+                                        <ul class="list-group list-group-flush mt-3">
+                                            <li class="list-group-item"><a href="">My Profile</a></li>
+                                            <li class="list-group-item"><a href="">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </aside>
 
-                        <section class="col-9">
+                        <section class="col-md-9 col-sm-12">
                             <section class="col-12 fixed-uppper-content">
                                 <div class="row">
                                     <div class="col-3">
@@ -210,13 +231,10 @@
                             </section>
 
 
-                            <section class="col-12 mt-4">
-                                <div class="card p-4">
+                            <section class="col-md-12 mt-4">
+                                <div class="card">
                                     <div class="card-body">
-                                        <div class="mb-4 ums-small-nav">
-                                            @yield('nav_bar')
-                                        </div>
-
+                                        @yield('nav_bar')
                                         @yield('content')
                                     </div>
                                 </div>
