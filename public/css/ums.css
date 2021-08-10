@@ -57,16 +57,18 @@ thead {
     background:transparent;
 
 }
+
+
 table th {
     background-color: transparent;
-    padding:5px;
+    padding-left: 0px;
     font-weight:bold;
     vertical-align: middle !important;
 
 }
 table td {
     background-color: transparent;
-    padding:5px;
+    padding-left: 0px;
     vertical-align:middle !important;
 }
 .rowspan {
@@ -169,7 +171,12 @@ hr{
     background-color: #fff;
  }
 
- .ums-small-nav .small-nav {
+.ums-small-nav {
+    padding: 1.5rem;
+}
+
+
+.ums-small-nav .small-nav {
     border-radius: .25rem;
     display: block;
 }
@@ -232,3 +239,32 @@ hr{
     text-decoration: none;
     background-color: #12A759; 
 }
+
+.ums-content-heading {
+    padding-left: 1.5rem;
+}
+
+.ums-fixed-sidebar { 
+    height: calc(70vh - 50px);
+ }
+
+ .avatar {
+    border: 0.3rem solid rgba(#fff, 0.3);
+    margin-top: -6rem;
+    margin-bottom: 1rem;
+    max-width: 9rem;
+  }
+
+  .card-title, .card-subtitle { 
+      float: none;
+      display: inline-block;
+  }
+
+  .profile-social-icon a {
+      font-size: 20px;
+      margin: 2px
+  }
+
+.ums-profile-img-top {
+    height: 250px;
+ }
