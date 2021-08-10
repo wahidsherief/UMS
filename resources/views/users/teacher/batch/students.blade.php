@@ -25,10 +25,8 @@
             </thead>
             <tbody>
                 @php $i=1;
-
                 @endphp
                 @foreach($my_batch_students as $my_batch_student)
-
                 <tr data-widget="expandable-table" aria-expanded="false">
                     {{-- <td><img class="img-circle img-bordered-sm" src="{{$my_batch_student->user->picture}}"
                     alt="U"> --}}
