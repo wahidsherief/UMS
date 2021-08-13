@@ -25,10 +25,16 @@ class TeacherSeeder extends Seeder
                 'phone' => '555657',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
                 'blood_group' => 'A+'
             ],
             [
@@ -42,10 +48,15 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
 
                 'blood_group' => 'A+'
             ],
@@ -60,11 +71,14 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
 
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
                 'blood_group' => 'A+'
             ],
             [
@@ -79,10 +93,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -98,10 +118,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -117,10 +143,14 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -136,10 +166,15 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
 
                 'blood_group' => 'A+'
             ],
@@ -155,10 +190,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -174,10 +215,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -193,10 +240,15 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
 
                 'blood_group' => 'A+'
             ],
@@ -212,10 +264,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -231,10 +289,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -250,10 +314,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],
@@ -269,10 +339,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'A+'
             ],          [
@@ -287,10 +363,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'B+'
             ],
@@ -306,10 +388,16 @@ class TeacherSeeder extends Seeder
                 'address' => 'address',
                 'gender' => 'male',
                 'address' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nisi.',
-                'masters' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'bachelor' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'college' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
-                'school' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem.',
+
+                'masters_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'masters_passing_year' => '2020',
+                'masters_gpa' => '3.83',
+
+                'bachelor_institution' => 'Lorem ipsum dolor, sit amet consectetur',
+                'bachelor_passing_year' => '2016',
+                'bachelor_gpa' => '4.00',
+
+
 
                 'blood_group' => 'AB+'
             ],

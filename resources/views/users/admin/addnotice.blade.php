@@ -1,8 +1,6 @@
 @extends('users.admin.layout')
 @section('title',"Admin profile")
 @section('content')
-
-
 <div class="container">
   <div class="card card-primary">
     <div class="card-header">
@@ -11,7 +9,6 @@
     <div class="card-body">
       @if(Session::has('submitted'))
       <div class="alert alert-success" role='alert'>
-
         {{Session::get('submitted')}}
 
       </div>

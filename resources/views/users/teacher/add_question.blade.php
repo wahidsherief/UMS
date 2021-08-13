@@ -1,14 +1,19 @@
 @extends('users.teacher.layout')
 @section('title',"My Batch")
+
+@section('nav_bar')
+@include('users.teacher.top_nav.question_without_search')
+@endsection
+
 @section('content')
 <div class="container">
-    <div class="card card-secondary">
-        <div class="card-header">
-            <h3 class="card-title"> Upload Question</h3>
 
-        </div>
-        <!-- /.card-header -->
+
+
         <div class="card-body">
+            <div class="ums-content-heading">
+                <h3 class="card-title">Add Questions</h3>
+            </div>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <form action="{{ route('upload_question_submit',[$session_id,$course_id]) }}" method="POST" enctype="multipart/form-data">

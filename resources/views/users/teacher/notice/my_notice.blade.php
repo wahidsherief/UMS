@@ -2,30 +2,31 @@
 @extends('users.teacher.layout')
 @section('title',"notice")
 
+@section('nav_bar')
 @include('users.teacher.top_nav.notice')
+@endsection
 
 @section('content')
 <div class="container">
-<div class="card card-secondary">
-    <div class="card-header">
-      <h3 class="card-title">My Notices</h3>
+
+
+
+<div class="card-body">
+    <div class="ums-content-heading">
+        <h3 class="card-title">Available Notices</h3>
     </div>
-    <!-- /.card-header -->
-@if($count!==0)
+    @if($count!==0)
 
 
-
-    <div class="card-body">
-
-      <div class="card-body table-responsive p-0">
-        <table class="table table-bordered table-hover">
-          <thead>
+  <div class="card-body table-responsive p-0">
+    <table class="table table-borderless table-hover table-sm">
+      <thead>
             <tr>
               <th>Image</th>
               <th>Name</th>
               <th>Date</th>
               <th>Title</th>
-              <th>Action</th>
+
             </tr>
           </thead>
           <tbody>
@@ -33,14 +34,16 @@
 
 
             <tr data-widget="expandable-table" aria-expanded="false">
-              <td>  <img class="img-circle img-bordered-sm" src="{{$notice->user->picture}}" alt="U"width="50"></td>
+                <td class='text-left'><img class="img-circle"
+                    src="{{$notice->user->picture}}" width="40" alt="U">
+            </td>
               <td>{{$notice->user->name}}</td>
               <td> <span class="description">{{$notice->created_at->diffForHumans()}}</span></td>
 
               <td>{{$notice->notice_title}}</td>
-              <td>
-                  <a href="{{route('teacher.single_notice',$notice->id)}}" class="btn btn-info mr-2"><i class="fas fa-eye"></i> </a>
-                  <a href="{{route('teacher.notice_delete',$notice->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+              <td  class='text-right' style="width:120px;">
+                  <a href="{{route('teacher.single_notice',$notice->id)}}" class="mr-1 text-info mr-2"><i class="fas fa-eye"></i> </a>
+                  <a href="{{route('teacher.notice_delete',$notice->id)}}" class="text-danger"><i class="fas fa-trash-alt"></i></a>
               </td>
             </tr>
 

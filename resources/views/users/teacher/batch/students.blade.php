@@ -1,10 +1,10 @@
 @extends('users.teacher.layout')
 
+@section('title',"Students Details")
 @section('nav_bar')
 @include('users.teacher.top_nav.small_nav')
 @endsection
 
-@section('title',"Students Details")
 @section('content')
 <!-- /.card-header -->
 <div class="card-body">
@@ -17,7 +17,6 @@
                 <tr>
                     <th></th>
 
-                    {{-- <th>Department Name</th> --}}
                     <th>Reg.No</th>
                     <th>ID.No</th>
                     <th>Student Name</th>
@@ -25,8 +24,10 @@
             </thead>
             <tbody>
                 @php $i=1;
+
                 @endphp
                 @foreach($my_batch_students as $my_batch_student)
+
                 <tr data-widget="expandable-table" aria-expanded="false">
                     {{-- <td><img class="img-circle img-bordered-sm" src="{{$my_batch_student->user->picture}}"
                     alt="U"> --}}

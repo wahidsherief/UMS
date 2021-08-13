@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="card-body table-responsive p-0">
 
-                <table class="table table-bordered table-hover table-sm">
+                <table class="table table-borderless table-hover ">
                     <thead>
                         <tr>
                             <th class="sl">SL</th>

@@ -26,6 +26,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('profile', [TeacherController::class, 'profile'])->name('teacher.profile');
         Route::get('setting', [TeacherController::class, 'setting'])->name('teacher.setting');
         Route::view('/password', 'users.teacher.password')->name('password');
+
+        Route::POST('about', [TeacherController::class, 'teacher_about'])->name('teacher_about');
+
         //Notice
         Route::get('addnotice', [TeacherController::class, 'addnotice'])->name('teacher.addnotice');
         Route::get('notice', [TeacherController::class, 'notice'])->name('teacher.notice');

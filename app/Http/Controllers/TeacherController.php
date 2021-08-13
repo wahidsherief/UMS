@@ -28,7 +28,14 @@ class TeacherController extends Controller
         $teacher = Teacher::where('user_id', $user_id)->with('user')->first();
         return view('users.teacher.profile', compact(['teacher', 'publication', 'publication_count']));
     }
-
+    public function teacher_about(Request $request)
+    {
+        $teacher_id = $request->teacher_id;
+        $teacher = Teacher::find($teacher_id);
+        $teacher->about = $request->about;
+        $teacher->save();
+        return redirect()->back()->with('about_added', 'About has been added');
+    }
     public function setting()
     {
         return view('users.teacher.setting');
@@ -111,8 +118,6 @@ class TeacherController extends Controller
             'blood_group' => 'required|max:3',
             'masters' => 'required',
             'bachelor' => 'required',
-            'college' => 'required',
-            'school' => 'required',
             'address' => 'required',
             'about' => 'required',
         ]);
@@ -129,8 +134,6 @@ class TeacherController extends Controller
         $teachers->about = $request->about;
         $teachers->masters = $request->masters;
         $teachers->bachelor = $request->bachelor;
-        $teachers->college = $request->college;
-        $teachers->school = $request->school;
         $teachers->save();
         return redirect()->route('teacher.data')->with('pending', 'Your Profile is pending');
     }

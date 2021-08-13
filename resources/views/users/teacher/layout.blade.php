@@ -116,18 +116,10 @@
 
 
                 @endif
-                <li class="nav-item">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();" class="nav-link">
-                        <i class="nav-icon fas fa-sign-out-alt"></i>
-                        <p>LogOut</p>
-                    </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
 
-                </li>
+
+
 
             </ul>
         </nav>
@@ -140,7 +132,7 @@
             <div class="col-md-11 col-sm-12">
                 <div class="container">
                     <div class="row">
-                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12'>
+                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12 sticky-top'>
                             <div class="container">
                                 <div class="card">
                                     <img class="card-img-top"
@@ -148,9 +140,9 @@
                                         alt="Bologna">
                                     <div class="card-body text-center p-4">
                                         <img class="avatar rounded-circle"
-                                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg"
+                                            src="{{ Auth::user()->picture}}"
                                             alt="Bologna">
-                                        <h4 class="card-title">Robert Downey Jr.</h4>
+                                        <h4 class="card-title">{{ Auth::user()->name }}.</h4>
                                         <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
                                         <p class="card-text">Robert John Downey Jr.'career has included critical and
                                             popular success in his youth.
@@ -163,8 +155,21 @@
                                             <a href="#"><i class="fas fa-globe"></i></i></a>
                                         </div>
                                         <ul class="list-group list-group-flush mt-3">
-                                            <li class="list-group-item"><a href="">My Profile</a></li>
-                                            <li class="list-group-item"><a href="">Logout</a></li>
+                                            <li class="list-group-item"><a href="{{route('teacher.profile')}}"> My Profile</a></li>
+
+                                            <li class="list-group-item">
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();" class="nav-link">
+                          Logout
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+
+                                            </li>
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -176,7 +181,8 @@
                                 <div class="row">
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('MyBatchController.students') }}">
+                                        <a class="small-box cyan-light-bg"
+                                            href="{{ route('MyBatchController.students') }}">
                                             <div class="inner">
                                                 <p>My Batch</p>
 
@@ -190,7 +196,8 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('teacher.my_courses_internal') }}">
+                                        <a class="small-box blue-light-bg"
+                                            href="{{ route('teacher.my_courses_internal') }}">
                                             <div class="inner">
                                                 <p>Examination</p>
 
@@ -204,7 +211,7 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{route('teacher.notice')}}">
+                                        <a class="small-box red-light-bg" href="{{route('teacher.notice')}}">
                                             <div class="inner">
                                                 <p>Notices</p>
                                             </div>
@@ -217,9 +224,10 @@
                                     <!-- ./col -->
                                     <div class="col-3">
                                         <!-- small box -->
-                                        <a class="small-box" href="{{ route('teacher.show_questions') }}">
+                                        <a class="small-box purple-light-bg"
+                                            href="{{ route('teacher.show_questions') }}">
                                             <div class="inner">
-                                                <p>Question Bank</p>
+                                                <p>Questions</p>
                                             </div>
                                             <div class="icon">
                                                 <i class="fas fa-book-open"></i>
@@ -311,6 +319,7 @@
             , withCSRF: ['_token', '{{ csrf_token() }}']
             , onSuccess: function(message, element, status) {
                 alert(message);
+                window.location.reload(); 
             }
             , onError: function(message, element, status) {
                 alert(message);

@@ -1,23 +1,18 @@
 @extends('users.teacher.layout')
-
-
+@section('title',"Course List")
 @section('nav_bar')
 @include('users.teacher.top_nav.small_nav')
 @endsection
-
-
-
-@section('title',"Course List")
 @section('content')
 <div class="container">
-    <div class="card card-secondary">
-        <div class="card-header">
-            <h3 class="card-title">Courses</h3>
-        </div>
+
         <!-- /.card-header -->
         <div class="card-body">
+            <div class="ums-content-heading">
+                <h3 class="card-title">Courses</h3>
+            </div>
             <div class="card-body table-responsive p-0">
-                <table class="table table-bordered table-hover table-sm">
+                <table class="table table-borderless table-hover ">
                     <thead>
                         <tr>
                             <th class="sl">sl</th>
@@ -26,7 +21,6 @@
                             <th>Course Code</th>
                             <th>Course Name</th>
                             <th>Internal</th>
-                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,9 +36,11 @@
 
                             <td>{{$assign_course->teacher_internal}}</td>
 
-                            <td>
+
+                    <td class='text-right'>
                                 <a href="{{ route('teacher.my_batch_result_list',[$assign_course->semester_id,$assign_course->course_id]) }}"
-                                    class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Show Details </a>
+                                   ><span
+                                   class='ums-tiny-btn'><i class="fas fa-eye"></i> Show Details</span> </a>
                             </td>
                         </tr>
 
