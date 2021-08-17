@@ -64,12 +64,14 @@ table th {
     padding-left: 0px;
     font-weight:bold;
     vertical-align: middle !important;
+    font-size:14px;
 
 }
 table td {
     background-color: transparent;
     padding-left: 0px;
     vertical-align:middle !important;
+    font-size:14px;
 }
 .rowspan {
     border-left-width: 10px;
@@ -116,10 +118,6 @@ div.content-wrapper nav.navbar ul li a:hover, div.content-wrapper nav.navbar ul 
     background-color: #12A759;
     color: black;
 }
-
-
-
-
 
 .card-header {
     background: whitesmoke !important;
@@ -180,6 +178,7 @@ hr{
     padding: 0px;
     font-size: 14px;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .ums-tiny-btn {
@@ -225,14 +224,15 @@ hr{
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #12A759; 
+    background-color: #12A759;
 }
 
 .ums-content-heading {
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
-.ums-fixed-sidebar { 
+.ums-fixed-sidebar {
     height: calc(70vh - 50px);
 
  }
@@ -244,7 +244,7 @@ hr{
     max-width: 9rem;
   }
 
-  .card-title, .card-subtitle { 
+  .card-title, .card-subtitle {
       float: none;
       display: inline-block;
   }
@@ -319,4 +319,6 @@ hr{
     bottom: 20% !important;
     position: absolute;
 }
+
+
 

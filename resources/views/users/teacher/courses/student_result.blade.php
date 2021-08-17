@@ -15,17 +15,17 @@
             <div class="card-body table-responsive p-0">
 
                 <form action="{{ route('teacher.add_all_student_results',[$session_id,$semester_id,$course_id,$course_credit]) }}" method="POST">
-                <table class="table table-bordered table-hover table-sm">
+                    <table class="table table-borderless table-hover table-sm">
                     <thead>
                         <tr>
                             <th class="sl">SL</th>
                             <th>Reg.No</th>
                             <th>ID.No</th>
-                            <th class='lg-col'>Student Name</th>
-                            <th>Attendance</th>
-                            <th>Class Test</th>
-                            <th>PartA</th>
-                            <th>PartB</th>
+                            <th class='md-col'>Student Name</th>
+                            <th class='md-col'>Attendance</th>
+                            <th class='md-col'>Class Test</th>
+                            <th class='md-col'>PartA</th>
+                            <th class='md-col'>PartB</th>
                             {{--  --}}
 
                         </tr>

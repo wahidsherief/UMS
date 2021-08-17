@@ -1,70 +1,68 @@
-
 @extends('users.teacher.layout')
 @section('title',"notice")
 
-
+@section('nav_bar')
 @include('users.teacher.top_nav.notice')
-
+@endsection
 
 @section('content')
 <div class="container">
-<div class="card card-secondary">
-    <div class="card-header">
-      <h3 class="card-title">Available Notices</h3>
+
+  <!-- /.card-header -->
+  @if($count!==0)
+
+  <div class="card-body">
+    <div class="ums-content-heading">
+      <h3 class="card-title">Notices</h3>
     </div>
-    <!-- /.card-header -->
-@if($count!==0)
+    <div class="card-body table-responsive p-0">
+      <table class="table table-borderless table-hover table-sm">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th class="lg-col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($notice as $notify)
 
 
+          <tr data-widget="expandable-table" aria-expanded="false">
+            <td class='text-left'><img class="img-circle" src="{{$notify->user->picture}}" width="40" alt="U">
+            </td>
+            <td>{{$notify->user->name}}</td>
+            <td>Teacher</td>
+            <td> <span class="description">{{$notify->created_at->diffForHumans()}}</span></td>
 
-    <div class="card-body">
-
-      <div class="card-body table-responsive p-0">
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Status</th>
-              <th>Date</th>
-              <th>Title</th>
-              <th>show</th>
-            </tr>
-          </thead>
-          <tbody>
-    @foreach($notice as $notify)
+            <td>{{$notify->notice_title}}</td>
+            <td class='text-right'>
+              <a href="{{route('teacher.single_notice',$notify->id)}}" class="ums-tiny-btn text-info"><i
+                  class="fas fa-eye"></i> show</a>
+            </td>
+          </tr>
 
 
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>  <img class="img-circle img-bordered-sm" src="{{$notify->user->picture}}" alt="U"width="50"></td>
-              <td>{{$notify->user->name}}</td>
-              <td>Teacher</td>
-              <td> <span class="description">{{$notify->created_at->diffForHumans()}}</span></td>
+          @endforeach
+        </tbody>
+      </table>
 
-              <td>{{$notify->notice_title}}</td>
-              <td>
-                  <a href="{{route('teacher.single_notice',$notify->id)}}" class="btn btn-info"><i class="fas fa-eye"></i> show</a>
-              </td>
-            </tr>
+    </div>
+    {{$notice->links()}}
+    <style>
+      .w-5 {
+        display: none;
+      }
+    </style>
 
 
-@endforeach
-</tbody>
-</table>
+  </div>
+  @else
 
+  <div class="text-muted font-italic text-danger text-center h6 pt-3 pb-3">No Notice Available</div>
+  @endif
 </div>
-{{$notice->links()}}
-<style>
-    .w-5{
-        display:none;
-    }
-</style>
-
-
 </div>
-@else
-
-<div class="text-danger text-center h4 pt-3 pb-3">No Notice Available</div>
-@endif
-</div></div>
 @endsection

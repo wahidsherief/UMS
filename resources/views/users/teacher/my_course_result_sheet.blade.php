@@ -10,13 +10,17 @@
 <div class="container">
 
     <div class="container">
-        <div class="card card-secondary">
 
             <!-- /.card-header -->
             <div class="card-body">
-                <div class="card-body table-responsive p-0">
+                <div class="ums-content-heading pt-4">
+                    <h3 class="card-title">Result</h3>
+                </div>
+            <div class="card-body">
+                <div class="card-body table-responsive p-0 card-secondary">
 
-                    <table class="table table-bordered table-hover align-top">
+                    <table class="table table-borderless table-hover">
+
                         <thead class="align-top">
                             <tr>
                                 <th class="sl align-middle">SL</th>
@@ -71,15 +75,15 @@
 
 
 
-            <div class="card-footer text-right">
+            <div class="text-right">
 @if($result_added==0)
                 <a href="{{route('result.my_course_student',[$session_id,$semester_id,$course->id])}}"
-                    class='btn btn-info btn-sm'><i class="fas fa-plus-circle"></i> Add Result</a>
+                    class='ums-tiny-btn mr-2 text-success'><i class="fas fa-plus-circle"></i> Add Result</a>
 @else
 <a href="{{route('result.update_result',[$session_id,$semester_id,$course->id])}}"
-    class='btn btn-warning btn-sm'><i class="fas fa-plus-circle"></i> Update Result</a>
+    class='ums-tiny-btn mr-2 text-warnng'><i class="fas fa-plus-circle"></i> Update Result</a>
 @endif
-                <a href="{{ route('teacher.my_course_result_export',$course->id) }}" class="btn btn-warning btn-sm">Export as
+                <a href="{{ route('teacher.my_course_result_export',$course->id) }}" class="ums-tiny-btn mr-2 text-info">Export as
                     PDF </a>
             </div>
         </div>

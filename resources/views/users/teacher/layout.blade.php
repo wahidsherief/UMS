@@ -116,18 +116,10 @@
 
 
                 @endif
-                <li class="nav-item">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();" class="nav-link">
-                        <i class="nav-icon fas fa-sign-out-alt"></i>
-                        <p>LogOut</p>
-                    </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
 
-                </li>
+
+
 
             </ul>
         </nav>
@@ -140,17 +132,16 @@
             <div class="col-md-11 col-sm-12">
                 <div class="container">
                     <div class="row">
-                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12 sticky-top'>
+                        <aside class='ums-fixed-sidebar col-md-3 col-sm-12'>
                             <div class="container">
                                 <div class="card">
                                     <img class="card-img-top"
                                         src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/oslo.jpg"
                                         alt="Bologna">
                                     <div class="card-body text-center p-4">
-                                        <img class="avatar rounded-circle"
-                                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg"
+                                        <img class="avatar rounded-circle" src="{{ Auth::user()->picture}}"
                                             alt="Bologna">
-                                        <h4 class="card-title">Robert Downey Jr.</h4>
+                                        <h4 class="card-title">{{ Auth::user()->name }}.</h4>
                                         <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
                                         <p class="card-text">Robert John Downey Jr.'career has included critical and
                                             popular success in his youth.
@@ -163,8 +154,24 @@
                                             <a href="#"><i class="fas fa-globe"></i></i></a>
                                         </div>
                                         <ul class="list-group list-group-flush mt-3">
-                                            <li class="list-group-item"><a href="">My Profile</a></li>
-                                            <li class="list-group-item"><a href="">Logout</a></li>
+                                            <li class="list-group-item"><a href="{{route('teacher.profile')}}"> My
+                                                    Profile</a></li>
+
+                                            <li class="list-group-item">
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();"
+                                                    class="nav-link">
+                                                    Logout
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+
+                                            </li>
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -174,7 +181,31 @@
                         <section class="col-md-9 col-sm-12">
                             <section class="col-12 fixed-uppper-content">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-2">
+                                        <!-- small box -->
+                                        <a class="small-box bg-white" href="{{ route('teacher.dashboard') }}">
+                                            <div class="inner">
+                                                <p>Dashboard</p>
+
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-dashboard"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-2">
+                                        <!-- small box -->
+                                        <a class="small-box bg-white" href="{{ route('teacher.dashboard') }}">
+                                            <div class="inner">
+                                                <p>Dashboard</p>
+
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-dashboard"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box cyan-light-bg"
                                             href="{{ route('MyBatchController.students') }}">
@@ -189,7 +220,7 @@
                                     </div>
 
                                     <!-- ./col -->
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box blue-light-bg"
                                             href="{{ route('teacher.my_courses_internal') }}">
@@ -204,7 +235,7 @@
                                     </div>
 
                                     <!-- ./col -->
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box red-light-bg" href="{{route('teacher.notice')}}">
                                             <div class="inner">
@@ -217,7 +248,7 @@
                                     </div>
 
                                     <!-- ./col -->
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box purple-light-bg"
                                             href="{{ route('teacher.show_questions') }}">
@@ -235,13 +266,14 @@
 
 
                             <section class="col-md-12 mt-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        @yield('nav_bar')
-                                        @yield('content')
-                                    </div>
+                                @if (\Request::is('teacher/dashboard'))
+                                @yield('dashboard-content')
+                                @else
+                                <div class="card" <div>
+                                    @yield('nav_bar')
+                                    @yield('content')
                                 </div>
-
+                                @endif
                             </section>
                         </section>
                     </div>
@@ -314,6 +346,7 @@
             , withCSRF: ['_token', '{{ csrf_token() }}']
             , onSuccess: function(message, element, status) {
                 alert(message);
+                window.location.reload(); 
             }
             , onError: function(message, element, status) {
                 alert(message);
