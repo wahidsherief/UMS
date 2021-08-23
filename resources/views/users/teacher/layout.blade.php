@@ -183,7 +183,7 @@
                                 <div class="row">
                                     <div class="col-2">
                                         <!-- small box -->
-                                        <a class="small-box bg-white" href="{{ route('teacher.dashboard') }}">
+                                        <a class="small-box yellow-light-bg" href="{{ route('teacher.dashboard') }}">
                                             <div class="inner">
                                                 <p>Dashboard</p>
 
@@ -193,18 +193,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-2">
-                                        <!-- small box -->
-                                        <a class="small-box bg-white" href="{{ route('teacher.dashboard') }}">
-                                            <div class="inner">
-                                                <p>Dashboard</p>
 
-                                            </div>
-                                            <div class="icon">
-                                                <i class="fas fa-dashboard"></i>
-                                            </div>
-                                        </a>
-                                    </div>
                                     <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box cyan-light-bg"
@@ -260,6 +249,20 @@
                                             </div>
                                         </a>
                                     </div>
+
+                                    <div class="col-2">
+                                        <!-- small box -->
+                                        <a class="small-box chocolate-light-bg"
+                                            href="{{ route('MyBatchController.students') }}">
+                                            <div class="inner">
+                                                <p>Events</p>
+
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
 
                             </section>
@@ -269,7 +272,7 @@
                                 @if (\Request::is('teacher/dashboard'))
                                 @yield('dashboard-content')
                                 @else
-                                <div class="card" <div>
+                                <div class="card">
                                     @yield('nav_bar')
                                     @yield('content')
                                 </div>
@@ -323,9 +326,9 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-</script>
+
 
 <script>
     $(document).ready(function() {
@@ -346,7 +349,7 @@
             , withCSRF: ['_token', '{{ csrf_token() }}']
             , onSuccess: function(message, element, status) {
                 alert(message);
-                window.location.reload(); 
+                window.location.reload();
             }
             , onError: function(message, element, status) {
                 alert(message);

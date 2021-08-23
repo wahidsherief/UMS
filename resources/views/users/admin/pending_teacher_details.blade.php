@@ -1,13 +1,22 @@
 @extends('users.admin.layout')
 @section('title','Pending Account')
-@section('content')
-<div class="container">
 
-    <div class="card col-md-10 offset-md-1">
-        <div class="card-header">
-            <h3 class="alert alert-warning" role="alert">Take An Action</h3>
-        </div>
-        <div class="card-body ">
+
+@section('nav_bar')
+@include('users.top_nav.admin_courses')
+@endsection
+
+
+
+@section('content')
+
+<div class="card-body">
+    <div class="ums-content-heading">
+        <h3 class="card-title">Available Courses</h3>
+      </div>
+
+    <div class="card-body table-responsive p-0 text-center">
+        <table class="table table-borderless table-hover table-sm">
             <div class="row">
                 <div class="col">
                     <div class="form-group">

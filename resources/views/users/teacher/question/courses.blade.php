@@ -12,17 +12,18 @@
   <form action="{{route('add.course.submit')}}" method="POST">
     @csrf
     <div class="ums-content-heading">
-      <h3 class="card-title">Courses</h3>
+      <h3 class="card-title">Select Course</h3>
     </div>
     <div class="card-body table-responsive p-0">
       <table class="table table-borderless table-hover">
 
         <thead>
           <tr>
-            <th class="sl">SL</th>
+            <th class="sl"></th>
             <th>Course Code</th>
             <th>Course Title</th>
             <th>Semester</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

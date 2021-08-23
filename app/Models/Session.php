@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Session extends Model
 {
     use HasFactory;
-    protected $table="sessions";
+    protected $table = "sessions";
     public function assigncourses()
     {
         return $this->hasMany(AssignCourses::class);
@@ -20,5 +20,9 @@ class Session extends Model
     public function question()
     {
         return $this->hasMany(Question::class);
+    }
+    public function examination()
+    {
+        return $this->hasMany(Examination::class);
     }
 }

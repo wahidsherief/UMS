@@ -42,7 +42,7 @@
             <td class='text-right' style="width:120px;">
               <a href="{{route('teacher.single_notice',$notice->id)}}" class="mr-1 text-info mr-2"><i
                   class="fas fa-eye"></i> </a>
-              <a href="{{route('teacher.notice_delete',$notice->id)}}" class="text-danger"><i
+              <a href="{{route('teacher.notice_delete',$notice->id)}}" class="text-danger delete_notice"><i
                   class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
@@ -53,6 +53,9 @@
       </table>
 
     </div>
+
+
+
     {{$notices->links()}}
     <style>
       .w-5 {

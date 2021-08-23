@@ -32,4 +32,9 @@ class CoursetypeController extends Controller
         $coursetypes = Coursetype::latest()->get();
         return view('users.admin.coursetype_data', compact('coursetypes'));
     }
+    public function delete($id)
+    {
+        Coursetype::find($id)->delete();
+        return redirect()->back()->with('deleted', 'deleted');
+    }
 }

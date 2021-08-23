@@ -39,8 +39,7 @@
 
             <td>{{$notify->notice_title}}</td>
             <td class='text-right'>
-              <a href="{{route('teacher.single_notice',$notify->id)}}" class="ums-tiny-btn text-info"><i
-                  class="fas fa-eye"></i> show</a>
+              <a href="{{route('teacher.single_notice',$notify->id)}}" class="ums-tiny-btn text-info"> View </a>
             </td>
           </tr>
 

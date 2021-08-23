@@ -3,13 +3,11 @@
 @section('title',"Sessions")
 @section('content')
 
-<div class="container">
-    <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title"> Add Session</h3>
-      </div>
       <!-- /.card-header -->
       <div class="card-body">
+        <div class="ums-content-heading">
+            <h3 class="card-title">Add Sessions</h3>
+          </div>
         <div class="row">
           <div class="col-md-8 offset-md-2">
               <form action="" method="POST">
@@ -31,22 +29,18 @@
                   </div>
                 </div>
               </form>
-          </div></div></div></div></div>
-
-<div class="container">
-    <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title">Sessions</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <div class="card-body table-responsive p-0">
-          <table class="table table-bordered table-hover">
+          </div></div></div>
+    <div class="card-body">
+        <div class="ums-content-heading">
+          <h3 class="card-title">All Sessions</h3>
+        </div>
+        <div class="card-body table-responsive p-0 text-center">
+          <table class="table table-borderless table-hover table-sm">
             <thead>
                 <tr>
-                  <th>Serial</th>
+                  <th></th>
                   <th>Session Title</th>
-                  <th>Action</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -60,8 +54,8 @@
 
     <td>
         @if($session->id==$latest)
-        <a href="{{route('admin.update_session',$session->id)}}" class="btn btn-warning btn-sm"> Update</a>
-        <a href="{{route('admin.delete_session',$session->id)}}" class="btn btn-danger btn-sm"> Delete</a>
+        <a href="{{route('admin.update_session',$session->id)}}" class="ums-tiny-btn"> Update</a>
+        {{-- <a href="{{route('admin.delete_session',$session->id)}}" class="ums-tiny-btn btn-dan"> Delete</a> --}}
         @else
 
         @endif
@@ -73,7 +67,7 @@
     @endforeach
     </tbody>
     </table>
-</div></div></div></div>
+</div></div>
 
 
               @if(Session::has('session_created'))

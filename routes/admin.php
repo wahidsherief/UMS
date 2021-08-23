@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\ExaminationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\BatchController;
@@ -19,6 +20,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('addnotice', [AdminController::class, 'addnotice'])->name('admin.addnotice');
     Route::get('notice', [AdminController::class, 'notice'])->name('admin.notice');
     Route::get('notice/{id}', [AdminController::class, 'single_notice'])->name('admin.single_notice');
+    //examination
+
+    Route::get('examination', [ExaminationController::class, 'create'])->name('admin.examination');
+    Route::POST('examination', [ExaminationController::class, 'submit'])->name('admin.examination');
+    Route::POST('start/{id}', [ExaminationController::class, 'start'])->name('examination.start');
+    Route::POST('end/{id}', [ExaminationController::class, 'end'])->name('examination.end');
 
     //delete operation
     Route::get('delete-notice/{id}', [AdminController::class, 'deletenotice'])->name('admin.deletenotice');
@@ -65,10 +72,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('coursetype', [CoursetypeController::class, 'add_coursetype'])->name('add.coursetype');
     Route::get('coursetypes', [CoursetypeController::class, 'coursetype_data'])->name('coursetype_data');
     Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.coursetype.submit');
+    Route::get('course-delete/{id}', [CoursetypeController::class, 'delete'])->name('admin.course_type_delete');
     //pending account
 
     Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');
     Route::get('teacheraccount', [AdminController::class, 'pendingteacher'])->name('admin.pending.teacher');
+    Route::get('pending-accounts', [AdminController::class, 'pendingaccounts'])->name('admin.pending_accounts');
 
 
     Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
@@ -91,5 +100,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses'])->name('admin.assign_courses_update');
     Route::POST('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses_submit'])->name('admin.assign_courses_update.submit');
 
-    Route::get('teacher-account-details/{id}', [AdminController::class, 'teacher_pending_account_details'])->name('teacher_pending_account_details');
+    Route::get('account-details/{id}', [AdminController::class, 'pending_account_details'])->name('admin.pending_account_details');
 });

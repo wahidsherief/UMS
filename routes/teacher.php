@@ -86,6 +86,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('download-question/{id}', [QuestionController::class, 'download'])->name('teacher.question_download');
         Route::get('search-question', [QuestionController::class, 'search'])->name('question.search');
 
+        Route::get('delete-question/{id}', [QuestionController::class, 'delete'])->name('question.delete');
+
+
         Route::get('select-courses', [TeacherQuestionController::class, 'add_course_question'])->name('teacher.add_course_question');
         Route::get('my-question/{id}', [TeacherQuestionController::class, 'my_question'])->name('teacher.my_question');
 

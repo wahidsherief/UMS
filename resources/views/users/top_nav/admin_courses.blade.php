@@ -1,9 +1,6 @@
-
-@section('nav_bar')
-<!-- Navbar -->
-<nav class="small-nav navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
+<div class="ums-small-nav">
+    <nav class="small-nav ums-short-nav navbar-expand">
+        <ul class="navbar-nav ml-auto justify-content-end">
 
 
         <li class="nav-item d-none d-sm-inline-block">
@@ -32,4 +29,3 @@
     </ul>
 
 </nav>
-@endsection

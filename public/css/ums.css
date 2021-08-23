@@ -194,6 +194,7 @@ hr{
     background: #f0f0f0;
     padding: 6px 13px 6px 16px;
     text-decoration: none;
+    border:none;
 }
 
 .ums-tiny-btn:hover {
@@ -264,23 +265,28 @@ hr{
  }
 
  .cyan-light-bg {
-     background-color: 
-     #B2EBF2; 
+     background-color:
+     #B2EBF2;
 }
 
-.red-light-bg { 
+.red-light-bg {
     background-color: #FFCDD2;
 }
-
-.blue-light-bg { 
+.chocolate-light-bg{
+    background-color:#E5C9FB;
+}
+.yellow-light-bg{
+background-color:#FFFACD;
+}
+.blue-light-bg {
     background-color: #BBDEFB;
 }
 
-.green-light-bg { 
+.green-light-bg {
     background-color: #C8E6C9;
 }
 
-.purple-light-bg { 
+.purple-light-bg {
     background-color: #D1C4E9;
 }
 
@@ -321,4 +327,6 @@ hr{
 }
 
 
-
+td{
+line-height:24px;
+}

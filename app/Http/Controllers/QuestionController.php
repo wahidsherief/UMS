@@ -52,9 +52,9 @@ class QuestionController extends Controller
     public function show_question()
     {
         $questions = Question::with(['session', 'user', 'teacher', 'course'])->orderBy('id', 'DESC')->get();
-
+        $count = Question::get()->count();
         $courses = Course::get();
-        return view('users.teacher.show_question', compact(['questions', 'courses']));
+        return view('users.teacher.show_question', compact(['questions', 'courses', 'count']));
     }
 
     public function download($id)
@@ -68,9 +68,14 @@ class QuestionController extends Controller
     {
         $search_text = $_GET['query'];
         $courses = Course::get();
-        // dd($search_text);
+        $count = Question::get()->count();
         $questions = Question::where('course_id', 'LIKE', '%' . $search_text . '%')->with(['session', 'user', 'teacher', 'course'])->get();
 
-        return view('users.teacher.search_data', compact(['questions', 'courses']));
+        return view('users.teacher.search_data', compact(['questions', 'courses', 'count']));
+    }
+    public function delete($id)
+    {
+        Question::where('id', $id)->delete();
+        return redirect()->back()->with('deleted', 'deleted');
     }
 }

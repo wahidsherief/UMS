@@ -20,10 +20,10 @@
 
                 <div class="profile-info">
                 <div>
-                    <h4 class="card-title">Joy Dhar.</h4>
+                    <h4 class="card-title text-capitalize">{{$teacher->firstname}} {{$teacher->lastname}}</h4>
                 </div>
                 <div>
-                    <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
+                    <h6 class="card-subtitle mb-2 text-muted text-capitalize">{{ $teacher->status }}</h6>
                 </div>
                 <div>
 
@@ -39,23 +39,23 @@
                     <span> | </span>
                     <span>
                         Gender:
-                        <span class="text-muted">{{ $teacher->gender }}</span>
+                        <span class="text-muted text-capitalize">{{ $teacher->gender }}</span>
                     </span>
                     <span> | </span>
                     <span>
                         Short Name:
-                        <span class="text-muted">{{ $teacher->teachers_short_name }}</span>
+                        <span class="text-muted text-uppercase">{{ $teacher->teachers_short_name }}</span>
                     </span>
                     <span> | </span>
                     <span>
                         Blood Group:
-                        <span class="text-muted">{{ $teacher->blood_group }}</span>
+                        <span class="text-muted text-capitalize">{{ $teacher->blood_group }}</span>
                     </span>
                 </div>
 
                 <p>
                     Address:
-                    <span class="text-muted">{{ $teacher->address }}</span>
+                    <span class="text-muted text-capitalize">{{ $teacher->address }}</span>
                 </p>
             </div>
             <div class="profile-social-icon">

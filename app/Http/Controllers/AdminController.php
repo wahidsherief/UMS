@@ -75,11 +75,15 @@ class AdminController extends Controller
         // dd($count_account);
         return view('users.admin.pendingteacher', compact(['teachers', 'count_account']));
     }
-    public function teacher_pending_account_details($id)
+    public function pending_account_details($id)
     {
-        $teacher = Teacher::where('user_id', $id)->with(['user'])->first();
-        // dd($teacher);
-        return view('users.admin.pending_teacher_details', compact('teacher'));
+        $user = User::find($id);
+        if ($user->role == 3) {
+
+            $teacher = Teacher::where('user_id', $id)->with(['user'])->first();
+            return view('users.admin.pending_teacher_details', compact('teacher'));
+        } elseif ($user->role == 4) {
+        }
     }
 
 
@@ -131,5 +135,12 @@ class AdminController extends Controller
         Mail::to($email)->send(new RejectAccount($reject));
         $student->delete();
         return redirect()->back()->with('request_removed', 'Request Has Been Removed');
+    }
+    public function pendingaccounts()
+    {
+        $users = User::where('account_status', 0)->latest()->get();
+        $count_users = User::where('account_status', 0)->count();
+        // dd($count_users);
+        return view('users.admin.pending_accounts', compact(['users', 'count_users']));
     }
 }

@@ -2,29 +2,23 @@
 @section('title',"Course Data")
 
 @section('nav_bar')
-@include('users.admin.top_nav.courses')
+@include('users.top_nav.admin_courses')
 @endsection
 
 
 
 @section('content')
 
-<div class="container">
-  <div class="card card-secondary">
+  <div class="card-body">
+        <div class="ums-content-heading">
+            <h3 class="card-title">Available Courses</h3>
+          </div>
 
-    <div class="card-header">
-      <h3 class="card-title">All Course of CSE</h3>
-    </div>
-
-    <!-- /.card-header -->
-    <div class="card-body">
-      <form action="{{route('add.course.submit')}}" method="POST">
-        @csrf
-        <div class="card-body table-responsive p-0">
-          <table class="table table-bordered table-hover">
+        <div class="card-body table-responsive p-0 text-center">
+            <table class="table table-borderless table-hover table-sm">
             <thead>
               <tr>
-                <th>Serial</th>
+                <th class="sl"></th>
                 {{-- <th>Department Name</th> --}}
                 <th>Batch Name</th>
                 <th>Semester Name</th>
@@ -37,7 +31,7 @@
               @foreach($courses as $course)
               <!-- ./card-header -->
               <tr data-widget="expandable-table" aria-expanded="false">
-                <td> {{$i++}}</td>
+                <td class='text-left'> {{$i++}}</td>
                 {{-- <td>{{$course->department->department_name}}</td> --}}
                 {{-- <td>{{$course->batch->batch_name}}</td> --}}
                 <td>{{$course->semester->semester_name}}</td>
@@ -56,6 +50,5 @@
           </table>
         </div>
     </div>
-  </div>
-</div>
+
 @endsection
