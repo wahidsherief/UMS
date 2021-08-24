@@ -177,7 +177,7 @@
                                     <div class="col-2">
                                         <!-- small box -->
                                         <a class="small-box chocolate-light-bg"
-                                            href="{{ route('MyBatchController.students') }}">
+                                            href="{{ route('admin.events') }}">
                                             <div class="inner">
                                                 <p>Events</p>
 

@@ -143,4 +143,19 @@ class AdminController extends Controller
         // dd($count_users);
         return view('users.admin.pending_accounts', compact(['users', 'count_users']));
     }
+
+    public function teachers()
+    {
+        $teachers = Teacher::latest()->with('user')->get();
+        return view('users.admin.teachers', compact('teachers'));
+    }
+    public function students()
+    {
+        $students = Student::latest()->with('user')->get();
+        return view('users.admin.students', compact('students'));
+    }
+    public function events()
+    {
+        return view('users.admin.events.show_events');
+    }
 }

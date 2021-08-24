@@ -73,13 +73,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('coursetypes', [CoursetypeController::class, 'coursetype_data'])->name('coursetype_data');
     Route::post('coursetype', [CoursetypeController::class, 'add_coursetype_submit'])->name('add.coursetype.submit');
     Route::get('course-delete/{id}', [CoursetypeController::class, 'delete'])->name('admin.course_type_delete');
+
     //pending account
 
     Route::get('studentaccount', [AdminController::class, 'pendingstudent'])->name('admin.pending.student');
     Route::get('teacheraccount', [AdminController::class, 'pendingteacher'])->name('admin.pending.teacher');
     Route::get('pending-accounts', [AdminController::class, 'pendingaccounts'])->name('admin.pending_accounts');
-
-
+    Route::get('teachers', [AdminController::class, 'teachers'])->name('admin.all_teachers');
+    Route::get('students', [AdminController::class, 'students'])->name('admin.all_students');
     Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
     Route::POST('accountapproved/{id}', [AdminController::class, 'teacheraccountaccept'])->name('admin.teacher_account_approve');
 
@@ -99,6 +100,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::get('assign-courses-details/{id}', [AssignCoursesController::class, 'assign_courses'])->name('admin.assign_courses');
     Route::get('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses'])->name('admin.assign_courses_update');
     Route::POST('update-activity/{id}', [AssignCoursesController::class, 'update_assign_courses_submit'])->name('admin.assign_courses_update.submit');
-
     Route::get('account-details/{id}', [AdminController::class, 'pending_account_details'])->name('admin.pending_account_details');
+
+    //Event
+
+    Route::get('events', [Admincontroller::class, 'events'])->name('admin.events');
 });

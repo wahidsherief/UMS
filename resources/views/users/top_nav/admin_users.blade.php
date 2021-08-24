@@ -4,16 +4,16 @@
 
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item  {{ request()->is('admin/pending-accounts') ? 'active' : '' }}" href="{{ route('admin.pending_accounts') }}">Pending 
+            <a class="dropdown-item  {{ request()->is('admin/pending-accounts') ? 'active' : '' }}" href="{{ route('admin.pending_accounts') }}">Pending
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item {{ request()->is('admin/courses') ? 'active' : '' }}" href="{{ route('course_data') }}">Teachers
+            <a class="dropdown-item {{ request()->is('admin/teachers') ? 'active' : '' }}" href="{{ route('admin.all_teachers') }}">Teachers
             </a>
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item {{ request()->is('admin/coursetype') ? 'active' : '' }}" href="{{ route('add.coursetype') }}">Students
+            <a class="dropdown-item {{ request()->is('admin/students') ? 'active' : '' }}" href="{{ route('admin.all_students') }}">Students
             </a>
         </li>
 
