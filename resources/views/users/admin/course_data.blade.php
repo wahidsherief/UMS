@@ -20,9 +20,9 @@
               <tr>
                 <th class="sl"></th>
                 {{-- <th>Department Name</th> --}}
-                <th>Batch Name</th>
-                <th>Semester Name</th>
+                <th>Semester</th>
                 <th>Course Name</th>
+                <th>Course Code</th>
                 <th>Course Credit</th>
               </tr>
             </thead>

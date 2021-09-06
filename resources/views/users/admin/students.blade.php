@@ -1,5 +1,5 @@
 @extends('users.admin.layout')
-@section('title','Teachers')
+@section('title','Students')
 
 
 @section('nav_bar')
@@ -40,7 +40,7 @@
                     <td>{{$student->user->email}}</td>
                     <td>{{ $student->phone }}</td>
                     <td class="text-right">
-                        <a href=""
+                        <a href="{{ route('admin.student_details',$student->id) }}"
                             class="ums-tiny-btn text-success"><i class="fas fa-eye"></i> Details </a>
                     </td>
                 </tr>

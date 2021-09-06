@@ -83,6 +83,9 @@ class AdminController extends Controller
             $teacher = Teacher::where('user_id', $id)->with(['user'])->first();
             return view('users.admin.pending_teacher_details', compact('teacher'));
         } elseif ($user->role == 4) {
+            $student = Student::where('user_id', $id)->with(['user'])->first();
+
+            return view('users.admin.pending_user.pending_student_details', compact('student'));
         }
     }
 
@@ -97,11 +100,12 @@ class AdminController extends Controller
         // dd($student);
         $student->account_status = 1;
         $student->save();
-        $email = $student->email;
 
-        $accept = [];
-        Mail::to($email)->send(new PendingAccount($accept));
-        return redirect()->back()->with('account_approved', 'Account Has Been Approved');
+        // $email = $student->email;
+        // $accept = [];
+        // Mail::to($email)->send(new PendingAccount($accept));
+
+        return redirect()->route('admin.pending_accounts')->with('account_approved', 'Account Has Been Approved');
     }
 
     public function teacheraccountaccept(Request $request, $id)
@@ -144,6 +148,18 @@ class AdminController extends Controller
         return view('users.admin.pending_accounts', compact(['users', 'count_users']));
     }
 
+
+    public function student_details($id)
+    {
+        $student_details = Student::where('id', $id)->with('user')->first();
+        return view('users.admin.pending_user.student_profile', compact('student_details'));
+    }
+    public function teacher_details($id)
+    {
+        $teacher_details = Teacher::where('id', $id)->with('user')->first();
+        return view('users.admin.pending_user.teacher_profile', compact('teacher_details'));
+    }
+
     public function teachers()
     {
         $teachers = Teacher::latest()->with('user')->get();
@@ -157,5 +173,20 @@ class AdminController extends Controller
     public function events()
     {
         return view('users.admin.events.show_events');
+    }
+
+    public function password()
+    {
+        return view('users.admin.settings.password');
+    }
+
+    public function terms()
+    {
+        return view('users.admin.settings.terms');
+    }
+
+    public function privacy()
+    {
+        return view('users.admin.settings.privacy');
     }
 }

@@ -34,5 +34,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['isStudent', 'auth', 'Prev
         Route::get('questions', [StudentController::class, 'show_question'])->name('student.show_questions');
         Route::get('download-question/{id}', [StudentController::class, 'download'])->name('student.question_download');
         Route::get('search-question', [StudentController::class, 'search'])->name('question.student.search');
+        Route::get('coming-soon', [StudentController::class, 'coming_soon'])->name('student.coming_soon');
     });
 });

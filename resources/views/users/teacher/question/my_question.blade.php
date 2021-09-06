@@ -23,6 +23,7 @@
                     <th>Course Code</th>
                     <th>Course Title</th>
                     <th>Type</th>
+                    <th class="md-col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +43,7 @@
                     <td>{{$question->course->course_name}}</td>
                     <td>{{$question->question_type}}</td>
                     <td class='text-right'>
-                        <a href="{{route('teacher.question_download',$question->id)}}" class="mr-1 text-info mr-2"><i
+                        <a href="{{route('teacher.question_download',$question->id)}}" class="mr-1 text-info mr-1"><i
                                 class="fas fa-eye"></i> </a>
                         <a href="{{route('question.delete',$question->id)}}" class="text-danger"><i
                                 class="fas fa-trash-alt"></i></a>

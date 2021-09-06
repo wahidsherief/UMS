@@ -1,28 +1,25 @@
 @extends('users.student.layout')
 @section('title',"Question")
 
+
 @section('content')
-<div class="container">
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active" id="activity">
 
-                <div class="card card-secondary">
+    @if($count!==0)
 
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <div class="card-body table-responsive p-0">
-
-                            <table class="table table-bordered table-hover align-top">
+    <div class="card-body">
+      <div class="ums-content-heading">
+        <h3 class="card-title">Available Questions</h3>
+      </div>
+      <div class="card-body table-responsive p-0">
+        <table class="table table-borderless table-hover table-sm">
                         <thead>
                             <tr>
-                                <th>Image</th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Session</th>
                                 <th>Course Code</th>
                                 <th>Course Title</th>
                                 <th>Type</th>
-                                <th>show</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,8 +39,8 @@
                                 <td>{{$question->course->course_name}}</td>
                                 <td>{{$question->question_type}}</td>
                                 <td>
-                                    <a href="{{route('student.question_download',$question->id)}}" class="btn btn-info"
-                                        style="color:white"> <i class="fas fa-eye"></i></a>
+                                    <a href="{{route('student.question_download',$question->id)}}"><span
+                                        class='ums-tiny-btn'>View</span></a>
 
                                 </td>
                             </tr>
@@ -54,10 +51,10 @@
                     </table>
 
                 </div>
+                @else
 
+                <div class="text-muted font-italic text-danger text-center h6 pt-3 pb-3">No Question Available</div>
+                @endif
             </div>
-        </div>
-    </div>
-</div>
-</div></div>
+
 @endsection

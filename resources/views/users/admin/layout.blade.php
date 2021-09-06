@@ -64,7 +64,7 @@
                                         <img class="avatar rounded-circle" src="{{ Auth::user()->picture}}"
                                             alt="Bologna"/>
                                         <h4 class="card-title">{{ Auth::user()->name }}</h4><br>
-                                        <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">System Admin</h6>
                                         <p class="card-text">Robert John Downey Jr.'career has included critical and
                                             popular success in his youth.
                                         </p>
@@ -78,7 +78,7 @@
                                         <ul class="list-group list-group-flush mt-3">
                                             <li class="list-group-item"><a href="{{route('admin.profile')}}"> My
                                                     Profile</a></li>
-                                                <li class="list-group-item"><a href="{{route('admin.profile')}}">
+                                                <li class="list-group-item"><a href="{{route('admin.password')}}">
                                                         Settings</a></li>
 
                                             <li class="list-group-item">

@@ -2,7 +2,7 @@
 @extends('users.admin.layout')
 @section('title',"Admin Dashboard")
 
-@section('content')
+@section('dashboard-content')
 
 <div class="row">
     <div class="col-8">

@@ -14,7 +14,7 @@
               <div class="card-header">
              <div class="card-title"> Update Activities</div></div>
               </div>
-           
+
             <div class="card-body">
             <div class="row">
 
@@ -50,8 +50,8 @@
 
           <!-- /.card-body -->
 
-          <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="float-right">
+            <button type="submit" class="ums-tiny-btn btn btn-success mt-2">Submit</button>
           </div>
         </div>
         </form>

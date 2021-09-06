@@ -3,15 +3,14 @@
 
 @section('content')
 
-<div class="container">
-  <div class="card card-secondary">
-    <div class="card-header">
-      <h3 class="card-title">
+<div class="p-4">
+        <div class="ums-content-heading">
+
           {{ $data->session->session_name }} ->
-        <span align="right">
+        <span class="">
 {{ $data->course->course_name }}
         </span>
-    </h3>
+
     </div>
     <!-- /.card-header -->
     <div class="card-body  table-responsive p-0">
@@ -29,5 +28,5 @@
         </div>
 
 
-      </div></div></div></div>
+      </div></div></div>
       @endsection

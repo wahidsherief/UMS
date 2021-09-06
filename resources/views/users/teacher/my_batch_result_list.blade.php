@@ -1,7 +1,7 @@
 @extends('users.teacher.layout')
 @section('title',"My Batch")
 @section('nav_bar')
-@include('users.teacher.small_nav')
+@include('users.teacher.top_nav.small_nav')
 @endsection
 @section('content')
 <div class="container">

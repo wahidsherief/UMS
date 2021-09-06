@@ -24,7 +24,7 @@
                 <!-- /.card-body -->
 
                 <div class="float-right">
-                    <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <button type="submit" class="ums-tiny-btn btn btn-success btn-sm"><i class="fa fa-check-circle" aria-hidden="true"></i>
                       Save</button>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
 
     <td>
         @if($session->id==$latest)
-        <a href="{{route('admin.update_session',$session->id)}}" class="ums-tiny-btn"> Update</a>
+        <a href="{{route('admin.update_session',$session->id)}}" class="ums-tiny-btn text-info"> Update</a>
         {{-- <a href="{{route('admin.delete_session',$session->id)}}" class="ums-tiny-btn btn-dan"> Delete</a> --}}
         @else
 

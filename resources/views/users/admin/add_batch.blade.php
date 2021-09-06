@@ -49,7 +49,7 @@
 <span class="text-danger">{{ $message }}</span>
 @enderror
                             <div align="right">
-                                <button type="submit" class="btn btn-success mt-1"><i class="fa fa-check-circle"
+                                <button type="submit" class="ums-tiny-btn btn btn-success mt-1"><i class="fa fa-check-circle"
                                         aria-hidden="true"></i>
                                     Save</button>
                             </div>

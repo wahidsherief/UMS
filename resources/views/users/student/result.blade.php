@@ -2,16 +2,15 @@
 @section('title',"student profile")
 
 @section('content')
-
-<div class="container">
-    <div class="card card-secondary  table-responsive p-0">
-
-      <div class="card-body">
-        <div class="card-body table-responsive p-0">
-          <table class="table table-bordered table-hover">
+<div class="card-body">
+    <div class="ums-content-heading">
+        <h3 class="card-title">Result</h3>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-borderless table-hover">
             <thead>
               <tr>
-                <th>Serial</th>
+                <th class="sl"></th>
                 <th>Course Code</th>
                 <th>Course Name</th>
                 <th>Attendance</th>

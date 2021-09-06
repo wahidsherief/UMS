@@ -84,6 +84,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
     Route::post('studentaccountapproved/{id}', [AdminController::class, 'studentaccountaccept'])->name('admin.student_account_approve');
     Route::POST('accountapproved/{id}', [AdminController::class, 'teacheraccountaccept'])->name('admin.teacher_account_approve');
 
+    Route::get('students-details/{id}', [AdminController::class, 'student_details'])->name('admin.student_details');
+    Route::get('teacher-details/{id}', [AdminController::class, 'teacher_details'])->name('admin.teacher_details');
+
+    Route::get('password', [AdminController::class, 'password'])->name('admin.password');
+
+    Route::get('terms', [AdminController::class, 'terms'])->name('admin.terms');
+    Route::get('privacy', [AdminController::class, 'privacy'])->name('admin.privacy');
+
+
+
 
     //Session Information
     //Create

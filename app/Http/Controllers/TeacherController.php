@@ -238,4 +238,24 @@ class TeacherController extends Controller
         return $pdf->download('batch_result.pdf');
         // return view('users.teacher.my_course_result_sheet_export', compact(['results','course']));
     }
+
+
+    public function password()
+    {
+        return view('users.teacher.settings.password');
+    }
+
+    public function terms()
+    {
+        return view('users.teacher.settings.terms');
+    }
+
+    public function privacy()
+    {
+        return view('users.teacher.settings.privacy');
+    }
+    public function coming_soon()
+    {
+        return view('users.teacher.events.coming_soon');
+    }
 }

@@ -34,13 +34,13 @@
  {{-- {{ $teacher->user->picture }} --}}
                 <tr data-widget="expandable-table" aria-expanded="false">
                     <td class='text-left'><img class="img-circle"
-                        src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" width="40" alt="U">
+                        src="{{ $teacher->user->picture }}" width="40" alt="U">
                 </td>
                     <td>{{$teacher->user->name}}</td>
                     <td>{{$teacher->user->email}}</td>
                     <td>{{ $teacher->phone }}</td>
                     <td class="text-right">
-                        <a href=""
+                        <a href="{{ route('admin.teacher_details',$teacher->id) }}"
                             class="ums-tiny-btn text-success"><i class="fas fa-eye"></i> Details </a>
                     </td>
                 </tr>

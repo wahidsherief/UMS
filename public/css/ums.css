@@ -200,6 +200,7 @@ hr{
 .ums-tiny-btn:hover {
     background: #ffffff;
     text-decoration: none;
+    color:black;
 }
 
 .dropdown-item {

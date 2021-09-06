@@ -8,8 +8,7 @@
     <title>@yield('title')</title>
     <base href="{{ \URL::to('/')}}">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -30,8 +29,7 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.css')}}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/5b63wl8ybhi7rxkv3pz7vt60x9e2rdxx5drkqo3ou4c7mkuf/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/5b63wl8ybhi7rxkv3pz7vt60x9e2rdxx5drkqo3ou4c7mkuf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <link rel="stylesheet" href="{{ asset('css/ums.css') }}">
 </head>
 
@@ -51,8 +49,7 @@
     {{-- <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ \URL::to('/teacher/dashboard')}}" class="brand-link">
-    <img src="{{('users/images/4271621914328_avatar.png')}}" alt="Logo" class="brand-image img-circle elevation-3"
-        style="opacity: .8">
+    <img src="{{('users/images/4271621914328_avatar.png')}}" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">Teacher Dashboard</span>
     </a>
 
@@ -92,22 +89,19 @@
 
 
                 <li class="nav-item">
-                    <a href="{{route('teacher.profile')}}"
-                        class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">
+                    <a href="{{route('teacher.profile')}}" class="nav-link {{ (request()->is('teacher/profile'))?'active': ''}}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Profile</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('courses.all_students',1) }}"
-                        class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
+                    <a href="{{ route('courses.all_students',1) }}" class="nav-link {{ (request()->is('teacher/students'))?'active': ''}}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>All Students</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('password') }}"
-                        class="nav-link {{ (request()->is('teacher/password'))?'active': ''}}">
+                    <a href="{{ route('password') }}" class="nav-link {{ (request()->is('teacher/password'))?'active': ''}}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Password</p>
                     </a>
@@ -135,15 +129,12 @@
                         <aside class='ums-fixed-sidebar col-md-3 col-sm-12'>
                             <div class="container">
                                 <div class="card">
-                                    <img class="card-img-top"
-                                        src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/oslo.jpg"
-                                        alt="Bologna">
+                                    <img class="card-img-top" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/oslo.jpg" alt="Bologna">
                                     <div class="card-body text-center p-4">
-                                        <img class="avatar rounded-circle" src="{{ Auth::user()->picture}}"
-                                            alt="Bologna">
+                                        <img class="avatar rounded-circle" src="{{ Auth::user()->picture}}" alt="Bologna">
                                         <h4 class="card-title">{{ Auth::user()->name }}.</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
-                                        <p class="card-text">Robert John Downey Jr.'career has included critical and
+                                        <h6 class="card-subtitle mb-2 text-muted">Senior Lecture</h6>
+                                        <p class="card-text">{{ Auth::user()->name}}' career has included critical and
                                             popular success in his youth.
                                         </p>
                                         <div class="profile-social-icon">
@@ -156,16 +147,16 @@
                                         <ul class="list-group list-group-flush mt-3">
                                             <li class="list-group-item"><a href="{{route('teacher.profile')}}"> My
                                                     Profile</a></li>
+                                            <li class="list-group-item"><a href="{{route('teacher.password')}}">
+                                                    Settings</a></li>
 
                                             <li class="list-group-item">
                                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();"
-                                                    class="nav-link">
+                                                                 document.getElementById('logout-form').submit();" class="nav-link">
                                                     Logout
                                                 </a>
 
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                    class="d-none">
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
 
@@ -196,8 +187,7 @@
 
                                     <div class="col-2">
                                         <!-- small box -->
-                                        <a class="small-box cyan-light-bg"
-                                            href="{{ route('MyBatchController.students') }}">
+                                        <a class="small-box cyan-light-bg" href="{{ route('MyBatchController.students') }}">
                                             <div class="inner">
                                                 <p>My Batch</p>
 
@@ -211,8 +201,7 @@
                                     <!-- ./col -->
                                     <div class="col-2">
                                         <!-- small box -->
-                                        <a class="small-box blue-light-bg"
-                                            href="{{ route('teacher.my_courses_internal') }}">
+                                        <a class="small-box blue-light-bg" href="{{ route('teacher.current_exam') }}">
                                             <div class="inner">
                                                 <p>Examination</p>
 
@@ -239,8 +228,7 @@
                                     <!-- ./col -->
                                     <div class="col-2">
                                         <!-- small box -->
-                                        <a class="small-box purple-light-bg"
-                                            href="{{ route('teacher.show_questions') }}">
+                                        <a class="small-box purple-light-bg" href="{{ route('teacher.show_questions') }}">
                                             <div class="inner">
                                                 <p>Questions</p>
                                             </div>
@@ -252,8 +240,7 @@
 
                                     <div class="col-2">
                                         <!-- small box -->
-                                        <a class="small-box chocolate-light-bg"
-                                            href="{{ route('MyBatchController.students') }}">
+                                        <a class="small-box chocolate-light-bg" href="{{ route('coming_soon') }}">
                                             <div class="inner">
                                                 <p>Events</p>
 
@@ -326,7 +313,9 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <script src="{{asset('plugins/ijaboCropTool/ijaboCropTool.min.js')}}">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+</script>
 
 
 

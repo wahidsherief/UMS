@@ -7,121 +7,131 @@
 
 @section('content')
 <section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-primary card-outline ">
-                    <div class="card-body box-profile user-info">
-                        <div class="row pb-4" style='border-bottom: 1px solid #ccc'>
-                            <div class="col-md-3">
-                                <div class="text-left">
-                                    <img class="profile-user-img-student img-fluid img-circle"
-                                        src="{{ Auth::user()->picture }}" alt="profile " class="updated_picture">
-                                    <input type="file" name="upload_profile_image" id="upload_profile_image"
-                                        style="opacity:0,height:1px;display:none" class="updated_picture" />
-                                    <a href="javascript:void(0)" class="btn btn-primary btn-block mt-2 btn-sm col-sm-6 offset-sm-3"
-                                        id="change_picture_btn"><b>Update Picture</b></a>
+    <div class="container p-0">
+        <div>
+            <img class="card-img-top ums-profile-img-top" src="https://cdn.wallpapersafari.com/42/1/W8RAKI.jpg"
+                alt="Bologna" />
+            <div class="card-body text-center">
+                <img class="avatar rounded-circle"
 
-                                </div>
-                            </div>
+                    src="{{ Auth::user()->picture }}"
+                    alt="U">
+                    <input type="file" name="upload_profile_image" id="upload_profile_image"
+                    style="opacity:0,height:1px;display:none" class="updated_picture" />
+                <a href="javascript:void(0)"class="update-profile-image-button"
+                    id="change_picture_btn"><i class="fas fa-edit"></i></a>
 
-                            <div class="col-md-8">
-                                <h3 class="profile-username"> <span
-                                        style="color:#565656; font-weight:bold">{{$student->firstname}}
-                                    </span> <span style="color:#666666">{{$student->lastname}} </span></h3>
 
-                                <div>
-                                    <div class="mt-2">
-                                        <span>
-                                            Email:
-                                            <span
-                                                class="text-muted text-lowercase">{{ $student->user->email }}</span>
-                                        </span>
-                                        <span> | </span>
-                                        <span>
-                                            Mobile:
-                                            <span class="text-muted">{{ $student->phone }}</span>
-                                        </span>
-                                        <span> | </span>
-                                        <span>
-                                            Gender:
-                                            <span class="text-muted">{{ $student->gender }}</span>
-                                        </span>
-                                        <span> | </span>
-                                        <span>
-                                            Blood Group:
-                                            <span class="text-muted">{{ $student->blood_group }}</span>
-                                        </span>
-                                    </div>
 
-                                    <p>
-                                        Address:
-                                        <span class="text-muted">{{ $student->address }}</span>
-                                    </p>
-                                </div>
-                                {{-- <p>{{ $student->about }}</p> --}}
+                    <div class="profile-info">
+                        <div>
+                            <h4 class="card-title text-capitalize">{{$student->firstname}} {{$student->lastname}}</h4>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Email:
+                                <span class="text-muted text-lowercase">{{ $student->user->email }}</span>
+                            </span>
+                            <span> | </span>
+                            <span>
+                                Mobile:
+                                <span class="text-muted">{{ $student->phone }}</span>
+                            </span>
+                            <span> | </span>
+                            <span>
+                                Gender:
+                                <span class="text-muted text-capitalize">{{ $student->gender }}</span>
+                            </span>
+                            <span> | </span>
+
+                            <span> | </span>
+                            <span>
+                                Blood Group:
+                                <span class="text-muted text-capitalize">{{ $student->blood_group }}</span>
+                            </span>
+                        </div>
+
+                        <p>
+                            Address:
+                            <span class="text-muted text-capitalize">{{ $student->address }}</span>
+                        </p>
+                        <div class="profile-social-icon">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-researchgate"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></i></a>
+                        </div>
+                    </div></div></div></div>
+
+
+
+
+
+                    <div class='profile-content m-4'>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <strong>About:</strong>
+                    @if($student->about==0)
+                    <form action="{{ route('teacher_about') }}"method="POST">
+                        @csrf
+                        <input type="hidden" name="teacher_id" value={{ $student->id }}>
+                        <textarea name="about"  class="form-control " rows="8" placeholder="Please write about yourself" minlength="50" maxlength="200"></textarea>
+
+                        <button type="submit" class="btn btn-success mt-1 float-right btn-sm"><i class="fa fa-check-circle"
+                            aria-hidden="true"></i>
+                        Save</button>
+                    </form>
+
+                    @else
                                 <p class='mt-2'>{{ $student->about }}</p>
+                                @endif
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-6">
+
+
+                        <div class="row mt-2">
+                            <div class="col-12">
                                 <strong>Education:</strong>
                                 <div class='mt-2'>
-                                    <p>Higher Secondary School Certficate</p>
-                                    <p class="text-muted">Sample School and College</p>
-                                    <p class="text-muted">
-                                        <span>Result:</span>
-                                        <span class="text-muted">{{ $student->hsc_gpa }}
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class='mt-2'>
-                                    <p>Higher Secondary School Certficate</p>
-                                    <p class="text-muted">Sample School and College</p>
-                                    <p class="text-muted">
-                                        <span>Result:</span>
-                                        <span class="text-muted">{{ $student->ssc_gpa }}
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class='mt-2'>
-                                    <p>Higher Secondary School Certficate</p>
-                                    <p class="text-muted">Sample School and College</p>
-                                    <p class="text-muted">
-                                        <span>Result:</span>
-                                        <span class="text-muted">{{ $student->jsc_gpa }}
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class='mt-2'>
-                                    <p>Higher Secondary School Certficate</p>
-                                    <p class="text-muted">Sample School and College</p>
-                                    <p class="text-muted">
-                                        <span>Result:</span>
-                                        <span class="text-muted">{{ $student->psc_gpa }}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
+                                    <table class='table table-borderless table-hover table-sm'>
+                                        <thead>
+                                            <tr>
+                                                <th>Degree</th>
+                                                <th>Instuition</th>
+                                                <th class='text-center'>Passing Year</th>
+                                                <th class='text-center'>Result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                            <div class="col-6">
-                                <strong>Skills:</strong>
-                                <div class='mt-2'>
-                                    <p class="text-muted">
-                                        <span class="text-muted">{{ $student->skill }}
-                                        </span>
-                                    </p>
+
+
+                                     
+
+                                            <tr>
+                                                <td>{{ $student->bachelor }}</td>
+                                                <td>{{ $student->bachelor_institution }}</td>
+                                                <td class='text-center'>{{ $student->bachelor_passing_year }}</td>
+                                                <td class='text-center text-bold'>{{ $student->bachelor_gpa }}</td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
+
+
+
+
+
+
+
 </section>
 @endsection
 

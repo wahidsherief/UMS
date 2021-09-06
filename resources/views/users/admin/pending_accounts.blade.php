@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-
+@if($count_users>0)
 <div class="card-body">
     <div class="ums-content-heading">
         <h3 class="card-title">Pending Accounts</h3>
@@ -42,7 +42,6 @@
                             @endif
 
                         </td>
-
                         <td>
                             <a href="{{ route('admin.pending_account_details',$user->id) }}" class="ums-tiny-btn text-success"><i class="fas fa-eye"></i> Details </a>
                         </td>
@@ -58,11 +57,11 @@
         </div>
     </div>
 
+@else
 
-</div>
-</div>
+<div class="text-muted font-italic text-danger text-center h6 pt-3 pb-3">No Request Found</div>
 
-
+@endif
 @if(Session::has('account_approved'))
 <script>
     swal("Success", "Account has been approved successfully", "success");

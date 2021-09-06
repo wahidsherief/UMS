@@ -1,19 +1,21 @@
 @extends('users.teacher.layout')
-@section('title',"Internal Activities")
+@section('title',"Examination")
 @section('nav_bar')
-@include('users.teacher.top_nav.teacher_exam')
+@include('users.top_nav.teacher_examination')
 @endsection
 
 @section('content')
 
+@if($current_examination>=1)
+
+
 <div class="card-body pt-4">
   <div class="ums-content-heading">
-    <h3 class="card-title">Examination</h3>
+    <h3 class="card-title">Current Examination</h3>
   </div>
-  <form action="{{route('add.course.submit')}}" method="POST">
-    @csrf
+
     <div class="card-body table-responsive p-0">
-      <table class="table table-borderless table-hover">
+      <table class="table table-borderless table-hover table-sm">
         <thead>
           <tr>
             <th class="sl"></th>
@@ -44,6 +46,14 @@
         </tbody>
       </table>
     </div>
+
+@else
+
+
+<div class="text-muted font-italic text-danger text-center h6 pt-3 pb-3">No Current Available Now !!!</div>
+
+@endif
+
 </div>
 
 

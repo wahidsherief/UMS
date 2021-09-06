@@ -9,6 +9,7 @@ use App\Http\Controllers\teacher\StudentController;
 use App\Http\Controllers\teacher\TeacherNoticeController;
 use App\Http\Controllers\teacher\TeacherQuestionController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExaminationController;
 use App\Http\Controllers\teacher\CoursesControlller;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
@@ -50,6 +51,9 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
         Route::get('sessions', [SessionController::class, 'session'])->name('teacher.sessions');
         Route::get('internal', [SessionController::class, 'my_courses_internal'])->name('teacher.my_courses_internal');
         Route::get('external', [SessionController::class, 'my_courses_external'])->name('teacher.my_courses_external');
+
+        Route::get('current-exam', [ExaminationController::class, 'current_exam'])->name('teacher.current_exam');
+        Route::get('previous-exam', [ExaminationController::class, 'previous_exam'])->name('teacher.previous_exam');
 
         //
         Route::get('semester', [ResultController::class, 'semester_result'])->name('teacher.semester_result');
@@ -116,5 +120,12 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['isTeacher', 'auth', 'Prev
 
         Route::get('semester/{id}', [StudentController::class, 'all_students'])->name('courses.all_students');
         Route::get('student-details/{id}', [StudentController::class, 'my_batch_student_profile'])->name('teacher.student_profile');
+
+
+        Route::get('password', [TeacherController::class, 'password'])->name('teacher.password');
+
+        Route::get('terms', [TeacherController::class, 'terms'])->name('teacher.terms');
+        Route::get('privacy', [TeacherController::class, 'privacy'])->name('teacher.privacy');
+        Route::get('coming-soon', [TeacherController::class, 'coming_soon'])->name('coming_soon');
     });
 });

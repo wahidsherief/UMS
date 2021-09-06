@@ -37,8 +37,10 @@ class StudentController extends Controller
     public function notice()
     {
         $notice = Notice::with('user')->orderBy('id', 'DESC')->paginate(5);
+        $count = Notice::count();
+
         // dd($notice);
-        return view('users.student.notice', compact('notice'));
+        return view('users.student.notice', compact(['notice', 'count']));
     }
 
     public function single_notice($id)
@@ -151,9 +153,9 @@ class StudentController extends Controller
     public function show_question()
     {
         $questions = Question::with(['session', 'user', 'teacher', 'course'])->orderBy('id', 'DESC')->get();
-
+        $count = Question::count();
         $courses = Course::get();
-        return view('users.student.show_question', compact(['questions', 'courses']));
+        return view('users.student.show_question', compact(['questions', 'courses', 'count']));
     }
     public function download($id)
     {
@@ -170,5 +172,9 @@ class StudentController extends Controller
         $questions = Question::where('course_id', 'LIKE', '%' . $search_text . '%')->with(['session', 'user', 'teacher', 'course'])->get();
 
         return view('users.teacher.search_data', compact(['questions', 'courses']));
+    }
+    public function coming_soon()
+    {
+        return view('users.student.coming_soon');
     }
 }
