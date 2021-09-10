@@ -116,8 +116,8 @@ class TeacherController extends Controller
             'gender' => 'required',
             'phone' => 'required|numeric|unique:teachers',
             'blood_group' => 'required|max:3',
-            'masters' => 'required',
-            'bachelor' => 'required',
+            'masters_institution' => 'required',
+            'bachelor_institution' => 'required',
             'address' => 'required',
             'about' => 'required',
         ]);
@@ -132,8 +132,8 @@ class TeacherController extends Controller
         $teachers->blood_group = $request->blood_group;
         $teachers->address = $request->address;
         $teachers->about = $request->about;
-        $teachers->masters = $request->masters;
-        $teachers->bachelor = $request->bachelor;
+        $teachers->masters_institution = $request->masters_institution;
+        $teachers->bachelor_institution = $request->bachelor_institution;
         $teachers->save();
         return redirect()->route('teacher.data')->with('pending', 'Your Profile is pending');
     }

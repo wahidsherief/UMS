@@ -1,6 +1,4 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 offset-md-1">
+
             <!-- /.card-header -->
             <!-- form start -->
             @foreach($teachers as $teacher)
@@ -10,6 +8,10 @@
 
             @endforeach
             @if(!isset($user_exists))
+            <div class="card-body">
+                <div class="ums-content-heading">
+                    <h3 class="card-title">Student List</h3>
+                </div>
             <form action="{{route('teacher.profile_submit',['id' =>(Auth::user()->id)])}}" method="POST">
                 @csrf
                 <div class="card card-secondary">
@@ -103,7 +105,7 @@
 
                                     <textarea class="form-control" id="text" name="about"
                                         placeholder="About yourself 50-150 words" minlength="50"
-                                        maxlength="200">{{ old('about') }}</textarea>
+                                        maxlength="300">{{ old('about') }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -112,32 +114,18 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Master Degree</label>
                                     <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                                        name="masters"value={{ old('masters') }}>
+                                        name="masters_institution" value={{ old('masters_institution') }}>
                                 </div></div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Bachelor Degree</label>
                                      <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                                     name="bachelor"value={{ old('bachelor') }}>
+                                     name="bachelor_institution"value={{ old('bachelor_institution') }}>
                                     </div>
                                 </div>
                             </div>
 
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">College</label>
-                                    <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                                        name="college"value={{ old('college') }}>
-                                </div></div>
-                                <div class="col">
-                                    <div class="form-group">
-                                    <label for="exampleInputEmail1">School</label>
-                                     <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                                            name="school"value={{ old('school') }}>
-                                    </div>
-                                </div></div>
 
 
 
@@ -147,24 +135,15 @@
                         <button type="submit" class="btn btn-primary float-right   btn-sm">Submit</button>
                     </div>  </div> </div> </div>
             </form>
-            @else
 
+@else
 
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
     @foreach($teachers as $teacher)
-
-    <div class="card col-md-10 offset-md-1">
-        <div class="card-header">
-            <h3 class="alert alert-warning" role="alert">Account is Pending</h3>
+    <div class="card-body">
+        <div class="ums-content-heading">
+            <h3 class="card-title">Your Information</h3>
         </div>
-
-
-        <div class="card-body ">
+        <div class="card-body">
 
 
 
@@ -222,7 +201,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Address</label>
                         <textarea placeholder="Enter Full Address" name="address"
-                            class="form-control" readonly>{{ $teacher->about }}</textarea>
+                            class="form-control" readonly>{{ $teacher->address }}</textarea>
                     </div>
                 </div>
                 <div class="col">
@@ -240,13 +219,13 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Master Degree</label>
                         <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                            name="masters"  readonly value={{ $teacher->masters }}>
+                            name="masters"  readonly value={{ $teacher->masters_institution }}>
                     </div></div>
                     <div class="col">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Bachelor Degree</label>
                          <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                         name="bachelor" readonly value={{ $teacher->bachelor }}>
+                         name="bachelor" readonly value={{ $teacher->masters_institution }}>
                         </div>
                     </div>
                 </div>
@@ -254,20 +233,7 @@
 
 
 
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">College</label>
-                        <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                            name="college" readonly value={{ $teacher->college }}>
-                    </div></div>
-                    <div class="col">
-                        <div class="form-group">
-                        <label for="exampleInputEmail1">School</label>
-                         <input type="text" class="form-control " id="text" placeholder="Institution Name"
-                                name="school" readonly value={{ $teacher->school }}>
-                        </div>
-                    </div></div>
+
 
             @endforeach
             @endif

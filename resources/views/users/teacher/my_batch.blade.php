@@ -19,11 +19,11 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th class="sl">SL</th>
+                        <th class="sl"></th>
                         <th>Registration Number</th>
                         <th>Class ID</th>
                         <th>Name</th>
-                        <th>Action</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
