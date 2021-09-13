@@ -6,12 +6,12 @@
 
 @section('content')
 
-@if($current_examination>=1)
+@if($current_examination_count>=1)
 
 
 <div class="card-body pt-4">
   <div class="ums-content-heading">
-    <h3 class="card-title">Current Examination</h3>
+    <h3 class="card-title font-weight-bold">{{ $current_examination->name }}</h3>
   </div>
 
     <div class="card-body table-responsive p-0">

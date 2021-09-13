@@ -23,7 +23,7 @@
                                 <label for="exampleInputEmail1">Class Test (Marks)</label>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="" placeholder="Marks Range:0-60"
-                                        name="class_test">
+                                        name="class_test" min="0" max="60">
 
                                 @error('class_test')
                                 <span class="text-danger">{{ $message }}</span>

@@ -4,11 +4,11 @@
 
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item  {{ request()->is('admin/pending-accounts') ? 'active' : '' }}" href="{{ route('admin.pending_accounts') }}">Current Examination
+            <a class="dropdown-item  {{ request()->is('teacher/current-exam') ? 'active' : '' }}" href="{{ route('teacher.current_exam') }}">Current Examination
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="dropdown-item {{ request()->is('admin/teachers') ? 'active' : '' }}" href="{{ route('teacher.previous_exam') }}">Previous Examination
+            <a class="dropdown-item {{ request()->is('teacher/previous-exam') ? 'active' : '' }}" href="{{ route('teacher.previous_exam') }}">Previous Examination
             </a>
         </li>
 

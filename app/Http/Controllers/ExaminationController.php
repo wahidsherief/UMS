@@ -50,8 +50,9 @@ class ExaminationController extends Controller
     }
     public function current_exam()
     {
-        $current_examination = Examination::where('status', 1)->count();
+        $current_examination_count = Examination::where('status', 1)->count();
 
+        $current_examination = Examination::where('status', 1)->first();
         // dd($current_examination);
         $auth_id = Auth::user()->id;
         // dd($teacher_id);
@@ -61,7 +62,7 @@ class ExaminationController extends Controller
         $session_id = ($internal_courses[0]->session_id);
         $external_courses = AssignCourses::where('teacher_external_id', $teacher->id)->with(['semester'])->get();
         // dd($AssignCoursess);
-        return view('users.teacher.examination.current_exam', compact(['internal_courses', 'current_examination', 'external_courses', 'session_id']));
+        return view('users.teacher.examination.current_exam', compact(['internal_courses', 'current_examination', 'current_examination_count', 'external_courses', 'session_id']));
     }
     public function previous_exam()
     {
